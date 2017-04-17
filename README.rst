@@ -17,7 +17,7 @@ Installation
 License
 =======
 
-MIT. See ``GPLv3`` for more details.
+GPLv3. See ``LICENSE`` for more details.
 
 .. _Django: https://www.djangoproject.com
 .. _Pipenv: https://github.com/kennethreitz/pipenv
