@@ -9,7 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-build/
+/build/
 develop-eggs/
 dist/
 downloads/
@@ -87,3 +87,21 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Databases
+*.db
+
+# Project's environment settings
+.env.json
+!/tests/pytests/.env.json
+gt_project/settings/settings_env.py
+
+# Media/static files (only used in development)
+/media/
+/static/
+
+# Assets and Node stuff
+node_modules/
+__snapshots__/
+/gt/static/build_dev/*
+!gt/static/build_dev/.gitkeep

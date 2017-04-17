@@ -1,0 +1,19 @@
+//
+// Common elements
+// --------------------------------------------------
+
+
+html{
+  height: 100%;
+}
+
+a{
+  @include transition(0.25s, ease-in-out);
+}
+
+#id_wrap{
+  clear: both;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+}
