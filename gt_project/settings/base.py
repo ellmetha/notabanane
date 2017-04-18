@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     # Third-party apps
     'modelcluster',
     'taggit',
+    'wagtail.contrib.wagtailroutablepage',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
     'wagtail.wagtailembeds',
