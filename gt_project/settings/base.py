@@ -66,6 +66,19 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Third-party apps
+    'modelcluster',
+    'taggit',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailforms',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtailusers',
+    'wagtail.wagtaildocs',
 
     # Django's admin app
     'django.contrib.admin',
@@ -88,6 +101,8 @@ MIDDLEWARE = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
 
@@ -239,3 +254,10 @@ WSGI_APPLICATION = 'gt_project.wsgi.application'
 
 # URL of the admin page
 ADMIN_URL = get_envsetting('ADMIN_URL')
+
+
+# WAGTAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+
+WAGTAIL_ADMIN_URL = get_envsetting('WAGTAIL_ADMIN_URL')
+WAGTAIL_SITE_NAME = 'GaëlleTonic'

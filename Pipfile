@@ -15,5 +15,6 @@ pytest-sugar = "*"
 tox = "*"
 
 [packages]
+wagtail = "*"
 Django = ">=1.11,<2.0"
 Pillow = "*"

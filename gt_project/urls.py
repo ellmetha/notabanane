@@ -11,6 +11,9 @@ from django.conf.urls import include
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.i18n import JavaScriptCatalog
+from wagtail.wagtailadmin import urls as wagtailadmin_urls
+from wagtail.wagtailcore import urls as wagtail_urls
+from wagtail.wagtaildocs import urls as wagtaildocs_urls
 
 
 js_info_dict = {
@@ -22,6 +25,11 @@ urlpatterns = [
 
     # Admin
     url(r'^' + settings.ADMIN_URL, admin.site.urls),
+
+    # Apps
+    url(r'^' + settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'', include(wagtail_urls)),
 ]
 
 if settings.DEBUG:
