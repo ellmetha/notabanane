@@ -139,7 +139,7 @@ DATABASES = {
 TIME_ZONE = 'EST'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fr'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -158,7 +158,7 @@ USE_TZ = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#languages
 LANGUAGES = (
-    ('en', 'English'),
+    ('fr', 'Français'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
