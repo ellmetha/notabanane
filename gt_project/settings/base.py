@@ -261,4 +261,4 @@ ADMIN_URL = get_envsetting('ADMIN_URL')
 # ------------------------------------------------------------------------------
 
 WAGTAIL_ADMIN_URL = get_envsetting('WAGTAIL_ADMIN_URL')
-WAGTAIL_SITE_NAME = 'GaëlleTonic'
+WAGTAIL_SITE_NAME = 'GaelleTonic'
