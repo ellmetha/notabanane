@@ -247,7 +247,7 @@ MEDIA_URL = '/media/'
 ROOT_URLCONF = 'gt_project.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'gt_project.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # ADMIN CONFIGURATION
