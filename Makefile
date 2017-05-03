@@ -1,18 +1,21 @@
-.PHONY: init lint isort coverage spec
+.PHONY: devserver init lint isort coverage spec
+
+coverage:
+	pipenv run py.test --cov-report term-missing --cov gt
+
+devserver:
+	pipenv run python manage.py runserver --settings=gt_project.settings.dev
 
 init:
 	pip install pipenv
 	pipenv lock
 	pipenv install --dev
 
-lint:
-	pipenv run flake8
-
 isort:
 	pipenv run isort --check-only --recursive --diff gt tests
 
-coverage:
-	pipenv run py.test --cov-report term-missing --cov gt
+lint:
+	pipenv run flake8
 
 spec:
 	pipenv run py.test --spec -p no:sugar
