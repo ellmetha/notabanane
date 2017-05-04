@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "263680b0fa9fbfd91f8abb202e9c3b466b83bc52c0c11a6d5253bf68759764f5"
+            "sha256": "cabf340063b9cede98814543a369f3814a878313a3269e7db7f3f0bcb5eb7976"
         },
         "requires": {},
         "sources": [
@@ -81,8 +81,8 @@
             "version": "==0.04.20"
         },
         "wagtail": {
-            "hash": "sha256:2b51c74bb3fe3ef71bf9a4a303255b9ab851689151418593ebbd5631caa8ecd6",
-            "version": "==1.9"
+            "hash": "sha256:49cc9ea8e25160b06ab2ad454ef63d32db9f0c2321b8d919b153dd9cd996e230",
+            "version": "==1.10"
         },
         "webencodings": {
             "hash": "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78",
