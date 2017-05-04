@@ -65,9 +65,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third-party apps
-    'modelcluster',
-    'taggit',
+    # Wagtail apps
     'wagtail.contrib.wagtailroutablepage',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
@@ -80,6 +78,10 @@ INSTALLED_APPS = (
     'wagtail.wagtailsnippets',
     'wagtail.wagtailusers',
     'wagtail.wagtaildocs',
+
+    # Third-party apps
+    'modelcluster',
+    'taggit',
 
     # Django's admin app
     'django.contrib.admin',
