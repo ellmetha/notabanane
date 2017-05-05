@@ -98,4 +98,6 @@ class EntryPage(Page):
 
 
 class TagEntryPage(TaggedItemBase):
+    """ Represents a simple tag. """
+
     content_object = ParentalKey('EntryPage', related_name='entry_tags')
