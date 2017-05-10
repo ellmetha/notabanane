@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cabf340063b9cede98814543a369f3814a878313a3269e7db7f3f0bcb5eb7976"
+            "sha256": "cede1ed8cae63c8411dd2dad83f07a510adafe97aff017322983121213cb82ea"
         },
         "requires": {},
         "sources": [
@@ -17,12 +17,12 @@
             "version": "==1.4.3"
         },
         "beautifulsoup4": {
-            "hash": "sha256:0a91347d5a4ab2196407ff4d3d758f2e712cae9bdfa3fd1eb0f83edea95e0d8d",
-            "version": "==4.5.3"
+            "hash": "sha256:11a9a27b7d3bddc6d86f59fb76afb70e921a25ac2d6cc55b40d072bd68435a76",
+            "version": "==4.6.0"
         },
         "django": {
-            "hash": "sha256:0120b3b60760fb0617848b58aaa9702c0bf963320ed472f0879c5c55ab75b64a",
-            "version": "==1.11"
+            "hash": "sha256:bb3109a31cfa016e5f234223665f80fc06107f2169afb9f6dc8828295db73547",
+            "version": "==1.11.1"
         },
         "django-modelcluster": {
             "hash": "sha256:9edde7fb87b413c1114df47f928e95fbd6878de17f9f2caeea90e77766e272b5",
@@ -65,8 +65,8 @@
             "version": "==2017.2"
         },
         "requests": {
-            "hash": "sha256:1a720e8862a41aa22e339373b526f508ef0c8988baf48b84d3fc891a8e237efb",
-            "version": "==2.13.0"
+            "hash": "sha256:c5a42004b9cd384e5ad0f868b1cc968a3c2bb0276dccc12e4bdc7330591b5f51",
+            "version": "==2.14.1"
         },
         "setuptools": {
             "hash": "sha256:19d753940f8cdbee7548da318f8b56159aead279ef811a6efc8b8a33d89c86a4",
@@ -99,16 +99,16 @@
             "version": "==1.4.3"
         },
         "coverage": {
-            "hash": "sha256:8b282292973a1dc4eccfcc0776e0fde75b5b3de2e35164c2d854f7dd80149e4b",
-            "version": "==4.3.4"
+            "hash": "sha256:88c4c15347bc813a7a23c66e13d7a9dc968a0f9d59136fb1d97ebe869db5b88b",
+            "version": "==4.4"
         },
         "django": {
-            "hash": "sha256:0120b3b60760fb0617848b58aaa9702c0bf963320ed472f0879c5c55ab75b64a",
-            "version": "==1.11"
+            "hash": "sha256:bb3109a31cfa016e5f234223665f80fc06107f2169afb9f6dc8828295db73547",
+            "version": "==1.11.1"
         },
         "django-debug-toolbar": {
-            "hash": "sha256:bd929113ae22d7553c3ae6a6cb6762e8453784972eca06fa396aca47d0b66874",
-            "version": "==1.7"
+            "hash": "sha256:0b4d2b1ac49a8bc5604518e8e20f56c1c08c0c4873336107e7c773c42537876b",
+            "version": "==1.8"
         },
         "flake8": {
             "hash": "sha256:83905eadba99f73fbfe966598aaf1682b3eb6755d2263c5b33a4e8367d60b0d1",
@@ -159,8 +159,8 @@
             "version": "==3.0.7"
         },
         "pytest-cov": {
-            "hash": "sha256:10e37e876f49ddec80d6c83a54b657157f1387ebc0f7755285f8c156130014a1",
-            "version": "==2.4.0"
+            "hash": "sha256:267864bcab5fd16ec8655a0c74194ddaaa879a116d3e1c9d1e0cda0ec849a459",
+            "version": "==2.5.0"
         },
         "pytest-django": {
             "hash": "sha256:00995c2999b884a38ae9cd30a8c00ed32b3d38c1041250ea84caf18085589662",

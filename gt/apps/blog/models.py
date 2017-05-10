@@ -6,11 +6,13 @@ from django.utils.translation import ugettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
+from treebeard.al_tree import AL_Node
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
+from wagtail.wagtailsnippets.models import register_snippet
 
 
 class BlogPage(Page):
@@ -64,6 +66,10 @@ class EntryPage(Page):
     body = RichTextField(verbose_name=_('Body'))
     date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
 
+    # A blog entry can be associated with many categories if necessary.
+    categories = models.ManyToManyField(
+        'blog.Category', through='blog.CategoryEntryPage', blank=True)
+
     # A blog entry can be associated with many tags if necessary.
     tags = ClusterTaggableManager(through='blog.TagEntryPage', blank=True)
 
@@ -83,6 +89,7 @@ class EntryPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
+        InlinePanel('entry_categories', label=_("Categories")),
     ]
 
     promote_panels = Page.promote_panels + [
@@ -101,3 +108,45 @@ class TagEntryPage(TaggedItemBase):
     """ Represents a simple tag. """
 
     content_object = ParentalKey('EntryPage', related_name='entry_tags')
+
+
+@register_snippet
+class Category(AL_Node):
+    """ Represents a blog category. """
+
+    # A category is basically defined by a name, a slug (that will be used in URLs) and a
+    # description.
+    name = models.CharField(max_length=80, unique=True, verbose_name=_('Category name'))
+    slug = models.SlugField(max_length=100, unique=True, verbose_name=_('Slug'))
+    description = models.CharField(max_length=500, blank=True, verbose_name=_('Description'))
+
+    # A tree of categories can be created using the parent relation (thus allowing to build
+    # adjacency list trees).
+    parent = models.ForeignKey(
+        'self', blank=True, null=True, db_index=True, related_name='children_set',
+        verbose_name=_('Parent category'))
+
+    node_order_by = ['name', ]
+
+    class Meta:
+        ordering = ['name', ]
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return self.name
+
+
+class CategoryEntryPage(models.Model):
+    """ Represents a category entry page. """
+
+    category = models.ForeignKey(Category, related_name='+', verbose_name=_('Category'))
+    page = ParentalKey('EntryPage', related_name='entry_categories')
+
+    ###############################
+    # EDITOR PANELS CONFIGURATION #
+    ###############################
+
+    panels = [
+        FieldPanel('category')
+    ]
