@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
+
+{% block content %}
+<section id="featured_article_section" class="hero is-medium is-info is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="subtitle"><small>{% trans "Featured article" %}</small></div>
+      <div class="title"><a href="#">{% trans "Test article" %}</a></div>
+    </div>
+  </div>
+</section>
+<section id="category_menu_section" class="container">
+  <div class="tabs is-medium">
+    <ul>
+      <li class="is-active"><a>{% trans "Most recent" %}</a></li>
+      <li><a>Music</a></li>
+      <li><a>Videos</a></li>
+      <li><a>Documents</a></li>
+    </ul>
+  </div>
+</section>
+{% endblock content %}

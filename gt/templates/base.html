@@ -7,8 +7,7 @@
     {% block head %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-
-    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} &dash; GaëlleTonic{% endblock %}</title>
     <meta name="created" content="{% now "jS M Y h:i" %}" />
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
@@ -29,6 +28,36 @@
       >
     <div id="id_wrap">
       {% block header %}
+      <div class="container">
+        <nav class="nav">
+          <div class="nav-left">
+            <a class="nav-item"><img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"></a>
+            <a class="nav-item">{% trans "About" %}</a>
+            <a class="nav-item">{% trans "FAQ" %}</a>
+            <a class="nav-item">{% trans "Contact" %}</a>
+          </div>
+          <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+          <span class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <!-- This "nav-menu" is hidden on mobile -->
+          <div class="nav-right nav-menu">
+            <a class="nav-item"><span class="icon"><i class="fa fa-search"></i></span></a>
+            <div class="nav-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-primary">
+                    <span class="icon"><i class="fa fa-envelope-open"></i></span>&nbsp;
+                    <span>{% trans "Subscribe" %}</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
       {% endblock header %}
 
       {% block content %}

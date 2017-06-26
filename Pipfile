@@ -16,6 +16,6 @@ tox = "*"
 
 [packages]
 wagtail = ">=1.10"
-django = ">=1.11,<2.0"
 pillow = "*"
 django-treebeard = "*"
+Django = ">=1.11,<2.0"
