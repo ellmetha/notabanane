@@ -9,8 +9,8 @@
 """
 
 import json
-import pathlib
 import os
+import pathlib
 
 from django.core.exceptions import ImproperlyConfigured
 

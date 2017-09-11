@@ -7,8 +7,7 @@
 """
 
 from django.conf import settings
-from django.conf.urls import include
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.i18n import JavaScriptCatalog
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
