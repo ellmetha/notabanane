@@ -3,17 +3,51 @@
 // --------------------------------------------------
 
 
-html{
+html {
   height: 100%;
 }
 
-a{
+a {
   @include transition(0.25s, ease-in-out);
 }
 
-#id_wrap{
-  clear: both;
-  height: auto;
-  min-height: 100%;
-  overflow-x: hidden;
+#id_wrap {
+  nav.nav {
+    height: 5.5rem;
+
+    .nav-item {
+      padding: 1rem 0.75rem;
+    }
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding: 3rem 1.5rem 3rem;
+    background-color: $ferra;
+    color: $saltpan;
+
+    p.logo {
+      margin-bottom: 2rem;
+    }
+
+    p.social {
+      a {
+        margin: 0 10px;
+        display: inline-block;
+        font-size: 1.5rem;
+        color: $saltpan;
+        @include transition(0.5s, ease-in-out);
+
+        &:hover, &:focus {
+          color: darken($saltpan, 20%);
+        }
+      }
+    }
+
+    p.copyright {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $grey-lighter;
+    }
+  }
 }

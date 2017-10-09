@@ -31,7 +31,7 @@
       <div class="container">
         <nav class="nav">
           <div class="nav-left">
-            <a class="nav-item"><img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"></a>
+            <a href="/" class="nav-item"><img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"></a>
             <a class="nav-item">{% trans "About" %}</a>
             <a class="nav-item">{% trans "FAQ" %}</a>
             <a class="nav-item">{% trans "Contact" %}</a>
@@ -63,7 +63,24 @@
       {% block content %}
       {% endblock content %}
 
-      {% block footer %}{% endblock footer %}
+      {% block footer %}
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p class="logo">
+              <img src="{% static 'img/logo_white.svg' %}" alt="GaelleTonic logo" />
+            </p>
+            <p class="social">
+              <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="" target="_blank"><i class="fa fa-pinterest"></i></a>
+            </p>
+            <p class="copyright">&copy; GaëlleTonic 2017</p>
+          </div>
+        </div>
+      </footer>
+      {% endblock footer %}
     </div>
 
     <script type="text/javascript" src="{% url 'javascript_catalog' %}"></script>
