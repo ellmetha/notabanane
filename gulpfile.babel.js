@@ -134,6 +134,7 @@ gulp.task('webpack-dev-server', () => {
   new WebpackDevServer(webpack(devWebpackConfig), {
     contentBase: path.resolve(__dirname, staticDir, '..'),
     publicPath: '/static/',
+    headers: { 'Access-Control-Allow-Origin': '*' },
     hot: true,
     inline: true,
   }).listen(WEBPACK_DEV_SERVER_PORT, 'localhost', (err) => {
