@@ -28,7 +28,6 @@ urlpatterns = [
     # Apps
     url(r'^' + settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
-    url(r'', include(wagtail_urls)),
 ]
 
 if settings.DEBUG:
@@ -55,3 +54,5 @@ if settings.DEBUG:
         url(r'^500/$', TemplateView.as_view(template_name='500.html')),
         url(r'^503/$', TemplateView.as_view(template_name='503.html')),
     ]
+
+urlpatterns.append(url(r'', include(wagtail_urls)))
