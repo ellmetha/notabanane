@@ -52,6 +52,11 @@ const webpackConfig = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
     new ExtractTextPlugin({ filename: 'css/[name].css', disable: false }),
     ...(PROD_ENV ? [
       new webpack.LoaderOptionsPlugin({
@@ -118,6 +123,9 @@ gulp.task('webpack-dev-server', () => {
     filename: 'js/[name].js',
   };
   devWebpackConfig.plugins = [
+    new webpack.ProvidePlugin({
+      $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery',
+    }),
     new webpack.LoaderOptionsPlugin({ debug: true }),
     new webpack.HotModuleReplacementPlugin(),
   ];
