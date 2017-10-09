@@ -20,6 +20,7 @@ class BlogPage(Page):
     Basically the blog page will correspond the blog's index page. It should be noted that the
     ``BlogPage`` model inherits from the ``RoutablePageMixin``. Thus blog pages are associated with
     multiple routes allowing to retrieve blog entries by date, month or year.
+
     """
 
     description = models.CharField(
@@ -28,7 +29,9 @@ class BlogPage(Page):
 
     header_image = models.ForeignKey(
         'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
-        verbose_name=_('Header image'))
+        verbose_name=_('Header image'),
+        help_text=_('Default header image used if the featured article does not provide any '
+                    'header image'))
 
     # The following fields can be used to configure the way the behavior of the blog.
     show_tags = models.BooleanField(default=True, verbose_name=_('Show tags'))
@@ -52,18 +55,38 @@ class BlogPage(Page):
 
     subpage_types = ['blog.EntryPage', ]
 
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse publication dates.
+        context = super(BlogPage, self).get_context(request)
+        blogpages = EntryPage.objects.live().order_by('-first_published_at')
+        context['blogpages'] = blogpages
+
+        # Includes the featured article (if any) into the context.
+        context['featured_article'] = blogpages.first()
+
+        return context
+
 
 class EntryPage(Page):
     """ Represents a blog entry page.
 
     This Page subclass provide a way to define blog entry pages through the Wagtail's admin.
     It defines the basic fields and information that are generally associated with blog pages.
+
     """
 
     # Basically a blog entry page is characterized by a body field (the actual content of the blog
     # post), a date and a title (which is provided by the wagtail's Page model).
     body = RichTextField(verbose_name=_('Body'))
     date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
+
+    # A blog entry page can have an header image that'll be used when rendering the blog post. It'll
+    # also be displayed if the blog post is featured in the home page.
+    header_image = models.ForeignKey(
+        'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
+        verbose_name=_('Header image'),
+        help_text=_('Header image displayed when rendering the article or if the article is '
+                    'featured on the home page'))
 
     # A blog entry can be associated with many categories if necessary.
     categories = models.ManyToManyField(
@@ -88,6 +111,7 @@ class EntryPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
+        ImageChooserPanel('header_image'),
         InlinePanel('entry_categories', label=_("Categories")),
     ]
 
@@ -147,5 +171,5 @@ class CategoryEntryPage(models.Model):
     ###############################
 
     panels = [
-        FieldPanel('category')
+        FieldPanel('category'),
     ]
