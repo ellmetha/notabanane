@@ -1,5 +1,6 @@
 import datetime as dt
 
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -58,11 +59,22 @@ class BlogPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse publication dates.
         context = super(BlogPage, self).get_context(request)
-        blogpages = EntryPage.objects.live().order_by('-first_published_at')
+        blogpages_qs = EntryPage.objects.select_related('header_image').live() \
+            .order_by('-first_published_at')
+        paginator = Paginator(blogpages_qs, 12)
+        page = request.GET.get('page')
+        try:
+            blogpages = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            blogpages = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            blogpages = paginator.page(paginator.num_pages)
         context['blogpages'] = blogpages
 
         # Includes the featured article (if any) into the context.
-        context['featured_article'] = blogpages.first()
+        context['featured_article'] = blogpages_qs.first()
 
         return context
 

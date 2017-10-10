@@ -52,5 +52,15 @@
     </div>
     {% endfor %}
   </div>
+  <div class="columns">
+    <div class="column has-text-centered">
+      {% if blogpages.has_previous %}
+      <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+      {% endif %}
+      {% if blogpages.has_next %}
+      <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+      {% endif %}
+    </div>
+  </div>
 </section>
 {% endblock content %}
