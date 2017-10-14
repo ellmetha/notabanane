@@ -1,3 +1,12 @@
+"""
+    Blog models
+    ===========
+
+    This module defines the main models associated with the blog application. Most of them make use
+    of the functionalities provided by Wagtail.
+
+"""
+
 import datetime as dt
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -14,8 +23,10 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsnippets.models import register_snippet
 
+from .routes import BlogRoutes
 
-class BlogPage(Page):
+
+class BlogPage(BlogRoutes, Page):
     """ Represents a blog page.
 
     Basically the blog page will correspond the blog's index page. It should be noted that the
@@ -34,7 +45,7 @@ class BlogPage(Page):
         help_text=_('Default header image used if the featured article does not provide any '
                     'header image'))
 
-    # The following fields can be used to configure the way the behavior of the blog.
+    # The following fields can be used to configure the behavior of the blog.
     show_tags = models.BooleanField(default=True, verbose_name=_('Show tags'))
 
     ###############################
@@ -59,9 +70,7 @@ class BlogPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse publication dates.
         context = super(BlogPage, self).get_context(request)
-        blogpages_qs = EntryPage.objects.select_related('header_image').live() \
-            .order_by('-first_published_at')
-        paginator = Paginator(blogpages_qs, 12)
+        paginator = Paginator(self.entries, 12)
         page = request.GET.get('page')
         try:
             blogpages = paginator.page(page)
@@ -74,9 +83,20 @@ class BlogPage(Page):
         context['blogpages'] = blogpages
 
         # Includes the featured article (if any) into the context.
-        context['featured_article'] = blogpages_qs.first()
+        context['featured_article'] = self.entries.first()
+
+        # Includes the categories into the context.
+        context['categories'] = Category.objects.all().order_by('name')
+
+        # Includes filter-related values into the context.
+        context['filter_type'] = getattr(self, 'filter_type', None)
+        context['filter_value'] = getattr(self, 'filter_value', None)
 
         return context
+
+    def get_entries(self):
+        return EntryPage.objects.select_related('header_image').live() \
+            .order_by('-first_published_at')
 
 
 class EntryPage(Page):

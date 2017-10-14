@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
+{% load wagtailroutablepage_tags %}
 
 {% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
 
@@ -26,10 +27,10 @@
   <div class="container">
     <div class="tabs is-medium">
       <ul>
-        <li class="is-active"><a>{% trans "Most recent" %}</a></li>
-        <li><a>Music</a></li>
-        <li><a>Videos</a></li>
-        <li><a>Documents</a></li>
+        <li{% if filter_type is None %} class="is-active"{% endif %}><a href="{% routablepageurl self 'entries_list' %}">{% trans "Most recent" %}</a></li>
+        {% for category in categories %}
+        <li{% if filter_type == 'category' and filter_value == category.slug %} class="is-active"{% endif %}><a href="{% routablepageurl self 'entries_by_category' category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
       </ul>
     </div>
   </div>
