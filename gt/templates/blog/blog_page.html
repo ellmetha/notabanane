@@ -35,32 +35,34 @@
     </div>
   </div>
 </section>
-<section id="post_list" class="container">
-  <div class="columns is-multiline">
-    {% for post in blogpages %}
-    <div class="column is-one-third">
-      <a href="{% pageurl post %}" class="post-box">
-        {% if post.header_image %}
-        <span class="image-wrapper">
-          <figure class="image">{% image post.header_image fill-370x208 %}</figure>
-        </span>
-        {% endif %}
-        <span class="content-wrapper">
-          <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-          <span class="post-title">{{ post.title }}</span>
-        </span>
-      </a>
+<section id="post_list" class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for post in blogpages %}
+      <div class="column is-one-third">
+        <a href="{% pageurl post %}" class="post-box">
+          {% if post.header_image %}
+          <span class="image-wrapper">
+            <figure class="image">{% image post.header_image fill-370x208 %}</figure>
+          </span>
+          {% endif %}
+          <span class="content-wrapper">
+            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="post-title">{{ post.title }}</span>
+          </span>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-  <div class="columns">
-    <div class="column has-text-centered">
-      {% if blogpages.has_previous %}
-      <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
-      {% endif %}
-      {% if blogpages.has_next %}
-      <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
-      {% endif %}
+    <div class="columns">
+      <div class="column has-text-centered">
+        {% if blogpages.has_previous %}
+        <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+        {% endif %}
+        {% if blogpages.has_next %}
+        <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
