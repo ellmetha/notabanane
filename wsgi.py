@@ -1,6 +1,6 @@
 """
-    WSGI application used by the gaelletonic project
-    ================================================
+    WSGI application used by the notabanane project
+    ===============================================
 
     This module contains the WSGI application used by Django's development server and any production
     WSGI deployments. It should expose a module-level variable named ``application``.

@@ -1,6 +1,6 @@
 """
-    Base URL configuration the gaelletonic project
-    ==============================================
+    Project base URL configuration
+    ==============================
 
     For more information on this file, see https://docs.djangoproject.com/en/1.10/topics/http/urls/
 
@@ -10,9 +10,9 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.i18n import JavaScriptCatalog
-from wagtail.wagtailadmin import urls as wagtailadmin_urls
-from wagtail.wagtailcore import urls as wagtail_urls
-from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.core import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
 
 
 js_info_dict = {

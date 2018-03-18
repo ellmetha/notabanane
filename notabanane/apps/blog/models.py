@@ -16,12 +16,12 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 from treebeard.al_tree import AL_Node
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailsearch import index
-from wagtail.wagtailsnippets.models import register_snippet
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.core.fields import RichTextField
+from wagtail.core.models import Page
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
+from wagtail.snippets.models import register_snippet
 
 from .routes import BlogRoutes
 
@@ -179,7 +179,7 @@ class Category(AL_Node):
     # adjacency list trees).
     parent = models.ForeignKey(
         'self', blank=True, null=True, db_index=True, related_name='children_set',
-        verbose_name=_('Parent category'))
+        on_delete=models.SET_NULL, verbose_name=_('Parent category'))
 
     node_order_by = ['name', ]
 
@@ -195,7 +195,8 @@ class Category(AL_Node):
 class CategoryEntryPage(models.Model):
     """ Represents a category entry page. """
 
-    category = models.ForeignKey(Category, related_name='+', verbose_name=_('Category'))
+    category = models.ForeignKey(
+        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'))
     page = ParentalKey('EntryPage', related_name='entry_categories')
 
     ###############################

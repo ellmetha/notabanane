@@ -15,7 +15,7 @@ env('.env');
 
 /* Global variables */
 const rootDir = './';
-const staticDir = `${rootDir}gt/static/`;
+const staticDir = `${rootDir}notabanane/static/`;
 const PROD_ENV = gutil.env.production;
 const WEBPACK_DEV_SERVER_PORT = (
   process.env.WEBPACK_DEV_SERVER_PORT ? process.env.WEBPACK_DEV_SERVER_PORT : 8080);
@@ -33,8 +33,10 @@ const jsDir = `${staticDir}js`;
  */
 
 const webpackConfig = {
+  mode: PROD_ENV ? 'production' : 'development',
   output: {
     filename: 'js/[name].js',
+    publicPath: '/static/',
   },
   resolve: {
     modules: ['node_modules'],
@@ -43,27 +45,25 @@ const webpackConfig = {
   module: {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader' },
-      { test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-            { use: ['css-loader', 'sass-loader'], fallback: 'style-loader', publicPath: '../' }) },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader'], fallback: 'style-loader', publicPath: '../',
+        }),
+      },
       { test: /\.txt$/, use: 'raw-loader' },
       { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/, use: 'url-loader?limit=10000' },
       { test: /\.(eot|ttf|wav|mp3|otf)([\?]?.*)$/, use: 'file-loader' },
     ],
   },
+  optimization: {
+    minimize: PROD_ENV,
+  },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-    }),
     new ExtractTextPlugin({ filename: 'css/[name].css', disable: false }),
     ...(PROD_ENV ? [
       new webpack.LoaderOptionsPlugin({
         minimize: true,
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false },
       }),
     ] : []),
   ],
@@ -80,8 +80,7 @@ gulp.task('build-webpack-assets', () =>
   gulp.src([`${jsDir}/App.js`, `${sassDir}/App.scss`])
     .pipe(named())
     .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(gulp.dest(buildDir)),
-);
+    .pipe(gulp.dest(buildDir)));
 
 
 /*
@@ -99,6 +98,7 @@ gulp.task('build', ['build-webpack-assets']);
 
 gulp.task('webpack-dev-server', () => {
   const devWebpackConfig = Object.create(webpackConfig);
+  devWebpackConfig.mode = 'development';
   devWebpackConfig.devtool = 'eval';
   devWebpackConfig.devServer = { hot: true };
   devWebpackConfig.entry = {
@@ -123,9 +123,6 @@ gulp.task('webpack-dev-server', () => {
     filename: 'js/[name].js',
   };
   devWebpackConfig.plugins = [
-    new webpack.ProvidePlugin({
-      $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery',
-    }),
     new webpack.LoaderOptionsPlugin({ debug: true }),
     new webpack.HotModuleReplacementPlugin(),
   ];
@@ -141,6 +138,7 @@ gulp.task('webpack-dev-server', () => {
     if (err) throw new gutil.PluginError('webpack-dev-server', err);
     gutil.log(
       '[webpack-dev-server]',
-      `http://localhost:${WEBPACK_DEV_SERVER_PORT}/webpack-dev-server/`);
+      `http://localhost:${WEBPACK_DEV_SERVER_PORT}/webpack-dev-server/`,
+    );
   });
 });

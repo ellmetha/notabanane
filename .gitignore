@@ -43,6 +43,7 @@ coverage/
 .coverage
 .coverage.*
 .cache
+.pytest_cache/
 nosetests.xml
 coverage.xml
 *,cover
@@ -97,7 +98,7 @@ ENV/
 # Project's environment settings
 .env.json
 !/tests/pytests/.env.json
-gt_project/settings/settings_env.py
+notabanane_project/settings/settings_env.py
 
 # Media/static files (only used in development)
 /media/
@@ -106,5 +107,5 @@ gt_project/settings/settings_env.py
 # Assets and Node stuff
 node_modules/
 __snapshots__/
-/gt/static/build_dev/*
-!gt/static/build_dev/.gitkeep
+/notabanane/static/build_dev/*
+!notabanane/static/build_dev/.gitkeep

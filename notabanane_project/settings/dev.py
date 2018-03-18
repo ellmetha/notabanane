@@ -1,8 +1,8 @@
 """
-    Development Django settings for the gaelletonic project
-    =======================================================
+    Development Django settings
+    ===========================
 
-    This files imports the ``base`` settings and can add or modify previously defined settings to
+    This file imports the ``base`` settings and can add or modify previously defined settings to
     alter the configuration of the application for development purposes.
 
     For more information on this file, see https://docs.djangoproject.com/en/dev/topics/settings/
@@ -49,7 +49,7 @@ INTERNAL_IPS = ['127.0.0.1', ]
 # ------------------------------------------------------------------------------
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += (  # noqa: F405
-    'gt_project.context_processors.webpack', )
+    'notabanane_project.context_processors.webpack', )
 TEMPLATES[0]['OPTIONS']['loaders'] = (  # noqa: F405
     # Disables cached loader
     'django.template.loaders.filesystem.Loader',
@@ -61,9 +61,9 @@ TEMPLATES[0]['OPTIONS']['loaders'] = (  # noqa: F405
 # ------------------------------------------------------------------------------
 
 STATICFILES_DIRS = (
-    str(PROJECT_PATH / 'gt' / 'static' / 'build_dev'),  # noqa: F405
-    str(PROJECT_PATH / 'gt' / 'static' / 'build'),  # noqa: F405
-    str(PROJECT_PATH / 'gt' / 'static'),  # noqa: F405
+    str(PROJECT_PATH / 'notabanane' / 'static' / 'build_dev'),  # noqa: F405
+    str(PROJECT_PATH / 'notabanane' / 'static' / 'build'),  # noqa: F405
+    str(PROJECT_PATH / 'notabanane' / 'static'),  # noqa: F405
 )
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

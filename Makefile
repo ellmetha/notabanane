@@ -1,6 +1,13 @@
-DJANGO_SETTINGS_MODULE := gt_project.settings.dev
+PROJECT_PACKAGE := notabanane
+PROJECT_CONFIGURATION_PACKAGE := $(PROJECT_PACKAGE)_project
+DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
 
-.PHONY: devserver qa lint lint_python lint_js isort isort_python tests tests_python tests_js spec spec_python
+.PHONY: devserver qa lint lint_python isort isort_python tests tests_python spec spec_python
+
+
+init:
+	pipenv install --dev --three
+	npm install
 
 
 # DEVELOPMENT
@@ -17,16 +24,19 @@ shell:
 
 messages:
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr
-	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="gt/static/build_dev/*" --ignore="node_modules/*"
+	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*"
 
 compiledmessages:
 	pipenv run python manage.py compilemessages  -l en -l fr
 
-init:
-	pip install pipenv
-	pipenv lock
-	pipenv install --dev --three
-	npm install
+migrations:
+	pipenv run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
+
+migrate:
+	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
+
+superuser:
+	pipenv run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
 
 
 # QUALITY ASSURANCE
@@ -36,7 +46,7 @@ init:
 
 qa: lint isort
 
-# Code quality checks (eg. flake8, eslint, etc).
+# Code quality checks (eg. flake8, etc).
 lint: lint_python lint_js
 lint_python:
 	pipenv run flake8
@@ -46,7 +56,7 @@ lint_js:
 # Import sort checks.
 isort: isort_python
 isort_python:
-	pipenv run isort --check-only --recursive --diff gt gt_project
+	pipenv run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
 
 
 # TESTING
@@ -64,7 +74,7 @@ tests_js:
 # Collects code coverage data.
 coverage: coverage_python coverage_js
 coverage_python:
-	pipenv run py.test --cov-report term-missing --cov gt
+	pipenv run py.test --cov-report term-missing --cov $(PROJECT_PACKAGE)
 coverage_js:
 	npm test
 

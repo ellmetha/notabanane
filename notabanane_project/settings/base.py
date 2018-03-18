@@ -1,6 +1,6 @@
 """
-    Base Django settings for the gaelletonic project
-    ================================================
+    Base Django settings
+    ====================
 
     For more information on this file, see https://docs.djangoproject.com/en/dev/topics/settings/
     For the full list of settings and their values, see
@@ -66,18 +66,18 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Wagtail apps
-    'wagtail.contrib.wagtailroutablepage',
-    'wagtail.wagtailadmin',
-    'wagtail.wagtailcore',
-    'wagtail.wagtailembeds',
-    'wagtail.wagtailforms',
-    'wagtail.wagtailimages',
-    'wagtail.wagtailredirects',
-    'wagtail.wagtailsearch',
-    'wagtail.wagtailsites',
-    'wagtail.wagtailsnippets',
-    'wagtail.wagtailusers',
-    'wagtail.wagtaildocs',
+    'wagtail.admin',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.contrib.routable_page',
+    'wagtail.core',
+    'wagtail.documents',
+    'wagtail.embeds',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.sites',
+    'wagtail.snippets',
+    'wagtail.users',
 
     # Third-party apps
     'modelcluster',
@@ -87,7 +87,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # Local apps
-    'gt.apps.blog',
+    'notabanane.apps.blog',
 )
 
 
@@ -104,8 +104,8 @@ MIDDLEWARE = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
-    'wagtail.wagtailcore.middleware.SiteMiddleware',
-    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 )
 
 
@@ -166,7 +166,7 @@ LANGUAGES = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = (
-    str(PROJECT_PATH / 'gt_project' / 'locale'),
+    str(PROJECT_PATH / 'notabanane_project' / 'locale'),
 )
 
 
@@ -185,7 +185,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': (
-            str(PROJECT_PATH / 'gt' / 'templates'),
+            str(PROJECT_PATH / 'notabanane' / 'templates'),
         ),
         'OPTIONS': {
             'context_processors': [
@@ -219,8 +219,8 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    str(PROJECT_PATH / 'gt' / 'static' / 'build'),
-    str(PROJECT_PATH / 'gt' / 'static'),
+    str(PROJECT_PATH / 'notabanane' / 'static' / 'build'),
+    str(PROJECT_PATH / 'notabanane' / 'static'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -246,7 +246,7 @@ MEDIA_URL = '/media/'
 # URL CONFIGURATION
 # ------------------------------------------------------------------------------
 
-ROOT_URLCONF = 'gt_project.urls'
+ROOT_URLCONF = 'notabanane_project.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'wsgi.application'
