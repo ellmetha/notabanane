@@ -1,23 +1,26 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
+
 
 [dev-packages]
 
 "flake8" = "*"
 isort = "*"
-"django-debug-toolbar" = "*"
+django-debug-toolbar = "*"
 pytest = "*"
-"pytest-cov" = "*"
-"pytest-django" = "*"
-"pytest-pythonpath" = "*"
-"pytest-spec" = "*"
-"pytest-sugar" = "*"
+pytest-cov = "*"
+pytest-django = "*"
+pytest-pythonpath = "*"
+pytest-spec = "*"
+pytest-sugar = "*"
 tox = "*"
+
 
 [packages]
 
 wagtail = ">=1.10"
 pillow = "*"
-"django-treebeard" = "*"
+django-treebeard = "*"
 django = "*"
