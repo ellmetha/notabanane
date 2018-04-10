@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load wagtailcore_tags %}
 
 <!DOCTYPE html>
 <html {% get_current_language as LANGUAGE_CODE %}lang="{{ LANGUAGE_CODE }}">
@@ -31,7 +32,7 @@
       <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="{% slugurl 'nota-banane' %}">
               <img src="{% static 'img/logo_black.svg' %}" alt="NotaBanane logo" height="70" />
             </a>
             <div class="navbar-burger">

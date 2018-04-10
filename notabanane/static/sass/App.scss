@@ -15,4 +15,5 @@ $fa-font-path: '~fork-awesome/fonts/'; @import "~fork-awesome/scss/fork-awesome"
 @import "common";
 
 // 3. Pages
+@import "pages/blog/entry";
 @import "pages/blog/index";
