@@ -11,12 +11,16 @@ a {
   @include transition(0.25s, ease-in-out);
 }
 
+h1, h2, h3 {
+  font-family: IndieFlower;
+}
+
 #id_wrap {
-  nav.nav {
+  nav.navbar {
     height: 5.5rem;
 
-    .nav-item {
-      padding: 1rem 0.75rem;
+    .navbar-item {
+      padding: 1.5rem 1rem;
     }
   }
 

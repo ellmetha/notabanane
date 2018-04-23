@@ -6,11 +6,11 @@
 //== Colors
 //
 
-$amethyst-smoke:  #A797B8;
+$amethystSmoke:  #A797B8;
 $cranberry:       #E55786;
 $ectasy:          #F78528;
 $ferra:           #67474A;
-$harvest-glod:    #E4B476;
+$harvestGlod:    #E4B476;
 $highland:        #7A9560;
 $pomegranate:     #F44336;
 $saltpan:         #FDFEFD;
@@ -29,3 +29,10 @@ $danger:          $pomegranate;
 
 //== Typography
 //
+
+@font-face {
+  font-family: IndieFlower;
+  src: url('../fonts/indieflower/IndieFlower.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -9,14 +9,25 @@
 {% block body_id %}id_blog_entry{% endblock body_id %}
 
 {% block content %}
-{% image page.header_image fill-1200x350 as header_image %}
+{% image page.header_image fill-1200x350-c100 as header_image %}
 <section id="entry_header" class="hero is-medium is-info is-bold" style="background-image:url({{ header_image.url }});">
   <div class="fill-opacity"></div>
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="header-content-wrapper">
-        <div class="title">{{ page.title }}</div>
-        <div class="subtitle"><small>{{ page.owner.firstname|default:page.owner.username }} | {{ page.date|date:"SHORT_DATE_FORMAT" }}</small></div>
+        <h1 class="title">{{ page.title }}</h1>
+        <div class="subtitle"><small>{{ page.owner.first_name|default:page.owner.username }} | {{ page.date|date:"SHORT_DATE_FORMAT" }}</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="entry_body" class="section">
+  <div class="container is-widescreen">
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="content">
+          {{ page.body|richtext }}
+        </div>
       </div>
     </div>
   </div>
