@@ -86,7 +86,7 @@ class BlogPage(BlogRoutes, Page):
         context['featured_article'] = self.entries.first()
 
         # Includes the categories into the context.
-        context['categories'] = Category.objects.all().order_by('name')
+        context['categories'] = Category.objects.filter(parent__isnull=True).order_by('name')
 
         # Includes filter-related values into the context.
         context['filter_type'] = getattr(self, 'filter_type', None)
