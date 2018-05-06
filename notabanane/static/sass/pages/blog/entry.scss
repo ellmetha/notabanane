@@ -49,6 +49,30 @@ body#id_blog_entry {
   }
 
   section#entry_body {
+    position: relative;
+
+    #share_this_post {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+
+      a {
+        margin-bottom: 1rem;
+        display: block;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 2.25rem;
+        background: $grey-lighter;
+        text-align: center;
+        line-height: 2.25rem;
+        color: $grey;
+
+        &:hover, &:focus {
+          opacity: 0.8;
+        }
+      }
+    }
+
     .content {
       font-size: 1.1rem;
 

@@ -19,8 +19,28 @@ h1, h2, h3 {
   nav.navbar {
     height: 5.5rem;
 
+    a.navbar-item {
+      background: transparent;
+      color: $grey;
+
+      &:hover, &:focus {
+        color: $ferra;
+      }
+    }
+
     .navbar-item {
-      padding: 1.5rem 1rem;
+      margin: 1rem 0;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .social-links {
+      a {
+        color: $grey;
+
+        &:hover, &:focus {
+          color: $ferra;
+        }
+      }
     }
   }
 
