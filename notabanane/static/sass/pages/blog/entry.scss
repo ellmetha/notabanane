@@ -52,9 +52,10 @@ body#id_blog_entry {
     position: relative;
 
     #share_this_post {
-      position: absolute;
-      top: 4rem;
-      left: 4rem;
+      position: sticky;
+      float: left;
+      top: 50px;
+      left: 50px;
 
       a {
         margin-bottom: 1rem;

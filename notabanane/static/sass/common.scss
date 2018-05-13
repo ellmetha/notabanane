@@ -45,6 +45,8 @@ h1, h2, h3 {
   }
 
   footer {
+    position: relative;
+    z-index: 10;
     margin-top: 1.5rem;
     padding: 3rem 1.5rem 3rem;
     background-color: $ferra;
