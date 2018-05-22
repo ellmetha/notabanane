@@ -87,15 +87,13 @@ body#id_blog_index {
     a.post-box {
       display: block;
       overflow: hidden;
-      border: 1px solid $grey-lighter;
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.05);
       @include rounded(4px);
-      @include transition(0.5s, ease-out);
+      @include transition(0.15s, ease-out);
 
       &:hover, &:focus {
-        span.content-wrapper {
-          background: lighten($grey-lighter, 10%);
+        box-shadow: 0 10px 15px -10px rgba(30,45,62,.21),0 5px 40px -10px rgba(31,44,60,.1);
 
+        span.content-wrapper {
           .post-date {
             &:before {
               left: -5rem;
@@ -124,7 +122,7 @@ body#id_blog_index {
         padding: 1.5rem 0.5rem;
         display: block;
         height: 8.25rem;
-        background: lighten($grey-lighter, 7%);
+        background: lighten($grey-lighter, 10%);
         text-align: center;
         color: $ferra;
         @include transition(0.5s, ease-out);
