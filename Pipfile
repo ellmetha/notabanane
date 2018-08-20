@@ -1,11 +1,8 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
-
 [dev-packages]
-
 "flake8" = "*"
 isort = "*"
 django-debug-toolbar = "*"
@@ -16,11 +13,10 @@ pytest-pythonpath = "*"
 pytest-spec = "*"
 pytest-sugar = "*"
 tox = "*"
-
+coverage = ">=4.5"
 
 [packages]
-
 wagtail = ">=1.10"
 pillow = "*"
 django-treebeard = "*"
-django = "*"
+django = "<2.1"
