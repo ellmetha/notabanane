@@ -263,4 +263,11 @@ ADMIN_URL = get_envsetting('ADMIN_URL')
 # ------------------------------------------------------------------------------
 
 WAGTAIL_ADMIN_URL = get_envsetting('WAGTAIL_ADMIN_URL')
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.db',
+    }
+}
+
 WAGTAIL_SITE_NAME = 'GaelleTonic'
