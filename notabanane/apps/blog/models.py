@@ -37,13 +37,16 @@ class BlogPage(BlogRoutes, Page):
 
     description = models.CharField(
         max_length=255, blank=True, null=True, verbose_name=_('Description'),
-        help_text=_('This is the description of your blog'))
+        help_text=_('This is the description of your blog'),
+    )
 
     header_image = models.ForeignKey(
         'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
         verbose_name=_('Header image'),
-        help_text=_('Default header image used if the featured article does not provide any '
-                    'header image'))
+        help_text=_(
+            'Default header image used if the featured article does not provide any header image'
+        ),
+    )
 
     # The following fields can be used to configure the behavior of the blog.
     show_tags = models.BooleanField(default=True, verbose_name=_('Show tags'))
@@ -68,6 +71,7 @@ class BlogPage(BlogRoutes, Page):
     subpage_types = ['blog.EntryPage', ]
 
     def get_context(self, request):
+        """ Returns a dictionary of variables to bind into the template. """
         # Update context to include only published posts, ordered by reverse publication dates.
         context = super(BlogPage, self).get_context(request)
         paginator = Paginator(self.entries, 12)
@@ -95,8 +99,10 @@ class BlogPage(BlogRoutes, Page):
         return context
 
     def get_entries(self):
-        return EntryPage.objects.select_related('header_image').live() \
-            .order_by('-first_published_at')
+        """ Returns all the live entries of the blog. """
+        return (
+            EntryPage.objects.select_related('header_image').live().order_by('-first_published_at')
+        )
 
 
 class EntryPage(Page):
@@ -117,12 +123,16 @@ class EntryPage(Page):
     header_image = models.ForeignKey(
         'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
         verbose_name=_('Header image'),
-        help_text=_('Header image displayed when rendering the article or if the article is '
-                    'featured on the home page'))
+        help_text=_(
+            'Header image displayed when rendering the article or if the article is featured on '
+            'the home page'
+        ),
+    )
 
     # A blog entry can be associated with many categories if necessary.
     categories = models.ManyToManyField(
-        'blog.Category', through='blog.CategoryEntryPage', blank=True)
+        'blog.Category', through='blog.CategoryEntryPage', blank=True,
+    )
 
     # A blog entry can be associated with many tags if necessary.
     tags = ClusterTaggableManager(through='blog.TagEntryPage', blank=True)
@@ -144,7 +154,7 @@ class EntryPage(Page):
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
         ImageChooserPanel('header_image'),
-        InlinePanel('entry_categories', label=_("Categories")),
+        InlinePanel('entry_categories', label=_('Categories')),
     ]
 
     promote_panels = Page.promote_panels + [
@@ -179,7 +189,8 @@ class Category(AL_Node):
     # adjacency list trees).
     parent = models.ForeignKey(
         'self', blank=True, null=True, db_index=True, related_name='children_set',
-        on_delete=models.SET_NULL, verbose_name=_('Parent category'))
+        on_delete=models.SET_NULL, verbose_name=_('Parent category'),
+    )
 
     node_order_by = ['name', ]
 
@@ -196,7 +207,8 @@ class CategoryEntryPage(models.Model):
     """ Represents a category entry page. """
 
     category = models.ForeignKey(
-        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'))
+        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
+    )
     page = ParentalKey('EntryPage', related_name='entry_categories')
 
     ###############################
