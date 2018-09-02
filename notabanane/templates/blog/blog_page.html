@@ -70,8 +70,16 @@
           </span>
         </a>
       </div>
+      {% empty %}
+      {% if not self.is_search %}
+      {% else %}
+      <div class="content is-large">
+        <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
+    {% if blogpages.has_previous or blogpages.has_next %}
     <div class="columns">
       <div class="column has-text-centered">
         {% if blogpages.has_previous %}
@@ -82,6 +90,7 @@
         {% endif %}
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 {% endblock content %}
