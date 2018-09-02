@@ -83,6 +83,10 @@ body#id_blog_index {
     }
   }
 
+  section#search_header_section {
+    background: $harvestGlod;
+  }
+
   section#post_list {
     a.post-box {
       display: block;

@@ -87,7 +87,9 @@ class BlogPage(BlogRoutes, Page):
         context['blogpages'] = blogpages
 
         # Includes the featured article (if any) into the context.
-        context['featured_article'] = self.entries.first()
+        context['featured_article'] = (
+            self.entries.first() if hasattr(self.entries, 'first') else None
+        )
 
         # Includes the categories into the context.
         context['categories'] = Category.objects.filter(parent__isnull=True).order_by('name')
