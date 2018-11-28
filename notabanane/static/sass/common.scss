@@ -9,6 +9,12 @@ html {
 
 a {
   @include transition(0.25s, ease-in-out);
+
+  &.button {
+    &.is-text {
+      text-decoration: none;
+    }
+  }
 }
 
 h1, h2, h3 {
@@ -18,6 +24,16 @@ h1, h2, h3 {
 #id_wrap {
   nav.navbar {
     height: 5.5rem;
+
+    .navbar-brand {
+      a {
+        padding: 0.25rem 1rem;
+
+        img {
+          max-height: 2.5rem;
+        }
+      }
+    }
 
     a.navbar-item {
       background: transparent;
