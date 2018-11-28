@@ -1,4 +1,4 @@
 [flake8]
 exclude = migrations,example_projects,build,docs,.tox,.venv,node_modules,.git
-ignore = E731
+ignore = E731, F403, W504
 max-line-length = 100

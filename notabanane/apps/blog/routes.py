@@ -8,7 +8,6 @@
 """
 
 from django.db.models import Q
-from django.utils.translation import ugettext_lazy as _
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core.models import Page
 from wagtail.search.models import Query
