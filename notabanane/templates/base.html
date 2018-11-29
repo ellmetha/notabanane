@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 {% load wagtailcore_tags %}
+{% load wagtailroutablepage_tags %}
 
 <!DOCTYPE html>
 <html {% get_current_language as LANGUAGE_CODE %}lang="{{ LANGUAGE_CODE }}">
@@ -29,68 +30,79 @@
       >
     <div id="id_wrap">
       {% block header %}
-      <div class="container is-fluid">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="{% slugurl 'nota-banane' %}">
-              <img src="{% static 'img/logo_cranberry.svg' %}" alt="NotaBanane logo" height="70" />
-            </a>
-            <div class="navbar-burger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div id="notabanane_navbar" class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item">{% trans "About" %}</a>
-              <a class="navbar-item">{% trans "FAQ" %}</a>
-              <a class="navbar-item">{% trans "Contact" %}</a>
-            </div>
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="field is-grouped social-links">
-                  <p class="control">
-                    <a href="" target="_blank"><span class="icon"><i class="fa fa-facebook"></i></span></a>
-                    <a href="#" target="_blank"><span class="icon"><i class="fa fa-twitter"></i></span></a>
-                    <a href="#" target="_blank"><span class="icon"><i class="fa fa-instagram"></i></span></a>
-                    <a href="#" target="_blank"><span class="icon"><i class="fa fa-pinterest"></i></span></a>
-                  </p>
-                </div>
-              </div>
-              <div class="navbar-item">
-                <div class="field is-grouped">
-                  <p class="control">
-                    <a class="button is-medium is-text has-text-primary">
-                      <span class="icon"><i class="fa fa-search"></i></span>&nbsp;
-                    </a>
-                  </p>
-                </div>
+      <div id="navbar_wrapper">
+        <div class="container is-fluid">
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="{% slugurl 'nota-banane' %}">
+                <img src="{% static 'img/logo_cranberry.svg' %}" alt="NotaBanane logo" height="70" />
+              </a>
+              <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
             </div>
-          </div>
-        </nav>
+            <div id="notabanane_navbar" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">{% trans "About" %}</a>
+                <a class="navbar-item">{% trans "FAQ" %}</a>
+                <a class="navbar-item">{% trans "Contact" %}</a>
+              </div>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped social-links">
+                    <p class="control">
+                      <a href="" target="_blank"><span class="icon"><i class="fa fa-facebook"></i></span></a>
+                      <a href="#" target="_blank"><span class="icon"><i class="fa fa-twitter"></i></span></a>
+                      <a href="#" target="_blank"><span class="icon"><i class="fa fa-instagram"></i></span></a>
+                      <a href="#" target="_blank"><span class="icon"><i class="fa fa-pinterest"></i></span></a>
+                    </p>
+                  </div>
+                </div>
+                <div id="search_toggler_wrapper" class="navbar-item">
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <a class="button is-medium is-text has-text-primary">
+                        <span class="icon"><i class="fa fa-search"></i></span>&nbsp;
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div id="search_input_container">
+                  <form action="{% routablepageurl blog_page 'entries_search' %}" method="get">
+                    <div class="field">
+                      <div class="control">
+                        <input name="q" type="text" placeholder="{% trans 'Type to search' %}" class="input is-medium is-primary">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
 
-        {% comment %}
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="nav-left">
-            <a href="/" class="nav-item"><img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"></a>
-            <a class="nav-item">{% trans "About" %}</a>
-            <a class="nav-item">{% trans "FAQ" %}</a>
-            <a class="nav-item">{% trans "Contact" %}</a>
-          </div>
-          <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-          <span class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <!-- This "nav-menu" is hidden on mobile -->
-          <div class="nav-right nav-menu">
+          {% comment %}
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="nav-left">
+              <a href="/" class="nav-item"><img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"></a>
+              <a class="nav-item">{% trans "About" %}</a>
+              <a class="nav-item">{% trans "FAQ" %}</a>
+              <a class="nav-item">{% trans "Contact" %}</a>
+            </div>
+            <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+            <span class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <!-- This "nav-menu" is hidden on mobile -->
+            <div class="nav-right nav-menu">
 
-          </div>
-        </nav>
-        {% endcomment %}
+            </div>
+          </nav>
+          {% endcomment %}
+        </div>
       </div>
       {% endblock header %}
 

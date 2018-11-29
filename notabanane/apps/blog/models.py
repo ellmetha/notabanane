@@ -70,10 +70,14 @@ class BlogPage(BlogRoutes, Page):
 
     subpage_types = ['blog.EntryPage', ]
 
-    def get_context(self, request):
+    def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
+        context = super().get_context(request, *args, **kwargs)
+
+        # Inserts the top-level blog page into the context; that is 'self' in that case.
+        context['blog_page'] = self
+
         # Update context to include only published posts, ordered by reverse publication dates.
-        context = super(BlogPage, self).get_context(request)
         paginator = Paginator(self.entries, 12)
         page = request.GET.get('page')
         try:
@@ -169,6 +173,15 @@ class EntryPage(Page):
 
     parent_page_types = ['blog.BlogPage']
     subpage_types = []
+
+    def get_context(self, request, *args, **kwargs):
+        """ Returns a dictionary of variables to bind into the template. """
+        context = super().get_context(request, *args, **kwargs)
+
+        # Inserts the top-level blog page into the context.
+        context['blog_page'] = self.get_parent().specific
+
+        return context
 
 
 class TagEntryPage(TaggedItemBase):

@@ -22,39 +22,70 @@ h1, h2, h3 {
 }
 
 #id_wrap {
-  nav.navbar {
-    height: 5.5rem;
+  #navbar_wrapper {
+    position: relative;
 
-    .navbar-brand {
-      a {
-        padding: 0.25rem 1rem;
+    nav.navbar {
+      height: 5.5rem;
 
-        img {
-          max-height: 2.5rem;
+      #search_input_container {
+        z-index: 50;
+        position: absolute;
+        right: 0.4rem;
+        width: 0;
+        opacity: 0;
+        transition: width 0.5s cubic-bezier(0.000, 0.795, 0.000, 1.000), opacity .1s ease-in-out;
+
+        &.on {
+          opacity: 1;
+          width: 40%;
+        }
+
+        form {
+          margin-top: 1.25rem;
+
+          input {
+            height: 2.40em;
+          }
         }
       }
-    }
 
-    a.navbar-item {
-      background: transparent;
-      color: $grey;
-
-      &:hover, &:focus {
-        color: $ferra;
+      #search_toggler_wrapper {
+        z-index: 51;
+        position: relative;
       }
-    }
 
-    .navbar-item {
-      margin: 1rem 0;
-      padding: 0.5rem 1.5rem;
-    }
+      .navbar-brand {
+        a {
+          padding: 0.25rem 1rem;
 
-    .social-links {
-      a {
+          img {
+            max-height: 2.5rem;
+          }
+        }
+      }
+
+      a.navbar-item {
+        background: transparent;
         color: $grey;
 
         &:hover, &:focus {
           color: $ferra;
+        }
+      }
+
+      .navbar-item {
+        margin: 1rem 0;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .social-links {
+        a {
+          color: $grey;
+
+          &:hover, &:focus {
+            color: $ferra;
+          }
         }
       }
     }
