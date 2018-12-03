@@ -53,6 +53,12 @@ h1, h2, h3 {
       #search_toggler_wrapper {
         z-index: 51;
         position: relative;
+
+        a {
+          &:hover, &:focus {
+            background: none;
+          }
+        }
       }
 
       .navbar-brand {
