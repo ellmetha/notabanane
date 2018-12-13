@@ -95,6 +95,9 @@ ENV/
 # Databases
 *.db
 
+# Editors
+/.vscode/
+
 # Project's environment settings
 .env.json
 !/tests/pytests/.env.json
