@@ -16,11 +16,13 @@ init:
 # locales, etc.
 # --------------------------------------------------------------------------------------------------
 
-devserver:
-	pipenv run python manage.py runserver 0.0.0.0:8000 --settings=$(DJANGO_SETTINGS_MODULE)
-
-shell:
+c: console
+console:
 	pipenv run python manage.py shell --settings=$(DJANGO_SETTINGS_MODULE)
+
+s: server
+server:
+	pipenv run python manage.py runserver 0.0.0.0:8000 --settings=$(DJANGO_SETTINGS_MODULE)
 
 messages:
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr
@@ -65,6 +67,7 @@ isort_python:
 # --------------------------------------------------------------------------------------------------
 
 # Just runs all the tests!
+t: tests
 tests: tests_python tests_js
 tests_python:
 	pipenv run py.test
