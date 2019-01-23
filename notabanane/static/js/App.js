@@ -13,19 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
   router.init();
 
   // Initializes the navbar behaviours; which should be visible on every page of the webapp.
+  const navBarSearchTogglerButton = document.querySelector('#search_toggler_wrapper a');
   const navBarSearchInputContainer = document.querySelector('#search_input_container');
   const navBarSearchInput = document.querySelector('#search_input_container input');
   const navBarSearchForm = document.querySelector('#search_input_container form');
-  document.querySelector('#search_toggler_wrapper a').addEventListener('click', () => {
+  navBarSearchTogglerButton.addEventListener('click', () => {
     if (navBarSearchInputContainer.classList.contains('on')) {
       // The search form is visible.
       if (!navBarSearchInput.value) {
+        navBarSearchTogglerButton.classList.remove('on');
         navBarSearchInputContainer.classList.remove('on');
       } else {
         navBarSearchForm.submit();
       }
     } else {
       // The search form is hidden.
+      navBarSearchTogglerButton.classList.add('on');
       navBarSearchInputContainer.classList.add('on');
       navBarSearchInput.focus();
     }
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ev.target.closest('#search_input_container')
         && !ev.target.closest('#search_toggler_wrapper')
         && navBarSearchInputContainer.classList.contains('on')) {
+      navBarSearchTogglerButton.classList.remove('on');
       navBarSearchInputContainer.classList.remove('on');
       navBarSearchInput.value = '';
     }
