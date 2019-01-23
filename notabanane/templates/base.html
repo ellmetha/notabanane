@@ -35,7 +35,7 @@
           <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
               <a class="navbar-item" href="{% slugurl 'nota-banane' %}">
-                <img src="{% static 'img/logo_cranberry.svg' %}" alt="NotaBanane logo" height="70" />
+                <img src="{% block navbar_brand_logo_src %}{% static 'img/logo_cranberry.svg' %}{% endblock %}" alt="NotaBanane logo" height="70" />
               </a>
               <div class="navbar-burger">
                 <span></span>

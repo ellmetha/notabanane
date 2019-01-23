@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% load wagtailroutablepage_tags %}
@@ -7,23 +8,19 @@
 {% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
 
 {% block body_id %}id_blog_index{% endblock body_id %}
+{% block body_class %}{% if not self.is_search %}notsearch{% endif %}{% endblock %}
+
+{% block navbar_brand_logo_src %}{% if not self.is_search %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
 
 {% block content %}
 {% if not self.is_search %}
-{% if featured_article %}
-{% if featured_article.header_image %}{% image featured_article.header_image fill-1200x350-c100 as header_image %}{% else %}{% image page.header_image fill-1200x350 as header_image %}{% endif %}
-<section id="featured_article_section" class="hero is-medium is-info is-bold" style="background-image:url({{ header_image.url }});">
-  <div class="fill-opacity"></div>
+<section id="blog_hero" class="hero is-medium is-info is-bold">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <a href="{% pageurl featured_article %}">
-        <span class="subtitle"><small>{% trans "Featured article" %}</small></span>
-        <span class="title">{{ featured_article.title }}</span>
-      </a>
+        <img src="{% static 'img/logo_fulltext_white.svg' %}" alt="NotaBanane logo" width="500" />
     </div>
   </div>
 </section>
-{% endif %}
 <section id="category_menu_section">
   <div class="container">
     <div class="tabs is-medium">
@@ -36,6 +33,9 @@
     </div>
   </div>
 </section>
+{% if featured_article %}
+{% if featured_article.header_image %}{% image featured_article.header_image fill-1200x350-c100 as header_image %}{% else %}{% image page.header_image fill-1200x350 as header_image %}{% endif %}
+{% endif %}
 {% else %}
 <section id="search_header_section" class="hero is-success is-bold">
   <div class="fill-opacity"></div>
