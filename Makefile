@@ -40,6 +40,9 @@ migrate:
 superuser:
 	pipenv run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
 
+webpack_server:
+	npm run gulp -- webpack-dev-server
+
 
 # QUALITY ASSURANCE
 # ~~~~~~~~~~~~~~~~~
