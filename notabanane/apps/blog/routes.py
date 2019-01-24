@@ -35,7 +35,7 @@ class BlogRoutes(RoutablePageMixin):
 
     @route(r'^search/$')
     def entries_search(self, request, *args, **kwargs):
-        """ Generates a page containing all the entries associated with specific search. """
+        """ Generates a page containing all the entries associated with a specific search. """
         self.search_query = request.GET.get('q', None)
         self.entries = self.get_entries()
         if self.search_query:
