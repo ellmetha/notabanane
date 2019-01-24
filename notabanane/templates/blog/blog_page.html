@@ -33,9 +33,6 @@
     </div>
   </div>
 </section>
-{% if featured_article %}
-{% if featured_article.header_image %}{% image featured_article.header_image fill-1200x350-c100 as header_image %}{% else %}{% image page.header_image fill-1200x350 as header_image %}{% endif %}
-{% endif %}
 {% else %}
 <section id="search_header_section" class="hero is-success is-bold">
   <div class="fill-opacity"></div>
@@ -53,8 +50,90 @@
   </div>
 </section>
 {% endif %}
+{% if self.filter_type == 'category' or self.is_search %}
+<section id="post_list" class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        {% for post in blogpages %}
+        <div class="column is-one-third">
+          <a href="{% pageurl post %}" class="post-box">
+            {% if post.header_image %}
+            <span class="image-wrapper">
+              <figure class="image">{% image post.header_image fill-555x312 %}</figure>
+            </span>
+            {% endif %}
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+        {% empty %}
+        {% if not self.is_search %}
+        {% else %}
+        <div class="content is-large">
+          <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% if blogpages.has_previous or blogpages.has_next %}
+      <div class="columns">
+        <div class="column has-text-centered">
+          {% if blogpages.has_previous %}
+          <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+          {% endif %}
+          {% if blogpages.has_next %}
+          <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+{% else %}
 <section id="post_list" class="section">
   <div class="container">
+    <div class="tile is-ancestor">
+      {% for post in blogpages %}
+      {% if forloop.counter0 == 0 %}
+      <div class="tile is-parent is-8">{% image post.header_image fill-888x613 as post_image %}
+        <div class="tile is-child" style="background-image:url({{ post_image.url }});">
+          <a href="{% pageurl post %}" class="post-box is-featured">
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      {% elif forloop.counter0 == 1 %}
+      <div class="tile is-4 is-vertical is-parent">{% image post.header_image fill-555x312 as post_image %}
+        <div class="tile is-child" style="background-image:url({{ post_image.url }});">
+          <a href="{% pageurl post %}" class="post-box is-top-twin">
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+      {% if forloop.last %}</div>{% endif %}
+      {% elif forloop.counter0 == 2 %}
+      {% image post.header_image fill-555x312 as post_image %}
+        <div class="tile is-child" style="background-image:url({{ post_image.url }});">
+          <a href="{% pageurl post %}" class="post-box is-top-twin">
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      {% else %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <h2 class="is-size-2">{% trans "Last recipes " %}</h2>
     <div class="columns is-multiline">
       {% for post in blogpages %}
       <div class="column is-one-third">
@@ -79,18 +158,7 @@
       {% endif %}
       {% endfor %}
     </div>
-    {% if blogpages.has_previous or blogpages.has_next %}
-    <div class="columns">
-      <div class="column has-text-centered">
-        {% if blogpages.has_previous %}
-        <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
-        {% endif %}
-        {% if blogpages.has_next %}
-        <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
-        {% endif %}
-      </div>
-    </div>
-    {% endif %}
   </div>
 </section>
+{% endif %}
 {% endblock content %}
