@@ -16,7 +16,7 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
 from treebeard.al_tree import AL_Node
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
@@ -68,7 +68,7 @@ class BlogPage(BlogRoutes, Page):
     # PARENT PAGE / SUBPAGE TYPE RULES #
     ####################################
 
-    subpage_types = ['blog.EntryPage', ]
+    subpage_types = ['blog.EntryPage', 'blog.RecipePage', ]
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
@@ -116,7 +116,7 @@ class EntryPage(Page):
 
     # Basically a blog entry page is characterized by a body field (the actual content of the blog
     # post), a date and a title (which is provided by the wagtail's Page model).
-    body = RichTextField(verbose_name=_('Body'))
+    body = RichTextField(verbose_name=_('Introduction'))
     date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
 
     # A blog entry page can have an header image that'll be used when rendering the blog post. It'll
@@ -179,10 +179,111 @@ class EntryPage(Page):
         return context
 
 
+class RecipePage(Page):
+    """ Represents a blog recipe page.
+
+    This Page subclass provide a way to define blog recipe pages through the Wagtail's admin.
+    It defines the basic fields and information that are generally associated with recipes showcased
+    in the context of a blog application.
+
+    """
+
+    # Like any blog article, a recipe has a date and a title. But it has no body: instead it only
+    # has an introduction field to contain a small content to be displayed before the recipe
+    # details.
+    introduction = RichTextField(verbose_name=_('Body'))
+    date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
+
+    # A blog recipe page can have an header image that'll be used when rendering the blog post.
+    header_image = models.ForeignKey(
+        'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
+        verbose_name=_('Header image'),
+        help_text=_(
+            'Header image displayed when rendering the article or if the article is featured on '
+            'the home page'
+        ),
+    )
+
+    # The following fields define basic meta-information regarding a recipe (times, yiels, etc).
+    preparation_time = models.DurationField(
+        blank=True,
+        null=True,
+        verbose_name=_('Preparation time'),
+    )
+    cook_time = models.DurationField(blank=True, null=True, verbose_name=_('Cook time'))
+    fridge_time = models.DurationField(blank=True, null=True, verbose_name=_('Fridge time'))
+    rest_time = models.DurationField(blank=True, null=True, verbose_name=_('Rest time'))
+    recipe_yield = models.CharField(max_length=127, blank=True, verbose_name=_('Yield'))
+
+    # A blog recipe can be associated with many categories if necessary.
+    categories = models.ManyToManyField(
+        'blog.Category', through='blog.CategoryRecipePage', blank=True,
+    )
+
+    # A blog recipe can be associated with many tags if necessary.
+    tags = ClusterTaggableManager(through='blog.TagRecipePage', blank=True)
+
+    ##############################
+    # SEARCH INDEX CONFIGURATION #
+    ##############################
+
+    search_fields = Page.search_fields + [
+        index.SearchField('introduction'),
+        index.FilterField('date'),
+    ]
+
+    ###############################
+    # EDITOR PANELS CONFIGURATION #
+    ###############################
+
+    content_panels = Page.content_panels + [
+        FieldPanel('introduction', classname='full'),
+        MultiFieldPanel(
+            [
+                FieldPanel('preparation_time'),
+                FieldPanel('cook_time'),
+                FieldPanel('fridge_time'),
+                FieldPanel('rest_time'),
+                FieldPanel('recipe_yield'),
+            ],
+            heading=_('Recipe information'),
+        ),
+        ImageChooserPanel('header_image'),
+        InlinePanel('recipe_categories', label=_('Categories')),
+        FieldPanel('date'),
+    ]
+
+    promote_panels = Page.promote_panels + [
+        FieldPanel('tags'),
+    ]
+
+    ####################################
+    # PARENT PAGE / SUBPAGE TYPE RULES #
+    ####################################
+
+    parent_page_types = ['blog.BlogPage']
+    subpage_types = []
+
+    def get_context(self, request, *args, **kwargs):
+        """ Returns a dictionary of variables to bind into the template. """
+        context = super().get_context(request, *args, **kwargs)
+
+        # Inserts the top-level blog page into the context.
+        context['blog_page'] = self.get_parent().specific
+
+        return context
+
+
 class TagEntryPage(TaggedItemBase):
-    """ Represents a simple tag. """
+    """ Represents a simple entry tag. """
 
     content_object = ParentalKey('EntryPage', related_name='entry_tags')
+
+
+class TagRecipePage(TaggedItemBase):
+    """ Represents a simple recipe tag. """
+
+    content_object = ParentalKey('RecipePage', related_name='recipe_tags')
 
 
 @register_snippet
@@ -220,6 +321,23 @@ class CategoryEntryPage(models.Model):
         Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
     )
     page = ParentalKey('EntryPage', related_name='entry_categories')
+
+    ###############################
+    # EDITOR PANELS CONFIGURATION #
+    ###############################
+
+    panels = [
+        FieldPanel('category'),
+    ]
+
+
+class CategoryRecipePage(models.Model):
+    """ Represents a category recipe page. """
+
+    category = models.ForeignKey(
+        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
+    )
+    page = ParentalKey('RecipePage', related_name='recipe_categories')
 
     ###############################
     # EDITOR PANELS CONFIGURATION #
