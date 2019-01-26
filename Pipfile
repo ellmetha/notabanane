@@ -14,6 +14,7 @@ pytest-spec = "*"
 pytest-sugar = "*"
 tox = "*"
 coverage = ">=4.5"
+ipython = "*"
 
 [packages]
 wagtail = ">=1.10"
