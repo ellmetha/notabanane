@@ -105,6 +105,10 @@ class BlogPage(BlogRoutes, Page):
             EntryPage.objects.select_related('header_image').live().order_by('-first_published_at')
         )
 
+    class Meta:
+        verbose_name = _('Blog')
+        verbose_name_plural = _('Blogs')
+
 
 class EntryPage(Page):
     """ Represents a blog entry page.
@@ -168,6 +172,10 @@ class EntryPage(Page):
 
     parent_page_types = ['blog.BlogPage']
     subpage_types = []
+
+    class Meta:
+        verbose_name = _('Article')
+        verbose_name_plural = _('Articles')
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
@@ -263,6 +271,10 @@ class RecipePage(Page):
 
     parent_page_types = ['blog.BlogPage']
     subpage_types = []
+
+    class Meta:
+        verbose_name = _('Recipe')
+        verbose_name_plural = _('Recipes')
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
