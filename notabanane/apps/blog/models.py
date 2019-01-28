@@ -102,7 +102,11 @@ class BlogPage(BlogRoutes, Page):
     def get_entries(self):
         """ Returns all the live entries of the blog. """
         return (
-            EntryPage.objects.select_related('header_image').live().order_by('-first_published_at')
+            self.get_children()
+            .prefetch_related('entrypage', 'recipepage')
+            .select_related('entrypage__header_image', 'recipepage__header_image')
+            .live()
+            .order_by('-first_published_at')
         )
 
     class Meta:

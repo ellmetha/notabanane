@@ -55,6 +55,7 @@
     <div class="container">
       <div class="columns is-multiline">
         {% for post in blogpages %}
+        {% with post=post.specific %}
         <div class="column is-one-third">
           <a href="{% pageurl post %}" class="post-box">
             {% if post.header_image %}
@@ -68,6 +69,7 @@
             </span>
           </a>
         </div>
+        {% endwith %}
         {% empty %}
         {% if not self.is_search %}
         {% else %}
@@ -96,6 +98,7 @@
   <div class="container">
     <div class="tile is-ancestor">
       {% for post in blogpages %}
+      {% with post=post.specific %}
       {% if forloop.counter0 == 0 %}
       <div class="tile is-parent is-8">{% image post.header_image fill-888x613 as post_image %}
         <div class="tile is-child" style="background-image:url({{ post_image.url }});">
@@ -131,11 +134,13 @@
       </div>
       {% else %}
       {% endif %}
+      {% endwith %}
       {% endfor %}
     </div>
     <h2 class="is-size-2">{% trans "Last recipes " %}</h2>
     <div class="columns is-multiline">
       {% for post in blogpages %}
+      {% with post=post.specific %}
       <div class="column is-one-third">
         <a href="{% pageurl post %}" class="post-box">
           {% if post.header_image %}
@@ -149,6 +154,7 @@
           </span>
         </a>
       </div>
+      {% endwith %}
       {% empty %}
       {% if not self.is_search %}
       {% else %}
