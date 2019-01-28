@@ -8,6 +8,7 @@
 """
 
 from django.db.models import Q
+from django.shortcuts import redirect
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core.models import Page
 from wagtail.search.models import Query
@@ -42,4 +43,5 @@ class BlogRoutes(RoutablePageMixin):
             self.is_search = True
             self.entries = self.get_entries().search(self.search_query)
             Query.get(self.search_query).add_hit()
-        return Page.serve(self, request, *args, **kwargs)
+            return Page.serve(self, request, *args, **kwargs)
+        return redirect(self.url)
