@@ -8,12 +8,12 @@
 {% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
 
 {% block body_id %}id_blog_index{% endblock body_id %}
-{% block body_class %}{% if not self.is_search %}notsearch{% endif %}{% endblock %}
+{% block body_class %}{% if not self.filter_type == 'search' %}notsearch{% endif %}{% endblock %}
 
-{% block navbar_brand_logo_src %}{% if not self.is_search %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
+{% block navbar_brand_logo_src %}{% if not self.filter_type == 'search' %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
 
 {% block content %}
-{% if not self.is_search %}
+{% if not self.filter_type == 'search' %}
 <section id="blog_hero" class="hero is-medium is-info is-bold">
   <div class="hero-body">
     <div class="container has-text-centered">
@@ -50,49 +50,48 @@
   </div>
 </section>
 {% endif %}
-{% if self.filter_type == 'category' or self.is_search %}
+{% if self.filter_type == 'category' or self.filter_type == 'search' %}
 <section id="post_list" class="section">
-    <div class="container">
-      <div class="columns is-multiline">
-        {% for post in blogpages %}
-        {% with post=post.specific %}
-        <div class="column is-one-third">
-          <a href="{% pageurl post %}" class="post-box">
-            {% if post.header_image %}
-            <span class="image-wrapper">
-              <figure class="image">{% image post.header_image fill-555x312 %}</figure>
-            </span>
-            {% endif %}
-            <span class="content-wrapper">
-              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-              <span class="post-title">{{ post.title }}</span>
-            </span>
-          </a>
-        </div>
-        {% endwith %}
-        {% empty %}
-        {% if not self.is_search %}
-        {% else %}
-        <div class="content is-large">
-          <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
-        </div>
-        {% endif %}
-        {% endfor %}
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for post in blogpages %}
+      {% with post=post.specific %}
+      <div class="column is-one-third">
+        <a href="{% pageurl post %}" class="post-box">
+          {% if post.header_image %}
+          <span class="image-wrapper">
+            <figure class="image">{% image post.header_image fill-555x312 %}</figure>
+          </span>
+          {% endif %}
+          <span class="content-wrapper">
+            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="post-title">{{ post.title }}</span>
+          </span>
+        </a>
       </div>
-      {% if blogpages.has_previous or blogpages.has_next %}
-      <div class="columns">
-        <div class="column has-text-centered">
-          {% if blogpages.has_previous %}
-          <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
-          {% endif %}
-          {% if blogpages.has_next %}
-          <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
-          {% endif %}
-        </div>
+      {% endwith %}
+      {% empty %}
+      {% if self.filter_type == 'search' %}
+      <div class="content is-large">
+        <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
       </div>
       {% endif %}
+      {% endfor %}
     </div>
-  </section>
+    {% if blogpages.has_previous or blogpages.has_next %}
+    <div class="columns">
+      <div class="column has-text-centered">
+        {% if blogpages.has_previous %}
+        <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+        {% endif %}
+        {% if blogpages.has_next %}
+        <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
 {% else %}
 <section id="post_list" class="section">
   <div class="container">
@@ -155,13 +154,6 @@
         </a>
       </div>
       {% endwith %}
-      {% empty %}
-      {% if not self.is_search %}
-      {% else %}
-      <div class="content is-large">
-        <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
-      </div>
-      {% endif %}
       {% endfor %}
     </div>
   </div>
