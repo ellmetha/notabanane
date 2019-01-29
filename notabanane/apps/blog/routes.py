@@ -23,8 +23,8 @@ class BlogRoutes(RoutablePageMixin):
         self.filter_type = 'category'
         self.filter_value = category
         self.entries = self.get_entries().filter(
-            Q(entrypage__entry_categories__category__slug=category) |
-            Q(entrypage__entry_categories__category__parent__slug=category) |
+            Q(articlepage__entry_categories__category__slug=category) |
+            Q(articlepage__entry_categories__category__parent__slug=category) |
             Q(recipepage__recipe_categories__category__slug=category) |
             Q(recipepage__recipe_categories__category__parent__slug=category)
         )

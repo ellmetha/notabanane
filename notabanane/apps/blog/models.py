@@ -68,7 +68,7 @@ class BlogPage(BlogRoutes, Page):
     # PARENT PAGE / SUBPAGE TYPE RULES #
     ####################################
 
-    subpage_types = ['blog.EntryPage', 'blog.RecipePage', ]
+    subpage_types = ['blog.ArticlePage', 'blog.RecipePage', ]
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
@@ -104,15 +104,18 @@ class BlogPage(BlogRoutes, Page):
     def get_articles(self):
         """ Returns all the live articles of the blog. """
         return (
-            EntryPage.objects.select_related('header_image').live().order_by('-first_published_at')
+            ArticlePage.objects
+            .select_related('header_image')
+            .live()
+            .order_by('-first_published_at')
         )
 
     def get_entries(self):
         """ Returns all the live entries of the blog. """
         return (
             self.get_children()
-            .prefetch_related('entrypage', 'recipepage')
-            .select_related('entrypage__header_image', 'recipepage__header_image')
+            .prefetch_related('articlepage', 'recipepage')
+            .select_related('articlepage__header_image', 'recipepage__header_image')
             .live()
             .order_by('-first_published_at')
         )
@@ -128,21 +131,21 @@ class BlogPage(BlogRoutes, Page):
         verbose_name_plural = _('Blogs')
 
 
-class EntryPage(Page):
-    """ Represents a blog entry page.
+class ArticlePage(Page):
+    """ Represents a blog article page.
 
-    This Page subclass provide a way to define blog entry pages through the Wagtail's admin.
+    This Page subclass provide a way to define blog article pages through the Wagtail's admin.
     It defines the basic fields and information that are generally associated with blog pages.
 
     """
 
-    # Basically a blog entry page is characterized by a body field (the actual content of the blog
+    # Basically a blog article page is characterized by a body field (the actual content of the blog
     # post), a date and a title (which is provided by the wagtail's Page model).
     body = RichTextField(verbose_name=_('Introduction'))
     date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
 
-    # A blog entry page can have an header image that'll be used when rendering the blog post. It'll
-    # also be displayed if the blog post is featured in the home page.
+    # A blog article page can have an header image that'll be used when rendering the blog post.
+    # It'll also be displayed if the blog post is featured in the home page.
     header_image = models.ForeignKey(
         'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
         verbose_name=_('Header image'),
@@ -152,13 +155,13 @@ class EntryPage(Page):
         ),
     )
 
-    # A blog entry can be associated with many categories if necessary.
+    # A blog article can be associated with many categories if necessary.
     categories = models.ManyToManyField(
-        'blog.Category', through='blog.CategoryEntryPage', blank=True,
+        'blog.Category', through='blog.CategoryArticlePage', blank=True,
     )
 
-    # A blog entry can be associated with many tags if necessary.
-    tags = ClusterTaggableManager(through='blog.TagEntryPage', blank=True)
+    # A blog article can be associated with many tags if necessary.
+    tags = ClusterTaggableManager(through='blog.TagArticlePage', blank=True)
 
     ##############################
     # SEARCH INDEX CONFIGURATION #
@@ -177,7 +180,7 @@ class EntryPage(Page):
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
         ImageChooserPanel('header_image'),
-        InlinePanel('entry_categories', label=_('Categories')),
+        InlinePanel('article_categories', label=_('Categories')),
     ]
 
     promote_panels = Page.promote_panels + [
@@ -304,10 +307,10 @@ class RecipePage(Page):
         return context
 
 
-class TagEntryPage(TaggedItemBase):
-    """ Represents a simple entry tag. """
+class TagArticlePage(TaggedItemBase):
+    """ Represents a simple article tag. """
 
-    content_object = ParentalKey('EntryPage', related_name='entry_tags')
+    content_object = ParentalKey('ArticlePage', related_name='article_tags')
 
 
 class TagRecipePage(TaggedItemBase):
@@ -344,13 +347,13 @@ class Category(AL_Node):
         return self.name
 
 
-class CategoryEntryPage(models.Model):
-    """ Represents a category entry page. """
+class CategoryArticlePage(models.Model):
+    """ Represents a category article page. """
 
     category = models.ForeignKey(
         Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
     )
-    page = ParentalKey('EntryPage', related_name='entry_categories')
+    page = ParentalKey('ArticlePage', related_name='article_categories')
 
     ###############################
     # EDITOR PANELS CONFIGURATION #
