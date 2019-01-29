@@ -77,18 +77,20 @@ class BlogPage(BlogRoutes, Page):
         # Inserts the top-level blog page into the context; that is 'self' in that case.
         context['blog_page'] = self
 
-        # Update context to include only published posts, ordered by reverse publication dates.
-        paginator = Paginator(self.entries, 12)
-        page = request.GET.get('page')
-        try:
-            blogpages = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            blogpages = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            blogpages = paginator.page(paginator.num_pages)
-        context['blogpages'] = blogpages
+        # Update context to include only published posts, ordered by reverse publication dates. The
+        # list of entries (if any) is paginated.
+        if hasattr(self, 'entries'):
+            paginator = Paginator(self.entries, 12)
+            page = request.GET.get('page')
+            try:
+                paginated_entries = paginator.page(page)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                paginated_entries = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                paginated_entries = paginator.page(paginator.num_pages)
+            context['paginated_entries'] = paginated_entries
 
         # Includes the categories into the context.
         context['categories'] = Category.objects.filter(parent__isnull=True).order_by('name')
@@ -99,6 +101,12 @@ class BlogPage(BlogRoutes, Page):
 
         return context
 
+    def get_articles(self):
+        """ Returns all the live articles of the blog. """
+        return (
+            EntryPage.objects.select_related('header_image').live().order_by('-first_published_at')
+        )
+
     def get_entries(self):
         """ Returns all the live entries of the blog. """
         return (
@@ -107,6 +115,12 @@ class BlogPage(BlogRoutes, Page):
             .select_related('entrypage__header_image', 'recipepage__header_image')
             .live()
             .order_by('-first_published_at')
+        )
+
+    def get_recipes(self):
+        """ Returns all the live articles of the blog. """
+        return (
+            RecipePage.objects.select_related('header_image').live().order_by('-first_published_at')
         )
 
     class Meta:

@@ -33,7 +33,9 @@ class BlogRoutes(RoutablePageMixin):
     @route(r'^$')
     def entries_list(self, request, *args, **kwargs):
         """ Generates a page containing all the entries of the blog. """
-        self.entries = self.get_entries()
+        self.featured_entries = self.get_entries()[:3]
+        self.latest_recipes = self.get_recipes()[:3]
+        self.latest_articles = self.get_articles()[:3]
         return Page.serve(self, request, *args, **kwargs)
 
     @route(r'^search/$')

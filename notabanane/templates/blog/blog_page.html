@@ -54,7 +54,7 @@
 <section id="post_list" class="section">
   <div class="container">
     <div class="columns is-multiline">
-      {% for post in blogpages %}
+      {% for post in paginated_entries %}
       {% with post=post.specific %}
       <div class="column is-one-third">
         <a href="{% pageurl post %}" class="post-box">
@@ -78,14 +78,14 @@
       {% endif %}
       {% endfor %}
     </div>
-    {% if blogpages.has_previous or blogpages.has_next %}
+    {% if paginated_entries.has_previous or paginated_entries.has_next %}
     <div class="columns">
       <div class="column has-text-centered">
-        {% if blogpages.has_previous %}
-        <a href="?page={{ blogpages.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+        {% if paginated_entries.has_previous %}
+        <a href="?page={{ paginated_entries.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
         {% endif %}
-        {% if blogpages.has_next %}
-        <a href="?page={{ blogpages.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+        {% if paginated_entries.has_next %}
+        <a href="?page={{ paginated_entries.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
         {% endif %}
       </div>
     </div>
@@ -96,7 +96,7 @@
 <section id="post_list" class="section">
   <div class="container">
     <div class="tile is-ancestor">
-      {% for post in blogpages %}
+      {% for post in self.featured_entries %}
       {% with post=post.specific %}
       {% if forloop.counter0 == 0 %}
       <div class="tile is-parent is-8">{% image post.header_image fill-888x613 as post_image %}
@@ -136,9 +136,29 @@
       {% endwith %}
       {% endfor %}
     </div>
-    <h2 class="is-size-2">{% trans "Last recipes " %}</h2>
+    <h2 class="is-size-2">{% trans "Latest recipes " %}</h2>
     <div class="columns is-multiline">
-      {% for post in blogpages %}
+      {% for post in self.latest_recipes %}
+      {% with post=post.specific %}
+      <div class="column is-one-third">
+        <a href="{% pageurl post %}" class="post-box">
+          {% if post.header_image %}
+          <span class="image-wrapper">
+            <figure class="image">{% image post.header_image fill-555x312 %}</figure>
+          </span>
+          {% endif %}
+          <span class="content-wrapper">
+            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="post-title">{{ post.title }}</span>
+          </span>
+        </a>
+      </div>
+      {% endwith %}
+      {% endfor %}
+    </div>
+    <h2 class="is-size-2">{% trans "Latest articles " %}</h2>
+    <div class="columns is-multiline">
+      {% for post in self.latest_articles %}
       {% with post=post.specific %}
       <div class="column is-one-third">
         <a href="{% pageurl post %}" class="post-box">
