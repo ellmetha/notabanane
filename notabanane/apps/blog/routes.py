@@ -32,7 +32,7 @@ class BlogRoutes(RoutablePageMixin):
 
     @route(r'^$')
     def entries_list(self, request, *args, **kwargs):
-        """ Generates a page containing all the entries of the blog. """
+        """ Generates a home page containing relevant entries of the blog. """
         self.featured_entries = self.get_entries()[:3]
         self.latest_recipes = self.get_recipes()[:3]
         self.latest_articles = self.get_articles()[:3]
@@ -49,3 +49,19 @@ class BlogRoutes(RoutablePageMixin):
             Query.get(self.search_query).add_hit()
             return Page.serve(self, request, *args, **kwargs)
         return redirect(self.url)
+
+    @route(r'^articles/$')
+    def article_list(self, request, *args, **kwargs):
+        """ Generates a page containing all the articles of the blog. """
+        self.filter_type = 'pagetype'
+        self.filter_value = 'article'
+        self.entries = self.get_articles()
+        return Page.serve(self, request, *args, **kwargs)
+
+    @route(r'^recipes/$')
+    def recipe_list(self, request, *args, **kwargs):
+        """ Generates a page containing all the recipes of the blog. """
+        self.filter_type = 'pagetype'
+        self.filter_value = 'recipe'
+        self.entries = self.get_recipes()
+        return Page.serve(self, request, *args, **kwargs)
