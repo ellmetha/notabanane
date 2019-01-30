@@ -52,7 +52,7 @@ class BlogRoutes(RoutablePageMixin):
         return redirect(self.url)
 
     @route(_(r'^articles/$'))
-    def article_list(self, request, *args, **kwargs):
+    def articles_list(self, request, *args, **kwargs):
         """ Generates a page containing all the articles of the blog. """
         self.filter_type = 'pagetype'
         self.filter_value = 'article'
@@ -60,7 +60,7 @@ class BlogRoutes(RoutablePageMixin):
         return Page.serve(self, request, *args, **kwargs)
 
     @route(_(r'^recipes/$'))
-    def recipe_list(self, request, *args, **kwargs):
+    def recipes_list(self, request, *args, **kwargs):
         """ Generates a page containing all the recipes of the blog. """
         self.filter_type = 'pagetype'
         self.filter_value = 'recipe'

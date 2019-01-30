@@ -156,6 +156,11 @@
       {% endwith %}
       {% endfor %}
     </div>
+    {% if self.get_recipes.count > 3 %}
+    <div class="content has-text-right">
+      <a href="{% routablepageurl blog_page 'recipes_list' %}" class="button is-primary">{% trans "View all" %}</a>
+    </div>
+    {% endif %}
     <h2 class="is-size-2">{% trans "Latest articles " %}</h2>
     <div class="columns is-multiline">
       {% for post in self.latest_articles %}
@@ -176,6 +181,11 @@
       {% endwith %}
       {% endfor %}
     </div>
+    {% if self.get_articles.count > 3 %}
+    <div class="content has-text-right">
+      <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary">{% trans "View all" %}</a>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endif %}
