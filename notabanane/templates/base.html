@@ -1,6 +1,5 @@
 {% load i18n %}
 {% load static %}
-{% load wagtailcore_tags %}
 {% load wagtailroutablepage_tags %}
 
 <!DOCTYPE html>
@@ -34,7 +33,7 @@
         <div class="container is-fluid">
           <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a class="navbar-item" href="{% slugurl 'nota-banane' %}">
+              <a class="navbar-item" href="/">
                 <img src="{% block navbar_brand_logo_src %}{% static 'img/logo_cranberry.svg' %}{% endblock %}" alt="NotaBanane logo" height="70" />
               </a>
               <div class="navbar-burger">
