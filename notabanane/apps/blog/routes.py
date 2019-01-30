@@ -9,6 +9,7 @@
 
 from django.db.models import Q
 from django.shortcuts import redirect
+from django.utils.translation import ugettext_lazy as _
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core.models import Page
 from wagtail.search.models import Query
@@ -17,7 +18,7 @@ from wagtail.search.models import Query
 class BlogRoutes(RoutablePageMixin):
     """ Defines the main "routes" associated with a ``BlogPage`` instance. """
 
-    @route(r'^category/(?P<category>[-\w]+)/$')
+    @route(_(r'^category/(?P<category>[-\w]+)/$'))
     def entries_by_category(self, request, category, *args, **kwargs):
         """ Generates a page containing all the entries associated with a specific category. """
         self.filter_type = 'category'
@@ -38,7 +39,7 @@ class BlogRoutes(RoutablePageMixin):
         self.latest_articles = self.get_articles()[:3]
         return Page.serve(self, request, *args, **kwargs)
 
-    @route(r'^search/$')
+    @route(_(r'^search/$'))
     def entries_search(self, request, *args, **kwargs):
         """ Generates a page containing all the entries associated with a specific search. """
         self.search_query = request.GET.get('q', None)
@@ -50,7 +51,7 @@ class BlogRoutes(RoutablePageMixin):
             return Page.serve(self, request, *args, **kwargs)
         return redirect(self.url)
 
-    @route(r'^articles/$')
+    @route(_(r'^articles/$'))
     def article_list(self, request, *args, **kwargs):
         """ Generates a page containing all the articles of the blog. """
         self.filter_type = 'pagetype'
@@ -58,7 +59,7 @@ class BlogRoutes(RoutablePageMixin):
         self.entries = self.get_articles()
         return Page.serve(self, request, *args, **kwargs)
 
-    @route(r'^recipes/$')
+    @route(_(r'^recipes/$'))
     def recipe_list(self, request, *args, **kwargs):
         """ Generates a page containing all the recipes of the blog. """
         self.filter_type = 'pagetype'
