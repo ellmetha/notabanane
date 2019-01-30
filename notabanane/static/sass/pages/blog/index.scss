@@ -104,6 +104,14 @@ body#id_blog_index {
       @include rounded(4px);
     }
 
+    div.latest-entries {
+      margin-top: 2rem;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+
     a.post-box {
       position: relative;
       display: block;

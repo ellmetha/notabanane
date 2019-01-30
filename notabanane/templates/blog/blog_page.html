@@ -136,56 +136,60 @@
       {% endwith %}
       {% endfor %}
     </div>
-    <h2 class="is-size-2">{% trans "Latest recipes " %}</h2>
-    <div class="columns is-multiline">
-      {% for post in self.latest_recipes %}
-      {% with post=post.specific %}
-      <div class="column is-one-third">
-        <a href="{% pageurl post %}" class="post-box">
-          {% if post.header_image %}
-          <span class="image-wrapper">
-            <figure class="image">{% image post.header_image fill-555x312 %}</figure>
-          </span>
-          {% endif %}
-          <span class="content-wrapper">
-            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-            <span class="post-title">{{ post.title }}</span>
-          </span>
-        </a>
+    <div class="latest-entries">
+      <h2 class="is-size-2">{% trans "Latest recipes " %}</h2>
+      <div class="columns is-multiline">
+        {% for post in self.latest_recipes %}
+        {% with post=post.specific %}
+        <div class="column is-one-third">
+          <a href="{% pageurl post %}" class="post-box">
+            {% if post.header_image %}
+            <span class="image-wrapper">
+              <figure class="image">{% image post.header_image fill-555x312 %}</figure>
+            </span>
+            {% endif %}
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+        {% endwith %}
+        {% endfor %}
       </div>
-      {% endwith %}
-      {% endfor %}
-    </div>
-    {% if self.get_recipes.count > 3 %}
-    <div class="content has-text-right">
-      <a href="{% routablepageurl blog_page 'recipes_list' %}" class="button is-primary">{% trans "View all" %}</a>
-    </div>
-    {% endif %}
-    <h2 class="is-size-2">{% trans "Latest articles " %}</h2>
-    <div class="columns is-multiline">
-      {% for post in self.latest_articles %}
-      {% with post=post.specific %}
-      <div class="column is-one-third">
-        <a href="{% pageurl post %}" class="post-box">
-          {% if post.header_image %}
-          <span class="image-wrapper">
-            <figure class="image">{% image post.header_image fill-555x312 %}</figure>
-          </span>
-          {% endif %}
-          <span class="content-wrapper">
-            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-            <span class="post-title">{{ post.title }}</span>
-          </span>
-        </a>
+      {% if self.get_recipes.count > 3 %}
+      <div class="content has-text-right">
+        <a href="{% routablepageurl blog_page 'recipes_list' %}" class="button is-primary">{% trans "View all" %}</a>
       </div>
-      {% endwith %}
-      {% endfor %}
+      {% endif %}
     </div>
-    {% if self.get_articles.count > 3 %}
-    <div class="content has-text-right">
-      <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary">{% trans "View all" %}</a>
+    <div class="latest-entries">
+      <h2 class="is-size-2">{% trans "Latest articles " %}</h2>
+      <div class="columns is-multiline">
+        {% for post in self.latest_articles %}
+        {% with post=post.specific %}
+        <div class="column is-one-third">
+          <a href="{% pageurl post %}" class="post-box">
+            {% if post.header_image %}
+            <span class="image-wrapper">
+              <figure class="image">{% image post.header_image fill-555x312 %}</figure>
+            </span>
+            {% endif %}
+            <span class="content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+            </span>
+          </a>
+        </div>
+        {% endwith %}
+        {% endfor %}
+      </div>
+      {% if self.get_articles.count > 3 %}
+      <div class="content has-text-right">
+        <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary">{% trans "View all" %}</a>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
 </section>
 {% endif %}
