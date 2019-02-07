@@ -154,7 +154,7 @@
       {% endfor %}
       {% if self.get_recipes.count > 6 %}
       <div class="content has-text-right">
-        <a href="{% routablepageurl blog_page 'recipes_list' %}" class="button is-primary">{% trans "View all" %}</a>
+        <a href="{% routablepageurl blog_page 'recipes_list' %}" class="button is-primary">{% trans "View all" %} <i data-feather="chevron-right"></i></a>
       </div>
       {% endif %}
     </div>
@@ -179,7 +179,7 @@
       </div>
       {% if self.get_articles.count > 3 %}
       <div class="content has-text-right">
-        <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary">{% trans "View all" %}</a>
+        <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary">{% trans "View all" %} <i data-feather="chevron-right"></i></a>
       </div>
       {% endif %}
     </div>
