@@ -26,6 +26,8 @@
     <div class="tabs is-medium">
       <ul>
         <li{% if filter_type is None %} class="is-active"{% endif %}><a href="{% routablepageurl self 'entries_list' %}">{% trans "Most recent" %}</a></li>
+        <li{% if filter_type == 'pagetype' and filter_value == 'recipe' %} class="is-active"{% endif %}><a href="{% routablepageurl self 'recipes_list' %}">{% trans "Recipes" %}</a></li>
+        <li{% if filter_type == 'pagetype' and filter_value == 'article' %} class="is-active"{% endif %}><a href="{% routablepageurl self 'articles_list' %}">{% trans "Articles" %}</a></li>
         {% for category in categories %}
         <li{% if filter_type == 'category' and filter_value == category.slug %} class="is-active"{% endif %}><a href="{% routablepageurl self 'entries_by_category' category.slug %}">{{ category.name }}</a></li>
         {% endfor %}
