@@ -56,8 +56,14 @@ body#id_blog_index {
     .hero-body {
       position: relative;
       z-index: 2;
-      padding-top: 9rem;
+      padding-top: 8rem;
       padding-bottom: 4rem;
+
+      .subtitle {
+        font-family: IndieFlower;
+        font-size: 1.35rem;
+        font-weight: bold;
+      }
     }
   }
 
