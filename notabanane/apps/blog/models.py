@@ -221,7 +221,7 @@ class RecipePage(Page):
     # Like any blog article, a recipe has a date and a title. But it has no body: instead it only
     # has an introduction field to contain a small content to be displayed before the recipe
     # details.
-    introduction = RichTextField(verbose_name=_('Body'))
+    introduction = RichTextField(verbose_name=_('Introduction'))
     date = models.DateField(verbose_name=_('Post date'), default=dt.datetime.today)
 
     # A blog recipe page can have an header image that'll be used when rendering the blog post.
