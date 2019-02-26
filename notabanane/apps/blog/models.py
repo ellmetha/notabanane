@@ -14,11 +14,12 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
+from modelcluster.models import ClusterableModel
 from taggit.models import TaggedItemBase
 from treebeard.al_tree import AL_Node
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.core.fields import RichTextField
-from wagtail.core.models import Page
+from wagtail.core.models import Orderable, Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
@@ -277,6 +278,8 @@ class RecipePage(Page):
             ],
             heading=_('Recipe information'),
         ),
+        InlinePanel('ingredient_sections', label=_('Recipe ingredient sections')),
+        InlinePanel('instruction_sections', label=_('Recipe instruction sections')),
         ImageChooserPanel('header_image'),
         InlinePanel('recipe_categories', label=_('Categories')),
         FieldPanel('date'),
@@ -305,6 +308,57 @@ class RecipePage(Page):
         context['blog_page'] = self.get_parent().specific
 
         return context
+
+
+class RecipeIngredientSection(Orderable, ClusterableModel, models.Model):
+    """ Represents a section of ingredients of a recipe. """
+
+    page = ParentalKey('RecipePage', related_name='ingredient_sections')
+
+    # An ingredient section is basically defined by a list of ingredients and by an optional label.
+    label = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Label'))
+    ingredients = models.TextField(
+        verbose_name=_('Ingredients'),
+        help_text=_(
+            'Each new line generates a new numbered ingredient. Blank lines are allowed to '
+            'separate ingredients from each others too.'
+        ),
+    )
+
+    panels = [
+        FieldPanel('label'),
+        FieldPanel('ingredients'),
+    ]
+
+    class Meta:
+        verbose_name = _('Recipe ingredient section')
+        verbose_name_plural = _('Recipe ingredient sections')
+
+
+class RecipeInstructionSection(Orderable, ClusterableModel, models.Model):
+    """ Represents a section of instructions of a recipe. """
+
+    page = ParentalKey('RecipePage', related_name='instruction_sections')
+
+    # An instruction section is basically defined by a list of instructions and by an optional
+    # label.
+    label = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Label'))
+    instructions = models.TextField(
+        verbose_name=_('Instructions'),
+        help_text=_(
+            'Each new line generates a new numbered instruction. Blank lines are allowed to '
+            'separate instructions from each others too.'
+        ),
+    )
+
+    panels = [
+        FieldPanel('label'),
+        FieldPanel('instructions'),
+    ]
+
+    class Meta:
+        verbose_name = _('Recipe instruction section')
+        verbose_name_plural = _('Recipe instruction sections')
 
 
 class TagArticlePage(TaggedItemBase):
