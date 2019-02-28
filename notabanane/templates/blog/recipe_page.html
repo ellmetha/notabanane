@@ -38,4 +38,48 @@
     </div>
   </div>
 </section>
+<section id="entry_recipe" class="section">
+  <div class="container is-widescreen">
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="card recipe-card">
+          <header class="card-header">
+            <p class="card-header-title">{{ page.title}}</p>
+          </header>
+          <div class="card-content">
+            <div class="recipe-meta-information">
+              <div class="columns is-multiline">
+                {% if page.recipe_yield %}
+                <div class="column is-half">
+                  {% blocktrans trimmed with yield=page.recipe_yield %}For: {{ yield }}{% endblocktrans %}
+                </div>
+                {% endif %}
+                {% if page.preparation_time %}
+                <div class="column is-half">
+                  {% blocktrans trimmed with time=page.preparation_time %}Preparation: {{ time }}{% endblocktrans %}
+                </div>
+                {% endif %}
+                {% if page.cook_time %}
+                <div class="column is-half">
+                  {% blocktrans trimmed with time=page.cook_time %}Cook: {{ time }}{% endblocktrans %}
+                </div>
+                {% endif %}
+                {% if page.fridge_time %}
+                <div class="column is-half">
+                  {% blocktrans trimmed with time=page.fridge_time %}Fridge: {{ time }}{% endblocktrans %}
+                </div>
+                {% endif %}
+                {% if page.rest_time %}
+                <div class="column is-half">
+                  {% blocktrans trimmed with time=page.rest_time %}Rest: {{ time }}{% endblocktrans %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}
