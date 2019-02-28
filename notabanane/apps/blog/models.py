@@ -226,7 +226,11 @@ class RecipePage(Page):
 
     # A blog recipe page can have an header image that'll be used when rendering the blog post.
     header_image = models.ForeignKey(
-        'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
         verbose_name=_('Header image'),
         help_text=_(
             'Header image displayed when rendering the article or if the article is featured on '
@@ -239,10 +243,25 @@ class RecipePage(Page):
         blank=True,
         null=True,
         verbose_name=_('Preparation time'),
+        help_text=_('Duration in the form "HH:MM:SS".'),
     )
-    cook_time = models.DurationField(blank=True, null=True, verbose_name=_('Cook time'))
-    fridge_time = models.DurationField(blank=True, null=True, verbose_name=_('Fridge time'))
-    rest_time = models.DurationField(blank=True, null=True, verbose_name=_('Rest time'))
+    cook_time = models.DurationField(
+        blank=True,
+        null=True,
+        verbose_name=_('Cook time'),
+        help_text=_('Duration in the form "HH:MM:SS".'),
+    )
+    fridge_time = models.DurationField(
+        blank=True,
+        null=True,
+        verbose_name=_('Fridge time'),
+        help_text=_('Duration in the form "HH:MM:SS".'),
+    )
+    rest_time = models.DurationField(
+        blank=True,
+        null=True, verbose_name=_('Rest time'),
+        help_text=_('Duration in the form "HH:MM:SS".'),
+    )
     recipe_yield = models.CharField(max_length=127, blank=True, verbose_name=_('Yield'))
 
     # A blog recipe can be associated with many categories if necessary.
