@@ -50,27 +50,27 @@
             <div class="recipe-meta-information">
               <div class="columns is-multiline">
                 {% if page.recipe_yield %}
-                <div class="column is-half">
+                <div class="column is-half is-paddingless">
                   {% blocktrans trimmed with yield=page.recipe_yield %}For: {{ yield }}{% endblocktrans %}
                 </div>
                 {% endif %}
                 {% if page.preparation_time %}
-                <div class="column is-half">
+                <div class="column is-half is-paddingless">
                   {% blocktrans trimmed with time=page.preparation_time %}Preparation: {{ time }}{% endblocktrans %}
                 </div>
                 {% endif %}
                 {% if page.cook_time %}
-                <div class="column is-half">
+                <div class="column is-half is-paddingless">
                   {% blocktrans trimmed with time=page.cook_time %}Cook: {{ time }}{% endblocktrans %}
                 </div>
                 {% endif %}
                 {% if page.fridge_time %}
-                <div class="column is-half">
+                <div class="column is-half is-paddingless">
                   {% blocktrans trimmed with time=page.fridge_time %}Fridge: {{ time }}{% endblocktrans %}
                 </div>
                 {% endif %}
                 {% if page.rest_time %}
-                <div class="column is-half">
+                <div class="column is-half is-paddingless">
                   {% blocktrans trimmed with time=page.rest_time %}Rest: {{ time }}{% endblocktrans %}
                 </div>
                 {% endif %}
