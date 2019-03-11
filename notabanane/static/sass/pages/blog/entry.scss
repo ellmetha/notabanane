@@ -94,4 +94,32 @@ body#id_blog_entry {
       }
     }
   }
+
+  section#entry_recipe {
+    .recipe-general-info-and-ingredients-wrapper {
+      background: #f3f3f3;
+      @include rounded(4px);
+
+      .recipe-image {
+        margin-bottom: 1rem;
+
+        img {
+          display: block;
+          width: 100%;
+          @include rounded(4px 4px 0 0);
+        }
+      }
+
+      .content {
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+
+        .recipe-meta-information {
+          p {
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
+  }
 }

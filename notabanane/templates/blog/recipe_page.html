@@ -41,42 +41,43 @@
 <section id="entry_recipe" class="section">
   <div class="container is-widescreen">
     <div class="columns">
-      <div class="column is-three-fifths is-offset-one-fifth">
-        <div class="card recipe-card">
-          <header class="card-header">
-            <p class="card-header-title">{{ page.title}}</p>
-          </header>
-          <div class="card-content">
-            <div class="recipe-meta-information">
-              <div class="columns is-multiline">
-                {% if page.recipe_yield %}
-                <div class="column is-half is-paddingless">
-                  {% blocktrans trimmed with yield=page.recipe_yield %}For: {{ yield }}{% endblocktrans %}
-                </div>
-                {% endif %}
-                {% if page.preparation_time %}
-                <div class="column is-half is-paddingless">
-                  {% blocktrans trimmed with time=page.preparation_time %}Preparation: {{ time }}{% endblocktrans %}
-                </div>
-                {% endif %}
-                {% if page.cook_time %}
-                <div class="column is-half is-paddingless">
-                  {% blocktrans trimmed with time=page.cook_time %}Cook: {{ time }}{% endblocktrans %}
-                </div>
-                {% endif %}
-                {% if page.fridge_time %}
-                <div class="column is-half is-paddingless">
-                  {% blocktrans trimmed with time=page.fridge_time %}Fridge: {{ time }}{% endblocktrans %}
-                </div>
-                {% endif %}
-                {% if page.rest_time %}
-                <div class="column is-half is-paddingless">
-                  {% blocktrans trimmed with time=page.rest_time %}Rest: {{ time }}{% endblocktrans %}
-                </div>
-                {% endif %}
-              </div>
-            </div>
+      <div class="column is-10 is-offset-1">
+        <div class="content">
+          <h2>{{ page.title}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-4 is-offset-1">
+        <div class="recipe-general-info-and-ingredients-wrapper">
+          <div class="recipe-image">
+            <img src="{% image page.header_image fill-662x457-c100 as recipe_image %}{{ recipe_image.url }}" alt="" />
           </div>
+          <div class="content">
+            <div class="recipe-meta-information">
+              {% if page.recipe_yield %}
+              <p>{% blocktrans trimmed with yield=page.recipe_yield %}For: {{ yield }}{% endblocktrans %}</p>
+              {% endif %}
+              {% if page.preparation_time %}
+              <p>{% blocktrans trimmed with time=page.preparation_time %}Preparation: {{ time }}{% endblocktrans %}</p>
+              {% endif %}
+              {% if page.cook_time %}
+              <p>{% blocktrans trimmed with time=page.cook_time %}Cook: {{ time }}{% endblocktrans %}</p>
+              {% endif %}
+              {% if page.fridge_time %}
+              <p>{% blocktrans trimmed with time=page.fridge_time %}Fridge: {{ time }}{% endblocktrans %}</p>
+              {% endif %}
+              {% if page.rest_time %}
+              <p>{% blocktrans trimmed with time=page.rest_time %}Rest: {{ time }}{% endblocktrans %}</p>
+              {% endif %}
+            </div>
+            <h3>{% trans "Ingredients" %}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="content">
+          <h3>Step by step</h3>
         </div>
       </div>
     </div>
