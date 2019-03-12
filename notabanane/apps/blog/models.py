@@ -297,8 +297,8 @@ class RecipePage(Page):
             ],
             heading=_('Recipe information'),
         ),
-        InlinePanel('ingredient_sections', label=_('Recipe ingredient sections')),
-        InlinePanel('instruction_sections', label=_('Recipe instruction sections')),
+        InlinePanel('ingredients_sections', label=_('Recipe ingredients sections')),
+        InlinePanel('instructions_sections', label=_('Recipe instructions sections')),
         ImageChooserPanel('header_image'),
         InlinePanel('recipe_categories', label=_('Categories')),
         FieldPanel('date'),
@@ -329,10 +329,10 @@ class RecipePage(Page):
         return context
 
 
-class RecipeIngredientSection(Orderable, ClusterableModel, models.Model):
+class RecipeIngredientsSection(Orderable, ClusterableModel, models.Model):
     """ Represents a section of ingredients of a recipe. """
 
-    page = ParentalKey('RecipePage', related_name='ingredient_sections')
+    page = ParentalKey('RecipePage', related_name='ingredients_sections')
 
     # An ingredient section is basically defined by a list of ingredients and by an optional label.
     label = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Label'))
@@ -350,8 +350,8 @@ class RecipeIngredientSection(Orderable, ClusterableModel, models.Model):
     ]
 
     class Meta:
-        verbose_name = _('Recipe ingredient section')
-        verbose_name_plural = _('Recipe ingredient sections')
+        verbose_name = _('Recipe ingredients section')
+        verbose_name_plural = _('Recipe ingredients sections')
 
     @property
     def ingredients_list(self):
@@ -359,10 +359,10 @@ class RecipeIngredientSection(Orderable, ClusterableModel, models.Model):
         return [i for i in (self.ingredients or '').splitlines() if i]
 
 
-class RecipeInstructionSection(Orderable, ClusterableModel, models.Model):
+class RecipeInstructionsSection(Orderable, ClusterableModel, models.Model):
     """ Represents a section of instructions of a recipe. """
 
-    page = ParentalKey('RecipePage', related_name='instruction_sections')
+    page = ParentalKey('RecipePage', related_name='instructions_sections')
 
     # An instruction section is basically defined by a list of instructions and by an optional
     # label.
@@ -381,8 +381,8 @@ class RecipeInstructionSection(Orderable, ClusterableModel, models.Model):
     ]
 
     class Meta:
-        verbose_name = _('Recipe instruction section')
-        verbose_name_plural = _('Recipe instruction sections')
+        verbose_name = _('Recipe instructions section')
+        verbose_name_plural = _('Recipe instructions sections')
 
     @property
     def instructions_list(self):

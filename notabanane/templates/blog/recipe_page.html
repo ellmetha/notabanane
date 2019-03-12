@@ -73,7 +73,7 @@
             </div>
             <h3>{% trans "Ingredients" %}</h3>
             <div class="recipe-ingredients">
-              {% for ingredients_section in page.ingredient_sections.all %}
+              {% for ingredients_section in page.ingredients_sections.all %}
               {% if forloop.first and not forloop.last or not forloop.first and forloop.last or not forloop.first and not forloop.last %}
               <h4>{{ ingredients_section.label }}</h4>
               {% endif %}
@@ -90,7 +90,7 @@
       <div class="column is-6">
         <div class="content preparation">
           <h3>{% trans "Preparation" %}</h3>
-          {% for instructions_section in page.instruction_sections.all %}
+          {% for instructions_section in page.instructions_sections.all %}
           {% if forloop.first and not forloop.last or not forloop.first and forloop.last or not forloop.first and not forloop.last %}
           <h4>{{ instructions_section.label }}</h4>
           {% endif %}
