@@ -131,8 +131,26 @@ body#id_blog_entry {
 
     .content.preparation {
       ol {
-        margin-left: 1rem;
+        position: relative;
+        margin-left: 0;
         margin-bottom: 2rem;
+        list-style: none;
+        counter-reset: recipe-instructions-counter;
+
+        li {
+          margin-left: 2.5rem;
+          margin-bottom: 0.5rem;
+          counter-increment: recipe-instructions-counter;
+
+          &:before {
+            position: absolute;
+            left: 0.2rem;
+            content: counter(recipe-instructions-counter) ". ";
+            font-family: IndieFlower;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+        }
       }
     }
   }
