@@ -97,6 +97,7 @@ body#id_blog_entry {
 
   section#entry_recipe {
     .recipe-general-info-and-ingredients-wrapper {
+      height: 100%;
       background: #f3f3f3;
       @include rounded(4px);
 
@@ -111,14 +112,27 @@ body#id_blog_entry {
       }
 
       .content {
-        margin-bottom: 1rem;
         padding: 0 1rem;
+        padding-bottom: 1rem;
 
         .recipe-meta-information {
           p {
             margin-bottom: 0.25rem;
           }
         }
+
+        .recipe-ingredients {
+          ul {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    .content.preparation {
+      ol {
+        margin-left: 1rem;
+        margin-bottom: 2rem;
       }
     }
   }

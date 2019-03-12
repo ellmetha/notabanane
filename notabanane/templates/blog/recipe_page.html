@@ -72,12 +72,34 @@
               {% endif %}
             </div>
             <h3>{% trans "Ingredients" %}</h3>
+            <div class="recipe-ingredients">
+              {% for ingredients_section in page.ingredient_sections.all %}
+              {% if forloop.first and not forloop.last or not forloop.first and forloop.last or not forloop.first and not forloop.last %}
+              <h4>{{ ingredients_section.label }}</h4>
+              {% endif %}
+              <ul>
+                {% for ingredient in ingredients_section.ingredients_list %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
       <div class="column is-6">
-        <div class="content">
-          <h3>Step by step</h3>
+        <div class="content preparation">
+          <h3>{% trans "Preparation" %}</h3>
+          {% for instructions_section in page.instruction_sections.all %}
+          {% if forloop.first and not forloop.last or not forloop.first and forloop.last or not forloop.first and not forloop.last %}
+          <h4>{{ instructions_section.label }}</h4>
+          {% endif %}
+          <ol>
+            {% for instruction in instructions_section.instructions_list %}
+            <li>{{ instruction }}</li>
+            {% endfor %}
+          </ol>
+          {% endfor %}
         </div>
       </div>
     </div>

@@ -353,6 +353,11 @@ class RecipeIngredientSection(Orderable, ClusterableModel, models.Model):
         verbose_name = _('Recipe ingredient section')
         verbose_name_plural = _('Recipe ingredient sections')
 
+    @property
+    def ingredients_list(self):
+        """ Returns the list of ingredients as standard list. """
+        return [i for i in (self.ingredients or '').splitlines() if i]
+
 
 class RecipeInstructionSection(Orderable, ClusterableModel, models.Model):
     """ Represents a section of instructions of a recipe. """
@@ -378,6 +383,11 @@ class RecipeInstructionSection(Orderable, ClusterableModel, models.Model):
     class Meta:
         verbose_name = _('Recipe instruction section')
         verbose_name_plural = _('Recipe instruction sections')
+
+    @property
+    def instructions_list(self):
+        """ Returns the list of instructions as a standard list. """
+        return [i for i in (self.instructions or '').splitlines() if i]
 
 
 class TagArticlePage(TaggedItemBase):
