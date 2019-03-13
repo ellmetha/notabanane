@@ -74,7 +74,7 @@ body#id_blog_entry {
       }
     }
 
-    .content {
+    .content.body, .content.introduction {
       font-size: 1.1rem;
 
       p:first-child::first-letter {
@@ -93,62 +93,77 @@ body#id_blog_entry {
         line-height: 1.4em;
       }
     }
-  }
 
-  section#entry_recipe {
-    .recipe-general-info-and-ingredients-wrapper {
-      height: 100%;
-      background: #f3f3f3;
-      @include rounded(4px);
+    #entry_recipe {
+      margin-top: 3rem;
 
-      .recipe-image {
-        margin-bottom: 1rem;
+      .recipe-general-info-and-ingredients-wrapper {
+        height: 100%;
+        background: #f3f3f3;
+        @include rounded(4px);
 
-        img {
-          display: block;
-          width: 100%;
-          @include rounded(4px 4px 0 0);
-        }
-      }
+        .recipe-image {
+          margin-bottom: 1rem;
 
-      .content {
-        padding: 0 1rem;
-        padding-bottom: 1rem;
-
-        .recipe-meta-information {
-          p {
-            margin-bottom: 0.25rem;
+          img {
+            display: block;
+            width: 100%;
+            @include rounded(4px 4px 0 0);
           }
         }
 
-        .recipe-ingredients {
-          ul {
-            margin-left: 1rem;
+        .content {
+          padding: 0 1rem;
+          padding-bottom: 1rem;
+
+          .recipe-meta-information {
+            p {
+              margin-bottom: 0.25rem;
+            }
+          }
+
+          .recipe-ingredients {
+            ul {
+              margin-left: 1rem;
+              list-style: none;
+
+              li {
+                &:before {
+                  content: "\2022";
+                  color: $ectasy;
+                  font-weight: bold;
+                  font-size: 1.25rem;
+                  display: inline-block;
+                  width: 1rem;
+                  margin-left: -1rem;
+                }
+              }
+            }
           }
         }
       }
-    }
 
-    .content.preparation {
-      ol {
-        position: relative;
-        margin-left: 0;
-        margin-bottom: 2rem;
-        list-style: none;
-        counter-reset: recipe-instructions-counter;
+      .content.preparation {
+        ol {
+          position: relative;
+          margin-left: 0;
+          margin-bottom: 2rem;
+          list-style: none;
+          counter-reset: recipe-instructions-counter;
 
-        li {
-          margin-left: 2.5rem;
-          margin-bottom: 0.5rem;
-          counter-increment: recipe-instructions-counter;
+          li {
+            margin-left: 2.5rem;
+            margin-bottom: 0.5rem;
+            counter-increment: recipe-instructions-counter;
 
-          &:before {
-            position: absolute;
-            left: 0.2rem;
-            content: counter(recipe-instructions-counter) ". ";
-            font-family: IndieFlower;
-            font-size: 1.25rem;
-            font-weight: bold;
+            &:before {
+              position: absolute;
+              left: 0.2rem;
+              content: counter(recipe-instructions-counter) ". ";
+              font-family: IndieFlower;
+              font-size: 1.25rem;
+              font-weight: bold;
+            }
           }
         }
       }
