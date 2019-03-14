@@ -30,7 +30,7 @@ from .routes import BlogRoutes
 class BlogPage(BlogRoutes, Page):
     """ Represents a blog page.
 
-    Basically the blog page will correspond the blog's index page. It should be noted that the
+    Basically the blog page will correspond to the blog's index page. It should be noted that the
     ``BlogPage`` model inherits from the ``RoutablePageMixin``. Thus blog pages are associated with
     multiple routes allowing to retrieve blog entries by date, month or year.
 
