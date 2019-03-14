@@ -83,12 +83,12 @@
     </div>
     {% if paginated_entries.has_previous or paginated_entries.has_next %}
     <div class="columns">
-      <div class="column has-text-centered">
+      <div class="column">
         {% if paginated_entries.has_previous %}
-        <a href="?page={{ paginated_entries.previous_page_number }}" class="button is-info">{% trans "Newer articles" %}</a>
+        <a href="?page={{ paginated_entries.previous_page_number }}" class="button is-text">{% trans "Newer articles" %}</a>
         {% endif %}
         {% if paginated_entries.has_next %}
-        <a href="?page={{ paginated_entries.next_page_number }}" class="button is-info">{% trans "Older articles" %}</a>
+        <a href="?page={{ paginated_entries.next_page_number }}" class="button is-text">{% trans "Older articles" %}</a>
         {% endif %}
       </div>
     </div>
