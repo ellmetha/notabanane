@@ -170,6 +170,18 @@ body#id_blog_index {
             font-size: 2.25rem;
           }
         }
+
+        @include until($tablet) {
+          span.content-wrapper {
+            margin: 4rem 0.5rem;
+            height: 8rem;
+            background: transparent;
+
+            .post-title {
+              font-size: 1.5rem;
+            }
+          }
+        }
       }
 
       &.is-top-twin {
@@ -193,6 +205,18 @@ body#id_blog_index {
 
           .post-title {
             margin-top: 1.25rem;
+          }
+        }
+
+        @include until($tablet) {
+          span.content-wrapper {
+            margin: 4.2rem 0.5rem;
+            height: 8rem;
+            background: transparent;
+
+            .post-title {
+              font-size: 1.5rem;
+            }
           }
         }
       }
