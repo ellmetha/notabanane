@@ -7,25 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-17 20:20-0500\n"
-"PO-Revision-Date: 2019-03-17 21:45-0400\n"
+"POT-Creation-Date: 2019-03-17 20:49-0500\n"
+"PO-Revision-Date: 2019-03-17 21:52-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "This is the description of your blog"
-msgstr ""
+msgstr "Description du blog"
 
 msgid "Header image"
-msgstr ""
+msgstr "Image d’entête"
 
 msgid "Default header image used if the featured article does not provide any header image"
 msgstr ""
@@ -34,16 +34,16 @@ msgid "Show tags"
 msgstr ""
 
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 msgid "Blogs"
-msgstr ""
+msgstr "Blogs"
 
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 msgid "Post date"
-msgstr ""
+msgstr "Date de publication"
 
 msgid "Header image displayed when rendering the article or if the article is featured on the home page"
 msgstr ""
@@ -61,7 +61,7 @@ msgid "Preparation time"
 msgstr "Temps de préparation"
 
 msgid "Duration in the form \"HH:MM:SS\"."
-msgstr "Durée au format “HH:MM:SS”"
+msgstr "Durée au format “HH:MM:SS”."
 
 msgid "Cook time"
 msgstr "Temps de cuisson"
@@ -150,8 +150,8 @@ msgstr "Taper pour chercher"
 msgid "Healthy recipes for real life adventurers"
 msgstr ""
 
-msgid "Most recent"
-msgstr ""
+msgid "Home"
+msgstr "Accueil"
 
 msgid "Your search"
 msgstr "Votre recherche"
@@ -172,13 +172,13 @@ msgid "Older articles"
 msgstr "Articles plus anciens"
 
 msgid "Latest recipes "
-msgstr "Dernières recettes"
+msgstr "Dernières recettes "
 
 msgid "View all"
 msgstr "En voir plus"
 
 msgid "Latest articles "
-msgstr "Dernier articles"
+msgstr "Dernier articles "
 
 #, python-format
 msgid "For: %(yield)s"
