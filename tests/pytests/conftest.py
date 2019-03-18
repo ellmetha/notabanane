@@ -2,6 +2,7 @@ import os
 import shutil
 
 import pytest
+from django.utils.translation import activate
 
 from . import settings
 
@@ -17,3 +18,9 @@ def empty_media():
                 shutil.rmtree(path)
             except OSError:
                 os.remove(path)
+
+
+@pytest.yield_fixture(scope='session', autouse=True)
+def force_en_locale():
+    activate('en')
+    yield
