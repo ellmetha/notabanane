@@ -262,7 +262,12 @@ class RecipePage(Page):
         null=True, verbose_name=_('Rest time'),
         help_text=_('Duration in the form "HH:MM:SS".'),
     )
-    recipe_yield = models.CharField(max_length=127, blank=True, verbose_name=_('Yield'))
+    recipe_yield = models.CharField(
+        max_length=127,
+        blank=True,
+        verbose_name=_('Yield'),
+        help_text=_('Enter a yield indication such as "4 persons", "3 servings", etc.'),
+    )
 
     # A blog recipe can be associated with many categories if necessary.
     categories = models.ManyToManyField(
