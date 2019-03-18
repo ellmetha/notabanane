@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-17 20:20-0500\n"
+"PO-Revision-Date: 2019-03-17 21:45-0400\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Description"
+msgstr ""
+
+msgid "This is the description of your blog"
+msgstr ""
+
+msgid "Header image"
+msgstr ""
+
+msgid "Default header image used if the featured article does not provide any header image"
+msgstr ""
+
+msgid "Show tags"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Blogs"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Post date"
+msgstr ""
+
+msgid "Header image displayed when rendering the article or if the article is featured on the home page"
+msgstr ""
+
+msgid "Categories"
+msgstr "Catégories"
+
+msgid "Article"
+msgstr "Article"
+
+msgid "Articles"
+msgstr "Articles"
+
+msgid "Preparation time"
+msgstr "Temps de préparation"
+
+msgid "Duration in the form \"HH:MM:SS\"."
+msgstr "Durée au format “HH:MM:SS”"
+
+msgid "Cook time"
+msgstr "Temps de cuisson"
+
+msgid "Fridge time"
+msgstr "Temps de repos au réfrigérateur"
+
+msgid "Rest time"
+msgstr "Temps de repos"
+
+msgid "Yield"
+msgstr "Nombre de parts, portions ou nombre de personnes"
+
+msgid "Recipe information"
+msgstr "Informations sur la recette"
+
+msgid "Recipe ingredients sections"
+msgstr "Sections de listings d’ingrédients"
+
+msgid "Recipe instructions sections"
+msgstr "Sections de listings d’instructions"
+
+msgid "Recipe"
+msgstr "Recette"
+
+msgid "Recipes"
+msgstr "Recettes"
+
+msgid "Label"
+msgstr "Label"
+
+msgid "Ingredients"
+msgstr "Ingrédients"
+
+msgid "Each new line generates a new numbered ingredient. Blank lines are allowed to separate ingredients from each others too."
+msgstr "Chaque nouvelle ligne génère un nouvel ingrédient numéroté. Des lignes vides peuvent être utilisées pour séparer les ingrédient entre eux."
+
+msgid "Recipe ingredients section"
+msgstr "Section de listings d’ingrédients"
+
+msgid "Instructions"
+msgstr "Instructions"
+
+msgid "Each new line generates a new numbered instruction. Blank lines are allowed to separate instructions from each others too."
+msgstr "Chaque nouvelle ligne génère une nouvelle instruction numérotée. Des lignes vides peuvent être utilisées pour séparer les instructions entre elles."
+
+msgid "Recipe instructions section"
+msgstr "Section de listings d’instructions"
+
+msgid "Category name"
+msgstr "Nom de la catégorie"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Parent category"
+msgstr "Catégorie parente"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "^category/(?P<category>[-\\w]+)/$"
+msgstr "^categorie/(?P<category>[-\\w]+)/$"
+
+msgid "^search/$"
+msgstr "^recherche/$"
+
+msgid "^articles/$"
+msgstr "^articles/$"
+
+msgid "^recipes/$"
+msgstr "^recettes/$"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Type to search"
+msgstr "Taper pour chercher"
+
+msgid "Healthy recipes for real life adventurers"
+msgstr ""
+
+msgid "Most recent"
+msgstr ""
+
+msgid "Your search"
+msgstr "Votre recherche"
+
+#, python-format
+msgid "%(results_count)s result for <strong>%(search_query)s</strong>"
+msgid_plural "%(results_count)s results for <strong>%(search_query)s</strong>"
+msgstr[0] "%(results_count)s résultat pour <strong>%(search_query)s</strong>"
+msgstr[1] "%(results_count)s résultats pour <strong>%(search_query)s</strong>"
+
+msgid "Sorry, no posts were found. Try searching for something else!"
+msgstr "Désolé, aucun article trouvé. Essayez de chercher autre chose!"
+
+msgid "Newer articles"
+msgstr "Articles plus récents"
+
+msgid "Older articles"
+msgstr "Articles plus anciens"
+
+msgid "Latest recipes "
+msgstr "Dernières recettes"
+
+msgid "View all"
+msgstr "En voir plus"
+
+msgid "Latest articles "
+msgstr "Dernier articles"
+
+#, python-format
+msgid "For: %(yield)s"
+msgstr "Pour: %(yield)s"
+
+#, python-format
+msgid "Preparation: %(time)s"
+msgstr "Préparation: %(time)s"
+
+#, python-format
+msgid "Cook: %(time)s"
+msgstr "Cuisson: %(time)s"
+
+#, python-format
+msgid "Fridge: %(time)s"
+msgstr "Réfrigérateur: %(time)s"
+
+#, python-format
+msgid "Rest: %(time)s"
+msgstr "Repos: %(time)s"
+
+msgid "Preparation"
+msgstr "Préparation"

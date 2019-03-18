@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-17 20:20-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Description"
+msgstr ""
+
+msgid "This is the description of your blog"
+msgstr ""
+
+msgid "Header image"
+msgstr ""
+
+msgid "Default header image used if the featured article does not provide any header image"
+msgstr ""
+
+msgid "Show tags"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Blogs"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Post date"
+msgstr ""
+
+msgid "Header image displayed when rendering the article or if the article is featured on the home page"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Article"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Preparation time"
+msgstr ""
+
+msgid "Duration in the form \"HH:MM:SS\"."
+msgstr ""
+
+msgid "Cook time"
+msgstr ""
+
+msgid "Fridge time"
+msgstr ""
+
+msgid "Rest time"
+msgstr ""
+
+msgid "Yield"
+msgstr ""
+
+msgid "Recipe information"
+msgstr ""
+
+msgid "Recipe ingredients sections"
+msgstr ""
+
+msgid "Recipe instructions sections"
+msgstr ""
+
+msgid "Recipe"
+msgstr ""
+
+msgid "Recipes"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Ingredients"
+msgstr ""
+
+msgid "Each new line generates a new numbered ingredient. Blank lines are allowed to separate ingredients from each others too."
+msgstr ""
+
+msgid "Recipe ingredients section"
+msgstr ""
+
+msgid "Instructions"
+msgstr ""
+
+msgid "Each new line generates a new numbered instruction. Blank lines are allowed to separate instructions from each others too."
+msgstr ""
+
+msgid "Recipe instructions section"
+msgstr ""
+
+msgid "Category name"
+msgstr ""
+
+msgid "Slug"
+msgstr ""
+
+msgid "Parent category"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "^category/(?P<category>[-\\w]+)/$"
+msgstr ""
+
+msgid "^search/$"
+msgstr ""
+
+msgid "^articles/$"
+msgstr ""
+
+msgid "^recipes/$"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "FAQ"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Type to search"
+msgstr ""
+
+msgid "Healthy recipes for real life adventurers"
+msgstr ""
+
+msgid "Most recent"
+msgstr ""
+
+msgid "Your search"
+msgstr ""
+
+#, python-format
+msgid "%(results_count)s result for <strong>%(search_query)s</strong>"
+msgid_plural "%(results_count)s results for <strong>%(search_query)s</strong>"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Sorry, no posts were found. Try searching for something else!"
+msgstr ""
+
+msgid "Newer articles"
+msgstr ""
+
+msgid "Older articles"
+msgstr ""
+
+msgid "Latest recipes "
+msgstr ""
+
+msgid "View all"
+msgstr ""
+
+msgid "Latest articles "
+msgstr ""
+
+#, python-format
+msgid "For: %(yield)s"
+msgstr ""
+
+#, python-format
+msgid "Preparation: %(time)s"
+msgstr ""
+
+#, python-format
+msgid "Cook: %(time)s"
+msgstr ""
+
+#, python-format
+msgid "Fridge: %(time)s"
+msgstr ""
+
+#, python-format
+msgid "Rest: %(time)s"
+msgstr ""
+
+msgid "Preparation"
+msgstr ""
