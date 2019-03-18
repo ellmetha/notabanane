@@ -283,5 +283,11 @@ body#id_blog_index {
         }
       }
     }
+
+    @include until($tablet) {
+      h2 {
+        font-size: 2rem !important;
+      }
+    }
   }
 }
