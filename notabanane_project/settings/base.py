@@ -88,6 +88,7 @@ INSTALLED_APPS = (
 
     # Local apps
     'notabanane.apps.blog',
+    'notabanane.common',
 )
 
 
