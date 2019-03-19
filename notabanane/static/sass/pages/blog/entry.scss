@@ -45,6 +45,17 @@ body#id_blog_entry {
           font-size: 3.8rem;
         }
       }
+
+      @include until($tablet) {
+        .header-content-wrapper {
+          padding-top: 1rem;
+          padding-bottom: 10rem;
+
+          .title {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 
