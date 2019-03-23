@@ -284,6 +284,7 @@ class RecipePage(Page):
     DISH_TYPE_CHOICES = (
         (DISH_TYPE_APPETIZERS, _('Appetizers')),
         (DISH_TYPE_BEVERAGES, _('Beverages')),
+        (DISH_TYPE_BREAKFAST, _('Breakfast')),
         (DISH_TYPE_DESSERTS, _('Desserts')),
         (DISH_TYPE_MAIN_COURSE, _('Main course')),
         (DISH_TYPE_SAUCES_SALAD_DRESSINGS, _('Sauces and salad dressings')),
