@@ -11,6 +11,7 @@ import datetime as dt
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
+from django.forms.widgets import CheckboxSelectMultiple
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
@@ -23,6 +24,8 @@ from wagtail.core.models import Orderable, Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+
+from notabanane.common.db.models.fields import ChoiceArrayField
 
 from .routes import BlogRoutes
 
@@ -269,6 +272,31 @@ class RecipePage(Page):
         help_text=_('Enter a yield indication such as "4 persons", "3 servings", etc.'),
     )
 
+    # A recipe is defined by at least one dish type.
+    DISH_TYPE_APPETIZERS = 'appetizers'
+    DISH_TYPE_BEVERAGES = 'beverages'
+    DISH_TYPE_BREAKFAST = 'breakfast'
+    DISH_TYPE_DESSERTS = 'desserts'
+    DISH_TYPE_MAIN_COURSE = 'main-course'
+    DISH_TYPE_SAUCES_SALAD_DRESSINGS = 'sauces+salad-dressings'
+    DISH_TYPE_SOUPS = 'soups'
+    DISH_TYPE_VEGETABLES_SALADS = 'vegetables+salads'
+    DISH_TYPE_CHOICES = (
+        (DISH_TYPE_APPETIZERS, _('Appetizers')),
+        (DISH_TYPE_BEVERAGES, _('Beverages')),
+        (DISH_TYPE_DESSERTS, _('Desserts')),
+        (DISH_TYPE_MAIN_COURSE, _('Main course')),
+        (DISH_TYPE_SAUCES_SALAD_DRESSINGS, _('Sauces and salad dressings')),
+        (DISH_TYPE_SOUPS, _('Soups')),
+        (DISH_TYPE_VEGETABLES_SALADS, _('Vegetables and salads')),
+    )
+    dish_types = ChoiceArrayField(
+        models.CharField(max_length=64, choices=DISH_TYPE_CHOICES),
+        size=3,
+        default=list,
+        verbose_name=_('Dish types'),
+    )
+
     # A blog recipe can be associated with many categories if necessary.
     categories = models.ManyToManyField(
         'blog.Category', through='blog.CategoryRecipePage', blank=True,
@@ -292,6 +320,7 @@ class RecipePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('introduction', classname='full'),
+        FieldPanel('dish_types', widget=CheckboxSelectMultiple),
         MultiFieldPanel(
             [
                 FieldPanel('preparation_time'),
