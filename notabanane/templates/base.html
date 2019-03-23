@@ -57,7 +57,7 @@
                     </p>
                   </div>
                 </div>
-                <div id="search_toggler_wrapper" class="navbar-item">
+                <div id="search_toggler_wrapper" class="navbar-item is-hidden-touch">
                   <div class="field is-grouped">
                     <p class="control">
                       <a class="button is-medium is-text has-text-primary">
@@ -66,12 +66,24 @@
                     </p>
                   </div>
                 </div>
-                <div id="search_input_container">
+                <div id="search_input_container" class="is-hidden-touch">
                   <form action="{% routablepageurl blog_page 'entries_search' %}" method="get">
                     <div class="field">
                       <div class="control">
                         <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium is-primary">
                       </div>
+                    </div>
+                  </form>
+                </div>
+                <div id="search_input_container_mobile" class="is-hidden-desktop">
+                  <form action="{% routablepageurl blog_page 'entries_search' %}" method="get">
+                    <div class="field">
+                      <div class="control">
+                        <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium is-primary">
+                      </div>
+                      <button type="submit" class="button is-medium is-text has-text-primary">
+                        <span class="icon"><i data-feather="search"></i></span>
+                      </button>
                     </div>
                   </form>
                 </div>

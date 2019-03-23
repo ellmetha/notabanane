@@ -7,6 +7,15 @@ html {
   height: 100%;
 }
 
+body {
+  @include until($desktop) {
+    &.navbar-menu-opened {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
 a {
   @include transition(0.25s, ease-in-out);
 
@@ -95,6 +104,108 @@ h1, h2, h3, h4 {
 
           &:hover, &:focus {
             color: $ferra;
+          }
+        }
+      }
+
+      @include until($desktop) {
+        $navbar-width: 300px;
+
+        height: auto;
+
+        .navbar-burger {
+          margin-top: 0.8rem;
+          margin-right: 0.25rem;
+
+          &:hover {
+            background: none;
+          }
+
+          span {
+            width: 20px;
+            height: 1.5px;
+          }
+        }
+
+        .navbar-menu {
+          width: $navbar-width;
+          flex-grow: unset;
+          flex-basis: unset;
+          align-items: unset;
+          flex-direction: column;
+          position: fixed;
+          display: block;
+          left: 0;
+          top: 0;
+          background-color: white;
+          height: 100%;
+          opacity: 0;
+          transition: 0.4s;
+          transform: translate3d(-$navbar-width, 0px, 0px);
+          z-index: 10;
+          padding: 0.5rem 1rem;
+          box-shadow: 10px 0 20px 10px rgba(0, 0, 0, 0.3);
+
+          &.opened {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          a.navbar-item {
+            font-weight: 500 !important;
+            color: $grey !important;
+
+            &:hover, &:focus {
+              color: $ferra !important;
+            }
+          }
+
+          .navbar-end {
+            .navbar-item {
+              position: static !important;
+            }
+          }
+
+          .social-links {
+            position: absolute;
+            bottom: 1.5rem;
+
+            a {
+              margin-right: 0.5rem;
+              display: inline-block;
+              font-size: 1.25rem;
+              color: $grey !important;
+
+              &:hover, &:focus {
+                color: $ferra !important;
+              }
+            }
+          }
+
+          #search_input_container_mobile {
+            position: relative;
+            padding: 0 1.5rem;
+
+            form {
+              margin-top: 1.25rem;
+
+              input {
+                height: 3em;
+                font-size: 1rem;
+              }
+
+              button {
+                position: absolute;
+                padding: 0.5rem 0.9rem;
+                top: 0;
+                right: 1.25rem;
+                height: auto;
+
+                &:hover, &:focus {
+                  background: none;
+                }
+              }
+            }
           }
         }
       }

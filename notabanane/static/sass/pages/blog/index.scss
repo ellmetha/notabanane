@@ -42,6 +42,12 @@ body#id_blog_index {
             }
           }
         }
+
+        @include until($desktop) {
+          .navbar-burger {
+            color: $white;
+          }
+        }
       }
     }
   }
