@@ -286,6 +286,10 @@ body#id_blog_index {
           font-size: 1.5rem;
           font-weight: bold;
           line-height: 1.4rem;
+
+          @include until($tablet) {
+            padding: 0 0.2rem;
+          }
         }
       }
     }
