@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-17 21:04-0500\n"
-"PO-Revision-Date: 2019-03-17 22:08-0400\n"
+"POT-Creation-Date: 2019-03-23 10:32-0500\n"
+"PO-Revision-Date: 2019-03-23 11:36-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -77,6 +77,33 @@ msgstr "Nombre de portions"
 
 msgid "Enter a yield indication such as \"4 persons\", \"3 servings\", etc."
 msgstr "Entrer une indication telle que “4 personnes”, “6 parts”, “8 portions”, etc."
+
+msgid "Appetizers"
+msgstr "Entrées"
+
+msgid "Beverages"
+msgstr "Boissons"
+
+msgid "Breakfast"
+msgstr "Déjeuners"
+
+msgid "Desserts"
+msgstr "Desserts"
+
+msgid "Main course"
+msgstr "Plats principaux"
+
+msgid "Sauces and salad dressings"
+msgstr "Sauces et vinaigrettes"
+
+msgid "Soups"
+msgstr "Potages et soupes"
+
+msgid "Vegetables and salads"
+msgstr "Légumes et salades"
+
+msgid "Dish types"
+msgstr "Types de plats"
 
 msgid "Recipe information"
 msgstr "Informations sur la recette"
