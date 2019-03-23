@@ -32,6 +32,9 @@
   <div class="container is-widescreen">
     <div class="columns">
       <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="content dish-types">
+          <p class="has-text-grey-light">{% for dish_type in page.verbose_dish_types %}{{ dish_type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        </div>
         <div class="content introduction">
           {{ page.introduction|richtext }}
         </div>
