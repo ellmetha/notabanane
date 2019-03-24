@@ -271,4 +271,4 @@ WAGTAILSEARCH_BACKENDS = {
     }
 }
 
-WAGTAIL_SITE_NAME = 'GaelleTonic'
+WAGTAIL_SITE_NAME = 'Nota Banane'
