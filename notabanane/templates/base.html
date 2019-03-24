@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load wagtailcore_tags %}
 {% load wagtailroutablepage_tags %}
 
 <!DOCTYPE html>
@@ -45,8 +46,8 @@
             </div>
             <div id="notabanane_navbar" class="navbar-menu">
               <div class="navbar-start">
-                <a class="navbar-item">{% trans "About" %}</a>
-                <a class="navbar-item">{% trans "Contact" %}</a>
+                <a href="{% slugurl 'about' %}" class="navbar-item">{% trans "About" %}</a>
+                <a href="#" class="navbar-item">{% trans "Contact" %}</a>
               </div>
               <div class="navbar-end">
                 <div class="navbar-item">
