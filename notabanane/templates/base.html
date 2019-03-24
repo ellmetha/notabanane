@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0">
     <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} &dash; NotaBanane{% endblock %}</title>
     <meta name="created" content="{% now "jS M Y h:i" %}" />
+    <link rel="icon" href="{% static 'img/favicon.png' %}" sizes="16x16" type="images/png" />
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
     {% endblock head %}
