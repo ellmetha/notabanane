@@ -72,7 +72,7 @@ class BlogPage(BlogRoutes, Page):
     # PARENT PAGE / SUBPAGE TYPE RULES #
     ####################################
 
-    subpage_types = ['blog.ArticlePage', 'blog.RecipePage', ]
+    subpage_types = ['blog.ArticlePage', 'blog.RecipePage', 'blog.SimplePage', ]
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
@@ -503,3 +503,50 @@ class CategoryRecipePage(models.Model):
     panels = [
         FieldPanel('category'),
     ]
+
+
+class SimplePage(Page):
+    """ Represents a simple page. """
+
+    # A simple page has a single body field, which degines the actual content of the page.
+    body = RichTextField(verbose_name=_('Body'))
+
+    # A simple page can have an header image that'll be used when rendering the page.
+    header_image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('Header image'),
+        help_text=_('Header image displayed when rendering the page.'),
+    )
+
+    ###############################
+    # EDITOR PANELS CONFIGURATION #
+    ###############################
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname='full'),
+        ImageChooserPanel('header_image'),
+    ]
+
+    ####################################
+    # PARENT PAGE / SUBPAGE TYPE RULES #
+    ####################################
+
+    parent_page_types = ['blog.BlogPage']
+    subpage_types = []
+
+    class Meta:
+        verbose_name = _('Simple page')
+        verbose_name_plural = _('Simple pages')
+
+    def get_context(self, request, *args, **kwargs):
+        """ Returns a dictionary of variables to bind into the template. """
+        context = super().get_context(request, *args, **kwargs)
+
+        # Inserts the top-level blog page into the context.
+        context['blog_page'] = self.get_parent().specific
+
+        return context

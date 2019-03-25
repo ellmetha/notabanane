@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load wagtailroutablepage_tags %}
+
+{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
+
+{% block body_id %}id_blog_entry{% endblock body_id %}
+
+{% block content %}
+{% image page.header_image fill-1920x574-c100 as header_image %}
+{% image page.header_image fill-500x600-c100 as header_image_mobile %}
+<section id="entry_header" class="hero is-medium is-info is-bold">
+  <div class="bg is-hidden-mobile" style="background-image:url({{ header_image.url }});"></div>
+  <div class="bg is-hidden-tablet" style="background-image:url({{ header_image_mobile.url }});"></div>
+  <div class="fill-opacity"></div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="header-content-wrapper">
+        <h1 class="title">{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="entry_body" class="section">
+  <div class="container is-widescreen">
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="content body">
+          {{ page.body|richtext }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
