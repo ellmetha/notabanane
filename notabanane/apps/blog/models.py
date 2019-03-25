@@ -44,14 +44,6 @@ class BlogPage(BlogRoutes, Page):
         help_text=_('This is the description of your blog'),
     )
 
-    header_image = models.ForeignKey(
-        'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
-        verbose_name=_('Header image'),
-        help_text=_(
-            'Default header image used if the featured article does not provide any header image'
-        ),
-    )
-
     # The following fields can be used to configure the behavior of the blog.
     show_tags = models.BooleanField(default=True, verbose_name=_('Show tags'))
 
@@ -61,7 +53,6 @@ class BlogPage(BlogRoutes, Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
-        ImageChooserPanel('header_image'),
     ]
 
     settings_panels = Page.settings_panels + [
