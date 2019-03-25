@@ -151,7 +151,11 @@ class ArticlePage(Page):
     # A blog article page can have an header image that'll be used when rendering the blog post.
     # It'll also be displayed if the blog post is featured in the home page.
     header_image = models.ForeignKey(
-        'wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+',
+        'wagtailimages.Image',
+        blank=False,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
         verbose_name=_('Header image'),
         help_text=_(
             'Header image displayed when rendering the article or if the article is featured on '
@@ -230,7 +234,7 @@ class RecipePage(Page):
     # A blog recipe page can have an header image that'll be used when rendering the blog post.
     header_image = models.ForeignKey(
         'wagtailimages.Image',
-        blank=True,
+        blank=False,
         null=True,
         on_delete=models.SET_NULL,
         related_name='+',
@@ -514,7 +518,7 @@ class SimplePage(Page):
     # A simple page can have an header image that'll be used when rendering the page.
     header_image = models.ForeignKey(
         'wagtailimages.Image',
-        blank=True,
+        blank=False,
         null=True,
         on_delete=models.SET_NULL,
         related_name='+',
