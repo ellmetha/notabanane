@@ -59,6 +59,11 @@ body#id_blog_entry {
           padding-top: 2.5rem;
           padding-bottom: 8rem;
 
+          &.no-subtitle {
+            padding-top: 4.5rem;
+            padding-bottom:  6rem;
+          }
+
           .title {
             font-size: 2rem;
           }
