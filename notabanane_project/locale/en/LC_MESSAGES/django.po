@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-23 10:32-0500\n"
+"POT-Creation-Date: 2019-03-27 22:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Blog"
+msgstr ""
+
 msgid "Description"
 msgstr ""
 
 msgid "This is the description of your blog"
 msgstr ""
 
-msgid "Header image"
-msgstr ""
-
-msgid "Default header image used if the featured article does not provide any header image"
-msgstr ""
-
 msgid "Show tags"
-msgstr ""
-
-msgid "Blog"
 msgstr ""
 
 msgid "Blogs"
@@ -43,6 +37,9 @@ msgid "Introduction"
 msgstr ""
 
 msgid "Post date"
+msgstr ""
+
+msgid "Header image"
 msgstr ""
 
 msgid "Header image displayed when rendering the article or if the article is featured on the home page"
@@ -153,6 +150,18 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
+msgid "Body"
+msgstr ""
+
+msgid "Header image displayed when rendering the page."
+msgstr ""
+
+msgid "Simple page"
+msgstr ""
+
+msgid "Simple pages"
+msgstr ""
+
 msgid "^category/(?P<category>[-\\w]+)/$"
 msgstr ""
 
@@ -166,9 +175,6 @@ msgid "^recipes/$"
 msgstr ""
 
 msgid "About"
-msgstr ""
-
-msgid "FAQ"
 msgstr ""
 
 msgid "Contact"

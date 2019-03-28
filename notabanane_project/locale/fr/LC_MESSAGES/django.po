@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-23 10:32-0500\n"
-"PO-Revision-Date: 2019-03-23 11:36-0400\n"
+"POT-Creation-Date: 2019-03-27 22:00-0500\n"
+"PO-Revision-Date: 2019-03-27 23:02-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -18,23 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.2.1\n"
 
+msgid "Blog"
+msgstr "Blog"
+
 msgid "Description"
 msgstr "Description"
 
 msgid "This is the description of your blog"
 msgstr "Description du blog"
 
-msgid "Header image"
-msgstr "Image d’entête"
-
-msgid "Default header image used if the featured article does not provide any header image"
-msgstr ""
-
 msgid "Show tags"
 msgstr ""
-
-msgid "Blog"
-msgstr "Blog"
 
 msgid "Blogs"
 msgstr "Blogs"
@@ -44,6 +38,9 @@ msgstr "Introduction"
 
 msgid "Post date"
 msgstr "Date de publication"
+
+msgid "Header image"
+msgstr "Image d’entête"
 
 msgid "Header image displayed when rendering the article or if the article is featured on the home page"
 msgstr ""
@@ -153,6 +150,18 @@ msgstr "Catégorie parente"
 msgid "Category"
 msgstr "Catégorie"
 
+msgid "Body"
+msgstr "Corps de page"
+
+msgid "Header image displayed when rendering the page."
+msgstr "Image d’en-tête affichée en haut de page."
+
+msgid "Simple page"
+msgstr "Page simple"
+
+msgid "Simple pages"
+msgstr "Pages simples"
+
 msgid "^category/(?P<category>[-\\w]+)/$"
 msgstr "^categorie/(?P<category>[-\\w]+)/$"
 
@@ -167,9 +176,6 @@ msgstr "^recettes/$"
 
 msgid "About"
 msgstr "À propos"
-
-msgid "FAQ"
-msgstr "FAQ"
 
 msgid "Contact"
 msgstr "Contact"
@@ -232,3 +238,6 @@ msgstr "Repos: %(time)s"
 
 msgid "Preparation"
 msgstr "Préparation"
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
