@@ -294,6 +294,22 @@ body#id_blog_index {
       }
     }
 
+    .pagination-wrapper {
+      margin-top: 1.5rem;
+
+      @include until($tablet) {
+        .column {
+          text-align: center;
+
+          a {
+            margin: 0 auto;
+            display: inline-block;
+            font-size: 0.9rem !important;
+          }
+        }
+      }
+    }
+
     @include until($tablet) {
       h2 {
         font-size: 2rem !important;

@@ -83,7 +83,7 @@
       {% endfor %}
     </div>
     {% if paginated_entries.has_previous or paginated_entries.has_next %}
-    <div class="columns">
+    <div class="columns pagination-wrapper">
       <div class="column">
         {% if paginated_entries.has_previous %}
         <a href="?page={{ paginated_entries.previous_page_number }}" class="button is-text">{% trans "Newer articles" %}</a>
