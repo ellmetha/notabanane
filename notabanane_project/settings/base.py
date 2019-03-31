@@ -263,6 +263,16 @@ WSGI_APPLICATION = 'wsgi.application'
 ADMIN_URL = get_envsetting('ADMIN_URL')
 
 
+# EMAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+EMAIL_BACKEND = get_envsetting('EMAIL_BACKEND')
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
+DEFAULT_FROM_EMAIL = get_envsetting('DEFAULT_FROM_EMAIL')
+
+
 # WAGTAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 
