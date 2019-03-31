@@ -1,0 +1,4 @@
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.scheme|add:'://'|add:request.get_host|add:request.get_full_path }}&quote={{ self.title }}" target="_blank"><i class="fa fa-facebook"></i></a>
+<a href="https://twitter.com/intent/tweet?text={{ self.title }}%20{{ request.scheme|add:'://'|add:request.get_host|add:request.get_full_path }}" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+<a href="#"><i class="fa fa-envelope"></i></a>

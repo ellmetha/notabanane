@@ -26,10 +26,7 @@
 </section>
 <section id="entry_body" class="section">
   <div id="share_this_post">
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-pinterest"></i></a>
-    <a href="#"><i class="fa fa-envelope"></i></a>
+    {% include "blog/partials/entry_share_buttons.html" %}
   </div>
   <div class="container is-widescreen">
     <div class="columns">
@@ -41,10 +38,7 @@
     </div>
   </div>
   <div id="share_this_post_mobile" class="is-hidden-tablet">
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-pinterest"></i></a>
-    <a href="#"><i class="fa fa-envelope"></i></a>
+    {% include "blog/partials/entry_share_buttons.html" %}
   </div>
 </section>
 {% endblock content %}
