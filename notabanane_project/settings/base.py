@@ -81,8 +81,10 @@ INSTALLED_APPS = (
     'wagtail.users',
 
     # Third-party apps
+    'captcha',
     'modelcluster',
     'taggit',
+    'widget_tweaks',
 
     # Django's admin app
     'django.contrib.admin',
@@ -273,3 +275,10 @@ WAGTAILSEARCH_BACKENDS = {
 }
 
 WAGTAIL_SITE_NAME = 'Nota Banane'
+
+
+# RECAPTCHA CONFIGURATION
+# ------------------------------------------------------------------------------
+
+RECAPTCHA_PUBLIC_KEY = get_envsetting('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')

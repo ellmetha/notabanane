@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Contact" %}{% endblock page_title %}
+
+{% block content %}
+<section id="contact_header_section" class="hero is-harvest-gold is-bold">
+  <div class="fill-opacity"></div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="title">{% trans "Contact" %}</div>
+    </div>
+  </div>
+</section>
+<section id="contact_form" class="section">
+  <div class="container is-widescreen">
+    <form method="post" action="." class="form" novalidate>{% csrf_token %}
+      <div class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <div class="columns">
+            <div class="column is-half">{% include "partials/form_field_input.html" with field=form.first_name %}</div>
+            <div class="column is-half">{% include "partials/form_field_input.html" with field=form.last_name %}</div>
+          </div>
+          <div class="columns">
+            <div class="column is-half">{% include "partials/form_field_input.html" with field=form.email %}</div>
+            <div class="column is-half">{% include "partials/form_field_input.html" with field=form.subject %}</div>
+          </div>
+          <div class="columns">
+            <div class="column">{% include "partials/form_field_textarea.html" with field=form.message %}</div>
+          </div>
+          {{ form.captcha }}
+          <div class="control">
+            <button class="button is-medium is-primary" role="submit">{% trans "Send" %}&nbsp;<i data-feather="send"></i></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock content %}

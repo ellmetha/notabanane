@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div class="field">
+  {% if field.label %}<label class="label" for="{{ field.auto_id }}">{{ field.label }}{% if not field.field.required %} <span class="text-muted">{% trans "(optional)" %}</span>{% endif %}</label>{% endif %}
+  {% if not field.errors %}<p class="control">{{ field|add_class:'input' }}</p>{% else %}<p class="control">{{ field|add_class:'input is-danger' }}</p>{% endif %}
+  {% if field.help_text %}<p class="help">{{ field.help_text|safe }}</p>{% endif %}
+  {% for error in field.errors %}<p class="help is-danger">{{ error }}</p>{% endfor %}
+</div>

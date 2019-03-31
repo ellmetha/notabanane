@@ -43,6 +43,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ]
 INTERNAL_IPS = ['127.0.0.1', ]
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error', ]
 
 
 # TEMPLATE CONFIGURATION

@@ -30,6 +30,16 @@ h1, h2, h3, h4 {
   font-family: IndieFlower;
 }
 
+.hero {
+  &.is-harvest-gold {
+    background: $harvestGlod;
+
+    .title {
+      color: $white;
+    }
+  }
+}
+
 #id_wrap {
   #navbar_wrapper {
     position: relative;

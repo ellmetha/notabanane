@@ -9,7 +9,7 @@
     {% block head %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-    <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} &dash; NotaBanane{% endblock %}</title>
+    <title>{% block title %}{% block page_title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock page_title %} &dash; Nota Banane{% endblock %}</title>
     <meta name="created" content="{% now "jS M Y h:i" %}" />
     <link rel="icon" href="{% static 'img/favicon.png' %}" sizes="16x16" type="images/png" />
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
@@ -48,7 +48,7 @@
             <div id="notabanane_navbar" class="navbar-menu">
               <div class="navbar-start">
                 <a href="{% slugurl 'a-propos' %}" class="navbar-item">{% trans "About" %}</a>
-                <a href="#" class="navbar-item">{% trans "Contact" %}</a>
+                <a href="{% url 'contact' %}" class="navbar-item">{% trans "Contact" %}</a>
               </div>
               <div class="navbar-end">
                 <div class="navbar-item">
@@ -70,7 +70,7 @@
                   </div>
                 </div>
                 <div id="search_input_container" class="is-hidden-touch">
-                  <form action="{% routablepageurl blog_page 'entries_search' %}" method="get">
+                  <form action="{% routablepageurl request.site.root_page.specific 'entries_search' %}" method="get">
                     <div class="field">
                       <div class="control">
                         <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium">
@@ -79,7 +79,7 @@
                   </form>
                 </div>
                 <div id="search_input_container_mobile" class="is-hidden-desktop">
-                  <form action="{% routablepageurl blog_page 'entries_search' %}" method="get">
+                  <form action="{% routablepageurl request.site.root_page.specific 'entries_search' %}" method="get">
                     <div class="field">
                       <div class="control">
                         <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium">
