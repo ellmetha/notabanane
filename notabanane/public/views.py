@@ -6,6 +6,8 @@
 
 """
 
+from django.contrib import messages
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView
 
 from .forms import ContactForm
@@ -16,3 +18,13 @@ class ContactFormView(FormView):
 
     form_class = ContactForm
     template_name = 'contact.html'
+
+    def form_valid(self, form):
+        """ Handles a valid form. """
+        form.send_contact_email(self.request)
+        messages.success(self.request, _('Contact message sent successfully'))
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        """ Returns the URL to redirect the user to upon valid form processing. """
+        return '/'

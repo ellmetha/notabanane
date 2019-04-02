@@ -3,6 +3,7 @@ import '@babel/polyfill';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import gulp from 'gulp';
 import env from 'gulp-env';
+import mjml from 'gulp-mjml';
 import gutil from 'gulp-util';
 import path from 'path';
 import named from 'vinyl-named';
@@ -16,6 +17,7 @@ env('.env');
 /* Global variables */
 const rootDir = './';
 const staticDir = `${rootDir}notabanane/static/`;
+const templatesDir = `${rootDir}notabanane/templates/`;
 const PROD_ENV = gutil.env.production;
 const WEBPACK_DEV_SERVER_PORT = (
   process.env.WEBPACK_DEV_SERVER_PORT ? process.env.WEBPACK_DEV_SERVER_PORT : 8080);
@@ -85,11 +87,24 @@ gulp.task('build-webpack-assets', gulp.series(() => (
 
 
 /*
+ * Other tasks
+ * ~~~~~~~~~~~
+ */
+
+/* Task to build our MJML templates. */
+gulp.task('build-mjml-templates', gulp.series(() => (
+  gulp.src(`${staticDir}/mjml/**/*.mjml`)
+    .pipe(mjml())
+    .pipe(gulp.dest(`${templatesDir}/emails/`))
+)));
+
+
+/*
  * Global tasks
  * ~~~~~~~~~~~~
  */
 
-gulp.task('build', gulp.series(['build-webpack-assets']));
+gulp.task('build', gulp.series(['build-webpack-assets', 'build-mjml-templates']));
 
 
 /*

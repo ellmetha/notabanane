@@ -1,0 +1,44 @@
+<mjml>
+  <mj-body>
+    <mj-container background-color="#E1E8ED">
+      <!-- Header with logo section -->
+      <mj-section padding-bottom="0" background-color="white">
+        <mj-column width="100%">
+          <mj-text>
+            {% load i18n %}{% load static %}
+          </mj-text>
+          <mj-image width="100px" src="{% static 'img/logo_cranberry.svg' as s2 %}{% if s2|slice:':4' == 'http' %}{{ s2 }}{% else %}{{ protocol }}://{{ domain }}{{ s2 }}{% endif %}" />
+          <mj-divider horizontal-spacing="0" vertical-spacing="0" padding-top="20" padding-bottom="0" padding-left="0" padding-right="0" border-width="1px" border-color="#f8f8f8" />
+        </mj-column>
+      </mj-section>
+
+      <!-- Content section -->
+      <mj-section background-color="white">
+        <mj-column width="400">
+          <mj-text>
+            {% blocktrans trimmed %}Hello,{% endblocktrans %}
+          </mj-text>
+
+          <mj-text>
+            {% blocktrans trimmed %}Here's a new contact message:{% endblocktrans %}
+          </mj-text>
+
+          <mj-wrapper border="1px solid #eeeeee" background-color="#fafafa" padding="50px">
+            <mj-text>
+              {{ contact.message|linebreaks }}
+            </mj-text>
+          </mj-wrapper>
+
+          <mj-text>
+            {% blocktrans trimmed %}And some information regarding the author of this message:{% endblocktrans %}
+            <ul>
+              <li>{% trans "Email address:" %} {{ contact.email }}</li>
+              <li>{% trans "Full name:" %} {{ contact.first_name }} {{ contact.last_name }}</li>
+            </ul>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+    </mj-container>
+  </mj-body>
+</mjml>

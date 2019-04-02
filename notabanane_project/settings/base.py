@@ -292,3 +292,9 @@ WAGTAIL_SITE_NAME = 'Nota Banane'
 
 RECAPTCHA_PUBLIC_KEY = get_envsetting('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')
+
+
+# PROJECT CONFIGURATION
+# ------------------------------------------------------------------------------
+
+PROJECT_CONTACT_EMAIL = get_envsetting('PROJECT_CONTACT_EMAIL')

@@ -9,7 +9,11 @@
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Invisible
 from django import forms
+from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
 from django.utils.translation import ugettext_lazy as _
+
+from notabanane.common.email import Email
 
 
 class ContactForm(forms.Form):
@@ -26,3 +30,18 @@ class ContactForm(forms.Form):
         widget=forms.Textarea
     )
     captcha = ReCaptchaField(widget=ReCaptchaV2Invisible)
+
+    def send_contact_email(self, request):
+        """ Sends the contact e-mail once the form has been processed and validated. """
+        email = Email(
+            settings.PROJECT_CONTACT_EMAIL,
+            html_template='emails/contact.html',
+            subject=_('Contact: {}').format(self.cleaned_data['subject']),
+            extra_context={
+                'request': request,
+                'domain': get_current_site(request).domain,
+                'protocol': 'https' if request.is_secure() else 'http',
+                'contact': self.cleaned_data
+            }
+        )
+        email.send()
