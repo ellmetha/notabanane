@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 17:06-0500\n"
+"POT-Creation-Date: 2019-04-01 21:22-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -189,6 +189,12 @@ msgstr ""
 msgid "Your message"
 msgstr ""
 
+msgid "Contact: {}"
+msgstr ""
+
+msgid "Contact message sent successfully"
+msgstr ""
+
 msgid "About"
 msgstr ""
 
@@ -255,6 +261,21 @@ msgid "Preparation"
 msgstr ""
 
 msgid "Send"
+msgstr ""
+
+msgid "Hello,"
+msgstr ""
+
+msgid "Here's a new contact message:"
+msgstr ""
+
+msgid "And some information regarding the author of this message:"
+msgstr ""
+
+msgid "Email address:"
+msgstr ""
+
+msgid "Full name:"
 msgstr ""
 
 msgid "(optional)"
