@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-01 21:22-0500\n"
-"PO-Revision-Date: 2019-03-31 18:07-0400\n"
+"POT-Creation-Date: 2019-04-06 16:39-0500\n"
+"PO-Revision-Date: 2019-04-06 17:41-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -189,13 +189,11 @@ msgstr "Sujet"
 msgid "Your message"
 msgstr "Ton message"
 
-#, fuzzy
-#| msgid "Contact"
 msgid "Contact: {}"
-msgstr "Contact"
+msgstr "Contact: {}"
 
 msgid "Contact message sent successfully"
-msgstr ""
+msgstr "Message de contact envoyé avec succès"
 
 msgid "About"
 msgstr "À propos"
@@ -266,23 +264,22 @@ msgid "Send"
 msgstr "Envoyer"
 
 msgid "Hello,"
-msgstr ""
+msgstr "Salut,"
 
 msgid "Here's a new contact message:"
-msgstr ""
+msgstr "Voici un nouveau message de contact:"
 
 msgid "And some information regarding the author of this message:"
-msgstr ""
+msgstr "Et quelques informations concernant l’auteur de ce message:"
 
-#, fuzzy
-#| msgid "E-mail address"
 msgid "Email address:"
-msgstr "Adresse courriel"
+msgstr "Adresse courriel:"
 
-#, fuzzy
-#| msgid "First name"
 msgid "Full name:"
-msgstr "Prénom"
+msgstr "Nom complet:"
+
+msgid "Bye!"
+msgstr "Bye!"
 
 msgid "(optional)"
 msgstr "(Optionnel)"
