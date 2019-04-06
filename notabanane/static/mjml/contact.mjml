@@ -36,6 +36,10 @@
               <li>{% trans "Full name:" %} {{ contact.first_name }} {{ contact.last_name }}</li>
             </ul>
           </mj-text>
+
+          <mj-text>
+            {% blocktrans trimmed %}Bye!{% endblocktrans %}
+          </mj-text>
         </mj-column>
       </mj-section>
 
