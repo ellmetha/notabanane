@@ -81,6 +81,7 @@ INSTALLED_APPS = (
     'wagtail.users',
 
     # Third-party apps
+    'anymail',
     'captcha',
     'modelcluster',
     'taggit',
@@ -271,6 +272,14 @@ EMAIL_BACKEND = get_envsetting('EMAIL_BACKEND')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = get_envsetting('DEFAULT_FROM_EMAIL')
+
+
+# ANYMAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+
+ANYMAIL = {
+    'SENDGRID_API_KEY': get_envsetting('SENDGRID_API_KEY', 'notset'),
+}
 
 
 # WAGTAIL CONFIGURATION
