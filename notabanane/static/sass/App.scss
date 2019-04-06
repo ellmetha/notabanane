@@ -7,6 +7,8 @@
 // 1. Vendors
 @import "~bulma";
 $fa-font-path: '~fork-awesome/fonts/'; @import "~fork-awesome/scss/fork-awesome";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/sunset.scss";
 
 // 2. Mixins
 @import "mixins";

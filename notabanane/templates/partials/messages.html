@@ -1,0 +1,7 @@
+{% if messages %}
+<div id="flash_messages">
+  {% for message in messages %}
+  <div class="message" data-type="{% if 'error' in message.tags %}danger{% else %}{{ message.tags }}{% endif %}" data-msg="{{ message }}"></div>
+  {% endfor %}
+</div>
+{% endif %}

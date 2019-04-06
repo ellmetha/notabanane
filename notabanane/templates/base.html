@@ -30,6 +30,7 @@
       data-controller="{% block data_controller %}{% endblock data_controller %}"
       data-action="{% block data_action %}{% endblock data_action %}"
       >
+    {% include "partials/messages.html" %}
     <div id="id_wrap">
       {% block header %}
       <div id="navbar_wrapper">

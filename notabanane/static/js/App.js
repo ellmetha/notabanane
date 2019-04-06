@@ -5,6 +5,7 @@ import feather from 'feather-icons/dist/feather';
 
 import controllers from './controllers';
 import DOMRouter from './core/DOMRouter';
+import FlashMessages from './core/FlashMessages';
 
 
 const router = new DOMRouter(controllers);
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initializes the DOM router. The DOM router is used to execute specific portions of JS code for
   // each specific page.
   router.init();
+
+  // Initializes flash messages.
+  FlashMessages.init();
 
   // Initializes the navbar behaviours; which should be visible on every page of the webapp.
   const navBarSearchTogglerButton = document.querySelector('#search_toggler_wrapper a');

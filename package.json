@@ -5,6 +5,7 @@
     "feather-icons": "^4.17.0",
     "fork-awesome": "^1.0.11",
     "natives": "^1.1.4",
+    "noty": "^3.2.0-beta",
     "regenerator": "^0.13.4"
   },
   "devDependencies": {

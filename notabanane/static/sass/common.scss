@@ -40,6 +40,16 @@ h1, h2, h3, h4 {
   }
 }
 
+div#flash_messages {
+  display: none;
+}
+
+.noty_bar {
+  &.noty_type__success {
+    background-color: $success;
+  }
+}
+
 #id_wrap {
   #navbar_wrapper {
     position: relative;
