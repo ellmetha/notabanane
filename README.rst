@@ -14,7 +14,6 @@ Installation
 
 .. code-block:: shell
 
-  $ git clone https://github.com/ellmetha/notabanane && cd machina-vanilla
   $ make
   $ cp .env.json.example .env.json     # Initializes the environment settings
   $ make db
