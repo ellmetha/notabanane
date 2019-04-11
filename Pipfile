@@ -17,13 +17,16 @@ coverage = ">=4.5"
 ipython = "*"
 
 [packages]
-wagtail = ">=1.10"
+wagtail = ">=2.5rc1"
 pillow = "*"
 django-treebeard = "*"
-django = ">=2.1"
+django = ">=2.2"
 psycopg2-binary = "*"
 babel = "*"
 django-widget-tweaks = "*"
 django-recaptcha = "*"
 html2text = "*"
 django-anymail = "*"
+
+[pipenv]
+allow_prereleases = true
