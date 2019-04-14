@@ -4,7 +4,7 @@
 {% load wagtailimages_tags %}
 {% load wagtailroutablepage_tags %}
 
-{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
+{% block page_title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock page_title %}
 
 {% block body_id %}id_blog_entry{% endblock body_id %}
 
