@@ -386,7 +386,7 @@ class RecipeIngredientsSection(Orderable, ClusterableModel, models.Model):
     ]
 
     class Meta:
-        ordering = ['-sort_order', ]
+        ordering = ['sort_order', ]
         verbose_name = _('Recipe ingredients section')
         verbose_name_plural = _('Recipe ingredients sections')
 
@@ -418,7 +418,7 @@ class RecipeInstructionsSection(Orderable, ClusterableModel, models.Model):
     ]
 
     class Meta:
-        ordering = ['-sort_order', ]
+        ordering = ['sort_order', ]
         verbose_name = _('Recipe instructions section')
         verbose_name_plural = _('Recipe instructions sections')
 
