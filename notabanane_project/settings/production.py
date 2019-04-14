@@ -39,6 +39,11 @@ STATICFILES_STORAGE = 'notabanane_project.storage.StaticRootS3BotoStorage'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = get_envsetting('STATIC_URL', None)  # noqa: F405
 
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+    str(PROJECT_PATH / 'notabanane' / 'static' / 'build'),  # noqa: F405
+)
+
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------

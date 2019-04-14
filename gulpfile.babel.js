@@ -98,13 +98,19 @@ gulp.task('build-mjml-templates', gulp.series(() => (
     .pipe(gulp.dest(`${templatesDir}/emails/`))
 )));
 
+/* Task to move images to the build folder. */
+gulp.task('build-images', gulp.series(() => (
+  gulp.src(`${staticDir}/img/**/*`)
+    .pipe(gulp.dest(`${buildDir}/img/`))
+)));
+
 
 /*
  * Global tasks
  * ~~~~~~~~~~~~
  */
 
-gulp.task('build', gulp.series(['build-webpack-assets', 'build-mjml-templates']));
+gulp.task('build', gulp.series(['build-webpack-assets', 'build-mjml-templates', 'build-images']));
 
 
 /*
