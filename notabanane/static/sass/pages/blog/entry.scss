@@ -180,7 +180,14 @@ body#id_blog_entry {
           }
 
           .recipe-ingredients {
+            h4 {
+              margin-top: 1.25em;
+              margin-bottom: 0.25rem;
+            }
+
             ul {
+              margin-top: 0;
+              margin-bottom: 1em;
               margin-left: 1rem;
               list-style: none;
 
