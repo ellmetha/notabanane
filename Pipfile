@@ -28,6 +28,7 @@ django-recaptcha = "*"
 html2text = "*"
 django-anymail = "*"
 sentry-sdk = "*"
+raven = "*"
 
 [pipenv]
 allow_prereleases = true
