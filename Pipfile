@@ -30,6 +30,7 @@ sentry-sdk = "*"
 raven = "*"
 psycopg2 = "*"
 django-storages = "*"
+boto3 = "*"
 
 [pipenv]
 allow_prereleases = true
