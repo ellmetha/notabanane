@@ -132,6 +132,7 @@ DATABASES = {
         'USER': get_envsetting('DB_USER'),
         'PASSWORD': get_envsetting('DB_PASSWORD'),
         'HOST': get_envsetting('DB_HOST'),
+        'PORT': get_envsetting('DB_PORT', ''),
         'OPTIONS': get_envsetting('DB_OPTIONS'),
     },
 }
