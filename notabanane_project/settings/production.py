@@ -137,6 +137,7 @@ AWS_SECRET_ACCESS_KEY = get_envsetting('AWS_SECRET_ACCESS_KEY', 'notset')  # noq
 AWS_STORAGE_BUCKET_NAME = get_envsetting('AWS_STORAGE_BUCKET_NAME', 'notset')  # noqa: F405
 AWS_S3_REGION_NAME = get_envsetting('AWS_S3_REGION_NAME', 'notset')  # noqa: F405
 AWS_S3_ENDPOINT_URL = get_envsetting('AWS_S3_ENDPOINT_URL', 'notset')  # noqa: F405
+AWS_S3_CUSTOM_DOMAIN = get_envsetting('AWS_S3_CUSTOM_DOMAIN', None)  # noqa: F405
 AWS_QUERYSTRING_AUTH = False
 
 AWS_S3_OBJECT_PARAMETERS = {
