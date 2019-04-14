@@ -27,6 +27,7 @@ django-widget-tweaks = "*"
 django-recaptcha = "*"
 html2text = "*"
 django-anymail = "*"
+sentry-sdk = "*"
 
 [pipenv]
 allow_prereleases = true
