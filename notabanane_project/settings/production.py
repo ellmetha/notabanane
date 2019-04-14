@@ -18,6 +18,7 @@ from .base import *  # noqa: F403
 # ------------------------------------------------------------------------------
 
 INSTALLED_APPS += (  # noqa: F405
+    'storages',
     'raven.contrib.django.raven_compat',
 )
 
@@ -104,6 +105,29 @@ LOGGING = {
         },
     },
 }
+
+
+# STORAGES CONFIGURATION
+# ------------------------------------------------------------------------------
+
+AWS_ACCESS_KEY_ID = get_envsetting('AWS_ACCESS_KEY_ID', 'notset')  # noqa: F405
+AWS_SECRET_ACCESS_KEY = get_envsetting('AWS_SECRET_ACCESS_KEY', 'notset')  # noqa: F405
+AWS_STORAGE_BUCKET_NAME = get_envsetting('AWS_STORAGE_BUCKET_NAME', 'notset')  # noqa: F405
+AWS_S3_REGION_NAME = get_envsetting('AWS_S3_REGION_NAME', 'notset')  # noqa: F405
+AWS_S3_ENDPOINT_URL = get_envsetting('AWS_S3_ENDPOINT_URL', 'notset')  # noqa: F405
+AWS_QUERYSTRING_AUTH = False
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_IS_GZIPPED = True
+GZIP_CONTENT_TYPES = (
+    'text/css',
+    'application/javascript',
+    'application/x-javascript',
+    'image/svg+xml',
+)
 
 
 # RAVEN CONFIGURATION

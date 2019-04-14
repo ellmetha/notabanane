@@ -29,6 +29,7 @@ django-anymail = "*"
 sentry-sdk = "*"
 raven = "*"
 psycopg2 = "*"
+django-storages = "*"
 
 [pipenv]
 allow_prereleases = true
