@@ -21,7 +21,6 @@ wagtail = ">=2.5rc1"
 pillow = "*"
 django-treebeard = "*"
 django = ">=2.2"
-psycopg2-binary = "*"
 babel = "*"
 django-widget-tweaks = "*"
 django-recaptcha = "*"
@@ -29,6 +28,7 @@ html2text = "*"
 django-anymail = "*"
 sentry-sdk = "*"
 raven = "*"
+psycopg2 = "*"
 
 [pipenv]
 allow_prereleases = true
