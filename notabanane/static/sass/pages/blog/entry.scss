@@ -126,6 +126,14 @@ body#id_blog_entry {
     .content.body, .content.introduction {
       font-size: 1.1rem;
 
+      a {
+        color: $ectasy;
+
+        &:hover, &:focus {
+          color: lighten($ectasy, 10%);
+        }
+      }
+
       p:first-child::first-letter {
         margin: 6px 14px -5px 0;
         float: left;
