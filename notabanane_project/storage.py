@@ -41,8 +41,8 @@ class CustomS3Boto3Storage(S3Boto3Storage):
 
 
 class MediaRootS3BotoStorage(CustomS3Boto3Storage):
-    location = 'media'
+    location = 'm'
 
 
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
-    location = 'sta1'
+    location = 's1'
