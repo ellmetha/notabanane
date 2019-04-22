@@ -111,7 +111,7 @@ body#id_blog_index {
     background: $harvestGlod;
   }
 
-  section#post_list {
+  div#post_list {
     div.tile {
       @include rounded(4px);
     }
