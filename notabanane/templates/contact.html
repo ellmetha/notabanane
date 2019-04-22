@@ -4,15 +4,15 @@
 {% block page_title %}{% trans "Contact" %}{% endblock page_title %}
 
 {% block content %}
-<section id="contact_header_section" class="hero is-harvest-gold is-bold">
+<div id="contact_header_section" class="hero is-harvest-gold is-bold">
   <div class="fill-opacity"></div>
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="title">{% trans "Contact" %}</div>
     </div>
   </div>
-</section>
-<section id="contact_form" class="section">
+</div>
+<div id="contact_form" class="section">
   <div class="container is-widescreen">
     <form method="post" action="." class="form" novalidate>{% csrf_token %}
       <div class="columns">
@@ -30,11 +30,11 @@
           </div>
           {{ form.captcha }}
           <div class="control">
-            <button class="button is-medium is-primary" role="submit">{% trans "Send" %}&nbsp;<i data-feather="send"></i></button>
+            <button class="button is-medium is-primary" type="submit">{% trans "Send" %}&nbsp;<i data-feather="send"></i></button>
           </div>
         </div>
       </div>
     </form>
   </div>
-</section>
+</div>
 {% endblock content %}
