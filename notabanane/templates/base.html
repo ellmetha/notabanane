@@ -35,7 +35,7 @@
       {% block header %}
       <div id="navbar_wrapper">
         <div class="container is-fluid">
-          <nav class="navbar" role="navigation" aria-label="main navigation">
+          <nav class="navbar" aria-label="main navigation">
             <div class="navbar-brand">
               <a class="navbar-item" href="/">
                 <img src="{% block navbar_brand_logo_src %}{% static 'img/logo_cranberry.svg' %}{% endblock %}" alt="NotaBanane logo" height="70" />
@@ -120,10 +120,10 @@
       {% endblock footer %}
     </div>
 
-    <script type="text/javascript" src="{% url 'javascript_catalog' %}"></script>
+    <script src="{% url 'javascript_catalog' %}"></script>
 
     {% block js %}
-    <script type="text/javascript" src="{{ WEBPACK_DEV_SERVER_URL|default:'' }}{% static 'js/App.js' %}"></script>
+    <script src="{{ WEBPACK_DEV_SERVER_URL|default:'' }}{% static 'js/App.js' %}"></script>
     {% endblock js %}
 
     {% block extra_js %}

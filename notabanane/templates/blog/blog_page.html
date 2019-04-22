@@ -18,12 +18,12 @@
 <section id="blog_hero" class="hero is-medium is-info is-bold">
   <div class="hero-body">
     <div class="container has-text-centered">
-        <div><img src="{% static 'img/logo_fulltext_white.svg' %}" alt="NotaBanane logo" width="500" /></div>
+        <h2><img src="{% static 'img/logo_fulltext_white.svg' %}" alt="NotaBanane logo" width="500" /></h2>
         <p class="subtitle">{% trans "Healthy recipes for real life adventurers" %}</p>
     </div>
   </div>
 </section>
-<section id="category_menu_section">
+<div id="category_menu">
   <div class="container">
     <div class="tabs is-medium">
       <ul>
@@ -36,7 +36,7 @@
       </ul>
     </div>
   </div>
-</section>
+</div>
 {% else %}
 <section id="search_header_section" class="hero is-success is-bold">
   <div class="fill-opacity"></div>
