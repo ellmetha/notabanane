@@ -102,7 +102,7 @@ class BlogPage(BlogRoutes, Page):
             ArticlePage.objects
             .select_related('header_image')
             .live()
-            .order_by('-first_published_at')
+            .order_by('-date')
         )
 
     def get_entries(self):
@@ -112,13 +112,13 @@ class BlogPage(BlogRoutes, Page):
             .prefetch_related('articlepage', 'recipepage')
             .select_related('articlepage__header_image', 'recipepage__header_image')
             .live()
-            .order_by('-first_published_at')
+            .order_by('-date')
         )
 
     def get_recipes(self):
         """ Returns all the live articles of the blog. """
         return (
-            RecipePage.objects.select_related('header_image').live().order_by('-first_published_at')
+            RecipePage.objects.select_related('header_image').live().order_by('-date')
         )
 
     class Meta:
