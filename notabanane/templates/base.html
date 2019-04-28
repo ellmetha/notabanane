@@ -12,6 +12,10 @@
     <title>{% block title %}{% block page_title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock page_title %} &dash; Nota Banane{% endblock %}</title>
     <meta name="created" content="{% now "jS M Y h:i" %}" />
     <link rel="icon" href="{% static 'img/favicon.png' %}" sizes="16x16" type="images/png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon_120x120.png' %}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicon_152x152.png' %}" />
+    <link rel="apple-touch-icon" sizes="167x167" href="{% static 'img/favicon_167x167.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon_180x180.png' %}" />
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
     <meta name="p:domain_verify" content="913565828ca3a333726da819b71e3614"/>
