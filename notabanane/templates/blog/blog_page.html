@@ -102,8 +102,11 @@
       {% for post in self.latest_recipes %}
       {% if forloop.counter0 == 0 %}
       <div class="tile is-ancestor">
-        <div class="tile is-parent is-8">{% image post.header_image fill-888x613 as post_image %}
+        <div class="tile is-parent is-8">
+          {% image post.header_image fill-888x613 as post_image %}
+          {% image post.header_image fill-555x312 as post_image_mobile %}
           <div class="tile is-child" style="background-image:url({{ post_image.url }});">
+            <span class="bg is-hidden-tablet" style="background-image:url({{ post_image_mobile.url }});"></span>
             <a href="{% pageurl post %}" class="post-box is-featured">
               <span class="content-wrapper">
                 <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
