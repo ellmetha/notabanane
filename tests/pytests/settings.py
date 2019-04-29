@@ -16,3 +16,4 @@ from notabanane_project.settings.base import *  # noqa, isort:skip
 
 MEDIA_ROOT = os.path.join(TEST_ROOT, '_testdata/media/')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+TEMPLATES[0]['DIRS'] += [os.path.join(TEST_ROOT, '_testdata/templates/'), ]  # noqa: F405

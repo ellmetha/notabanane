@@ -190,9 +190,9 @@ SECRET_KEY = get_envsetting('SECRET_KEY')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': (
+        'DIRS': [
             str(PROJECT_PATH / 'notabanane' / 'templates'),
-        ),
+        ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',

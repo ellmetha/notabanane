@@ -1,0 +1,4 @@
+{% load i18n %}
+<h1>Hello World!</h1>
+<p>{{ var|default:'novar' }}</p>
+<p>{% get_current_language as LANGUAGE_CODE %}Current language: {{ LANGUAGE_CODE }}</p>
