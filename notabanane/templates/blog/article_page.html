@@ -10,7 +10,7 @@
 
 {% block content %}
 {% image page.header_image fill-1920x574-c100 as header_image %}
-{% image page.header_image fill-500x600-c100 as header_image_mobile %}
+{% image page.header_image fill-500x326 as header_image_mobile %}
 <section id="entry_header" class="hero is-medium is-info is-bold">
   <div class="bg is-hidden-mobile" style="background-image:url({{ header_image.url }});"></div>
   <div class="bg is-hidden-tablet" style="background-image:url({{ header_image_mobile.url }});"></div>
