@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-06 17:50-0500\n"
+"POT-Creation-Date: 2019-04-29 22:21-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,6 +193,18 @@ msgid "Contact: {}"
 msgstr ""
 
 msgid "Contact message sent successfully"
+msgstr ""
+
+msgid "Page not found"
+msgstr ""
+
+msgid "The requested resource could not be found but may be available again in the future."
+msgstr ""
+
+msgid "Webservice currently unavailable"
+msgstr ""
+
+msgid "An unexpected condition was encountered. Thanks for your patience."
 msgstr ""
 
 msgid "About"

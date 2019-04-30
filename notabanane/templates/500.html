@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Webservice currently unavailable" %}{% endblock page_title %}
+
+{% block content %}
+<div class="hero is-medium is-white">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="title">{% trans "Webservice currently unavailable" %}</div>
+      <hr class="has-background-light" />
+      <div class="subtitle h5">{% trans "An unexpected condition was encountered. Thanks for your patience." %}</div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

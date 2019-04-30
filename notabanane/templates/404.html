@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Page not found" %}{% endblock page_title %}
+
+{% block content %}
+<div class="hero is-medium is-white">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="title">{% trans "Page not found" %}</div>
+      <hr class="has-background-light" />
+      <div class="subtitle h5">{% trans "The requested resource could not be found but may be available again in the future." %}</div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
