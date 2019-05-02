@@ -132,5 +132,14 @@
 
     {% block extra_js %}
     {% endblock extra_js %}
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_PROPERTY_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ GA_PROPERTY_ID }}');
+    </script>
   </body>
 </html>

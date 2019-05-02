@@ -202,6 +202,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'notabanane_project.context_processors.google_analytics',
             ],
             'loaders': [
                 ('django.template.loaders.cached.Loader', (
@@ -302,6 +303,12 @@ WAGTAIL_SITE_NAME = 'Nota Banane'
 
 RECAPTCHA_PUBLIC_KEY = get_envsetting('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')
+
+
+# GOOGLE ANALYTICS CONFIGURATION
+# ------------------------------------------------------------------------------
+
+GA_PROPERTY_ID = get_envsetting('GA_PROPERTY_ID', 'notset')
 
 
 # PROJECT CONFIGURATION
