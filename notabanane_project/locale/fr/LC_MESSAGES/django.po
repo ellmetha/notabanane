@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-29 22:21-0500\n"
-"PO-Revision-Date: 2019-04-29 23:24-0400\n"
+"PO-Revision-Date: 2019-05-02 22:21-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -250,7 +250,7 @@ msgid "View all"
 msgstr "En voir plus"
 
 msgid "Latest articles "
-msgstr "Dernier articles "
+msgstr "Derniers articles "
 
 #, python-format
 msgid "For: %(yield)s"
