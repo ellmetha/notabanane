@@ -13,6 +13,7 @@ from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
 from django.views.i18n import JavaScriptCatalog
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
@@ -24,12 +25,15 @@ js_info_dict = {
 urlpatterns = [
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript_catalog'),
 
-    # Admin
+    # Admin.
     path(settings.ADMIN_URL, admin.site.urls),
 
-    # Apps
+    # Apps.
     path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
+
+    # Sitemaps
+    path('sitemap.xml', sitemap),
 
     # Robots URLs.
     path(
@@ -41,7 +45,7 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    # Add the Debug Toolbar’s URLs to the project’s URLconf
+    # Add the Debug Toolbar’s URLs to the project’s URLconf.
     import debug_toolbar
     urlpatterns += [path('__debug__/', include(debug_toolbar.urls)), ]
 
@@ -59,7 +63,7 @@ if settings.DEBUG:
         ),
     ]
 
-    # Test 503, 500, 404 and 403 pages
+    # Test 503, 500, 404 and 403 pages.
     from django.views.generic import TemplateView
     urlpatterns += [
         path('403/', TemplateView.as_view(template_name='403.html')),
