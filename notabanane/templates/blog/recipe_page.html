@@ -6,6 +6,7 @@
 {% load wagtailroutablepage_tags %}
 
 {% block page_title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock page_title %}
+{% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ page.introduction|striptags|truncatechars:150 }}{% endif %}{% endblock meta_description %}
 
 {% block body_id %}id_blog_entry{% endblock body_id %}
 
