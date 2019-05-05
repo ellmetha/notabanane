@@ -21,8 +21,8 @@
     <meta name="p:domain_verify" content="913565828ca3a333726da819b71e3614"/>
     <meta content="Nota Banane" property="og:site_name" />
     <meta content="{{ LANGUAGE_CODE }}" property="og:locale" />
+    <meta content="{{ request.scheme|add:'://'|add:request.get_host|add:request.get_full_path }}" property="og:url" />
     {% block extra_open_graph_tags %}
-    <meta content="{% static 'img/og-image.jpg' %}" property="og:image" />
     {% endblock extra_open_graph_tags %}
     {% endblock head %}
 
