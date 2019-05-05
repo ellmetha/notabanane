@@ -45,4 +45,4 @@ class MediaRootS3BotoStorage(CustomS3Boto3Storage):
 
 
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
-    location = 's1'
+    location = 's'
