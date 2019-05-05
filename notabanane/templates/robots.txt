@@ -1,1 +1,3 @@
-User-agent: *
+Sitemap: {{ request.scheme|add:'://'|add:request.get_host }}{% url 'sitemap' %}
+User-agent:*
+Disallow:

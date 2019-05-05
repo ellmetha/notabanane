@@ -33,7 +33,7 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     # Sitemaps
-    path('sitemap.xml', sitemap),
+    path('sitemap.xml', sitemap, name='sitemap'),
 
     # Robots URLs.
     path(
