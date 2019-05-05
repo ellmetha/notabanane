@@ -19,6 +19,11 @@
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
     <meta name="p:domain_verify" content="913565828ca3a333726da819b71e3614"/>
+    <meta content="Nota Banane" property="og:site_name" />
+    <meta content="{{ LANGUAGE_CODE }}" property="og:locale" />
+    {% block extra_open_graph_tags %}
+    <meta content="{% static 'img/og-image.jpg' %}" property="og:image" />
+    {% endblock extra_open_graph_tags %}
     {% endblock head %}
 
     {% block css %}
