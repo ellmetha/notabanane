@@ -19,11 +19,29 @@
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
     <meta name="p:domain_verify" content="913565828ca3a333726da819b71e3614"/>
+
     <meta content="Nota Banane" property="og:site_name" />
     <meta content="{{ LANGUAGE_CODE }}" property="og:locale" />
     <meta content="{{ request.scheme|add:'://'|add:request.get_host|add:request.get_full_path }}" property="og:url" />
     {% block extra_open_graph_tags %}
     {% endblock extra_open_graph_tags %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "{{ request.scheme|add:'://'|add:request.get_host }}",
+        "name": "Nota Banane - {% trans "Healthy recipes for real life adventurers" %}",
+        "logo": "{% static 'img/favicon_180x180.png' %}",
+        "sameAs": [
+          "https://www.instagram.com/notabanane",
+          "https://www.facebook.com/Nota-Banane-2193661220853275/",
+          "https://www.pinterest.ca/notabanane/"
+        ]
+      }
+    </script>
+    {% block extra_structured_data %}
+    {% endblock extra_structured_data %}
     {% endblock head %}
 
     {% block css %}
