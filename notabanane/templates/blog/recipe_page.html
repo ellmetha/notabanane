@@ -14,6 +14,19 @@
 {% image page.header_image fill-1200x630 as og_image %}
 <meta content="{{ og_image.url }}" property="og:image" />
 {% endblock extra_open_graph_tags %}
+{% block extra_structured_data %}
+{% image page.header_image fill-1920x574-c100 as structured_data_image %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "{{ self.seo_title|default:self.title }}",
+  "author": "{{ page.owner.first_name|default:page.owner.username }}",
+  "image": "{{ structured_data_image.url }}",
+  "description": "{% if self.search_description %}{{ self.search_description }}{% else %}{{ page.introduction|striptags|truncatechars:150 }}{% endif %}"
+}
+</script>
+{% endblock extra_structured_data %}
 
 {% block body_id %}id_blog_entry{% endblock body_id %}
 
