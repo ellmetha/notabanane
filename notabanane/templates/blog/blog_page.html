@@ -8,6 +8,7 @@
 {% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock title %}
 {% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ self.description }}{% endif %}{% endblock meta_description %}
 {% block extra_open_graph_tags %}
+<meta property="og:type" content="website" />
 <meta content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" property="og:title" />
 <meta content="{% if self.search_description %}{{ self.search_description }}{% else %}{{ self.description }}{% endif %}" property="og:description" />
 <meta content="{% static 'img/og-image.jpg' %}" property="og:image" />

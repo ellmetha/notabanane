@@ -7,6 +7,7 @@
 {% block page_title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock page_title %}
 {% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ page.body|striptags|truncatechars:150 }}{% endif %}{% endblock meta_description %}
 {% block extra_open_graph_tags %}
+<meta property="og:type" content="website" />
 <meta content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" property="og:title" />
 <meta content="{% if self.search_description %}{{ self.search_description }}{% else %}{{ page.body|striptags|truncatechars:150 }}{% endif %}" property="og:description" />
 {% image page.header_image fill-1200x630 as og_image %}
