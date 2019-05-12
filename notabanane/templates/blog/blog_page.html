@@ -112,8 +112,8 @@
           {% image post.header_image fill-888x613 as post_image %}
           {% image post.header_image fill-555x312 as post_image_mobile %}
           <div class="tile is-child" style="background-image:url({{ post_image.url }});">
-            <span class="bg is-hidden-tablet" style="background-image:url({{ post_image_mobile.url }});"></span>
             <a href="{% pageurl post %}" class="post-box is-featured">
+              <span class="image-wrapper is-hidden-tablet">{% image post.header_image fill-555x312 %}</span>
               <span class="content-wrapper">
                 <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
                 <span class="post-title">{{ post.title }}</span>
@@ -126,6 +126,7 @@
         <div class="tile is-4 is-vertical is-parent">{% image post.header_image fill-555x312 as post_image %}
           <div class="tile is-child" style="background-image:url({{ post_image.url }});">
             <a href="{% pageurl post %}" class="post-box is-top-twin">
+              <span class="image-wrapper is-hidden-tablet">{% image post.header_image fill-555x312 %}</span>
               <span class="content-wrapper">
                 <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
                 <span class="post-title">{{ post.title }}</span>
@@ -137,6 +138,7 @@
       {% image post.header_image fill-555x312 as post_image %}
           <div class="tile is-child" style="background-image:url({{ post_image.url }});">
             <a href="{% pageurl post %}" class="post-box is-top-twin">
+              <span class="image-wrapper is-hidden-tablet">{% image post.header_image fill-555x312 %}</span>
               <span class="content-wrapper">
                 <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
                 <span class="post-title">{{ post.title }}</span>
@@ -149,9 +151,7 @@
       {% if forloop.counter0 == 3 %}<div class="columns is-multiline">{% endif %}
       <div class="column is-one-third">
         <a href="{% pageurl post %}" class="post-box">
-          {% if post.header_image %}
           <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
-          {% endif %}
           <span class="content-wrapper">
             <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
             <span class="post-title">{{ post.title }}</span>

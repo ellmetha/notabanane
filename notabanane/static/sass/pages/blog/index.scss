@@ -186,14 +186,70 @@ body#id_blog_index {
           }
         }
 
+
         @include until($tablet) {
+          span.image-wrapper {
+            display: block;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           span.content-wrapper {
-            margin: 4rem 0.5rem;
-            height: 8rem;
-            background: transparent;
+            position: relative;
+            margin: 0;
+            padding: 1.5rem 0.5rem;
+            display: block;
+            height: 8.25rem;
+            background: lighten($grey-lighter, 10%);
+            text-align: center;
+            color: $ferra;
+            @include transition(0.5s, ease-out);
+
+            .post-date {
+              position: relative;
+              display: inline-block;
+              font-size: 0.8rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              color: $grey-light;
+
+              &:before {
+                background: $grey-light;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 0.58rem;
+                left: -3rem;
+                width: 2rem;
+                @include transition(0.2s, ease-in-out);
+              }
+
+              &:after {
+                margin-left: 0.5rem;
+                background: $grey-light;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 0.58rem;
+                right: -3rem;
+                width: 2rem;
+                @include transition(0.2s, ease-in-out);
+              }
+            }
 
             .post-title {
+              margin-top: 0.75rem;
+              padding: 0 0.2rem;
+              display: block;
+              color: $ferra;
+              font-family: IndieFlower;
               font-size: 1.5rem;
+              font-weight: bold;
+              line-height: 1.4rem;
             }
           }
         }
@@ -202,6 +258,22 @@ body#id_blog_index {
       &.is-top-twin {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
+
+        &:hover, &:focus {
+          span.content-wrapper {
+            .post-date {
+              &:before {
+                left: -5rem;
+                width: 4rem;
+              }
+
+              &:after {
+                right: -5rem;
+                width: 4rem;
+              }
+            }
+          }
+        }
 
         span.content-wrapper {
           margin: 5rem 0.5rem;
@@ -224,13 +296,68 @@ body#id_blog_index {
         }
 
         @include until($tablet) {
+          span.image-wrapper {
+            display: block;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           span.content-wrapper {
-            margin: 4.2rem 0.5rem;
-            height: 8rem;
-            background: transparent;
+            position: relative;
+            margin: 0;
+            padding: 1.5rem 0.5rem;
+            display: block;
+            height: 8.25rem;
+            background: lighten($grey-lighter, 10%);
+            text-align: center;
+            color: $ferra;
+            @include transition(0.5s, ease-out);
+
+            .post-date {
+              position: relative;
+              display: inline-block;
+              font-size: 0.8rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              color: $grey-light;
+
+              &:before {
+                background: $grey-light;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 0.58rem;
+                left: -3rem;
+                width: 2rem;
+                @include transition(0.2s, ease-in-out);
+              }
+
+              &:after {
+                margin-left: 0.5rem;
+                background: $grey-light;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 0.58rem;
+                right: -3rem;
+                width: 2rem;
+                @include transition(0.2s, ease-in-out);
+              }
+            }
 
             .post-title {
+              margin-top: 0.75rem;
+              padding: 0 0.2rem;
+              display: block;
+              color: $ferra;
+              font-family: IndieFlower;
               font-size: 1.5rem;
+              font-weight: bold;
+              line-height: 1.4rem;
             }
           }
         }
