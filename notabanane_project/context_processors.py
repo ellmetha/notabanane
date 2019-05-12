@@ -11,8 +11,13 @@ from django.conf import settings
 
 
 def google_analytics(request):
-    """ Inserts the Google Analytics Property Id into the context. """
+    """ Inserts the Google Analytics-relatd setting values into the context. """
     return {'GA_PROPERTY_ID': settings.GA_PROPERTY_ID, }
+
+
+def pinterest(request):
+    """ Inserts the Pinterest-related setting values into the context. """
+    return {'PINTEREST_DOMAIN_VERIFICATION_ID': settings.PINTEREST_DOMAIN_VERIFICATION_ID, }
 
 
 def webpack(request):

@@ -203,6 +203,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
                 'notabanane_project.context_processors.google_analytics',
+                'notabanane_project.context_processors.pinterest',
             ],
             'loaders': [
                 ('django.template.loaders.cached.Loader', (
@@ -309,6 +310,12 @@ RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')
 # ------------------------------------------------------------------------------
 
 GA_PROPERTY_ID = get_envsetting('GA_PROPERTY_ID', 'notset')
+
+
+# PINTEREST CONFIGURATION
+# ------------------------------------------------------------------------------
+
+PINTEREST_DOMAIN_VERIFICATION_ID = get_envsetting('PINTEREST_DOMAIN_VERIFICATION_ID', 'notset')
 
 
 # PROJECT CONFIGURATION
