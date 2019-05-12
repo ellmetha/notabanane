@@ -75,6 +75,8 @@
             </div>
             <div id="notabanane_navbar" class="navbar-menu">
               <div class="navbar-start">
+                <a href="{% slugurl 'a-propos' %}" class="navbar-item is-hidden-tablet">{% trans "Recipes" %}</a>
+                <a href="{% slugurl 'a-propos' %}" class="navbar-item is-hidden-tablet">{% trans "Articles" %}</a>
                 <a href="{% slugurl 'a-propos' %}" class="navbar-item">{% trans "About" %}</a>
                 <a href="{% url 'contact' %}" class="navbar-item">{% trans "Contact" %}</a>
               </div>
