@@ -9,9 +9,10 @@
 
 from django.urls import path
 
-from . import views
+from . import feeds, views
 
 
 urlpatterns = [
     path('contact/', views.ContactFormView.as_view(), name='contact'),
+    path('feed/', feeds.LatestEntriesFeed(), name='feed'),
 ]
