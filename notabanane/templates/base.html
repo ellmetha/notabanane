@@ -149,8 +149,6 @@
       {% endblock footer %}
     </div>
 
-    <script src="{% url 'javascript_catalog' %}"></script>
-
     {% block js %}
     <script src="{{ WEBPACK_DEV_SERVER_URL|default:'' }}{% static 'js/App.js' %}"></script>
     {% endblock js %}

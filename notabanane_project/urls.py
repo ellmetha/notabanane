@@ -11,7 +11,6 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
-from django.views.i18n import JavaScriptCatalog
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core import urls as wagtail_urls
@@ -23,8 +22,6 @@ js_info_dict = {
 }
 
 urlpatterns = [
-    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript_catalog'),
-
     # Admin.
     path(settings.ADMIN_URL, admin.site.urls),
 
