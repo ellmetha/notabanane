@@ -14,6 +14,13 @@
 <meta content="{{ og_image.url }}" property="og:image" />
 {% endblock extra_open_graph_tags %}
 
+{% block head %}
+{{ block.super }}
+{% if page.noindex %}
+<meta name="robots" content="noindex" />
+{% endif %}
+{% endblock head %}
+
 {% block body_id %}id_blog_entry{% endblock body_id %}
 
 {% block content %}

@@ -519,6 +519,10 @@ class SimplePage(Page):
         help_text=_('Header image displayed when rendering the page.'),
     )
 
+    # It is possible to block indexation for a specific page by setting the "noindex" option to
+    # true.
+    noindex = models.BooleanField(default=False, verbose_name=_('Disable robots indexation'))
+
     ###############################
     # EDITOR PANELS CONFIGURATION #
     ###############################
@@ -526,6 +530,19 @@ class SimplePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('body', classname='full'),
         ImageChooserPanel('header_image'),
+    ]
+
+    promote_panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel('slug'),
+                FieldPanel('seo_title'),
+                FieldPanel('show_in_menus'),
+                FieldPanel('search_description'),
+                FieldPanel('noindex'),
+            ],
+            _('Common page configuration')
+        ),
     ]
 
     ####################################
