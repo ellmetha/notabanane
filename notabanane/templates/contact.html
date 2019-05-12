@@ -3,6 +3,11 @@
 
 {% block page_title %}{% trans "Contact" %}{% endblock page_title %}
 
+{% block head %}
+{{ block.super }}
+<meta name="robots" content="noindex" />
+{% endblock head %}
+
 {% block content %}
 <div id="contact_header_section" class="hero is-harvest-gold is-bold">
   <div class="fill-opacity"></div>
