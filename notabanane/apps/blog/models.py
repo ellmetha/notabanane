@@ -65,6 +65,10 @@ class BlogPage(BlogRoutes, Page):
 
     subpage_types = ['blog.ArticlePage', 'blog.RecipePage', 'blog.SimplePage', ]
 
+    class Meta:
+        verbose_name = _('Blog')
+        verbose_name_plural = _('Blogs')
+
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
         context = super().get_context(request, *args, **kwargs)
@@ -120,10 +124,6 @@ class BlogPage(BlogRoutes, Page):
         return (
             RecipePage.objects.select_related('header_image').live().order_by('-date')
         )
-
-    class Meta:
-        verbose_name = _('Blog')
-        verbose_name_plural = _('Blogs')
 
 
 class ArticlePage(Page):
