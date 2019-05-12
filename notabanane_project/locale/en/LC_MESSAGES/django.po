@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-29 22:21-0500\n"
+"POT-Creation-Date: 2019-05-11 22:22-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,6 +156,12 @@ msgstr ""
 msgid "Header image displayed when rendering the page."
 msgstr ""
 
+msgid "Disable robots indexation"
+msgstr ""
+
+msgid "Common page configuration"
+msgstr ""
+
 msgid "Simple page"
 msgstr ""
 
@@ -207,6 +213,9 @@ msgstr ""
 msgid "An unexpected condition was encountered. Thanks for your patience."
 msgstr ""
 
+msgid "Healthy recipes for real life adventurers"
+msgstr ""
+
 msgid "About"
 msgstr ""
 
@@ -217,9 +226,6 @@ msgid "Type to search"
 msgstr ""
 
 msgid "Legal notice"
-msgstr ""
-
-msgid "Healthy recipes for real life adventurers"
 msgstr ""
 
 msgid "Home"

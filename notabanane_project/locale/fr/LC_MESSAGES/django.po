@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-29 22:21-0500\n"
-"PO-Revision-Date: 2019-05-05 19:25-0400\n"
+"POT-Creation-Date: 2019-05-11 22:22-0500\n"
+"PO-Revision-Date: 2019-05-11 23:23-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -156,6 +156,12 @@ msgstr "Corps de page"
 msgid "Header image displayed when rendering the page."
 msgstr "Image d’en-tête affichée en haut de page."
 
+msgid "Disable robots indexation"
+msgstr "Désactiver l’indexation par les robots"
+
+msgid "Common page configuration"
+msgstr ""
+
 msgid "Simple page"
 msgstr "Page simple"
 
@@ -207,6 +213,9 @@ msgstr "Service web indisponible"
 msgid "An unexpected condition was encountered. Thanks for your patience."
 msgstr "Une erreur est survenue et a été notifiée pour correction. Merci de patienter."
 
+msgid "Healthy recipes for real life adventurers"
+msgstr "Recettes santé pour aventuriers des temps modernes"
+
 msgid "About"
 msgstr "À propos"
 
@@ -218,9 +227,6 @@ msgstr "Taper pour chercher"
 
 msgid "Legal notice"
 msgstr "Mentions légales"
-
-msgid "Healthy recipes for real life adventurers"
-msgstr "Recettes santé pour aventuriers des temps modernes"
 
 msgid "Home"
 msgstr "Accueil"
