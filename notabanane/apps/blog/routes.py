@@ -7,7 +7,6 @@
 
 """
 
-from django.db.models import Q
 from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
