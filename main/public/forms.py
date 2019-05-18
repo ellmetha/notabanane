@@ -13,7 +13,7 @@ from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.translation import ugettext_lazy as _
 
-from notabanane.common.email import Email
+from main.common.email import Email
 
 
 class ContactForm(forms.Form):

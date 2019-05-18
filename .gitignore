@@ -97,7 +97,7 @@ ENV/
 # Project's environment settings
 .env.json
 !/tests/pytests/.env.json
-notabanane_project/settings/settings_env.py
+project/settings/settings_env.py
 
 # Media/static files (only used in development)
 /media/
@@ -106,5 +106,5 @@ notabanane_project/settings/settings_env.py
 # Assets and Node stuff
 node_modules/
 __snapshots__/
-/notabanane/static/build_dev/*
-!notabanane/static/build_dev/.gitkeep
+/main/static/build_dev/*
+!main/static/build_dev/.gitkeep

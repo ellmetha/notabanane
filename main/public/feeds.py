@@ -10,7 +10,7 @@ from django.contrib.syndication.views import Feed
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
 
-from notabanane.apps.blog.models import RecipePage
+from main.apps.blog.models import RecipePage
 
 
 class LatestEntriesFeed(Feed):

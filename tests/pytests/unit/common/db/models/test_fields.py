@@ -2,7 +2,7 @@ from collections import namedtuple
 
 from django import forms
 
-from notabanane.common.db.models.fields import ChoiceArrayField
+from main.common.db.models.fields import ChoiceArrayField
 
 
 class TestChoiceArrayField:

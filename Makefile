@@ -1,5 +1,5 @@
-PROJECT_PACKAGE := notabanane
-PROJECT_CONFIGURATION_PACKAGE := $(PROJECT_PACKAGE)_project
+PROJECT_PACKAGE := main
+PROJECT_CONFIGURATION_PACKAGE := project
 DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
 
 .PHONY: devserver qa lint lint_python isort isort_python tests tests_python spec spec_python

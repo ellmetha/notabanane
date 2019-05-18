@@ -53,18 +53,18 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "notabanane/static/js/**/*.{js,jsx}"
+      "main/static/js/**/*.{js,jsx}"
     ],
     "coverageDirectory": "./coverage/",
     "moduleDirectories": [
       "node_modules",
-      "notabanane/static/js"
+      "main/static/js"
     ],
     "testRegex": "(/tests/jstests/.*|\\.(react-test|spec|test))\\.(ts|tsx|js|jsx)$"
   },
   "scripts": {
     "gulp": "gulp",
-    "lint": "eslint --ext .js,.jsx notabanane/static/js/**/*",
+    "lint": "eslint --ext .js,.jsx main/static/js/**/*",
     "test": "jest"
   }
 }

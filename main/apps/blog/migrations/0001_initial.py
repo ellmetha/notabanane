@@ -5,8 +5,8 @@ from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.contrib.taggit
 import modelcluster.fields
-import notabanane.apps.blog.routes
-import notabanane.common.db.models.fields
+import main.apps.blog.routes
+import main.common.db.models.fields
 import wagtail.core.fields
 
 
@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Blog',
                 'verbose_name_plural': 'Blogs',
             },
-            bases=(notabanane.apps.blog.routes.BlogRoutes, 'wagtailcore.page'),
+            bases=(main.apps.blog.routes.BlogRoutes, 'wagtailcore.page'),
         ),
         migrations.CreateModel(
             name='Category',
@@ -115,7 +115,7 @@ class Migration(migrations.Migration):
                 ('fridge_time', models.DurationField(blank=True, help_text='Duration in the form "HH:MM:SS".', null=True, verbose_name='Fridge time')),
                 ('rest_time', models.DurationField(blank=True, help_text='Duration in the form "HH:MM:SS".', null=True, verbose_name='Rest time')),
                 ('recipe_yield', models.CharField(blank=True, help_text='Enter a yield indication such as "4 persons", "3 servings", etc.', max_length=127, verbose_name='Yield')),
-                ('dish_types', notabanane.common.db.models.fields.ChoiceArrayField(base_field=models.CharField(choices=[('appetizers', 'Appetizers'), ('beverages', 'Beverages'), ('desserts', 'Desserts'), ('main-course', 'Main course'), ('sauces+salad-dressings', 'Sauces and salad dressings'), ('soups', 'Soups'), ('vegetables+salads', 'Vegetables and salads')], max_length=64), default=list, size=3, verbose_name='Dish types')),
+                ('dish_types', main.common.db.models.fields.ChoiceArrayField(base_field=models.CharField(choices=[('appetizers', 'Appetizers'), ('beverages', 'Beverages'), ('desserts', 'Desserts'), ('main-course', 'Main course'), ('sauces+salad-dressings', 'Sauces and salad dressings'), ('soups', 'Soups'), ('vegetables+salads', 'Vegetables and salads')], max_length=64), default=list, size=3, verbose_name='Dish types')),
                 ('categories', models.ManyToManyField(blank=True, through='blog.CategoryRecipePage', to='blog.Category')),
                 ('header_image', models.ForeignKey(blank=True, help_text='Header image displayed when rendering the article or if the article is featured on the home page', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image', verbose_name='Header image')),
             ],

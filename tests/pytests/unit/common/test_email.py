@@ -3,7 +3,7 @@ import unittest.mock
 from django.conf import settings
 from django.core import mail
 
-from notabanane.common.email import Email
+from main.common.email import Email
 
 
 class TestEmail:
@@ -80,7 +80,7 @@ class TestEmail:
         assert 'Current language: fr' in mail.outbox[1].body
 
     @unittest.mock.patch('django.core.mail.EmailMultiAlternatives.send')
-    @unittest.mock.patch('notabanane.common.email.logger')
+    @unittest.mock.patch('main.common.email.logger')
     def test_logs_an_error_in_case_of_a_failure(self, mocked_logging, mocked_send):
         mocked_send.side_effect = Exception('Boom!')
 

@@ -16,8 +16,8 @@ env('.env');
 
 /* Global variables */
 const rootDir = './';
-const staticDir = `${rootDir}notabanane/static/`;
-const templatesDir = `${rootDir}notabanane/templates/`;
+const staticDir = `${rootDir}main/static/`;
+const templatesDir = `${rootDir}main/templates/`;
 const PROD_ENV = gutil.env.production;
 const WEBPACK_DEV_SERVER_PORT = (
   process.env.WEBPACK_DEV_SERVER_PORT ? process.env.WEBPACK_DEV_SERVER_PORT : 8080);

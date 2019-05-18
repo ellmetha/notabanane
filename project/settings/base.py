@@ -92,8 +92,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # Local apps
-    'notabanane.apps.blog',
-    'notabanane.common',
+    'main.apps.blog',
+    'main.common',
 )
 
 
@@ -173,7 +173,7 @@ LANGUAGES = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = (
-    str(PROJECT_PATH / 'notabanane_project' / 'locale'),
+    str(PROJECT_PATH / 'project' / 'locale'),
 )
 
 
@@ -192,7 +192,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            str(PROJECT_PATH / 'notabanane' / 'templates'),
+            str(PROJECT_PATH / 'main' / 'templates'),
         ],
         'OPTIONS': {
             'context_processors': [
@@ -203,8 +203,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
-                'notabanane_project.context_processors.google_analytics',
-                'notabanane_project.context_processors.pinterest',
+                'project.context_processors.google_analytics',
+                'project.context_processors.pinterest',
             ],
             'loaders': [
                 ('django.template.loaders.cached.Loader', (
@@ -228,8 +228,8 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    str(PROJECT_PATH / 'notabanane' / 'static' / 'build'),
-    str(PROJECT_PATH / 'notabanane' / 'static'),
+    str(PROJECT_PATH / 'main' / 'static' / 'build'),
+    str(PROJECT_PATH / 'main' / 'static'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -255,7 +255,7 @@ MEDIA_URL = '/media/'
 # URL CONFIGURATION
 # ------------------------------------------------------------------------------
 
-ROOT_URLCONF = 'notabanane_project.urls'
+ROOT_URLCONF = 'project.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'wsgi.application'

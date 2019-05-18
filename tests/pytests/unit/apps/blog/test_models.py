@@ -4,8 +4,8 @@ import pytest
 from django.core.paginator import Page
 from django.utils import timezone as tz
 
-from notabanane.apps.blog.models import ArticlePage
-from notabanane.apps.blog.test.factories import (
+from main.apps.blog.models import ArticlePage
+from main.apps.blog.test.factories import (
     ArticlePageFactory, BlogPageFactory, RecipeIngredientsSectionFactory,
     RecipeInstructionsSectionFactory, RecipePageFactory, SimplePageFactory
 )

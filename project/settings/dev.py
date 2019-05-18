@@ -50,7 +50,7 @@ SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error', ]
 # ------------------------------------------------------------------------------
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += (  # noqa: F405
-    'notabanane_project.context_processors.webpack', )
+    'project.context_processors.webpack', )
 TEMPLATES[0]['OPTIONS']['loaders'] = (  # noqa: F405
     # Disables cached loader
     'django.template.loaders.filesystem.Loader',
@@ -62,9 +62,9 @@ TEMPLATES[0]['OPTIONS']['loaders'] = (  # noqa: F405
 # ------------------------------------------------------------------------------
 
 STATICFILES_DIRS = (
-    str(PROJECT_PATH / 'notabanane' / 'static' / 'build_dev'),  # noqa: F405
-    str(PROJECT_PATH / 'notabanane' / 'static' / 'build'),  # noqa: F405
-    str(PROJECT_PATH / 'notabanane' / 'static'),  # noqa: F405
+    str(PROJECT_PATH / 'main' / 'static' / 'build_dev'),  # noqa: F405
+    str(PROJECT_PATH / 'main' / 'static' / 'build'),  # noqa: F405
+    str(PROJECT_PATH / 'main' / 'static'),  # noqa: F405
 )
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

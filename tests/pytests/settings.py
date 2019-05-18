@@ -7,7 +7,7 @@ TEST_ROOT = os.path.abspath(os.path.dirname(__file__))
 # PROJECT CONFIGURATION
 # ------------------------------------------------------------------------------
 
-from notabanane_project.settings.base import *  # noqa, isort:skip
+from project.settings.base import *  # noqa, isort:skip
 
 
 # TESTS-SPECIFIC CONFIGURATION

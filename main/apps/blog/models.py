@@ -25,8 +25,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
-from notabanane.common.db.models.fields import ChoiceArrayField
-
+from ...common.db.models.fields import ChoiceArrayField
 from .routes import BlogRoutes
 
 

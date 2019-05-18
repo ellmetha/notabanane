@@ -1,6 +1,6 @@
 import datetime as dt
 
-from notabanane.common.templatetags.common_duration_tags import duration
+from main.common.templatetags.common_duration_tags import duration
 
 
 def test_duration_filter_works_as_expected():

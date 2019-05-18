@@ -1,7 +1,7 @@
 from django.test import override_settings
 from django.utils.translation import get_language
 
-from notabanane.common.context_managers import switch_language
+from main.common.context_managers import switch_language
 
 
 @override_settings(LANGUAGES=[('en', 'English'), ('fr', 'French')])

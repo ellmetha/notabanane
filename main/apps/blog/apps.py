@@ -13,5 +13,5 @@ from django.utils.translation import ugettext_lazy as _
 
 class BlogAppConfig(AppConfig):
     label = 'blog'
-    name = 'notabanane.apps.blog'
+    name = 'main.apps.blog'
     verbose_name = _('Blog')
