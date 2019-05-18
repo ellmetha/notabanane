@@ -18,19 +18,6 @@ from wagtail.search.models import Query
 class BlogRoutes(RoutablePageMixin):
     """ Defines the main "routes" associated with a ``BlogPage`` instance. """
 
-    @route(_(r'^category/(?P<category>[-\w]+)/$'))
-    def entries_by_category(self, request, category, *args, **kwargs):
-        """ Generates a page containing all the entries associated with a specific category. """
-        self.filter_type = 'category'
-        self.filter_value = category
-        self.entries = self.get_entries().filter(
-            Q(articlepage__entry_categories__category__slug=category) |
-            Q(articlepage__entry_categories__category__parent__slug=category) |
-            Q(recipepage__recipe_categories__category__slug=category) |
-            Q(recipepage__recipe_categories__category__parent__slug=category)
-        )
-        return Page.serve(self, request, *args, **kwargs)
-
     @route(r'^$')
     def entries_list(self, request, *args, **kwargs):
         """ Generates a home page containing relevant entries of the blog. """
