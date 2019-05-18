@@ -91,9 +91,6 @@ class BlogPage(BlogRoutes, Page):
                 paginated_entries = paginator.page(paginator.num_pages)
             context['paginated_entries'] = paginated_entries
 
-        # Includes the categories into the context.
-        context['categories'] = Category.objects.filter(parent__isnull=True).order_by('name')
-
         # Includes filter-related values into the context.
         context['filter_type'] = getattr(self, 'filter_type', None)
         context['filter_value'] = getattr(self, 'filter_value', None)
