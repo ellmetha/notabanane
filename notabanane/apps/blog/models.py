@@ -97,15 +97,6 @@ class BlogPage(BlogRoutes, Page):
 
         return context
 
-    def get_articles(self):
-        """ Returns all the live articles of the blog. """
-        return (
-            ArticlePage.objects
-            .select_related('header_image')
-            .live()
-            .order_by('-date')
-        )
-
     def get_entries(self):
         """ Returns all the live entries of the blog. """
         return (
@@ -113,11 +104,19 @@ class BlogPage(BlogRoutes, Page):
             .prefetch_related('articlepage', 'recipepage')
             .select_related('articlepage__header_image', 'recipepage__header_image')
             .live()
+        )
+
+    def get_articles(self):
+        """ Returns all the live articles of the blog ordered by reverse publication date. """
+        return (
+            ArticlePage.objects
+            .select_related('header_image')
+            .live()
             .order_by('-date')
         )
 
     def get_recipes(self):
-        """ Returns all the live articles of the blog. """
+        """ Returns all the live articles of the blog ordered by reverse publication date. """
         return (
             RecipePage.objects.select_related('header_image').live().order_by('-date')
         )
