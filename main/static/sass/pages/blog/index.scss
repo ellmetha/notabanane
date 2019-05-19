@@ -74,12 +74,12 @@ body#id_blog_index {
   }
 
   div#category_menu {
+    padding-top: 0.35rem;
     margin-bottom: 1.5em;
     background-color: $harvestGlod;
 
     .tabs {
       ul {
-        margin-top: 0.25rem;
         border: none;
 
         li {

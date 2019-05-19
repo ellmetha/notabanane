@@ -75,10 +75,9 @@
             </div>
             <div id="notabanane_navbar" class="navbar-menu">
               <div class="navbar-start">
-                <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}" class="navbar-item is-hidden-tablet">{% trans "Recipes" %}</a>
-                <a href="{% routablepageurl request.site.root_page.specific 'articles_list' %}" class="navbar-item is-hidden-tablet">{% trans "Articles" %}</a>
+                <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}" class="navbar-item">{% trans "Recipes" %}</a>
+                <a href="{% routablepageurl request.site.root_page.specific 'articles_list' %}" class="navbar-item">{% trans "Articles" %}</a>
                 <a href="{% slugurl 'a-propos' %}" class="navbar-item">{% trans "About" %}</a>
-                <a href="{% url 'contact' %}" class="navbar-item">{% trans "Contact" %}</a>
               </div>
               <div class="navbar-end">
                 <div class="navbar-item">
@@ -144,7 +143,7 @@
               <a href="https://www.pinterest.ca/notabanane/" target="_blank"><i class="fa fa-pinterest"></i></a>
               <a href="{% url 'feed' %}" target="_blank"><i class="fa fa-rss"></i></a>
             </p>
-            <p class="copyright">&copy; NotaBanane {% now "Y" %}&nbsp;&dash;&nbsp;<a href="{% slugurl 'mentions-legales' %}" class="has-text-white">{% trans "Legal notice" %}</a></p>
+            <p class="copyright">&copy; NotaBanane {% now "Y" %}&nbsp;&dash;&nbsp;<a href="{% url 'contact' %}" class="has-text-white">{% trans "Contact" %}</a>&nbsp;&dash;&nbsp;<a href="{% slugurl 'mentions-legales' %}" class="has-text-white">{% trans "Legal notice" %}</a></p>
           </div>
         </div>
       </footer>
