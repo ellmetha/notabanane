@@ -28,13 +28,14 @@ class BlogRoutes(RoutablePageMixin):
     def entries_search(self, request, *args, **kwargs):
         """ Generates a page containing all the entries associated with a specific search. """
         self.search_query = request.GET.get('q', None)
+        response = None
         if self.search_query:
             self.filter_type = 'search'
             self.filter_value = self.search_query
             self.entries = self.get_entries().search(self.search_query)
             Query.get(self.search_query).add_hit()
-            return Page.serve(self, request, *args, **kwargs)
-        return redirect(self.url)
+            response = Page.serve(self, request, *args, **kwargs)
+        return response or redirect(self.url)
 
     @route(_(r'^articles/$'))
     def articles_list(self, request, *args, **kwargs):
