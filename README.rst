@@ -12,8 +12,6 @@ System requirements
 * Node_ 7.0+
 * Pipenv_ 3.5+
 
-Python_ 3.6+, Pipenv_ 3.5+, Django_ 2.2.
-
 Installation
 ============
 
