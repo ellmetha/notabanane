@@ -3,7 +3,7 @@ dist: xenial
 language: python
 
 addons:
-  postgresql: "9.4"
+  postgresql: "11.1"
 
 python:
   - "3.6"
