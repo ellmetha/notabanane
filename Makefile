@@ -8,6 +8,7 @@ DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
 init:
 	pipenv install --dev --three
 	npm install
+	cp -n .env.json.example .env.json
 
 
 # DEVELOPMENT
