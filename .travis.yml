@@ -27,3 +27,6 @@ before_script:
 script:
   - make qa
   - make coverage
+
+after_success:
+  - codecov

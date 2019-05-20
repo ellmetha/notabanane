@@ -17,6 +17,7 @@ coverage = ">=4.5"
 ipython = "*"
 faker = "*"
 factory-boy = "*"
+codecov = "*"
 
 [packages]
 wagtail = ">=2.5rc1"
