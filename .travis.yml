@@ -2,6 +2,9 @@ dist: xenial
 
 language: python
 
+addons:
+  postgresql: "9.4"
+
 python:
   - "3.6"
   - "3.7"
@@ -16,6 +19,10 @@ install:
   - pip install --upgrade setuptools
   - pipenv install --dev
   - npm install --dev
+  - cp tests/.env.json.ci .env.json
+
+before_script:
+  - psql -c 'create database ci;' -U postgres
 
 script:
   - make qa
