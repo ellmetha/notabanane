@@ -17,12 +17,9 @@ Installation
 
 .. code-block:: shell
 
-  $ make
-  $ cp .env.json.example .env.json     # Initializes the environment settings
-  $ sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$USER\",/" .env.json
+  $ make init
   $ make db
   $ make migrate
-  $ make superuser
 
 Usage
 =====
