@@ -6,7 +6,6 @@ addons:
   postgresql: "9.5"
 
 python:
-  - "3.6"
   - "3.7"
   - "3.8-dev"
 
