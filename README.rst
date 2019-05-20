@@ -4,6 +4,9 @@ notabanane.com
 .. image:: https://travis-ci.org/ellmetha/notabanane.svg?branch=master
     :target: https://travis-ci.org/ellmetha/notabanane
 
+.. image:: https://codecov.io/gh/ellmetha/notabanane/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/ellmetha/notabanane
+
 |
 
 .. contents:: Table of Contents
