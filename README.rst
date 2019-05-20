@@ -1,6 +1,9 @@
 notabanane.com
 ##############
 
+.. image:: https://travis-ci.org/ellmetha/notabanane.svg?branch=master
+    :target: https://travis-ci.org/ellmetha/notabanane
+
 .. contents:: Table of Contents
     :local:
 
