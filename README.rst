@@ -15,7 +15,7 @@ notabanane.com
 System requirements
 ===================
 
-* Python_ 3.6+
+* Python_ 3.7+
 * PostgreSQL_
 * Node_ 7.0+
 * Pipenv_ 3.5+
