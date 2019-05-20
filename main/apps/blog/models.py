@@ -8,10 +8,12 @@
 """
 
 import datetime as dt
+from typing import Any, Dict, List
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
 from django.forms.widgets import CheckboxSelectMultiple
+from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
@@ -62,13 +64,13 @@ class BlogPage(BlogRoutes, Page):
     # PARENT PAGE / SUBPAGE TYPE RULES #
     ####################################
 
-    subpage_types = ['blog.ArticlePage', 'blog.RecipePage', 'blog.SimplePage', ]
+    subpage_types = ['blog.ArticlePage', 'blog.RecipePage', 'blog.SimplePage']
 
     class Meta:
         verbose_name = _('Blog')
         verbose_name_plural = _('Blogs')
 
-    def get_context(self, request, *args, **kwargs):
+    def get_context(self, request: HttpRequest, *args, **kwargs) -> Dict[Any, Any]:
         """ Returns a dictionary of variables to bind into the template. """
         context = super().get_context(request, *args, **kwargs)
 
@@ -79,7 +81,7 @@ class BlogPage(BlogRoutes, Page):
         # list of entries (if any) is paginated.
         if hasattr(self, 'entries'):
             paginator = Paginator(self.entries, 12)
-            page = request.GET.get('page')
+            page = request.GET.get('page', 1)
             try:
                 paginated_entries = paginator.page(page)
             except PageNotAnInteger:
@@ -87,14 +89,14 @@ class BlogPage(BlogRoutes, Page):
                 paginated_entries = paginator.page(1)
             except EmptyPage:
                 # If page is out of range (e.g. 9999), deliver last page of results.
-                paginated_entries = paginator.page(paginator.num_pages)
+                paginated_entries = paginator.page(paginator.num_pages)  # type: ignore
             context['paginated_entries'] = paginated_entries
 
         # Includes filter-related values into the context.
         context['filter_type'] = getattr(self, 'filter_type', None)
         context['filter_value'] = getattr(self, 'filter_value', None)
 
-        return context
+        return context  # type: ignore
 
     def get_entries(self):
         """ Returns all the live entries of the blog. """
@@ -186,7 +188,7 @@ class ArticlePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types = []
+    subpage_types: List[str] = []
 
     class Meta:
         verbose_name = _('Article')
@@ -338,7 +340,7 @@ class RecipePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types = []
+    subpage_types: List[str] = []
 
     class Meta:
         verbose_name = _('Recipe')
@@ -467,7 +469,7 @@ class CategoryArticlePage(models.Model):
     """ Represents a category article page. """
 
     category = models.ForeignKey(
-        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
+        'Category', related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
     )
     page = ParentalKey('ArticlePage', related_name='article_categories')
 
@@ -484,7 +486,7 @@ class CategoryRecipePage(models.Model):
     """ Represents a category recipe page. """
 
     category = models.ForeignKey(
-        Category, related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
+        'Category', related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
     )
     page = ParentalKey('RecipePage', related_name='recipe_categories')
 
@@ -545,7 +547,7 @@ class SimplePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types = []
+    subpage_types: List[str] = []
 
     class Meta:
         verbose_name = _('Simple page')

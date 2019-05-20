@@ -50,7 +50,7 @@ webpack_server:
 # The following rules can be used to check code quality, import sorting, etc.
 # --------------------------------------------------------------------------------------------------
 
-qa: lint isort
+qa: lint isort type_checks
 
 # Code quality checks (eg. flake8, etc).
 lint: lint_python lint_js
@@ -63,6 +63,11 @@ lint_js:
 isort: isort_python
 isort_python:
 	pipenv run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
+
+# Type checks.
+type_checks: type_checks_python
+type_checks_python:
+	pipenv run mypy -p main
 
 
 # TESTING

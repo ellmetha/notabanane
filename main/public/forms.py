@@ -31,10 +31,11 @@ class ContactForm(forms.Form):
     )
     captcha = ReCaptchaField(widget=ReCaptchaV2Invisible)
 
-    def send_contact_email(self, request):
+    def send_contact_email(self, request) -> None:
         """ Sends the contact e-mail once the form has been processed and validated. """
+        contact_email = settings.PROJECT_CONTACT_EMAIL  # type: ignore
         email = Email(
-            settings.PROJECT_CONTACT_EMAIL,
+            contact_email,
             html_template='emails/contact.html',
             subject=_('Contact: {}').format(self.cleaned_data['subject']),
             extra_context={

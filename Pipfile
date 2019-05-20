@@ -18,6 +18,8 @@ ipython = "*"
 faker = "*"
 factory-boy = "*"
 codecov = "*"
+mypy = "*"
+django-stubs = "*"
 
 [packages]
 wagtail = ">=2.5rc1"

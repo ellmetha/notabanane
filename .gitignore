@@ -94,6 +94,9 @@ ENV/
 # Editors
 /.vscode/
 
+# Mypy type check
+/.mypy_cache/
+
 # Project's environment settings
 .env.json
 !/tests/pytests/.env.json

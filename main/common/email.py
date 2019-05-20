@@ -8,6 +8,7 @@
 """
 
 import logging
+from typing import Any, Dict, List, Optional, Union
 
 import html2text
 from django.conf import settings
@@ -31,16 +32,23 @@ class Email:
     """
 
     def __init__(
-        self, recipient, html_template, text_template=None, subject='', from_email=None,
-        subject_template=None, extra_context={}, language=None
+        self,
+        recipient: Union[List[str], str],
+        html_template: str,
+        text_template: str = None,
+        subject: str = '',
+        from_email: Optional[str] = None,
+        subject_template: Optional[str] = None,
+        extra_context: Optional[Dict[Any, Any]] = None,
+        language: Optional[str] = None
     ):
         self.recipient = recipient
         self.recipient = [self.recipient, ] if isinstance(self.recipient, str) else self.recipient
         self.language = language if language else translation.get_language()
         self.from_email = from_email or settings.DEFAULT_FROM_EMAIL
-        with switch_language(self.language):
-            self.context = {}
-            self.context.update(extra_context)
+        with switch_language(self.language):  # type: ignore
+            self.context: Dict[Any, Any] = {}
+            self.context.update(extra_context or {})
             self.subject = (
                 self._render_template(subject_template).strip() if subject_template else
                 force_text(subject)
@@ -51,8 +59,8 @@ class Email:
                 html2text.html2text(self.html_message)
             )
 
-    def send(self):
-        msg = EmailMultiAlternatives(
+    def send(self) -> None:
+        msg = EmailMultiAlternatives(  # type: ignore
             self.subject,
             self.text_message,
             self.from_email,
