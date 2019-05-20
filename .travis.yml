@@ -1,0 +1,22 @@
+dist: xenial
+
+language: python
+
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8-dev"
+
+before_install:
+  - nvm install 11.1.0
+  - nvm use 11.1.0
+
+install:
+  - pip install pipenv
+  - pip install --upgrade setuptools
+  - pipenv install --dev
+  - npm install --dev
+
+script:
+  - make qa
+  - make coverage
