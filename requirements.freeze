@@ -4,8 +4,8 @@ attrs==19.1.0
 Babel==2.6.0
 backcall==0.1.0
 beautifulsoup4==4.6.0
-boto3==1.9.151
-botocore==1.12.151
+boto3==1.9.155
+botocore==1.12.155
 certifi==2019.3.9
 chardet==3.0.4
 codecov==2.0.15
@@ -34,6 +34,7 @@ html5lib==1.0.1
 idna==2.8
 ipython==7.5.0
 ipython-genutils==0.2.0
+isodate==0.6.0
 isort==4.3.20
 jedi==0.13.3
 jmespath==0.9.4

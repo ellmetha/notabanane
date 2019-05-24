@@ -24,6 +24,8 @@
   "author": "{{ page.owner.first_name|default:page.owner.username }}",
   "image": "{{ structured_data_image.url }}",
   {% if page.recipe_yield %}"recipeYield": "{{ page.recipe_yield }}",{% endif %}
+  {% if page.cook_time %}"cookTime": "{{ page.cook_time|iso8601 }}",{% endif %}
+  {% if page.preparation_time %}"prepTime": "{{ page.preparation_time|iso8601 }}",{% endif %}
   "recipeCategory": "{{ page.verbose_dish_types.0 }}",
   "recipeCuisine": "",
   "keywords": "{{ self.seo_title|default:self.title }}, {% for dish_type in page.verbose_dish_types %}{{ dish_type }}{% if not forloop.last %}, {% endif %}{% endfor %}",

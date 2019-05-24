@@ -36,6 +36,7 @@ raven = "*"
 psycopg2 = "*"
 django-storages = "*"
 boto3 = "*"
+isodate = "*"
 
 [pipenv]
 allow_prereleases = true
