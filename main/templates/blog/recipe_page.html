@@ -24,8 +24,8 @@
   "author": "{{ page.owner.first_name|default:page.owner.username }}",
   "image": "{{ structured_data_image.url }}",
   {% if page.recipe_yield %}"recipeYield": "{{ page.recipe_yield }}",{% endif %}
-  "cookTime": "{{ page.cook_time|default:0|iso8601 }}",
-  "prepTime": "{{ page.preparation_time|default:0|iso8601 }}",
+  "cookTime": "{% if page.cook_time %}{{ page.cook_time|iso8601 }}{% else %}PT0M{% endif %}",
+  "prepTime": "{% if page.preparation_time %}{{ page.preparation_time|iso8601 }}{% else %}PT0M{% endif %}",
   "recipeIngredient": [{% for ingredients_section in page.ingredients_sections.all %}{% for ingredient in ingredients_section.ingredients_list %}"{{ ingredient }}"{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}],
   "recipeInstructions": [{% for instructions_section in page.instructions_sections.all %}{% for instruction in instructions_section.instructions_list %}{"@type": "HowToStep", "text": "{{ instruction }}"}{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}],
   "recipeCategory": "{{ page.verbose_dish_types.0 }}",
