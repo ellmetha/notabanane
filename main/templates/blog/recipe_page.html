@@ -29,7 +29,6 @@
   "recipeIngredient": [{% for ingredients_section in page.ingredients_sections.all %}{% for ingredient in ingredients_section.ingredients_list %}"{{ ingredient }}"{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}],
   "recipeInstructions": [{% for instructions_section in page.instructions_sections.all %}{% for instruction in instructions_section.instructions_list %}{"@type": "HowToStep", "text": "{{ instruction }}"}{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}],
   "recipeCategory": "{{ page.verbose_dish_types.0 }}",
-  "aggregateRating": {"@type":"AggregateRating", "reviewCount": 1, "ratingValue": 5,"worstRating":0, "bestRating":5},
   "recipeCuisine": "",
   "keywords": "{{ self.seo_title|default:self.title }}, {% for dish_type in page.verbose_dish_types %}{{ dish_type }}{% if not forloop.last %}, {% endif %}{% endfor %}",
   "description": "{% if self.search_description %}{{ self.search_description }}{% else %}{{ page.introduction|striptags|truncatechars:150 }}{% endif %}"
