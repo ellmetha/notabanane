@@ -30,6 +30,7 @@ before_script:
 script:
   - make qa
   - make coverage
+  - npm run gulp -- build --production
 
 after_success:
   - codecov
