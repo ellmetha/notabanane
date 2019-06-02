@@ -11,8 +11,6 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import webpackStream from 'webpack-stream';
 
-/* Env variables */
-env('.env');
 
 /* Global variables */
 const rootDir = './';
