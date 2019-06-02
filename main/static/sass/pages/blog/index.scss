@@ -67,8 +67,12 @@ body#id_blog_index {
 
       .subtitle {
         font-family: IndieFlower;
-        font-size: 1.35rem;
+        font-size: 1.5rem;
         font-weight: bold;
+
+        @include until($tablet) {
+          font-size: 1.35rem;
+        }
       }
     }
   }
