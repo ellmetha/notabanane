@@ -109,5 +109,7 @@ project/settings/settings_env.py
 # Assets and Node stuff
 node_modules/
 __snapshots__/
+/main/static/build/*
+!main/static/build/.gitkeep
 /main/static/build_dev/*
 !main/static/build_dev/.gitkeep
