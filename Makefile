@@ -1,14 +1,50 @@
 PROJECT_PACKAGE := main
 PROJECT_CONFIGURATION_PACKAGE := project
 DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
+DB_EXISTS := $(shell psql -l|awk '{print $1}'|grep -w notabanane)
 
 .PHONY: devserver qa lint lint_python isort isort_python tests tests_python spec spec_python
 
 
 init:
-	pipenv install --dev --three
+	@echo ---------------- Initialization --- Environment settings
+	@echo
+
+	rsync --ignore-existing .env.json.example .env.json
+	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$USER\",/" .env.json
+	rm -f .env.json.bak
+
+	@echo
+	@echo
+	@echo ---------------- Initialization --- Python dependencies
+	@echo
+
+	pipenv install --dev
+
+	@echo
+	@echo
+	@echo ---------------- Initialization --- Node.js dependencies
+	@echo
+
 	npm install
-	cp -n .env.json.example .env.json
+
+	@echo
+	@echo
+	@echo ---------------- Initialization --- Initial assets build
+	@echo
+
+	npm run gulp -- build
+
+	@echo
+	@echo
+	@echo ---------------- Initialization --- Database
+	@echo
+
+	psql -l|awk '{print $1}'|grep -w notabanane || createdb notabanane 2>/dev/null
+	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
+
+	@echo
+	@echo ---------------- Done.
 
 
 # DEVELOPMENT
@@ -30,7 +66,7 @@ messages:
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*"
 
 compiledmessages:
-	pipenv run python manage.py compilemessages  -l en -l fr
+	pipenv run python manage.py compilemessages -l en -l fr
 
 migrations:
 	pipenv run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
