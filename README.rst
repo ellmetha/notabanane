@@ -9,6 +9,9 @@ notabanane.com
 
 |
 
+Nota Banane is a blog application about healthy food and diet. It features recipes and other
+articles on various subjects.
+
 .. contents:: Table of Contents
     :local:
 
@@ -16,7 +19,7 @@ System requirements
 ===================
 
 * Python_ 3.7+
-* PostgreSQL_
+* PostgreSQL_ 9.4+
 * Node_ 11.0+
 * Pipenv_ 3.5+
 
