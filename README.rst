@@ -26,11 +26,11 @@ Installation
 .. code-block:: shell
 
   $ make init
-  $ make db
-  $ make migrate
 
 Usage
 =====
+
+The development server can be run using the following command:
 
 .. code-block:: shell
 
