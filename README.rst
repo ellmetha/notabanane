@@ -17,20 +17,26 @@ System requirements
 
 * Python_ 3.7+
 * PostgreSQL_
-* Node_ 7.0+
+* Node_ 11.0+
 * Pipenv_ 3.5+
 
 Installation
 ============
 
+If all the above system dependencies are properly installed on the target system, it should be
+possible to install the project using the following command:
+
 .. code-block:: shell
 
   $ make init
 
+This command will take care of installing the dependencies, initializing the environment-specific
+configuration values, building the development assets and preparing the database.
+
 Usage
 =====
 
-The development server can be run using the following command:
+The development server can be started using the following command:
 
 .. code-block:: shell
 
