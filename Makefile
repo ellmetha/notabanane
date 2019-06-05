@@ -1,9 +1,6 @@
 PROJECT_PACKAGE := main
 PROJECT_CONFIGURATION_PACKAGE := project
 DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
-DB_EXISTS := $(shell psql -l|awk '{print $1}'|grep -w notabanane)
-
-.PHONY: devserver qa lint lint_python isort isort_python tests tests_python spec spec_python
 
 
 init:
@@ -11,7 +8,7 @@ init:
 	@echo
 
 	rsync --ignore-existing .env.json.example .env.json
-	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$USER\",/" .env.json
+	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$(USER)\",/" .env.json
 	rm -f .env.json.bak
 
 	@echo
@@ -53,30 +50,45 @@ init:
 # locales, etc.
 # --------------------------------------------------------------------------------------------------
 
+.PHONY: c console
+## Alias of "console".
 c: console
+## Launch a development console.
 console:
 	pipenv run python manage.py shell --settings=$(DJANGO_SETTINGS_MODULE)
 
+.PHONY: s server
+## Alias of "server".
 s: server
+## Launch a development server.
 server:
 	pipenv run python manage.py runserver 0.0.0.0:8000 --settings=$(DJANGO_SETTINGS_MODULE)
 
+## Generate .po translations files.
 messages:
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*"
 
+## Generate .mo compiled translations files.
 compiledmessages:
 	pipenv run python manage.py compilemessages -l en -l fr
 
+## Generate new database migrations.
 migrations:
 	pipenv run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
 
+.PHONY: migrate
+## Run the database migrations.
 migrate:
 	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
 
+.PHONY: superuser
+## Create a superuser.
 superuser:
 	pipenv run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
 
+.PHONY: webpack_server
+## Launch a webpack development server with hot reloading.
 webpack_server:
 	npm run gulp -- webpack-dev-server
 
@@ -86,22 +98,31 @@ webpack_server:
 # The following rules can be used to check code quality, import sorting, etc.
 # --------------------------------------------------------------------------------------------------
 
+.PHONY: qa
+## Trigger all quality assurance checks.
 qa: lint isort type_checks
 
-# Code quality checks (eg. flake8, etc).
+.PHONY: lint lint_python lint_python
+## Trigger code quality checks (flake8, eslint).
 lint: lint_python lint_js
+## Trigger Python code quality checks (flake8).
 lint_python:
 	pipenv run flake8
+## Trigger Javascript code quality checks (eslint).
 lint_js:
 	npm run lint
 
-# Import sort checks.
+.PHONY: isort isort_python
+## Check Python imports sorting.
 isort: isort_python
+## Check Python imports sorting.
 isort_python:
 	pipenv run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
 
-# Type checks.
+.PHONY: type_checks type_checks_python
+## Perform types-related checks (mypy).
 type_checks: type_checks_python
+## Perform types-related checks (mypy).
 type_checks_python:
 	pipenv run mypy -p main
 
@@ -111,22 +132,61 @@ type_checks_python:
 # The following rules can be used to trigger tests execution and produce coverage reports.
 # --------------------------------------------------------------------------------------------------
 
-# Just runs all the tests!
+.PHONY: t tests tests_python tests_js
+## Alias of "console".
 t: tests
+## Run all the test suites.
 tests: tests_python tests_js
+## Run the Python test suite.
 tests_python:
 	pipenv run py.test
+## Run the Javascript test suite.
 tests_js:
 	npm test
 
-# Collects code coverage data.
+.PHONY: coverage coverage_python coverage_js
+## Collects code coverage data.
 coverage: coverage_python coverage_js
+## Collects code coverage data for the Python codebase.
 coverage_python:
 	pipenv run py.test --cov-report term-missing --cov $(PROJECT_PACKAGE)
+## Collects code coverage data for the Javascript codebase.
 coverage_js:
 	npm test
 
-# Run the tests in "spec" mode.
+.PHONY: spec spec_python
+# Run the test suites in "spec" mode.
 spec: spec_python
+# Run the Python test suite in "spec" mode.
 spec_python:
 	pipenv run py.test --spec -p no:sugar
+
+
+# MAKEFILE HELPERS
+# ~~~~~~~~~~~~~~~~
+# The following rules can be used to list available commands and to display help messages.
+# --------------------------------------------------------------------------------------------------
+
+# COLORS
+GREEN  := $(shell tput -Txterm setaf 2)
+YELLOW := $(shell tput -Txterm setaf 3)
+WHITE  := $(shell tput -Txterm setaf 7)
+RESET  := $(shell tput -Txterm sgr0)
+
+.PHONY: help
+## Print Makefile help.
+help:
+	@echo ''
+	@echo 'Usage:'
+	@echo '  ${YELLOW}make${RESET} ${GREEN}<action>${RESET}'
+	@echo ''
+	@echo 'Actions:'
+	@awk '/^[a-zA-Z\-\_0-9]+:/ { \
+		helpMessage = match(lastLine, /^## (.*)/); \
+		if (helpMessage) { \
+			helpCommand = substr($$1, 0, index($$1, ":")-1); \
+			helpMessage = substr(lastLine, RSTART + 3, RLENGTH); \
+			printf "  ${YELLOW}%-$(TARGET_MAX_CHAR_NUM)-30s${RESET}\t${GREEN}%s${RESET}\n", helpCommand, helpMessage; \
+		} \
+	} \
+	{ lastLine = $$0 }' $(MAKEFILE_LIST) | sort -t'|' -sk1,1
