@@ -4,44 +4,30 @@ DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.dev
 
 
 init:
-	@echo ---------------- Initialization --- Environment settings
-	@echo
+	@printf "${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Environment settings${RESET}\n\n"
 
 	rsync --ignore-existing .env.json.example .env.json
 	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$(USER)\",/" .env.json
 	rm -f .env.json.bak
 
-	@echo
-	@echo
-	@echo ---------------- Initialization --- Python dependencies
-	@echo
+	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Python dependencies${RESET}\n\n"
 
 	pipenv install --dev
 
-	@echo
-	@echo
-	@echo ---------------- Initialization --- Node.js dependencies
-	@echo
+	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Node.js dependencies${RESET}\n\n"
 
 	npm install
 
-	@echo
-	@echo
-	@echo ---------------- Initialization --- Initial assets build
-	@echo
+	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Initial assets build${RESET}\n\n"
 
 	npm run gulp -- build
 
-	@echo
-	@echo
-	@echo ---------------- Initialization --- Database
-	@echo
+	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Database${RESET}\n\n"
 
 	psql -l|awk '{print $1}'|grep -w notabanane || createdb notabanane 2>/dev/null
 	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
 
-	@echo
-	@echo ---------------- Done.
+	@printf "\n\n${YELLOW}---------------- Done.${RESET}\n\n"
 
 
 # DEVELOPMENT
