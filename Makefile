@@ -119,7 +119,7 @@ type_checks_python:
 # --------------------------------------------------------------------------------------------------
 
 .PHONY: t tests tests_python tests_js
-## Alias of "console".
+## Alias of "tests".
 t: tests
 ## Run all the test suites.
 tests: tests_python tests_js
