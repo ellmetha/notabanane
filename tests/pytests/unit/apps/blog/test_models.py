@@ -187,6 +187,10 @@ class TestSimplePage:
         context = simple_page.get_context(rf.get('/my-page'))
         assert context['blog_page'] == self.blog_page
 
+    def test_does_not_include_an_entry_in_the_sitemaps_if_it_has_the_noindex_flag(self):
+        simple_page = SimplePageFactory.create(parent=self.blog_page, noindex=True)
+        assert simple_page.get_sitemap_urls() == []
+
 
 @pytest.mark.django_db
 class TestRecipeIngredientsSection:

@@ -561,3 +561,7 @@ class SimplePage(Page):
         context['blog_page'] = self.get_parent().specific
 
         return context
+
+    def get_sitemap_urls(self, request=None):
+        """ Returns URLs to include in sitemaps. """
+        return [] if self.noindex else super().get_sitemap_urls(request=request)
