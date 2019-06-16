@@ -135,6 +135,14 @@ body#id_blog_index {
       h2 {
         margin-bottom: 1rem;
       }
+
+      .button{
+        &.view-all {
+          svg {
+            margin-top: 2px;
+          }
+        }
+      }
     }
 
     a.post-box {
