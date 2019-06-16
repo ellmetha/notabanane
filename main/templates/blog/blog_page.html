@@ -58,7 +58,7 @@
 </section>
 {% endif %}
 {% if self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
-<div id="post_list" class="section">
+<div class="section post-list">
   <div class="container">
     <div class="columns is-multiline">
       {% for post in paginated_entries %}
@@ -98,7 +98,7 @@
   </div>
 </div>
 {% else %}
-<div id="post_list" class="section">
+<div class="section post-list">
   <div class="container">
     <div class="latest-entries">
       <h2 class="is-size-2">{% trans "Latest recipes " %}</h2>
