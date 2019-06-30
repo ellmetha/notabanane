@@ -75,6 +75,21 @@ body#id_blog_entry {
   section#entry_body {
     position: relative;
 
+    &.recipe-body {
+      .content.introduction {
+        p{
+          font-size: 22px;
+          line-height: 30px;
+          font-size: 1.60em;
+          line-height: 1.4em;
+
+          @include until($tablet) {
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+
     #share_this_post {
       position: sticky;
       float: left;
