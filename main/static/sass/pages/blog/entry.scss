@@ -75,21 +75,6 @@ body#id_blog_entry {
   section#entry_body {
     position: relative;
 
-    &.recipe-body {
-      .content.introduction {
-        p{
-          font-size: 22px;
-          line-height: 30px;
-          font-size: 1.60em;
-          line-height: 1.4em;
-
-          @include until($tablet) {
-            font-size: 1.25em;
-          }
-        }
-      }
-    }
-
     #share_this_post {
       position: sticky;
       float: left;
@@ -139,7 +124,7 @@ body#id_blog_entry {
     }
 
     .content.body, .content.introduction {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
 
       a {
         color: $ectasy;
@@ -231,6 +216,14 @@ body#id_blog_entry {
       }
 
       .content.preparation {
+        h3 {
+          font-size: 1.6rem;
+        }
+
+        h4 {
+          font-size: 1.4rem;
+        }
+
         ol {
           position: relative;
           margin-left: 0;
@@ -242,6 +235,7 @@ body#id_blog_entry {
             margin-left: 2.5rem;
             margin-bottom: 0.5rem;
             counter-increment: recipe-instructions-counter;
+            font-size: 1.2rem;
 
             &:before {
               position: absolute;
