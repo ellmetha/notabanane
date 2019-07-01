@@ -1,12 +1,20 @@
-notabanane.com
-##############
+.. raw:: html
 
-.. image:: https://travis-ci.org/ellmetha/notabanane.svg?branch=master
-    :target: https://travis-ci.org/ellmetha/notabanane
+    <p align="center">
+        <img
+        src="main/static/img/logo_cranberry.svg"
+        width="125px;">
+    </p>
+    <h1 align="center">notabanane</h1>
+    <p align="center">
+        Healthy recipes for real life adventurers.
+    </p>
+    <p align="center">
+        <a href="https://travis-ci.org/ellmetha/notabanane" rel="nofollow"><img alt="Build status" src="https://travis-ci.org/ellmetha/notabanane.svg?branch=master" style="max-width:100%;"></a>
+        <a href="https://codecov.io/github/ellmetha/notabanane" rel="nofollow"><img alt="Codecov status" src="https://codecov.io/gh/ellmetha/notabanane/branch/master/graph/badge.svg" style="max-width:100%;"></a>
+    </p>
 
-.. image:: https://codecov.io/gh/ellmetha/notabanane/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/ellmetha/notabanane
-
+|
 |
 
 Nota Banane is a blog application about healthy food and diet. It features recipes and other
