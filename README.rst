@@ -1,7 +1,7 @@
 .. raw:: html
 
     <p align="center">
-        <a href="https//notabanane.com" target="_blank"><img src="main/static/img/logo_cranberry.svg" width="125px;" /></a>
+        <img src="main/static/img/logo_cranberry.svg" width="125px;" />
     </p>
     <h1 align="center">notabanane</h1>
     <p align="center">
@@ -15,7 +15,7 @@
 |
 |
 
-Nota Banane is a blog application about healthy food and diet. It features recipes and other
+`Nota Banane <https://notabanane.com>`_ is a blog application about healthy food and diet. It features recipes and other
 articles on various subjects.
 
 .. contents:: Table of Contents
