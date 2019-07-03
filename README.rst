@@ -1,9 +1,7 @@
 .. raw:: html
 
     <p align="center">
-        <img
-        src="main/static/img/logo_cranberry.svg"
-        width="125px;">
+        <a href="https//notabanane.com" target="_blank"><img src="main/static/img/logo_cranberry.svg" width="125px;" /></a>
     </p>
     <h1 align="center">notabanane</h1>
     <p align="center">
