@@ -29,6 +29,18 @@
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ request.scheme|add:'://'|add:request.get_host }}",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "{{ request.scheme|add:'://'|add:request.get_host }}{% routablepageurl request.site.root_page.specific 'entries_search' %}?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
         "@type": "Organization",
         "url": "{{ request.scheme|add:'://'|add:request.get_host }}",
         "name": "Nota Banane - {% trans "Healthy recipes for real life adventurers" %}",
