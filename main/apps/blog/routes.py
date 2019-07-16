@@ -32,7 +32,7 @@ class BlogRoutes(RoutablePageMixin):
         if self.search_query:
             self.filter_type = 'search'
             self.filter_value = self.search_query
-            self.entries = self.get_entries().search(self.search_query)
+            self.entries = self.get_entries().search(self.search_query, operator='or')
             Query.get(self.search_query).add_hit()
             response = Page.serve(self, request, *args, **kwargs)
         return response or redirect(self.url)
