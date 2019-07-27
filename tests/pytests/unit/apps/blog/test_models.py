@@ -3,6 +3,7 @@ import datetime as dt
 import pytest
 from django.core.paginator import Page
 from django.utils import timezone as tz
+from django.utils.translation import activate
 
 from main.apps.blog.models import ArticlePage
 from main.apps.blog.test.factories import (
@@ -172,6 +173,7 @@ class TestRecipePage:
         assert context['blog_page'] == self.blog_page
 
     def test_can_return_a_list_of_verbose_versions_of_dish_types(self):
+        activate('en')
         recipe_page = RecipePageFactory.create(parent=self.blog_page)
         assert recipe_page.verbose_dish_types == ['Main course']
 
