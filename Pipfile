@@ -25,7 +25,7 @@ mypy = "*"
 django-stubs = "< 1.0"
 
 [packages]
-wagtail = ">=2.5rc1"
+wagtail = ">=2.6"
 pillow = "*"
 django-treebeard = "*"
 django = ">=2.2.2"
