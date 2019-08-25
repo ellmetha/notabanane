@@ -93,7 +93,7 @@ INSTALLED_APPS = (
 
     # Local apps
     'main.apps.blog',
-    'main.common',
+    'main.presentation',
 )
 
 

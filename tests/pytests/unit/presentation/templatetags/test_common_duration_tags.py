@@ -1,6 +1,6 @@
 import datetime as dt
 
-from main.common.templatetags.common_duration_tags import duration, iso8601
+from main.presentation.templatetags.common_duration_tags import duration, iso8601
 
 
 def test_duration_filter_works_as_expected():
