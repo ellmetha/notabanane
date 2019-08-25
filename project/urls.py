@@ -69,5 +69,5 @@ if settings.DEBUG:
         path('503/', TemplateView.as_view(template_name='503.html')),
     ]
 
-urlpatterns.append(path('', include('main.public.urls')))
+urlpatterns.append(path('', include('main.presentation.urls')))
 urlpatterns.append(path('', include(wagtail_urls)))

@@ -2,7 +2,7 @@ import pytest
 from django.conf import settings
 from django.core import mail
 
-from main.public.forms import ContactForm
+from main.presentation.forms import ContactForm
 
 
 @pytest.mark.django_db

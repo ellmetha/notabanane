@@ -6,7 +6,7 @@ from wagtail.core.models import Site
 
 from main.apps.blog.test.factories import ArticlePageFactory, BlogPageFactory, RecipePageFactory
 from main.common.test.factories import UserFactory
-from main.public.feeds import LatestEntriesFeed
+from main.presentation.feeds import LatestEntriesFeed
 
 
 @pytest.mark.django_db
