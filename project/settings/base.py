@@ -84,6 +84,7 @@ INSTALLED_APPS = (
     # Third-party apps
     'anymail',
     'captcha',
+    'graphene_django',
     'modelcluster',
     'taggit',
     'widget_tweaks',
@@ -306,6 +307,15 @@ WAGTAIL_SITE_NAME = 'Nota Banane'
 
 RECAPTCHA_PUBLIC_KEY = get_envsetting('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')
+
+
+# GRAPHENE CONFIGURATIOM
+# ------------------------------------------------------------------------------
+
+GRAPHENE = {
+    'SCHEMA': 'main.presentation.graphql.schema',
+    'RELAY_CONNECTION_MAX_LIMIT': 50,
+}
 
 
 # GOOGLE ANALYTICS CONFIGURATION

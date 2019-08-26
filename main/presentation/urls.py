@@ -14,5 +14,6 @@ from . import feeds, views
 
 urlpatterns = [
     path('contact/', views.ContactFormView.as_view(), name='contact'),
+    path('graphql/', views.GraphQLView.as_view(), name='graphql'),
     path('feed/', feeds.LatestEntriesFeed(), name='feed'),
 ]

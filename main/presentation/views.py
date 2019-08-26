@@ -6,9 +6,11 @@
 
 """
 
+from django.conf import settings
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView
+from graphene_django.views import GraphQLView as BaseGraphQLView
 
 from .forms import ContactForm
 
@@ -28,3 +30,9 @@ class ContactFormView(FormView):
     def get_success_url(self):
         """ Returns the URL to redirect the user to upon valid form processing. """
         return '/'
+
+
+class GraphQLView(BaseGraphQLView):
+    """ Allows to interact with the main GraphQL schema. """
+
+    graphiql = settings.DEBUG
