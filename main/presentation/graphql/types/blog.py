@@ -22,7 +22,7 @@ class RecipePageType(DjangoObjectType):
     class Meta:
         model = RecipePage
         interfaces = (relay.Node, )
-        fields = ('id', 'title', 'date', 'header_image_url', 'url', )
+        fields = ('title', 'date', 'header_image_url', 'url', )
 
     def resolve_header_image_thumbnail(self, info):
         """ Returns the thumbnail URL of the header image. """
