@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-11 22:22-0500\n"
+"POT-Creation-Date: 2019-09-04 16:25-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,9 +55,6 @@ msgid "Articles"
 msgstr ""
 
 msgid "Preparation time"
-msgstr ""
-
-msgid "Duration in the form \"HH:MM:SS\"."
 msgstr ""
 
 msgid "Cook time"
@@ -168,9 +165,6 @@ msgstr ""
 msgid "Simple pages"
 msgstr ""
 
-msgid "^category/(?P<category>[-\\w]+)/$"
-msgstr ""
-
 msgid "^search/$"
 msgstr ""
 
@@ -219,10 +213,10 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-msgid "Contact"
+msgid "Type to search"
 msgstr ""
 
-msgid "Type to search"
+msgid "Contact"
 msgstr ""
 
 msgid "Legal notice"
@@ -300,6 +294,12 @@ msgid "Full name:"
 msgstr ""
 
 msgid "Bye!"
+msgstr ""
+
+msgid "Hours"
+msgstr ""
+
+msgid "Minutes"
 msgstr ""
 
 msgid "(optional)"

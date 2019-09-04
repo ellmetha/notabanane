@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-11 22:22-0500\n"
-"PO-Revision-Date: 2019-05-11 23:23-0400\n"
+"POT-Creation-Date: 2019-09-04 16:25-0500\n"
+"PO-Revision-Date: 2019-09-04 23:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 msgid "Blog"
 msgstr "Blog"
@@ -56,9 +56,6 @@ msgstr "Articles"
 
 msgid "Preparation time"
 msgstr "Temps de préparation"
-
-msgid "Duration in the form \"HH:MM:SS\"."
-msgstr "Durée au format “HH:MM:SS”."
 
 msgid "Cook time"
 msgstr "Temps de cuisson"
@@ -168,9 +165,6 @@ msgstr "Page simple"
 msgid "Simple pages"
 msgstr "Pages simples"
 
-msgid "^category/(?P<category>[-\\w]+)/$"
-msgstr "^categorie/(?P<category>[-\\w]+)/$"
-
 msgid "^search/$"
 msgstr "^recherche/$"
 
@@ -219,11 +213,11 @@ msgstr "Recettes santé pour aventuriers des temps modernes"
 msgid "About"
 msgstr "À propos"
 
-msgid "Contact"
-msgstr "Contact"
-
 msgid "Type to search"
 msgstr "Taper pour chercher"
+
+msgid "Contact"
+msgstr "Contact"
 
 msgid "Legal notice"
 msgstr "Mentions légales"
@@ -302,8 +296,20 @@ msgstr "Nom complet:"
 msgid "Bye!"
 msgstr "Bye!"
 
+msgid "Hours"
+msgstr "Heures"
+
+msgid "Minutes"
+msgstr "Minutes"
+
 msgid "(optional)"
 msgstr "(Optionnel)"
+
+#~ msgid "Duration in the form \"HH:MM:SS\"."
+#~ msgstr "Durée au format “HH:MM:SS”."
+
+#~ msgid "^category/(?P<category>[-\\w]+)/$"
+#~ msgstr "^categorie/(?P<category>[-\\w]+)/$"
 
 #~ msgid "FAQ"
 #~ msgstr "FAQ"
