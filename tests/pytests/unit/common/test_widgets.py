@@ -1,5 +1,3 @@
-from django.forms.widgets import Select
-
 from main.common.widgets import ShortDurationSelectWidget
 
 
