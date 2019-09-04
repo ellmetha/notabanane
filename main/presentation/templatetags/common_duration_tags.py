@@ -7,9 +7,9 @@
 """
 
 import isodate
-from babel.dates import format_timedelta
 from django import template
-from django.utils.translation import get_language
+from django.utils.translation import ngettext
+from django.utils.translation import ugettext_lazy as _
 
 
 register = template.Library()
@@ -18,7 +18,18 @@ register = template.Library()
 @register.filter
 def duration(timedelta):
     """ Formats a time delta to a human-friendly output. """
-    return format_timedelta(timedelta, locale=get_language())
+    total_seconds = int(timedelta.total_seconds())
+    hours = total_seconds // 3600
+    minutes = (total_seconds % 3600) // 60
+    if hours and not minutes:
+        return ngettext('{} hour', '{} hours', hours).format(hours)
+    elif minutes and not hours:
+        return ngettext('{} minute', '{} minutes', minutes).format(minutes)
+
+    return _('{hours} {minutes}').format(
+        hours=ngettext('{} hour', '{} hours', hours).format(hours),
+        minutes=ngettext('{} minute', '{} minutes', minutes).format(minutes)
+    )
 
 
 @register.filter
