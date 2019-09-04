@@ -2,6 +2,12 @@
 
 
 body.page-editor.model-recipepage {
+  ul#id_dish_types {
+    label {
+      width: 25%;
+    }
+  }
+
   div.duration_field.short_duration_select_widget {
     select {
       margin-left: 15px;
