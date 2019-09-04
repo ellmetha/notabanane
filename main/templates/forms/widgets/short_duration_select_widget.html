@@ -1,0 +1,5 @@
+{% load i18n %}
+{% spaceless %}
+{% include widget.hours.template_name with widget=widget.hours %}<span class="unit hours">{% trans "Hours" %}</span>
+{% include widget.minutes.template_name with widget=widget.minutes %}<span class="unit minutes">{% trans "Minutes" %}</span>
+{% endspaceless %}

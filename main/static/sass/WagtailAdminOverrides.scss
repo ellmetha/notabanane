@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+
+body.page-editor.model-recipepage {
+  div.duration_field.short_duration_select_widget {
+    select {
+      margin-left: 15px;
+      margin-right: 8px;
+      width: auto;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    span.unit {
+      margin-right: 3px;
+      display: inline-block;
+    }
+  }
+}

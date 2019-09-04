@@ -65,6 +65,7 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
 
     # Wagtail apps
     'wagtail.admin',
@@ -251,6 +252,13 @@ MEDIA_ROOT = str(INSTALL_PATH / 'media')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
+
+
+# FORMS CONFIGURATION
+# ------------------------------------------------------------------------------
+
+# See: https://docs.djangoproject.com/en/2.2/ref/settings/#form-renderer
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 
 # URL CONFIGURATION

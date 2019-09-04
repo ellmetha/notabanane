@@ -77,7 +77,7 @@ const webpackConfig = {
 
 /* Task to build our JS and CSS applications. */
 gulp.task('build-webpack-assets', gulp.series(() => (
-  gulp.src([`${jsDir}/App.js`, `${sassDir}/App.scss`])
+  gulp.src([`${jsDir}/App.js`, `${sassDir}/App.scss`, `${sassDir}/WagtailAdminOverrides.scss`])
     .pipe(named())
     .pipe(webpackStream(webpackConfig, webpack))
     .pipe(gulp.dest(buildDir))

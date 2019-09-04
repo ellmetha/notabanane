@@ -27,7 +27,9 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
-from ...common.db.models.fields import ChoiceArrayField
+from main.common.db.models.fields import ChoiceArrayField
+from main.common.widgets import ShortDurationSelectWidget
+
 from .routes import BlogRoutes
 
 
@@ -238,24 +240,20 @@ class RecipePage(Page):
         blank=True,
         null=True,
         verbose_name=_('Preparation time'),
-        help_text=_('Duration in the form "HH:MM:SS".'),
     )
     cook_time = models.DurationField(
         blank=True,
         null=True,
         verbose_name=_('Cook time'),
-        help_text=_('Duration in the form "HH:MM:SS".'),
     )
     fridge_time = models.DurationField(
         blank=True,
         null=True,
         verbose_name=_('Fridge time'),
-        help_text=_('Duration in the form "HH:MM:SS".'),
     )
     rest_time = models.DurationField(
         blank=True,
         null=True, verbose_name=_('Rest time'),
-        help_text=_('Duration in the form "HH:MM:SS".'),
     )
     recipe_yield = models.CharField(
         max_length=127,
@@ -316,10 +314,10 @@ class RecipePage(Page):
         FieldPanel('dish_types', widget=CheckboxSelectMultiple),
         MultiFieldPanel(
             [
-                FieldPanel('preparation_time'),
-                FieldPanel('cook_time'),
-                FieldPanel('fridge_time'),
-                FieldPanel('rest_time'),
+                FieldPanel('preparation_time', widget=ShortDurationSelectWidget),
+                FieldPanel('cook_time', widget=ShortDurationSelectWidget),
+                FieldPanel('fridge_time', widget=ShortDurationSelectWidget),
+                FieldPanel('rest_time', widget=ShortDurationSelectWidget),
                 FieldPanel('recipe_yield'),
             ],
             heading=_('Recipe information'),
