@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-04 16:56-0500\n"
+"POT-Creation-Date: 2019-09-05 16:34-0500\n"
 "PO-Revision-Date: 2019-09-04 23:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,9 +44,6 @@ msgstr "Image d’entête"
 
 msgid "Header image displayed when rendering the article or if the article is featured on the home page"
 msgstr ""
-
-msgid "Categories"
-msgstr "Catégories"
 
 msgid "Article"
 msgstr "Article"
@@ -134,18 +131,6 @@ msgstr "Chaque nouvelle ligne génère une nouvelle instruction numérotée. Des
 
 msgid "Recipe instructions section"
 msgstr "Section de listings d’instructions"
-
-msgid "Category name"
-msgstr "Nom de la catégorie"
-
-msgid "Slug"
-msgstr "Slug"
-
-msgid "Parent category"
-msgstr "Catégorie parente"
-
-msgid "Category"
-msgstr "Catégorie"
 
 msgid "Body"
 msgstr "Corps de page"
@@ -318,6 +303,21 @@ msgstr "Minutes"
 
 msgid "(optional)"
 msgstr "(Optionnel)"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgid "Category name"
+#~ msgstr "Nom de la catégorie"
+
+#~ msgid "Slug"
+#~ msgstr "Slug"
+
+#~ msgid "Parent category"
+#~ msgstr "Catégorie parente"
+
+#~ msgid "Category"
+#~ msgstr "Catégorie"
 
 #~ msgid "Duration in the form \"HH:MM:SS\"."
 #~ msgstr "Durée au format “HH:MM:SS”."
