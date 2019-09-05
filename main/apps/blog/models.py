@@ -145,10 +145,7 @@ class ArticlePage(Page):
         on_delete=models.SET_NULL,
         related_name='+',
         verbose_name=_('Header image'),
-        help_text=_(
-            'Header image displayed when rendering the article or if the article is featured on '
-            'the home page'
-        ),
+        help_text=_('Header image displayed when rendering the page.'),
     )
 
     # A blog article can be associated with many tags if necessary.
@@ -221,10 +218,7 @@ class RecipePage(Page):
         on_delete=models.SET_NULL,
         related_name='+',
         verbose_name=_('Header image'),
-        help_text=_(
-            'Header image displayed when rendering the article or if the article is featured on '
-            'the home page'
-        ),
+        help_text=_('Header image displayed when rendering the page.'),
     )
 
     # The following fields define basic meta-information regarding a recipe (times, yiels, etc).
