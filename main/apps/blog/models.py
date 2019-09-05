@@ -19,13 +19,11 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from taggit.models import TaggedItemBase
-from treebeard.al_tree import AL_Node
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Orderable, Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
-from wagtail.snippets.models import register_snippet
 
 from main.common.db.models.fields import ChoiceArrayField
 from main.common.widgets import ShortDurationSelectWidget
@@ -153,11 +151,6 @@ class ArticlePage(Page):
         ),
     )
 
-    # A blog article can be associated with many categories if necessary.
-    categories = models.ManyToManyField(
-        'blog.Category', through='blog.CategoryArticlePage', blank=True,
-    )
-
     # A blog article can be associated with many tags if necessary.
     tags = ClusterTaggableManager(through='blog.TagArticlePage', blank=True)
 
@@ -178,7 +171,6 @@ class ArticlePage(Page):
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
         ImageChooserPanel('header_image'),
-        InlinePanel('article_categories', label=_('Categories')),
     ]
 
     promote_panels = Page.promote_panels + [
@@ -288,11 +280,6 @@ class RecipePage(Page):
         verbose_name=_('Dish types'),
     )
 
-    # A blog recipe can be associated with many categories if necessary.
-    categories = models.ManyToManyField(
-        'blog.Category', through='blog.CategoryRecipePage', blank=True,
-    )
-
     # A blog recipe can be associated with many tags if necessary.
     tags = ClusterTaggableManager(through='blog.TagRecipePage', blank=True)
 
@@ -325,7 +312,6 @@ class RecipePage(Page):
         InlinePanel('ingredients_sections', label=_('Recipe ingredients sections')),
         InlinePanel('instructions_sections', label=_('Recipe instructions sections')),
         ImageChooserPanel('header_image'),
-        InlinePanel('recipe_categories', label=_('Categories')),
         FieldPanel('date'),
     ]
 
@@ -433,68 +419,6 @@ class TagRecipePage(TaggedItemBase):
     """ Represents a simple recipe tag. """
 
     content_object = ParentalKey('RecipePage', related_name='recipe_tags')
-
-
-@register_snippet
-class Category(AL_Node):
-    """ Represents a blog category. """
-
-    # A category is basically defined by a name, a slug (that will be used in URLs) and a
-    # description.
-    name = models.CharField(max_length=80, unique=True, verbose_name=_('Category name'))
-    slug = models.SlugField(max_length=100, unique=True, verbose_name=_('Slug'))
-    description = models.CharField(max_length=500, blank=True, verbose_name=_('Description'))
-
-    # A tree of categories can be created using the parent relation (thus allowing to build
-    # adjacency list trees).
-    parent = models.ForeignKey(
-        'self', blank=True, null=True, db_index=True, related_name='children_set',
-        on_delete=models.SET_NULL, verbose_name=_('Parent category'),
-    )
-
-    node_order_by = ['name', ]
-
-    class Meta:
-        ordering = ['name', ]
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
-
-    def __str__(self):
-        return self.name
-
-
-class CategoryArticlePage(models.Model):
-    """ Represents a category article page. """
-
-    category = models.ForeignKey(
-        'Category', related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
-    )
-    page = ParentalKey('ArticlePage', related_name='article_categories')
-
-    ###############################
-    # EDITOR PANELS CONFIGURATION #
-    ###############################
-
-    panels = [
-        FieldPanel('category'),
-    ]
-
-
-class CategoryRecipePage(models.Model):
-    """ Represents a category recipe page. """
-
-    category = models.ForeignKey(
-        'Category', related_name='+', on_delete=models.CASCADE, verbose_name=_('Category'),
-    )
-    page = ParentalKey('RecipePage', related_name='recipe_categories')
-
-    ###############################
-    # EDITOR PANELS CONFIGURATION #
-    ###############################
-
-    panels = [
-        FieldPanel('category'),
-    ]
 
 
 class SimplePage(Page):
