@@ -6,14 +6,12 @@ import env from 'gulp-env';
 import mjml from 'gulp-mjml';
 import gutil from 'gulp-util';
 import path from 'path';
-import named from 'vinyl-named';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import webpackStream from 'webpack-stream';
 
 
 /* Global variables */
-const rootDir = './';
+const rootDir = `${__dirname}/`;
 const staticDir = `${rootDir}main/static/`;
 const templatesDir = `${rootDir}main/templates/`;
 const PROD_ENV = gutil.env.production;
@@ -34,8 +32,13 @@ const jsDir = `${staticDir}js`;
 
 const webpackConfig = {
   mode: PROD_ENV ? 'production' : 'development',
+  entry: {
+    App: [`${jsDir}/App.js`, `${sassDir}/App.scss`],
+    WagtailAdminOverrides: [`${sassDir}/WagtailAdminOverrides.scss`],
+  },
   output: {
     filename: 'js/[name].js',
+    path: buildDir,
     publicPath: '/static/',
   },
   resolve: {
@@ -77,10 +80,18 @@ const webpackConfig = {
 
 /* Task to build our JS and CSS applications. */
 gulp.task('build-webpack-assets', gulp.series(() => (
-  gulp.src([`${jsDir}/App.js`, `${sassDir}/App.scss`, `${sassDir}/WagtailAdminOverrides.scss`])
-    .pipe(named())
-    .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(gulp.dest(buildDir))
+  new Promise((resolve, reject) => {
+    // eslint-disable-next-line consistent-return
+    webpack(webpackConfig, (err, stats) => {
+      if (err) {
+        return reject(err);
+      }
+      if (stats.hasErrors()) {
+        return reject(new Error(stats.compilation.errors.join('\n')));
+      }
+      resolve();
+    });
+  })
 )));
 
 
