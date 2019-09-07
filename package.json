@@ -30,7 +30,7 @@
     "gulp": "^4.0.0",
     "gulp-env": "^0.4.0",
     "gulp-less": "^4.0.0",
-    "gulp-mjml": "^3.0.0",
+    "gulp-mjml": "^4.0.2",
     "gulp-util": "^3.0.8",
     "jest": "^24.5.0",
     "less-loader": "^4.1.0",
