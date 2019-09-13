@@ -89,6 +89,10 @@ gulp.task('build-webpack-assets', gulp.series(() => (
       if (stats.hasErrors()) {
         return reject(new Error(stats.compilation.errors.join('\n')));
       }
+      console.log(stats.toString({
+        chunks: false,
+        colors: true,
+      }));
       resolve();
     });
   })
