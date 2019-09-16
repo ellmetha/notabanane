@@ -12,9 +12,10 @@ chardet==3.0.4
 codecov==2.0.15
 coverage==5.0a6
 decorator==4.4.0
-Django==2.2.4
+Django==2.2.5
 django-anymail==6.1.0
 django-debug-toolbar==2.0
+django-js-routes==0.1.0.dev0
 django-modelcluster==4.4
 django-recaptcha==2.0.4
 django-storages==1.7.1
