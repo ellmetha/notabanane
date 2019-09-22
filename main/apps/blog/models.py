@@ -15,10 +15,8 @@ from django.db import models
 from django.forms.widgets import CheckboxSelectMultiple
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
-from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
-from taggit.models import TaggedItemBase
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Orderable, Page
@@ -45,19 +43,12 @@ class BlogPage(BlogRoutes, Page):
         help_text=_('This is the description of your blog'),
     )
 
-    # The following fields can be used to configure the behavior of the blog.
-    show_tags = models.BooleanField(default=True, verbose_name=_('Show tags'))
-
     ###############################
     # EDITOR PANELS CONFIGURATION #
     ###############################
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
-    ]
-
-    settings_panels = Page.settings_panels + [
-        FieldPanel('show_tags'),
     ]
 
     ####################################
@@ -148,9 +139,6 @@ class ArticlePage(Page):
         help_text=_('Header image displayed when rendering the page.'),
     )
 
-    # A blog article can be associated with many tags if necessary.
-    tags = ClusterTaggableManager(through='blog.TagArticlePage', blank=True)
-
     ##############################
     # SEARCH INDEX CONFIGURATION #
     ##############################
@@ -168,10 +156,6 @@ class ArticlePage(Page):
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
         ImageChooserPanel('header_image'),
-    ]
-
-    promote_panels = Page.promote_panels + [
-        FieldPanel('tags'),
     ]
 
     ####################################
@@ -274,9 +258,6 @@ class RecipePage(Page):
         verbose_name=_('Dish types'),
     )
 
-    # A blog recipe can be associated with many tags if necessary.
-    tags = ClusterTaggableManager(through='blog.TagRecipePage', blank=True)
-
     ##############################
     # SEARCH INDEX CONFIGURATION #
     ##############################
@@ -307,10 +288,6 @@ class RecipePage(Page):
         InlinePanel('instructions_sections', label=_('Recipe instructions sections')),
         ImageChooserPanel('header_image'),
         FieldPanel('date'),
-    ]
-
-    promote_panels = Page.promote_panels + [
-        FieldPanel('tags'),
     ]
 
     ####################################
@@ -401,18 +378,6 @@ class RecipeInstructionsSection(Orderable, ClusterableModel, models.Model):
     def instructions_list(self):
         """ Returns the list of instructions as a standard list. """
         return [i for i in (self.instructions or '').splitlines() if i]
-
-
-class TagArticlePage(TaggedItemBase):
-    """ Represents a simple article tag. """
-
-    content_object = ParentalKey('ArticlePage', related_name='article_tags')
-
-
-class TagRecipePage(TaggedItemBase):
-    """ Represents a simple recipe tag. """
-
-    content_object = ParentalKey('RecipePage', related_name='recipe_tags')
 
 
 class SimplePage(Page):
