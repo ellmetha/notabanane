@@ -31,7 +31,7 @@ class RecipePageType(DjangoObjectType):
         model = RecipePage
         interfaces = (relay.Node, )
         fields = ('title', 'date', 'header_image_url', 'url', 'dish_types', )
-        filter_fields = []
+        filter_fields = ()
 
     def resolve_header_image_thumbnail(self, info):
         """ Returns the thumbnail URL of the header image. """
