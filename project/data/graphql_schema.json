@@ -303,7 +303,7 @@
             {
               "args": [],
               "deprecationReason": null,
-              "description": "Le titre de la page comme vous souhaiteriez que les lecteurs la voient",
+              "description": "The page title as you'd like it to be seen by the public",
               "isDeprecated": false,
               "name": "title",
               "type": {
