@@ -112,7 +112,7 @@
               "name": "recipes",
               "type": {
                 "kind": "OBJECT",
-                "name": "RecipePageConnection",
+                "name": "RecipePageTypeConnection",
                 "ofType": null
               }
             }
@@ -124,7 +124,7 @@
           "possibleTypes": null
         },
         {
-          "description": "Defines a Relay connection for the RecipePage type. ",
+          "description": null,
           "enumValues": null,
           "fields": [
             {
@@ -157,7 +157,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "RecipePageEdge",
+                    "name": "RecipePageTypeEdge",
                     "ofType": null
                   }
                 }
@@ -167,7 +167,7 @@
           "inputFields": null,
           "interfaces": [],
           "kind": "OBJECT",
-          "name": "RecipePageConnection",
+          "name": "RecipePageTypeConnection",
           "possibleTypes": null
         },
         {
@@ -258,7 +258,7 @@
           "possibleTypes": null
         },
         {
-          "description": "A Relay edge containing a `RecipePage` and its cursor.",
+          "description": "A Relay edge containing a `RecipePageType` and its cursor.",
           "enumValues": null,
           "fields": [
             {
@@ -293,7 +293,7 @@
           "inputFields": null,
           "interfaces": [],
           "kind": "OBJECT",
-          "name": "RecipePageEdge",
+          "name": "RecipePageTypeEdge",
           "possibleTypes": null
         },
         {
@@ -335,6 +335,26 @@
             {
               "args": [],
               "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "dishTypes",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "DishType",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
               "description": "The ID of the object.",
               "isDeprecated": false,
               "name": "id",
@@ -355,9 +375,13 @@
               "isDeprecated": false,
               "name": "headerImageThumbnail",
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               }
             },
             {
@@ -367,9 +391,13 @@
               "isDeprecated": false,
               "name": "url",
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               }
             }
           ],
@@ -436,6 +464,65 @@
           "interfaces": null,
           "kind": "SCALAR",
           "name": "Date",
+          "possibleTypes": null
+        },
+        {
+          "description": "An enumeration.",
+          "enumValues": [
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "APPETIZERS"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "BEVERAGES"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "BREAKFAST"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "DESSERTS"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "MAIN_COURSE"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "SAUCES_SALAD_DRESSINGS"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "SOUPS"
+            },
+            {
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "VEGETABLES_SALADS"
+            }
+          ],
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "kind": "ENUM",
+          "name": "DishType",
           "possibleTypes": null
         },
         {

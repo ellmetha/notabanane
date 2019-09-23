@@ -41,6 +41,7 @@ django-storages = "*"
 boto3 = "*"
 isodate = "*"
 graphene-django = "*"
+django-filter = "*"
 
 [pipenv]
 allow_prereleases = true

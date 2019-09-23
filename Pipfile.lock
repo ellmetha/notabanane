@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9e524888d9a879dca9d8548c3c5a2ad8913ea608c310c3fcb403feca2de7f4a8"
+            "sha256": "06748b168bbe364350f051b9defc928881824887038dde88d20ce0ac34b8374f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -79,6 +79,13 @@
             ],
             "version": "==7.0.0"
         },
+        "django-filter": {
+            "hashes": [
+                "sha256:558c727bce3ffa89c4a7a0b13bc8976745d63e5fd576b3a9a851650ef11c401b",
+                "sha256:c3deb57f0dd7ff94d7dce52a047516822013e2b441bed472b722a317658cfd14"
+            ],
+            "version": "==2.2.0"
+        },
         "django-modelcluster": {
             "hashes": [
                 "sha256:59672386191d38c69d6f994c3f9aaab3ff93910ec71e78a0bb6aa9abd4d1b90a",
@@ -150,10 +157,10 @@
         },
         "graphene-django": {
             "hashes": [
-                "sha256:25f2bdf41e30bc7b860c1c13bfb4ba5c3961712394f16e847d79a69fc25a06b1",
-                "sha256:d75b3e468d8d765d5964bc809e403b44bf7c37556c0464230a5083bccf14581b"
+                "sha256:0d1404ab1ba7873a8e848d87d138f615391d100ed0c046482c164429cfb992ef",
+                "sha256:fa9e815f63e3c972773adc96c3f3c81e537dba0edcd0f1be92c799bc0b6ed0a8"
             ],
-            "version": "==2.5.0"
+            "version": "==2.6.0"
         },
         "graphql-core": {
             "hashes": [

@@ -8,17 +8,17 @@
 """
 
 import graphene
-from graphene import relay
+from graphene_django.filter import DjangoFilterConnectionField
 
 from main.apps.blog.models import RecipePage
 
-from .types import RecipePageConnection
+from .types import RecipePageType
 
 
 class Query(graphene.ObjectType):
     """ Main GraphQL query. """
 
-    recipes = relay.ConnectionField(RecipePageConnection)
+    recipes = DjangoFilterConnectionField(RecipePageType)
 
     def resolve_recipes(self, info, **kwargs):
         """ Returns a queryset of all live recipes. """
