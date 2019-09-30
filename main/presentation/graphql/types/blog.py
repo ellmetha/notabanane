@@ -11,13 +11,8 @@ from graphene import relay
 from graphene_django.types import DjangoObjectType
 
 from main.apps.blog.models import RecipePage
-from main.common.text import replace
 
-
-DishType = graphene.Enum(
-    'DishType',
-    [(replace(t[0], (('-', '_'), ('+', '_'))).upper(), t[0]) for t in RecipePage.DISH_TYPE_CHOICES]
-)
+from .enums import DishType
 
 
 class RecipePageType(DjangoObjectType):
@@ -31,7 +26,7 @@ class RecipePageType(DjangoObjectType):
         model = RecipePage
         interfaces = (relay.Node, )
         fields = ('title', 'date', 'header_image_url', 'url', 'dish_types', )
-        filter_fields = ()
+        filter_fields = ('dish_types', )
 
     def resolve_header_image_thumbnail(self, info):
         """ Returns the thumbnail URL of the header image. """

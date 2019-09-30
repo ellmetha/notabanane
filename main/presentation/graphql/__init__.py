@@ -10,19 +10,15 @@
 import graphene
 from graphene_django.filter import DjangoFilterConnectionField
 
-from main.apps.blog.models import RecipePage
-
+from .converter import *  # noqa: F401
+from .filters import RecipePageFilter
 from .types import RecipePageType
 
 
 class Query(graphene.ObjectType):
     """ Main GraphQL query. """
 
-    recipes = DjangoFilterConnectionField(RecipePageType)
-
-    def resolve_recipes(self, info, **kwargs):
-        """ Returns a queryset of all live recipes. """
-        return RecipePage.objects.live().all()
+    recipes = DjangoFilterConnectionField(RecipePageType, filterset_class=RecipePageFilter)
 
 
 schema = graphene.Schema(query=Query)

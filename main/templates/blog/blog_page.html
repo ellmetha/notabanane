@@ -58,6 +58,9 @@
 </section>
 {% endif %}
 {% if self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
+{% if self.filter_value == 'recipe' and request.GET.next == 'ok' %}
+
+{% else %}
 <div class="section post-list">
   <div class="container">
     <div class="columns is-multiline">
@@ -97,6 +100,7 @@
     {% endif %}
   </div>
 </div>
+{% endif %}
 {% else %}
 <div class="section post-list">
   <div class="container">
