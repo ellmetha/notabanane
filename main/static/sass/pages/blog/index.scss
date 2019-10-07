@@ -136,6 +136,10 @@ body#id_blog_index {
         margin-bottom: 1rem;
       }
 
+      div.tile {
+        background-position: center;
+      }
+
       .button{
         &.view-all {
           svg {
