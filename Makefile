@@ -59,6 +59,10 @@ messages:
 compiledmessages:
 	pipenv run python manage.py compilemessages -l en -l fr
 
+## Generates the GraphQL schema dump.
+graphql_schema:
+	pipenv run python manage.py dump_graphql_schema -o project/db/schema.graphql
+
 ## Generate new database migrations.
 migrations:
 	pipenv run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
