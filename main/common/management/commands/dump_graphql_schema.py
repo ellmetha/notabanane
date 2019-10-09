@@ -29,6 +29,6 @@ class Command(BaseCommand):
         if options['output']:
             self.stdout.write(
                 self.style.MIGRATE_HEADING(
-                    'Successfully dumped GraphQL schema to {}'.format(options['output'])
+                    'Successfully dumped GraphQL schema to "{}".'.format(options['output'])
                 )
             )
