@@ -1,0 +1,50 @@
+schema {
+  query: Query
+}
+
+scalar Date
+
+enum DishType {
+  APPETIZERS
+  BEVERAGES
+  BREAKFAST
+  DESSERTS
+  MAIN_COURSE
+  SAUCES_SALAD_DRESSINGS
+  SOUPS
+  VEGETABLES_SALADS
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  recipes(before: String, after: String, first: Int, last: Int, dishTypes: [String]): RecipePageTypeConnection
+}
+
+type RecipePageType implements Node {
+  title: String!
+  date: Date!
+  dishTypes: [DishType]!
+  id: ID!
+  headerImageThumbnail: String!
+  url: String!
+}
+
+type RecipePageTypeConnection {
+  pageInfo: PageInfo!
+  edges: [RecipePageTypeEdge]!
+}
+
+type RecipePageTypeEdge {
+  node: RecipePageType
+  cursor: String!
+}

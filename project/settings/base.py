@@ -95,6 +95,7 @@ INSTALLED_APPS = (
 
     # Local apps
     'main.apps.blog',
+    'main.common',
     'main.presentation',
 )
 
@@ -322,7 +323,6 @@ RECAPTCHA_PRIVATE_KEY = get_envsetting('RECAPTCHA_PRIVATE_KEY')
 
 GRAPHENE = {
     'SCHEMA': 'main.presentation.graphql.schema',
-    'SCHEMA_OUTPUT': 'project/data/graphql_schema.json',
     'RELAY_CONNECTION_MAX_LIMIT': 50,
 }
 
