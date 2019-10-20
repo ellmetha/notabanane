@@ -220,7 +220,7 @@ body#id_blog_index {
             margin: 0;
             padding: 1.5rem 0.5rem;
             display: block;
-            height: 8.25rem;
+            height: 9rem;
             background: lighten($grey-lighter, 10%);
             text-align: center;
             color: $ferra;
@@ -266,7 +266,7 @@ body#id_blog_index {
               font-family: IndieFlower;
               font-size: 1.5rem;
               font-weight: bold;
-              line-height: 1.4rem;
+              line-height: 1.8rem;
             }
           }
         }
@@ -328,7 +328,7 @@ body#id_blog_index {
             margin: 0;
             padding: 1.5rem 0.5rem;
             display: block;
-            height: 8.25rem;
+            height: 9rem;
             background: lighten($grey-lighter, 10%);
             text-align: center;
             color: $ferra;
@@ -374,7 +374,7 @@ body#id_blog_index {
               font-family: IndieFlower;
               font-size: 1.5rem;
               font-weight: bold;
-              line-height: 1.4rem;
+              line-height: 1.8rem;
             }
           }
         }
@@ -394,7 +394,7 @@ body#id_blog_index {
         position: relative;
         padding: 1.5rem 0.5rem;
         display: block;
-        height: 8.25rem;
+        height: 9rem;
         background: lighten($grey-lighter, 10%);
         text-align: center;
         color: $ferra;
@@ -439,7 +439,7 @@ body#id_blog_index {
           font-family: IndieFlower;
           font-size: 1.5rem;
           font-weight: bold;
-          line-height: 1.4rem;
+          line-height: 1.8rem;
 
           @include until($tablet) {
             padding: 0 0.2rem;
