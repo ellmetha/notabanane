@@ -31,7 +31,7 @@ class RecipePageType(DjangoObjectType):
     @classmethod
     def get_queryset(cls, queryset, info):
         """ Returns the default queryset to use for the RecipePage type. """
-        return RecipePage.objects.select_related('header_image').live().order_by('-date')
+        return queryset.select_related('header_image').live().order_by('-date')
 
     def resolve_header_image_thumbnail(self, info):
         """ Returns the thumbnail URL of the header image. """
