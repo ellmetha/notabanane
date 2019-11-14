@@ -25,7 +25,7 @@ class RecipePageType(DjangoObjectType):
     class Meta:
         model = RecipePage
         interfaces = (relay.Node, )
-        fields = ('title', 'date', 'header_image_url', 'url', 'dish_types', )
+        fields = ('id', 'title', 'date', 'header_image_url', 'url', 'dish_types', )
         filter_fields = ('dish_types', )
 
     @classmethod

@@ -31,10 +31,10 @@ type Query {
 }
 
 type RecipePageType implements Node {
+  id: ID!
   title: String!
   date: Date!
   dishTypes: [DishType]!
-  id: ID!
   headerImageThumbnail: String!
   url: String!
 }
