@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 16:34-0500\n"
+"POT-Creation-Date: 2019-11-16 16:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,9 +27,6 @@ msgstr ""
 msgid "This is the description of your blog"
 msgstr ""
 
-msgid "Show tags"
-msgstr ""
-
 msgid "Blogs"
 msgstr ""
 
@@ -42,7 +39,7 @@ msgstr ""
 msgid "Header image"
 msgstr ""
 
-msgid "Header image displayed when rendering the article or if the article is featured on the home page"
+msgid "Header image displayed when rendering the page."
 msgstr ""
 
 msgid "Article"
@@ -133,9 +130,6 @@ msgid "Recipe instructions section"
 msgstr ""
 
 msgid "Body"
-msgstr ""
-
-msgid "Header image displayed when rendering the page."
 msgstr ""
 
 msgid "Disable robots indexation"
