@@ -68,9 +68,7 @@
       {% with post=post.specific %}
       <div class="column is-one-third">
         <a href="{% pageurl post %}" class="post-box">
-          {% if post.header_image %}
           <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
-          {% endif %}
           <span class="content-wrapper">
             <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
             <span class="post-title">{{ post.title }}</span>
@@ -174,9 +172,7 @@
         {% for post in self.latest_articles %}
         <div class="column is-one-third">
           <a href="{% pageurl post %}" class="post-box">
-            {% if post.header_image %}
             <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
-            {% endif %}
             <span class="content-wrapper">
               <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
               <span class="post-title">{{ post.title }}</span>
