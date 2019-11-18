@@ -12,13 +12,13 @@ class TestBlogRoutes:
     def setup(self):
         self.blog_page = BlogPageFactory.create()
 
-    def test_entries_list_include_the_latest_articles_and_recipes(self, rf):
-        article_page_1 = ArticlePageFactory.create(
+    def test_entries_list_include_the_latest_article_and_recipes(self, rf):
+        article_page_1 = ArticlePageFactory.create(  # noqa: F841
             parent=self.blog_page,
             date=tz.now() - dt.timedelta(days=5),
             live=True
         )
-        article_page_2 = ArticlePageFactory.create(
+        article_page_2 = ArticlePageFactory.create(  # noqa: F841
             parent=self.blog_page,
             date=tz.now() - dt.timedelta(days=4),
             live=True
@@ -50,11 +50,7 @@ class TestBlogRoutes:
             recipe_page_3,
             recipe_page_1,
         ]
-        assert list(response.context_data['self'].latest_articles) == [
-            article_page_3,
-            article_page_2,
-            article_page_1,
-        ]
+        assert response.context_data['self'].latest_article == article_page_3
 
     def test_entries_search_can_search_for_blog_entries(self, rf):
         article_page_1 = ArticlePageFactory.create(

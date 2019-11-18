@@ -166,27 +166,26 @@
       </div>
       {% endif %}
     </div>
-    <div class="latest-entries">
-      <h2 class="is-size-2">{% trans "Latest articles " %}</h2>
-      <div class="columns is-multiline">
-        {% for post in self.latest_articles %}
-        <div class="column is-one-third">
-          <a href="{% pageurl post %}" class="post-box">
-            <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
-            <span class="content-wrapper">
-              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-              <span class="post-title">{{ post.title }}</span>
-            </span>
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-      {% if self.get_articles.count > 3 %}
+    {% if self.latest_article %}
+    <div class="latest-article-wrapper">
+      <h2 class="is-size-2">{% trans "Latest article" %}</h2>
+      <a href="{% pageurl self.latest_article %}" class="latest-article">
+        <span class="columns is-multiline">
+          <span class="column is-one-third is-full-mobile image-wrapper">
+            {% image self.latest_article.header_image fill-555x312 %}
+          </span>
+          <span class="column is-two-thirds is-full-mobile content-wrapper">
+            <span class="post-date">{{ self.latest_article.date|date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="post-title">{{ self.latest_article.title }}</span>
+            <span class="post-truncated-body">{{ self.latest_article.body|safe|striptags|truncatechars:300 }}</span>
+          </span>
+        </span>
+      </a>
       <div class="content has-text-right">
-        <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary is-medium view-all">{% trans "View all" %} <i data-feather="chevron-right"></i></a>
+        <a href="{% routablepageurl blog_page 'articles_list' %}" class="button is-primary is-medium view-all">{% trans "All articles" %} <i data-feather="chevron-right"></i></a>
       </div>
-      {% endif %}
     </div>
+    {% endif %}
   </div>
 </div>
 {% endif %}
