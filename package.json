@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "bulma": "^0.7.5",
+    "bulma": "^0.8.0",
     "feather-icons": "^4.17.0",
     "fork-awesome": "^1.0.11",
     "natives": "^1.1.4",
