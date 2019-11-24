@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 {% load common_duration_tags %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
@@ -70,6 +71,9 @@
       </div>
     </div>
   </div>
+  <div class="has-text-centered chef-toque-separator">
+      <img src="{% static 'img/chef_toque.svg' %}" alt="" />
+    </div>
   <div id="entry_recipe" class="container is-widescreen">
     <div class="columns">
       <div class="column is-10 is-offset-1">
