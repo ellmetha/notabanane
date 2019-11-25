@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-17 21:23-0500\n"
-"PO-Revision-Date: 2019-11-17 21:24-0500\n"
+"POT-Creation-Date: 2019-11-24 21:28-0500\n"
+"PO-Revision-Date: 2019-11-24 21:31-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "Blog"
 msgstr "Blog"
@@ -92,6 +92,21 @@ msgstr "Légumes et salades"
 
 msgid "Dish types"
 msgstr "Types de plats"
+
+msgid "Winter"
+msgstr "Hiver"
+
+msgid "Spring"
+msgstr "Printemps"
+
+msgid "Summer"
+msgstr "Été"
+
+msgid "Autumn"
+msgstr "Automne"
+
+msgid "Seasons"
+msgstr "Saisons"
 
 msgid "Recipe information"
 msgstr "Informations sur la recette"

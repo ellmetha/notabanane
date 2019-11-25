@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-17 21:23-0500\n"
+"POT-Creation-Date: 2019-11-24 21:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,6 +91,21 @@ msgid "Vegetables and salads"
 msgstr ""
 
 msgid "Dish types"
+msgstr ""
+
+msgid "Winter"
+msgstr ""
+
+msgid "Spring"
+msgstr ""
+
+msgid "Summer"
+msgstr ""
+
+msgid "Autumn"
+msgstr ""
+
+msgid "Seasons"
 msgstr ""
 
 msgid "Recipe information"
