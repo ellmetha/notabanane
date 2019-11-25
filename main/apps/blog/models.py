@@ -255,7 +255,25 @@ class RecipePage(Page):
         models.CharField(max_length=64, choices=DISH_TYPE_CHOICES),
         size=3,
         default=list,
-        verbose_name=_('Dish types'),
+        verbose_name=_('Dish types')
+    )
+
+    # A recipe is associated with at least one season.
+    SEASON_WINTER = 'winter'
+    SEASON_SPRING = 'spring'
+    SEASON_SUMMER = 'summer'
+    SEASON_AUTUMN = 'autumn'
+    SEASON_CHOICES = (
+        (SEASON_WINTER, _('Winter')),
+        (SEASON_SPRING, _('Spring')),
+        (SEASON_SUMMER, _('Summer')),
+        (SEASON_AUTUMN, _('Autumn')),
+    )
+    seasons = ChoiceArrayField(
+        models.CharField(max_length=6, choices=SEASON_CHOICES),
+        size=4,
+        default=list,
+        verbose_name=_('Seasons')
     )
 
     ##############################
@@ -274,6 +292,7 @@ class RecipePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('introduction', classname='full'),
         FieldPanel('dish_types', widget=CheckboxSelectMultiple),
+        FieldPanel('seasons', widget=CheckboxSelectMultiple),
         MultiFieldPanel(
             [
                 FieldPanel('preparation_time', widget=ShortDurationSelectWidget),

@@ -91,6 +91,12 @@ class RecipePageFactory(_PageFactory):
     introduction = factory.LazyAttribute(lambda o: fake.sentences(nb=3, ext_word_list=None))
     header_image = factory.SubFactory(_ImageFactory)
     dish_types = [RecipePage.DISH_TYPE_MAIN_COURSE]
+    seasons = [
+        RecipePage.SEASON_WINTER,
+        RecipePage.SEASON_SPRING,
+        RecipePage.SEASON_SUMMER,
+        RecipePage.SEASON_AUTUMN,
+    ]
 
     class Meta:
         model = RecipePage
