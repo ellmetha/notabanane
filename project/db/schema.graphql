@@ -37,6 +37,7 @@ type RecipePageType implements Node {
   dishTypes: [DishType]!
   headerImageThumbnail: String!
   url: String!
+  formattedDate: String!
 }
 
 type RecipePageTypeConnection {

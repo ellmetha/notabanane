@@ -7,6 +7,7 @@
 """
 
 import graphene
+from django.template.defaultfilters import date
 from graphene import relay
 from graphene_django.types import DjangoObjectType
 
@@ -21,17 +22,30 @@ class RecipePageType(DjangoObjectType):
     dish_types = graphene.List(DishType, required=True)
     header_image_thumbnail = graphene.String(required=True)
     url = graphene.String(required=True)
+    formatted_date = graphene.String(required=True)
 
     class Meta:
         model = RecipePage
         interfaces = (relay.Node, )
-        fields = ('id', 'title', 'date', 'header_image_url', 'url', 'dish_types', )
+        fields = (
+            'id',
+            'title',
+            'date',
+            'header_image_url',
+            'url',
+            'dish_types',
+            'formatted_date',
+        )
         filter_fields = ('dish_types', )
 
     @classmethod
     def get_queryset(cls, queryset, info):
         """ Returns the default queryset to use for the RecipePage type. """
         return queryset.select_related('header_image').live().order_by('-date')
+
+    def resolve_formatted_date(self, info):
+        """ Returns the formatted date. """
+        return date(self.date, 'SHORT_DATE_FORMAT')
 
     def resolve_header_image_thumbnail(self, info):
         """ Returns the thumbnail URL of the header image. """

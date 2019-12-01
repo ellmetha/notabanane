@@ -2,6 +2,7 @@ import datetime as dt
 import json
 
 import pytest
+from django.template.defaultfilters import date
 from django.urls import reverse
 from django.utils import timezone as tz
 from graphql_relay import to_global_id
@@ -126,3 +127,37 @@ class TestRecipePageType:
         content = json.loads(response.content)
 
         assert content['data']['recipes']['edges'][0]['node']['url'] == recipe_page.url
+
+    def test_properly_exposes_the_formatted_date_of_recipe_pages(self, client):
+        recipe_page = RecipePageFactory.create(
+            parent=self.blog_page,
+            date=tz.now() - dt.timedelta(days=3),
+            live=True
+        )
+
+        query = '''
+            query {
+                recipes(first: 10) {
+                    edges {
+                        node {
+                            id
+                            formattedDate
+                        }
+                    }
+                }
+            }
+        '''
+
+        response = client.post(
+            reverse('graphql'),
+            json.dumps({'query': query}),
+            content_type='application/json',
+            site=self.site
+        )
+
+        content = json.loads(response.content)
+
+        assert content['data']['recipes']['edges'][0]['node']['formattedDate'] == date(
+            recipe_page.date,
+            'SHORT_DATE_FORMAT'
+        )
