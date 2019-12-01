@@ -43,6 +43,12 @@ body#id_blog_index {
           }
         }
 
+        #search_input_container_mobile {
+          .icon {
+            margin-right: 0;
+          }
+        }
+
         @include until($desktop) {
           .navbar-burger {
             color: $white;
