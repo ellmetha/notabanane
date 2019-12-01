@@ -90,7 +90,7 @@ webpack_server:
 
 .PHONY: qa
 ## Trigger all quality assurance checks.
-qa: lint isort type_checks
+qa: lint isort
 
 .PHONY: lint lint_python lint_python
 ## Trigger code quality checks (flake8, eslint).
@@ -108,13 +108,6 @@ isort: isort_python
 ## Check Python imports sorting.
 isort_python:
 	pipenv run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
-
-.PHONY: type_checks type_checks_python
-## Perform types-related checks (mypy).
-type_checks: type_checks_python
-## Perform types-related checks (mypy).
-type_checks_python:
-	pipenv run mypy -p main
 
 
 # TESTING

@@ -8,12 +8,10 @@
 """
 
 import datetime as dt
-from typing import Any, Dict, List
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
 from django.forms.widgets import CheckboxSelectMultiple
-from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
@@ -61,7 +59,7 @@ class BlogPage(BlogRoutes, Page):
         verbose_name = _('Blog')
         verbose_name_plural = _('Blogs')
 
-    def get_context(self, request: HttpRequest, *args, **kwargs) -> Dict[Any, Any]:
+    def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
         context = super().get_context(request, *args, **kwargs)
 
@@ -163,7 +161,7 @@ class ArticlePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types: List[str] = []
+    subpage_types = []
 
     class Meta:
         verbose_name = _('Article')
@@ -314,7 +312,7 @@ class RecipePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types: List[str] = []
+    subpage_types = []
 
     class Meta:
         verbose_name = _('Recipe')
@@ -447,7 +445,7 @@ class SimplePage(Page):
     ####################################
 
     parent_page_types = ['blog.BlogPage']
-    subpage_types: List[str] = []
+    subpage_types = []
 
     class Meta:
         verbose_name = _('Simple page')
