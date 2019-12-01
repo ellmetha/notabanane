@@ -78,14 +78,14 @@ class BlogPage(BlogRoutes, Page):
                 paginated_entries = paginator.page(1)
             except EmptyPage:
                 # If page is out of range (e.g. 9999), deliver last page of results.
-                paginated_entries = paginator.page(paginator.num_pages)  # type: ignore
+                paginated_entries = paginator.page(paginator.num_pages)
             context['paginated_entries'] = paginated_entries
 
         # Includes filter-related values into the context.
         context['filter_type'] = getattr(self, 'filter_type', None)
         context['filter_value'] = getattr(self, 'filter_value', None)
 
-        return context  # type: ignore
+        return context
 
     def get_entries(self):
         """ Returns all the live entries of the blog. """
