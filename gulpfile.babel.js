@@ -47,7 +47,22 @@ const webpackConfig = {
   },
   module: {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader' },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.js', '.jsx'],
+        },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+            ],
+          },
+        },
+      },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
@@ -145,7 +160,22 @@ gulp.task('webpack-dev-server', gulp.series(() => {
   };
   devWebpackConfig.module = {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader' },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.js', '.jsx'],
+        },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+            ],
+          },
+        },
+      },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.txt$/, use: 'raw-loader' },
       { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/, use: 'url-loader?limit=10000' },

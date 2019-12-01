@@ -16,6 +16,7 @@
 
 {% block body_id %}id_blog_index{% endblock body_id %}
 {% block body_class %}{% if not self.filter_type == 'search' %}notsearch{% endif %}{% endblock %}
+{% block data_controller %}{% if self.filter_value == 'recipe' and request.GET.next == 'ok' %}recipe_search_controller{% endif %}{% endblock data_controller %}
 
 {% block navbar_brand_logo_src %}{% if not self.filter_type == 'search' %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
 
@@ -59,7 +60,7 @@
 {% endif %}
 {% if self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
 {% if self.filter_value == 'recipe' and request.GET.next == 'ok' %}
-
+<div id="id_recipe_search_app"></div>
 {% else %}
 <div class="section post-list">
   <div class="container">

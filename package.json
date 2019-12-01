@@ -1,11 +1,18 @@
 {
   "private": true,
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "apollo-boost": "^0.4.4",
     "bulma": "^0.8.0",
+    "fbjs": "^1.0.0",
     "feather-icons": "^4.17.0",
     "fork-awesome": "^1.0.11",
+    "graphql": "^14.5.8",
     "natives": "^1.1.4",
     "noty": "^3.2.0-beta",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "regenerator": "^0.13.4"
   },
   "devDependencies": {
@@ -13,6 +20,7 @@
     "@babel/core": "^7.1.6",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.7.4",
     "@babel/register": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
