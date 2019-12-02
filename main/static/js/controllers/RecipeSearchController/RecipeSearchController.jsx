@@ -11,7 +11,7 @@ import Search from './components/Search';
 
 
 const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8000/graphql/',
+  uri: '/graphql/',
   headers: {
     'X-CSRFToken': getCSRFToken(),
   },
