@@ -1,5 +1,5 @@
 import { gql } from 'apollo-boost';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 
@@ -27,8 +27,14 @@ const RECIPES = gql`
 `;
 
 const Search = () => {
-  const { data } = useQuery(RECIPES);
+  const [submitting, setSubmitting] = useState(false);
+
+  const { data, loading } = useQuery(RECIPES);
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
+
+  if (submitting !== loading) {
+    setSubmitting(loading);
+  }
 
   return (
     <div id="recipe_search_engine" className="section">
