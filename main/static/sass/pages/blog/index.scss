@@ -122,6 +122,29 @@ body#id_blog_index {
   }
 
   div#recipe_search_engine {
+    div#search_results {
+      position: relative;
+
+      &.fetching {
+        div#search_results_fetching {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      #search_results_fetching{
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        @include transition(0.25s, ease-in-out);
+      }
+    }
   }
 
   div.post-list {

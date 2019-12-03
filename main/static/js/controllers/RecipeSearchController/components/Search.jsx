@@ -40,10 +40,17 @@ const Search = () => {
     <div id="recipe_search_engine" className="section">
       <div className="container">
         <div className="columns is-multiline">
-          <div className="column is-one-third">
+          <div id="search_filters" className="column is-one-third">
             FILTERS
           </div>
-          <div className="column is-two-thirds">
+          <div
+            id="search_results"
+            {...submitting
+              ? { className: 'fetching column is-two-thirds' }
+              : { className: 'column is-two-thirds' }
+            }
+          >
+            <div id="search_results_fetching" />
             {recipes.length > 0 && (
               <div className="columns is-multiline post-list">
                 {recipes.map(recipe => (
