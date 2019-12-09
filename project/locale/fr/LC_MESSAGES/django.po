@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-24 21:28-0500\n"
-"PO-Revision-Date: 2019-11-24 21:31-0500\n"
+"POT-Creation-Date: 2019-12-08 21:28-0500\n"
+"PO-Revision-Date: 2019-12-08 21:30-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -107,6 +107,12 @@ msgstr "Automne"
 
 msgid "Seasons"
 msgstr "Saisons"
+
+msgid "Recipe image"
+msgstr "Image de la recette"
+
+msgid "Recipe image displayed in the recipe sheet."
+msgstr "Image de la recette affichée au niveau de la fiche à la place de l’image d’en tête."
 
 msgid "Recipe information"
 msgstr "Informations sur la recette"
