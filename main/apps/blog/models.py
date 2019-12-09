@@ -274,6 +274,18 @@ class RecipePage(Page):
         verbose_name=_('Seasons')
     )
 
+    # A blog recipe page can have an optional recipe image that'll be used when rendering the
+    # recipe. By default the header image is used instead if this image is not set.
+    recipe_image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name=_('Recipe image'),
+        help_text=_('Recipe image displayed in the recipe sheet.'),
+    )
+
     ##############################
     # SEARCH INDEX CONFIGURATION #
     ##############################
@@ -304,6 +316,7 @@ class RecipePage(Page):
         InlinePanel('ingredients_sections', label=_('Recipe ingredients sections')),
         InlinePanel('instructions_sections', label=_('Recipe instructions sections')),
         ImageChooserPanel('header_image'),
+        ImageChooserPanel('recipe_image'),
         FieldPanel('date'),
     ]
 
