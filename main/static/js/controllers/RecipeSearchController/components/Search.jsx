@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 
+import smoothScrollTo from '../../../core/smoothScrollTo';
+
+import Pagination from './Pagination';
 import ResultListItem from './ResultListItem';
 
 
@@ -20,6 +23,7 @@ const RECIPES = gql`
       }
       pageInfo {
         endCursor
+        hasPreviousPage
         hasNextPage
       }
     }
@@ -28,9 +32,23 @@ const RECIPES = gql`
 
 const Search = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [cursorStack] = useState([]);
 
-  const { data, loading } = useQuery(RECIPES);
+  const { data, loading, fetchMore } = useQuery(RECIPES);
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
+  const pageInfo = data ? data.recipes.pageInfo : null;
+
+  const fetchRecipes = async (afterCursor) => {
+    await smoothScrollTo(document.documentElement);
+    return fetchMore({
+      variables: {
+        cursor: afterCursor,
+      },
+      updateQuery: (previousResult, { fetchMoreResult }) => (
+        fetchMoreResult
+      ),
+    });
+  };
 
   if (submitting !== loading) {
     setSubmitting(loading);
@@ -60,6 +78,20 @@ const Search = () => {
                   />
                 ))}
               </div>
+            )}
+            {pageInfo && (
+              <Pagination
+                hasPreviousPage={cursorStack.length > 0}
+                hasNextPage={pageInfo.hasNextPage}
+                onPaginatePrevious={() => {
+                  cursorStack.pop();
+                  return fetchRecipes(cursorStack[cursorStack.length - 1]);
+                }}
+                onPaginateNext={() => {
+                  cursorStack.push(pageInfo.endCursor);
+                  return fetchRecipes(pageInfo.endCursor);
+                }}
+              />
             )}
           </div>
         </div>

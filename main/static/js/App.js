@@ -1,4 +1,5 @@
 /* eslint-env browser */
+import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import feather from 'feather-icons/dist/feather';

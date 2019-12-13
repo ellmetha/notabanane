@@ -60,6 +60,12 @@ const webpackConfig = {
               '@babel/preset-env',
               '@babel/preset-react',
             ],
+            plugins: [
+              [
+                '@babel/plugin-transform-runtime',
+                { regenerator: true }
+              ]
+            ],
           },
         },
       },
@@ -172,6 +178,12 @@ gulp.task('webpack-dev-server', gulp.series(() => {
             presets: [
               '@babel/preset-env',
               '@babel/preset-react',
+            ],
+            plugins: [
+              [
+                '@babel/plugin-transform-runtime',
+                { regenerator: true }
+              ]
             ],
           },
         },
