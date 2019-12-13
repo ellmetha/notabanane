@@ -6,12 +6,13 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import getCSRFToken from '../../core/getCSRFToken';
+import reverseUrl from '../../core/reverseUrl';
 
 import Search from './components/Search';
 
 
 const client = new ApolloClient({
-  uri: '/graphql/',
+  uri: reverseUrl('graphql'),
   headers: {
     'X-CSRFToken': getCSRFToken(),
   },

@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'anymail',
     'captcha',
     'graphene_django',
+    'js_routes',
     'modelcluster',
     'taggit',
     'widget_tweaks',
@@ -325,6 +326,14 @@ GRAPHENE = {
     'SCHEMA': 'main.presentation.graphql.schema',
     'RELAY_CONNECTION_MAX_LIMIT': 50,
 }
+
+
+# JS ROUTES CONFIGURATION
+# ------------------------------------------------------------------------------
+
+JS_ROUTES_INCLUSION_LIST = [
+    'graphql',
+]
 
 
 # GOOGLE ANALYTICS CONFIGURATION
