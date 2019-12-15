@@ -37,30 +37,25 @@ const Search = () => {
   const [submitting, setSubmitting] = useState(false);
   const [cursorStack] = useState([]);
 
-  const { data, loading, fetchMore } = useQuery(
-    RECIPES,
-    { variables: { first: RESULTS_PER_PAGE } },
-  );
+  const { data, fetchMore } = useQuery(RECIPES, { variables: { first: RESULTS_PER_PAGE } });
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
   const fetchRecipes = async (afterCursor) => {
+    setSubmitting(true);
     await smoothScrollTo(document.documentElement);
     return fetchMore({
       variables: {
         first: RESULTS_PER_PAGE,
         cursor: afterCursor,
       },
-      updateQuery: (previousResult, { fetchMoreResult }) => (
-        fetchMoreResult
-      ),
+      updateQuery: (previousResult, { fetchMoreResult }) => {
+        setSubmitting(false);
+        return fetchMoreResult;
+      },
     });
   };
-
-  if (submitting !== loading) {
-    setSubmitting(loading);
-  }
 
   return (
     <div id="recipe_search_engine" className="section">
