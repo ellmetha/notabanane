@@ -161,3 +161,40 @@ class TestRecipePageType:
             recipe_page.date,
             'SHORT_DATE_FORMAT'
         )
+
+    def test_properly_exposes_the_total_count_of_recipes_in_connection_responses(self, client):
+        RecipePageFactory.create(
+            parent=self.blog_page,
+            date=tz.now() - dt.timedelta(days=3),
+            live=True
+        )
+        RecipePageFactory.create(parent=self.blog_page, live=True)
+        RecipePageFactory.create(
+            parent=self.blog_page,
+            date=tz.now() - dt.timedelta(days=1),
+            live=True
+        )
+        recipe_page_4 = RecipePageFactory.create(parent=self.blog_page, live=False)  # noqa: F841
+
+        query = '''
+            query {
+                recipes(first: 10) {
+                    edges {
+                        node {
+                            id
+                        }
+                    }
+                    totalCount
+                }
+            }
+        '''
+
+        response = client.post(
+            reverse('graphql'),
+            json.dumps({'query': query}),
+            content_type='application/json'
+        )
+
+        content = json.loads(response.content)
+
+        assert content['data']['recipes']['totalCount'] == 3

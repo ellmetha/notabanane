@@ -43,6 +43,7 @@ type RecipePageType implements Node {
 type RecipePageTypeConnection {
   pageInfo: PageInfo!
   edges: [RecipePageTypeEdge]!
+  totalCount: Int
 }
 
 type RecipePageTypeEdge {

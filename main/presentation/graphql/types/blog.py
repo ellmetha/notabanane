@@ -13,6 +13,7 @@ from graphene_django.types import DjangoObjectType
 
 from main.apps.blog.models import RecipePage
 
+from .connections import ExtendedConnection
 from .enums import DishType
 
 
@@ -26,6 +27,7 @@ class RecipePageType(DjangoObjectType):
 
     class Meta:
         model = RecipePage
+        connection_class = ExtendedConnection
         interfaces = (relay.Node, )
         fields = (
             'id',
