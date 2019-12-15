@@ -26,6 +26,7 @@ const RECIPES = gql`
         hasPreviousPage
         hasNextPage
       }
+      totalCount
     }
   }
 `;
@@ -41,6 +42,7 @@ const Search = () => {
     { variables: { first: RESULTS_PER_PAGE } },
   );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
+  const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
   const fetchRecipes = async (afterCursor) => {
@@ -97,6 +99,8 @@ const Search = () => {
                   cursorStack.push(pageInfo.endCursor);
                   return fetchRecipes(pageInfo.endCursor);
                 }}
+                resultsPerPage={RESULTS_PER_PAGE}
+                totalCount={totalCount}
               />
             )}
           </div>

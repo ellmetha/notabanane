@@ -1,3 +1,5 @@
+/* global gettext, interpolate */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -7,6 +9,8 @@ const Pagination = ({
   hasNextPage,
   onPaginatePrevious,
   onPaginateNext,
+  resultsPerPage,
+  totalCount,
 }) => (
   <nav className="pagination" role="navigation" aria-label="pagination">
     <a
@@ -17,7 +21,7 @@ const Pagination = ({
       }}
       {...hasPreviousPage ? {} : { disabled: 'disabled' }}
     >
-      Previous
+      <i className="fa fa-angle-left" />
     </a>
     <a
       className="pagination-next"
@@ -27,8 +31,11 @@ const Pagination = ({
       }}
       {...hasNextPage ? {} : { disabled: 'disabled' }}
     >
-      Next page
+      <i className="fa fa-angle-right" />
     </a>
+    <div className="pagination-list">
+      {interpolate(gettext('Showing %s of %s recipes'), [resultsPerPage, totalCount])}
+    </div>
   </nav>
 );
 
@@ -37,6 +44,8 @@ Pagination.propTypes = {
   hasNextPage: PropTypes.bool.isRequired,
   onPaginatePrevious: PropTypes.func.isRequired,
   onPaginateNext: PropTypes.func.isRequired,
+  resultsPerPage: PropTypes.number.isRequired,
+  totalCount: PropTypes.number.isRequired,
 };
 
 export default Pagination;

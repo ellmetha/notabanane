@@ -132,7 +132,7 @@ body#id_blog_index {
         }
       }
 
-      #search_results_fetching{
+      div#search_results_fetching{
         visibility: hidden;
         opacity: 0;
         position: absolute;
@@ -143,6 +143,12 @@ body#id_blog_index {
         height: 100%;
         background: rgba(255, 255, 255, 0.7);
         @include transition(0.25s, ease-in-out);
+      }
+
+      nav.pagination {
+        div.pagination-list {
+          padding: 0 0.25rem;
+        }
       }
     }
   }
