@@ -10,8 +10,8 @@ import ResultListItem from './ResultListItem';
 
 
 const RECIPES = gql`
-  query Recipes($cursor: String) {
-    recipes(first: 10, after: $cursor) {
+  query Recipes($first: Int, $cursor: String) {
+    recipes(first: $first, after: $cursor) {
       edges {
         node {
           id
@@ -30,11 +30,16 @@ const RECIPES = gql`
   }
 `;
 
+const RESULTS_PER_PAGE = 10;
+
 const Search = () => {
   const [submitting, setSubmitting] = useState(false);
   const [cursorStack] = useState([]);
 
-  const { data, loading, fetchMore } = useQuery(RECIPES);
+  const { data, loading, fetchMore } = useQuery(
+    RECIPES,
+    { variables: { first: RESULTS_PER_PAGE } },
+  );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const pageInfo = data ? data.recipes.pageInfo : null;
 
@@ -42,6 +47,7 @@ const Search = () => {
     await smoothScrollTo(document.documentElement);
     return fetchMore({
       variables: {
+        first: RESULTS_PER_PAGE,
         cursor: afterCursor,
       },
       updateQuery: (previousResult, { fetchMoreResult }) => (
