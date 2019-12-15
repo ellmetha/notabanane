@@ -4,7 +4,7 @@ import React from 'react';
 
 const ResultListItem = ({ recipe }) => (
   <div className="column is-half">
-    <a href={recipe.url} className="post-box">
+    <a href={recipe.url} className="post-box" target="_blank" rel="noopener noreferrer">
       <span className="image-wrapper">
         <img alt={recipe.title} src={recipe.headerImageThumbnail} width="555" height="312" />
       </span>
