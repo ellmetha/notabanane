@@ -170,6 +170,8 @@
     {% block extra_js %}
     {% endblock extra_js %}
 
+    <script src="{% url 'javascript_catalog' %}"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_PROPERTY_ID }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

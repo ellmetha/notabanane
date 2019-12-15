@@ -11,6 +11,7 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
+from django.views.i18n import JavaScriptCatalog
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core import urls as wagtail_urls
@@ -31,6 +32,10 @@ urlpatterns = [
 
     # Sitemaps
     path('sitemap.xml', sitemap, name='sitemap'),
+
+    # Internationalization URLs.
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('jsi18n/', cache_page(60 * 15)(JavaScriptCatalog.as_view()), name='javascript_catalog'),
 
     # Robots URLs.
     path(
