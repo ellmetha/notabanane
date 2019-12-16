@@ -14,13 +14,14 @@ from graphene_django.types import DjangoObjectType
 from main.apps.blog.models import RecipePage
 
 from .connections import ExtendedConnection
-from .enums import DishType
+from .enums import DishType, Season
 
 
 class RecipePageType(DjangoObjectType):
     """ Defines the GraphQL type of recipe pages. """
 
     dish_types = graphene.List(DishType, required=True)
+    seasons = graphene.List(Season, required=True)
     header_image_thumbnail = graphene.String(required=True)
     url = graphene.String(required=True)
     formatted_date = graphene.String(required=True)
@@ -36,6 +37,7 @@ class RecipePageType(DjangoObjectType):
             'header_image_url',
             'url',
             'dish_types',
+            'seasons',
             'formatted_date',
         )
         filter_fields = ('dish_types', )

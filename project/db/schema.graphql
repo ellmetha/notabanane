@@ -35,6 +35,7 @@ type RecipePageType implements Node {
   title: String!
   date: Date!
   dishTypes: [DishType]!
+  seasons: [Season]!
   headerImageThumbnail: String!
   url: String!
   formattedDate: String!
@@ -49,4 +50,11 @@ type RecipePageTypeConnection {
 type RecipePageTypeEdge {
   node: RecipePageType
   cursor: String!
+}
+
+enum Season {
+  WINTER
+  SPRING
+  SUMMER
+  AUTUMN
 }
