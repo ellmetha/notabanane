@@ -10,7 +10,7 @@ import django_filters
 
 from main.apps.blog.models import RecipePage
 
-from ..types.enums import DISH_TYPES_ENUM_MAPPING
+from ..types.enums import DISH_TYPES_ENUM_MAPPING, SEASONS_ENUM_MAPPING
 
 
 class RecipePageFilter(django_filters.FilterSet):
@@ -21,6 +21,11 @@ class RecipePageFilter(django_filters.FilterSet):
         method='filter_dish_types',
     )
 
+    seasons = django_filters.MultipleChoiceFilter(
+        choices=list(SEASONS_ENUM_MAPPING.items()),
+        method='filter_seasons',
+    )
+
     class Meta:
         model = RecipePage
         fields = ('dish_types', )
@@ -29,3 +34,8 @@ class RecipePageFilter(django_filters.FilterSet):
         """ Filters the queryset from a list of possible dish types. """
         mapped_values = [DISH_TYPES_ENUM_MAPPING[v] for v in values]
         return qs.filter(dish_types__overlap=mapped_values) if mapped_values else qs
+
+    def filter_seasons(self, qs, field_name, values):
+        """ Filters the queryset from a list of possible seasons. """
+        mapped_values = [SEASONS_ENUM_MAPPING[v] for v in values]
+        return qs.filter(seasons__overlap=mapped_values) if mapped_values else qs

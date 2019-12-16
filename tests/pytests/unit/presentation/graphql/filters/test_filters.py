@@ -30,3 +30,23 @@ class TestRecipePageFilter:
 
         qs = RecipePageFilter({'dish_types': ['DESSERTS', 'APPETIZERS']}).qs
         assert set(qs) == {recipe_page_1, recipe_page_3}
+
+    def test_can_filter_by_seasons(self):
+        recipe_page_1 = RecipePageFactory.create(
+            parent=self.blog_page,
+            seasons=[RecipePage.SEASON_AUTUMN, RecipePage.SEASON_WINTER],
+            live=True
+        )
+        recipe_page_2 = RecipePageFactory.create(  # noqa: F841
+            parent=self.blog_page,
+            seasons=[RecipePage.SEASON_SUMMER],
+            live=True
+        )
+        recipe_page_3 = RecipePageFactory.create(
+            parent=self.blog_page,
+            seasons=[RecipePage.SEASON_AUTUMN],
+            live=True
+        )
+
+        qs = RecipePageFilter({'seasons': ['AUTUMN', 'WINTER']}).qs
+        assert set(qs) == {recipe_page_1, recipe_page_3}

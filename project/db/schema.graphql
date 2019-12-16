@@ -27,7 +27,7 @@ type PageInfo {
 }
 
 type Query {
-  recipes(before: String, after: String, first: Int, last: Int, dishTypes: [String]): RecipePageTypeConnection
+  recipes(before: String, after: String, first: Int, last: Int, dishTypes: [String], seasons: [String]): RecipePageTypeConnection
 }
 
 type RecipePageType implements Node {
