@@ -16,7 +16,7 @@ Django==2.2.9
 django-anymail==7.0.0
 django-debug-toolbar==2.1
 django-filter==2.2.0
-django-js-routes==0.1.0.dev0
+django-js-routes==0.1.0
 django-modelcluster==5.0
 django-recaptcha==2.0.5
 django-storages==1.8

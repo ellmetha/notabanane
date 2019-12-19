@@ -88,10 +88,10 @@
         },
         "django-js-routes": {
             "hashes": [
-                "sha256:7b0568b20d5e3d148987b5d2e726799b934edf4506c1d82208e599332205833b",
-                "sha256:ff797caecf701f9772457da2b38add1955f0b3339f5431a3d63cf295b1d4c73f"
+                "sha256:65f742f8492304b979ad8a487ffbc19c434486349da76f1608fb02f4ea782a22",
+                "sha256:f094ef72e682c0672e5f5645a11d440a3e6313453611eb55db7a6f29e64bfb4e"
             ],
-            "version": "==0.1.0.dev0"
+            "version": "==0.1.0"
         },
         "django-modelcluster": {
             "hashes": [
