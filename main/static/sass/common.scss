@@ -26,6 +26,58 @@ a {
   }
 }
 
+form {
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  input[type='checkbox'] + span.label {
+    margin-right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    cursor: pointer;
+    border: 2px solid $cranberry;
+    @include rounded(5px);
+    background: $cranberry;
+
+    span.label-text {
+      padding-left: 40px;
+    }
+  }
+
+  input[type='checkbox'] + span.label:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    background: $saltpan;
+    @include rounded(3px);
+    @include transition(0.4s, ease-in-out);
+  }
+
+  input[type='checkbox']:checked + span.label:before {
+    width: 15px;
+    height: 15px;
+    @include rounded(50%);
+  }
+
+  span.label-text {
+    padding-top: 0.30rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: IndieFlower;
 }

@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 
 import smoothScrollTo from '../../../core/smoothScrollTo';
 
+import FilterForm from './FilterForm';
 import Pagination from './Pagination';
 import ResultListItem from './ResultListItem';
 
@@ -62,7 +63,11 @@ const Search = () => {
       <div className="container">
         <div className="columns is-multiline">
           <div id="search_filters" className="column is-one-third">
-            FILTERS
+            <FilterForm
+              onSubmitFilters={() => {
+
+              }}
+            />
           </div>
           <div
             id="search_results"
