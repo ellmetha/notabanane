@@ -45,7 +45,7 @@ const FilterForm = ({ onSubmitFilters }) => {
         key="recipes-filter-form"
         initialValues={initialValues}
         onSubmit={(values) => {
-          onSubmitFilters({ filters: values });
+          onSubmitFilters(values);
         }}
       >
         {({ values, setFieldValue, submitForm }) => (

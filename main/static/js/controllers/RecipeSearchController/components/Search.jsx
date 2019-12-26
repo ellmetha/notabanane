@@ -37,20 +37,27 @@ const RESULTS_PER_PAGE = 10;
 const Search = () => {
   const [submitting, setSubmitting] = useState(false);
   const [cursorStack] = useState([]);
+  const [currentFilters, setCurrentFilters] = useState({});
 
   const { data, fetchMore } = useQuery(RECIPES, { variables: { first: RESULTS_PER_PAGE } });
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
-  const fetchRecipes = async ({ afterCursor = null, filters = undefined }) => {
+  const fetchRecipes = async ({ afterCursor = null, filters = null }) => {
     setSubmitting(true);
+
+    if (filters != null) {
+      setCurrentFilters(filters);
+    }
+
     await smoothScrollTo(document.documentElement);
+
     return fetchMore({
       variables: {
         first: RESULTS_PER_PAGE,
         cursor: afterCursor,
-        ...(filters || {}),
+        ...(filters || currentFilters),
       },
       updateQuery: (previousResult, { fetchMoreResult }) => {
         setSubmitting(false);
@@ -65,7 +72,10 @@ const Search = () => {
         <div className="columns is-multiline">
           <div id="search_filters" className="column is-one-third">
             <FilterForm
-              onSubmitFilters={fetchRecipes}
+              onSubmitFilters={(values) => {
+                cursorStack.length = 0;
+                fetchRecipes({ filters: values });
+              }}
             />
           </div>
           <div
