@@ -3,26 +3,60 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-01 21:23-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-12-25 22:14-0500\n"
+"PO-Revision-Date: 2019-12-25 22:12-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-msgid "entries"
-msgstr ""
+msgid "Appetizers"
+msgstr "Entrées"
 
-msgid "values"
-msgstr ""
+msgid "Beverages"
+msgstr "Boissons"
 
-msgid "keys"
-msgstr ""
+msgid "Breakfast"
+msgstr "Déjeuners"
+
+msgid "Desserts"
+msgstr "Desserts"
+
+msgid "Main course"
+msgstr "Plats principaux"
+
+msgid "Sauces and salad dressings"
+msgstr "Sauces et vinaigrettes"
+
+msgid "Soups"
+msgstr "Potages et soupes"
+
+msgid "Vegetables and salads"
+msgstr "Légumes et salades"
+
+msgid "Winter"
+msgstr "Hiver"
+
+msgid "Spring"
+msgstr "Printemps"
+
+msgid "Summer"
+msgstr "Été"
+
+msgid "Autumn"
+msgstr "Automne"
+
+msgid "Dish types"
+msgstr "Types de plats"
+
+#, javascript-format
+msgid "Showing %s of %s recipes"
+msgstr "Affichage de %s sur %s recettes"
