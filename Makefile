@@ -53,7 +53,7 @@ server:
 ## Generate .po translations files.
 messages:
 	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr
-	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*"
+	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*" --extension jsx
 
 ## Generate .mo compiled translations files.
 compiledmessages:
