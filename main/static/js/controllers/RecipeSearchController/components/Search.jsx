@@ -66,6 +66,16 @@ const Search = () => {
     });
   };
 
+  const onPaginatePrevious = () => {
+    cursorStack.pop();
+    return fetchRecipes({ afterCursor: cursorStack[cursorStack.length - 1] });
+  };
+
+  const onPaginateNext = () => {
+    cursorStack.push(pageInfo.endCursor);
+    return fetchRecipes({ afterCursor: pageInfo.endCursor });
+  };
+
   return (
     <div id="recipe_search_engine" className="section">
       <div className="container">
@@ -86,6 +96,16 @@ const Search = () => {
             }
           >
             <div id="search_results_fetching" />
+            {pageInfo && (
+              <Pagination
+                hasPreviousPage={cursorStack.length > 0}
+                hasNextPage={pageInfo.hasNextPage}
+                onPaginatePrevious={onPaginatePrevious}
+                onPaginateNext={onPaginateNext}
+                resultsPerPage={RESULTS_PER_PAGE}
+                totalCount={totalCount}
+              />
+            )}
             {recipes.length > 0 && (
               <div className="columns is-multiline post-list">
                 {recipes.map(recipe => (
@@ -100,14 +120,8 @@ const Search = () => {
               <Pagination
                 hasPreviousPage={cursorStack.length > 0}
                 hasNextPage={pageInfo.hasNextPage}
-                onPaginatePrevious={() => {
-                  cursorStack.pop();
-                  return fetchRecipes({ afterCursor: cursorStack[cursorStack.length - 1] });
-                }}
-                onPaginateNext={() => {
-                  cursorStack.push(pageInfo.endCursor);
-                  return fetchRecipes({ afterCursor: pageInfo.endCursor });
-                }}
+                onPaginatePrevious={onPaginatePrevious}
+                onPaginateNext={onPaginateNext}
                 resultsPerPage={RESULTS_PER_PAGE}
                 totalCount={totalCount}
               />
