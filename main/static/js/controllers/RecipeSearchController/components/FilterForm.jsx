@@ -41,9 +41,8 @@ const FilterForm = ({ onSubmitFilters }) => {
       <Formik
         key="recipes-filter-form"
         initialValues={initialValues}
-        onSubmit={() => {
-          console.log('Submit');
-          onSubmitFilters();
+        onSubmit={(values) => {
+          onSubmitFilters({ filters: values });
         }}
       >
         {({ values, setFieldValue, submitForm }) => (

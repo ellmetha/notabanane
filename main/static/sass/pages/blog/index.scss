@@ -122,6 +122,17 @@ body#id_blog_index {
   }
 
   div#recipe_search_engine {
+    div#search_filters {
+      h4 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
     div#search_results {
       position: relative;
 

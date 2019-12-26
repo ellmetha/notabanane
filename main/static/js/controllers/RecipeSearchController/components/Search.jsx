@@ -11,8 +11,8 @@ import ResultListItem from './ResultListItem';
 
 
 const RECIPES = gql`
-  query Recipes($first: Int, $cursor: String) {
-    recipes(first: $first, after: $cursor) {
+  query Recipes($first: Int, $cursor: String, $dishTypes: [String], $seasons: [String]) {
+    recipes(first: $first, after: $cursor, dishTypes: $dishTypes, seasons: $seasons) {
       edges {
         node {
           id
@@ -43,13 +43,14 @@ const Search = () => {
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
-  const fetchRecipes = async (afterCursor) => {
+  const fetchRecipes = async ({ afterCursor = null, filters = undefined }) => {
     setSubmitting(true);
     await smoothScrollTo(document.documentElement);
     return fetchMore({
       variables: {
         first: RESULTS_PER_PAGE,
         cursor: afterCursor,
+        ...(filters || {}),
       },
       updateQuery: (previousResult, { fetchMoreResult }) => {
         setSubmitting(false);
@@ -64,9 +65,7 @@ const Search = () => {
         <div className="columns is-multiline">
           <div id="search_filters" className="column is-one-third">
             <FilterForm
-              onSubmitFilters={() => {
-
-              }}
+              onSubmitFilters={fetchRecipes}
             />
           </div>
           <div
@@ -93,11 +92,11 @@ const Search = () => {
                 hasNextPage={pageInfo.hasNextPage}
                 onPaginatePrevious={() => {
                   cursorStack.pop();
-                  return fetchRecipes(cursorStack[cursorStack.length - 1]);
+                  return fetchRecipes({ afterCursor: cursorStack[cursorStack.length - 1] });
                 }}
                 onPaginateNext={() => {
                   cursorStack.push(pageInfo.endCursor);
-                  return fetchRecipes(pageInfo.endCursor);
+                  return fetchRecipes({ afterCursor: pageInfo.endCursor });
                 }}
                 resultsPerPage={RESULTS_PER_PAGE}
                 totalCount={totalCount}
