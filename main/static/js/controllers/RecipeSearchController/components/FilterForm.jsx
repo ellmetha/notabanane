@@ -36,6 +36,9 @@ const FilterForm = ({ onSubmitFilters }) => {
     ['AUTUMN', gettext('Autumn')],
   ];
 
+  const dishTypesFilterLabel = gettext('Dish types');
+  const seasonsFilterLabel = gettext('Seasons');
+
   return (
     <div id="recipe_filters_form">
       <Formik
@@ -47,7 +50,7 @@ const FilterForm = ({ onSubmitFilters }) => {
       >
         {({ values, setFieldValue, submitForm }) => (
           <Form>
-            <h4 className="is-size-4">{gettext('Dish types')}</h4>
+            <h4 className="is-size-4">{dishTypesFilterLabel}</h4>
             <FieldArray
               name="dishTypes"
               render={arrayHelpers => (
@@ -81,7 +84,7 @@ const FilterForm = ({ onSubmitFilters }) => {
                 </div>
               )}
             />
-            <h4 className="is-size-4">{gettext('Seasons')}</h4>
+            <h4 className="is-size-4">{seasonsFilterLabel}</h4>
             <FieldArray
               name="seasons"
               render={arrayHelpers => (
