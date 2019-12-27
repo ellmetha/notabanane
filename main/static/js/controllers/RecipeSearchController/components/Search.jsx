@@ -45,14 +45,17 @@ const Search = () => {
   const searchEngineNode = useRef(null);
   const toggleMobileFiltersWrapperNode = useRef(null);
 
-  useEffect(() => {
-    toggleMobileFiltersWrapperNode.current.scrollIntoView();
-  }, [showMobileFilters]);
-
   const { data, fetchMore } = useQuery(RECIPES, { variables: { first: RESULTS_PER_PAGE } });
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
+
+  const filterLabel = gettext('Filters');
+  const viewResultsLabel = gettext('View recipes');
+
+  useEffect(() => {
+    toggleMobileFiltersWrapperNode.current.scrollIntoView();
+  }, [showMobileFilters]);
 
   const fetchRecipes = async ({ filters = null, direction = null }) => {
     setSubmitting(true);
@@ -116,12 +119,12 @@ const Search = () => {
           }}
         >
           {showMobileFilters === true && (
-            <span>{gettext('View recipes')}</span>
+            <span>{viewResultsLabel}</span>
           )}
           {showMobileFilters === false && (
             <span>
               <i className="fa fa-filter" aria-hidden="true" />
-              {gettext('Filters')}
+              {filterLabel}
             </span>
           )}
         </button>
