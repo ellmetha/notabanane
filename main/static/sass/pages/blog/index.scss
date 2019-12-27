@@ -122,6 +122,8 @@ body#id_blog_index {
   }
 
   div#recipe_search_engine {
+    position: relative;
+
     div#search_filters {
       h4 {
         position: relative;
@@ -181,6 +183,46 @@ body#id_blog_index {
         div.pagination-list {
           padding: 0 0.25rem;
         }
+      }
+    }
+
+    @include mobile {
+      margin-top: -1.5rem;
+
+      &.filters-on {
+        div#toggle_mobile_filters_wrapper {
+          position: sticky;
+          z-index: 1;
+          top: 0;
+          background-color: $white;
+        }
+
+        div#search_filters {
+          display: block;
+        }
+
+        div#search_results {
+          display: none;
+        }
+      }
+
+      div#toggle_mobile_filters_wrapper {
+        padding-top: 1.5rem;
+
+        button {
+          margin-bottom: 2rem;
+          display: block;
+          width: 100%;
+
+          i {
+            display: inline-block;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+
+      div#search_filters {
+        display: none;
       }
     }
   }

@@ -1,5 +1,7 @@
+/* global gettext */
+
 import { gql } from 'apollo-boost';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 
@@ -36,8 +38,16 @@ const RESULTS_PER_PAGE = 10;
 
 const Search = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [cursorStack] = useState([]);
   const [currentFilters, setCurrentFilters] = useState({});
+
+  const searchEngineNode = useRef(null);
+  const toggleMobileFiltersWrapperNode = useRef(null);
+
+  useEffect(() => {
+    toggleMobileFiltersWrapperNode.current.scrollIntoView();
+  }, [showMobileFilters]);
 
   const { data, fetchMore } = useQuery(RECIPES, { variables: { first: RESULTS_PER_PAGE } });
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
@@ -51,7 +61,9 @@ const Search = () => {
       setCurrentFilters(filters);
     }
 
-    await smoothScrollTo(document.documentElement);
+    if (!showMobileFilters) {
+      await smoothScrollTo(document.documentElement);
+    }
 
     // Updates the after cursor and the stack of cursors depending on the direction of the
     // pagination (if the results are paginated).
@@ -86,7 +98,34 @@ const Search = () => {
   );
 
   return (
-    <div id="recipe_search_engine" className="section">
+    <div
+      id="recipe_search_engine"
+      ref={searchEngineNode}
+      className={`section ${showMobileFilters ? 'filters-on' : ''}`}
+    >
+      <div
+        id="toggle_mobile_filters_wrapper"
+        ref={toggleMobileFiltersWrapperNode}
+        className="is-hidden-tablet"
+      >
+        <button
+          type="button"
+          className="button is-primary"
+          onClick={() => {
+            setShowMobileFilters(!showMobileFilters);
+          }}
+        >
+          {showMobileFilters === true && (
+            <span>{gettext('View recipes')}</span>
+          )}
+          {showMobileFilters === false && (
+            <span>
+              <i className="fa fa-filter" aria-hidden="true" />
+              {gettext('Filters')}
+            </span>
+          )}
+        </button>
+      </div>
       <div className="container">
         <div className="columns is-multiline">
           <div id="search_filters" className="column is-one-third">
