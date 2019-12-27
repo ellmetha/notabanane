@@ -20,7 +20,7 @@
 
 {% block navbar_brand_logo_src %}{% if not self.filter_type == 'search' %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
 
-{% block content %}
+{% block content %}{% csrf_token %}
 {% if not self.filter_type == 'search' %}
 <section id="blog_hero" class="hero is-medium is-info is-bold">
   <div class="hero-body">
