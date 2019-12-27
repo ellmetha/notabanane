@@ -24,31 +24,34 @@ const Pagination = ({
   }
 
   return (
-    <nav className="pagination" role="navigation" aria-label="pagination">
-      {(hasPreviousPage || hasNextPage) && (
-        <a
-          className="pagination-previous"
-          onClick={(ev) => {
-            ev.preventDefault();
-            if (hasPreviousPage) onPaginatePrevious();
-          }}
-          {...hasPreviousPage ? {} : { disabled: 'disabled' }}
-        >
-          <i className="fa fa-angle-left" />
-        </a>
-      )}
-      {(hasPreviousPage || hasNextPage) && (
-        <a
-          className="pagination-next"
-          onClick={(ev) => {
-            ev.preventDefault();
-            if (hasNextPage) onPaginateNext();
-          }}
-          {...hasNextPage ? {} : { disabled: 'disabled' }}
-        >
-          <i className="fa fa-angle-right" />
-        </a>
-      )}
+    <nav
+      role="navigation"
+      aria-label="pagination"
+      {...(hasPreviousPage || hasNextPage)
+        ? { className: 'pagination' }
+        : { className: 'pagination no-direction-available' }
+      }
+    >
+      <a
+        className="pagination-previous"
+        onClick={(ev) => {
+          ev.preventDefault();
+          if (hasPreviousPage) onPaginatePrevious();
+        }}
+        {...hasPreviousPage ? {} : { disabled: 'disabled' }}
+      >
+        <i className="fa fa-angle-left" />
+      </a>
+      <a
+        className="pagination-next"
+        onClick={(ev) => {
+          ev.preventDefault();
+          if (hasNextPage) onPaginateNext();
+        }}
+        {...hasNextPage ? {} : { disabled: 'disabled' }}
+      >
+        <i className="fa fa-angle-right" />
+      </a>
       <div className="pagination-list">{paginationText}</div>
     </nav>
   );

@@ -157,6 +157,12 @@ body#id_blog_index {
       }
 
       nav.pagination {
+        &.no-direction-available {
+          a {
+            opacity: 0;
+          }
+        }
+
         div.pagination-list {
           padding: 0 0.25rem;
         }
