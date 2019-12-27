@@ -48,11 +48,6 @@ function smoothScrollTo(element, targetPosition = 0, duration = 500) {
     // Defines a function that will handle the smooth scroll and update the scrollTop value of the
     // considered element.
     const scrollStep = () => {
-      if (element.scrollTop !== currentScrollTop) {
-        reject(new Error('interrupted'));
-        return;
-      }
-
       // Computes the new scrollTop value by ensuring a smooth transition.
       const now = Date.now();
       const point = smoothStep(startTime, endTime, now);
