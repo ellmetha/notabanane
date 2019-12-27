@@ -124,8 +124,23 @@ body#id_blog_index {
   div#recipe_search_engine {
     div#search_filters {
       h4 {
+        position: relative;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
+
+        &:before {
+          position: absolute;
+          z-index: -1;
+          top: -0.15rem;
+          left: -0.25rem;
+          width: 25%;
+          height: 1rem;
+          background: $harvestGlod;
+          display: inline-block;
+          content: '';
+          transform: rotate(-2deg);
+          opacity: 0.5;
+        }
 
         &:first-child {
           margin-top: 0;
