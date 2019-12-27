@@ -44,7 +44,7 @@ const Search = () => {
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
-  const fetchRecipes = async ({ afterCursor = null, filters = null }) => {
+  const fetchRecipes = async ({ filters = null, direction = null }) => {
     setSubmitting(true);
 
     if (filters != null) {
@@ -52,6 +52,17 @@ const Search = () => {
     }
 
     await smoothScrollTo(document.documentElement);
+
+    // Updates the after cursor and the stack of cursors depending on the direction of the
+    // pagination (if the results are paginated).
+    let afterCursor = null;
+    if (direction === 'previous') {
+      cursorStack.pop();
+      afterCursor = cursorStack[cursorStack.length - 1];
+    } else if (direction === 'next') {
+      cursorStack.push(pageInfo.endCursor);
+      afterCursor = pageInfo.endCursor;
+    }
 
     return fetchMore({
       variables: {
@@ -66,15 +77,13 @@ const Search = () => {
     });
   };
 
-  const onPaginatePrevious = () => {
-    cursorStack.pop();
-    return fetchRecipes({ afterCursor: cursorStack[cursorStack.length - 1] });
-  };
+  const onPaginatePrevious = () => (
+    fetchRecipes({ direction: 'previous' })
+  );
 
-  const onPaginateNext = () => {
-    cursorStack.push(pageInfo.endCursor);
-    return fetchRecipes({ afterCursor: pageInfo.endCursor });
-  };
+  const onPaginateNext = () => (
+    fetchRecipes({ direction: 'next' })
+  );
 
   return (
     <div id="recipe_search_engine" className="section">
@@ -102,7 +111,7 @@ const Search = () => {
                 hasNextPage={pageInfo.hasNextPage}
                 onPaginatePrevious={onPaginatePrevious}
                 onPaginateNext={onPaginateNext}
-                resultsPerPage={RESULTS_PER_PAGE}
+                resultsPerPage={recipes.length}
                 totalCount={totalCount}
               />
             )}
@@ -122,7 +131,7 @@ const Search = () => {
                 hasNextPage={pageInfo.hasNextPage}
                 onPaginatePrevious={onPaginatePrevious}
                 onPaginateNext={onPaginateNext}
-                resultsPerPage={RESULTS_PER_PAGE}
+                resultsPerPage={recipes.length}
                 totalCount={totalCount}
               />
             )}

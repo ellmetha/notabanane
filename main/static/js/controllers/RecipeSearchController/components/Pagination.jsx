@@ -1,4 +1,4 @@
-/* global gettext, interpolate */
+/* global gettext, interpolate, ngettext */
 
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -11,33 +11,48 @@ const Pagination = ({
   onPaginateNext,
   resultsPerPage,
   totalCount,
-}) => (
-  <nav className="pagination" role="navigation" aria-label="pagination">
-    <a
-      className="pagination-previous"
-      onClick={(ev) => {
-        ev.preventDefault();
-        if (hasPreviousPage) onPaginatePrevious();
-      }}
-      {...hasPreviousPage ? {} : { disabled: 'disabled' }}
-    >
-      <i className="fa fa-angle-left" />
-    </a>
-    <a
-      className="pagination-next"
-      onClick={(ev) => {
-        ev.preventDefault();
-        if (hasNextPage) onPaginateNext();
-      }}
-      {...hasNextPage ? {} : { disabled: 'disabled' }}
-    >
-      <i className="fa fa-angle-right" />
-    </a>
-    <div className="pagination-list">
-      {interpolate(gettext('Showing %s of %s recipes'), [resultsPerPage, totalCount])}
-    </div>
-  </nav>
-);
+}) => {
+  let paginationText;
+
+  if (hasPreviousPage || hasNextPage) {
+    paginationText = interpolate(gettext('Showing %s of %s recipes'), [resultsPerPage, totalCount]);
+  } else {
+    paginationText = interpolate(
+      ngettext('Showing %s recipe', 'Showing %s recipes', resultsPerPage),
+      [resultsPerPage],
+    );
+  }
+
+  return (
+    <nav className="pagination" role="navigation" aria-label="pagination">
+      {(hasPreviousPage || hasNextPage) && (
+        <a
+          className="pagination-previous"
+          onClick={(ev) => {
+            ev.preventDefault();
+            if (hasPreviousPage) onPaginatePrevious();
+          }}
+          {...hasPreviousPage ? {} : { disabled: 'disabled' }}
+        >
+          <i className="fa fa-angle-left" />
+        </a>
+      )}
+      {(hasPreviousPage || hasNextPage) && (
+        <a
+          className="pagination-next"
+          onClick={(ev) => {
+            ev.preventDefault();
+            if (hasNextPage) onPaginateNext();
+          }}
+          {...hasNextPage ? {} : { disabled: 'disabled' }}
+        >
+          <i className="fa fa-angle-right" />
+        </a>
+      )}
+      <div className="pagination-list">{paginationText}</div>
+    </nav>
+  );
+};
 
 Pagination.propTypes = {
   hasPreviousPage: PropTypes.bool.isRequired,
