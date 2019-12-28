@@ -65,7 +65,10 @@ const Search = () => {
     }
 
     if (!showMobileFilters) {
-      await smoothScrollTo(document.documentElement);
+      await smoothScrollTo(
+        document.documentElement,
+        searchEngineNode.current.offsetTop + toggleMobileFiltersWrapperNode.current.offsetTop,
+      );
     }
 
     // Updates the after cursor and the stack of cursors depending on the direction of the

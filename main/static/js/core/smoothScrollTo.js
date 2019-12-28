@@ -41,7 +41,7 @@ function smoothScrollTo(element, targetPosition = 0, duration = 500) {
     return x * x * (3 - (2 * x));
   };
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     // Let's set the value of the current number of pixels scrolled.
     let currentScrollTop = element.scrollTop;
 
