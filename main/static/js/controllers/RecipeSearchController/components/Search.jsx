@@ -45,13 +45,18 @@ const Search = () => {
   const searchEngineNode = useRef(null);
   const toggleMobileFiltersWrapperNode = useRef(null);
 
-  const { data, fetchMore } = useQuery(RECIPES, { variables: { first: RESULTS_PER_PAGE } });
+  const { data, fetchMore, loading } = useQuery(
+    RECIPES,
+    { variables: { first: RESULTS_PER_PAGE } },
+  );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
   const filterLabel = gettext('Filters');
   const viewResultsLabel = gettext('View recipes');
+  const noResultsTitle = gettext('No results');
+  const noResultsDescription = gettext('To get more results, try changing your filters.');
 
   useEffect(() => {
     toggleMobileFiltersWrapperNode.current.scrollIntoView();
@@ -150,7 +155,7 @@ const Search = () => {
             }
           >
             <div id="search_results_fetching" />
-            {pageInfo && (
+            {pageInfo && recipes.length > 0 && (
               <Pagination
                 hasPreviousPage={cursorStack.length > 0}
                 hasNextPage={pageInfo.hasNextPage}
@@ -170,7 +175,13 @@ const Search = () => {
                 ))}
               </div>
             )}
-            {pageInfo && (
+            {recipes.length === 0 && !submitting && !loading && (
+              <div id="search_results_empty">
+                <h3 className="is-size-3">{noResultsTitle}</h3>
+                <p>{noResultsDescription}</p>
+              </div>
+            )}
+            {pageInfo && recipes.length > 0 && (
               <Pagination
                 hasPreviousPage={cursorStack.length > 0}
                 hasNextPage={pageInfo.hasNextPage}
