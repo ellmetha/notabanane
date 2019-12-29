@@ -7,6 +7,8 @@ import { useQuery } from '@apollo/react-hooks';
 
 import smoothScrollTo from '../../../core/smoothScrollTo';
 
+import getInitialFilters from '../utilities/getInitialFilters';
+
 import FilterForm from './FilterForm';
 import Pagination from './Pagination';
 import ResultListItem from './ResultListItem';
@@ -45,9 +47,11 @@ const Search = () => {
   const searchEngineNode = useRef(null);
   const toggleMobileFiltersWrapperNode = useRef(null);
 
+  const initialFilters = getInitialFilters();
+
   const { data, fetchMore, loading } = useQuery(
     RECIPES,
-    { variables: { first: RESULTS_PER_PAGE } },
+    { variables: { first: RESULTS_PER_PAGE, ...initialFilters } },
   );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;

@@ -7,16 +7,16 @@ import {
   Form,
 } from 'formik';
 import PropTypes from 'prop-types';
+import queryString from 'query-string';
 import React from 'react';
 
 import CheckBox from '../../../core/components/forms/CheckBox';
+import history from '../../../core/history';
+import getInitialFilters from '../utilities/getInitialFilters';
 
 
 const FilterForm = ({ onSubmitFilters }) => {
-  const initialValues = {
-    dishTypes: [],
-    seasons: [],
-  };
+  const initialValues = getInitialFilters();
 
   const filterableDishTypes = [
     ['APPETIZERS', gettext('Appetizers')],
@@ -45,6 +45,9 @@ const FilterForm = ({ onSubmitFilters }) => {
         key="recipes-filter-form"
         initialValues={initialValues}
         onSubmit={(values) => {
+          // Pushes the querystring to the browser history.
+          history.push({ ...history.location, search: queryString.stringify(values) });
+          // Submit the filters.
           onSubmitFilters(values);
         }}
       >
