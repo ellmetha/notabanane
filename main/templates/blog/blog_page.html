@@ -16,7 +16,7 @@
 
 {% block body_id %}id_blog_index{% endblock body_id %}
 {% block body_class %}{% if not self.filter_type == 'search' %}notsearch{% endif %}{% endblock %}
-{% block data_controller %}{% if self.filter_value == 'recipe' and request.GET.next == 'ok' %}recipe_search_controller{% endif %}{% endblock data_controller %}
+{% block data_controller %}{% if self.filter_type == 'pagetype' and self.filter_value == 'recipe' %}recipe_search_controller{% endif %}{% endblock data_controller %}
 
 {% block navbar_brand_logo_src %}{% if not self.filter_type == 'search' %}{% static 'img/logo_white.svg' %}{% else %}{% static 'img/logo_cranberry.svg' %}{% endif %}{% endblock %}
 
@@ -58,10 +58,9 @@
   </div>
 </section>
 {% endif %}
-{% if self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
-{% if self.filter_value == 'recipe' and request.GET.next == 'ok' %}
+{% if self.filter_type == 'pagetype' and self.filter_value == 'recipe' %}
 <div id="id_recipe_search_app"></div>
-{% else %}
+{% elif self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
 <div class="section post-list">
   <div class="container">
     <div class="columns is-multiline">
@@ -99,7 +98,6 @@
     {% endif %}
   </div>
 </div>
-{% endif %}
 {% else %}
 <div class="section post-list">
   <div class="container">
