@@ -63,7 +63,9 @@ const Search = () => {
   const noResultsDescription = gettext('To get more results, try changing your filters.');
 
   useEffect(() => {
-    toggleMobileFiltersWrapperNode.current.scrollIntoView();
+    if (!loading) {
+      toggleMobileFiltersWrapperNode.current.scrollIntoView();
+    }
   }, [showMobileFilters]);
 
   const fetchRecipes = async ({ filters = null, direction = null }) => {
