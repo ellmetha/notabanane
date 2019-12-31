@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-28 15:32-0500\n"
-"PO-Revision-Date: 2019-12-08 21:30-0500\n"
+"POT-Creation-Date: 2019-12-30 21:03-0500\n"
+"PO-Revision-Date: 2019-12-30 21:04-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -223,6 +223,12 @@ msgstr "Une erreur est survenue et a été notifiée pour correction. Merci de p
 
 msgid "Healthy recipes for real life adventurers"
 msgstr "Recettes santé pour aventuriers des temps modernes"
+
+msgid "Recipes by category"
+msgstr "Recettes par catégories"
+
+msgid "Recipes by season"
+msgstr "Recettes par saisons"
 
 msgid "About"
 msgstr "À propos"
