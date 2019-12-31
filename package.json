@@ -32,6 +32,8 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -45,7 +47,7 @@
     "gulp-less": "^4.0.0",
     "gulp-mjml": "^4.0.2",
     "gulp-util": "^3.0.8",
-    "jest": "^24.5.0",
+    "jest": "^23.6.0",
     "less-loader": "^4.1.0",
     "lodash.template": ">=4.5.0",
     "nan": "^2.10.0",
@@ -73,7 +75,16 @@
       "node_modules",
       "main/static/js"
     ],
-    "testRegex": "(/tests/jstests/.*|\\.(react-test|spec|test))\\.(ts|tsx|js|jsx)$"
+    "setupTestFrameworkScriptFile": "./tests/jstests/setup.js",
+    "testPathIgnorePatterns": [
+      "./tests/jstests/wrapper.js",
+      "./tests/jstests/setup.js",
+      "./tests/jstests/__mocks__/"
+    ],
+    "testRegex": "(/tests/jstests/.*|\\.(react-test|spec|test))\\.(ts|tsx|js|jsx)$",
+    "transform": {
+      "^.+\\.jsx?$": "./tests/jstests/wrapper.js"
+    }
   },
   "resolutions": {
     "**/**/fsevents": "^1.2.9"
