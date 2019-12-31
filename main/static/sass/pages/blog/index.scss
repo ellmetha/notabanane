@@ -11,12 +11,16 @@ body#id_blog_index {
         width: 100%;
         background: transparent;
 
-        a.navbar-item {
+        a.navbar-item, a.navbar-link {
           color: $white;
 
           &:hover, &:focus {
             color: $grey-lighter;
           }
+        }
+
+        div.navbar-dropdown.recipes-dropdown {
+          @include rounded(4px);
         }
 
         .social-links {

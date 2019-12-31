@@ -159,7 +159,7 @@ div#flash_messages {
         }
       }
 
-      a.navbar-item {
+      a.navbar-item, a.navbar-link {
         background: transparent;
         font-weight: 500;
         color: $grey;
@@ -172,6 +172,53 @@ div#flash_messages {
       .navbar-item {
         margin: 1rem 0;
         padding: 0.5rem 1.5rem;
+
+        &.has-dropdown {
+          margin: 0;
+          padding: 0;
+
+          a.navbar-link {
+            margin: 1rem 0;
+            padding: 0.5rem 1.5rem;
+          }
+
+          div.navbar-dropdown.recipes-dropdown {
+            margin-top: -1rem;
+            margin-left: 0.5rem;
+            padding: 1rem;
+            width: 600px;
+            border: none;
+
+            a.title {
+              margin-bottom: 0.75rem;
+              display: block;
+              float: none;
+              width: 100%;
+              font-family: IndieFlower;
+              color: $ferra;
+            }
+
+            a {
+              margin-bottom: 0.35rem;
+              width: 50%;
+              float: left;
+              font-size: 0.9rem;
+              color: $grey;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              &:hover, &:focus {
+                color: $ferra;
+              }
+
+              i {
+                margin-right: 0.15rem;
+              }
+            }
+          }
+        }
       }
 
       .social-links {
@@ -229,7 +276,7 @@ div#flash_messages {
             transform: translate3d(0px, 0px, 0px);
           }
 
-          a.navbar-item {
+          a.navbar-item, a.navbar-link {
             font-weight: 500 !important;
             color: $grey !important;
 
