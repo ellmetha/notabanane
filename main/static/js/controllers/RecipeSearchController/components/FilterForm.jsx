@@ -98,7 +98,7 @@ const FilterForm = ({ onSubmitFilters }) => {
                       className="form-check form-check-inline"
                     >
                       <Field
-                        id={`dish_type_${s[0]}`}
+                        id={`season_${s[0]}`}
                         name="seasons"
                         value={s[0]}
                         checked={values.seasons ? values.seasons.includes(s[0]) : false}
