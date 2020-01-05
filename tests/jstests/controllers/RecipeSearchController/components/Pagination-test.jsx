@@ -14,18 +14,15 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Pagination />', () => {
   beforeEach(() => {
-    global.gettext = (msgid) => msgid;
-    global.ngettext = (singular, plural, count) => (count === 1) ? singular : plural;
+    global.gettext = msgid => msgid;
+    global.ngettext = (singular, plural, count) => (
+      (count === 1) ? singular : plural
+    );
     global.interpolate = (fmt, obj, named) => {
       if (named) {
-        return fmt.replace(/%\(\w+\)s/g, function(match) {
-          return String(obj[match.slice(2, -2)]);
-        });
-      } else {
-        return fmt.replace(/%s/g, function(match) {
-          return String(obj.shift());
-        });
+        return fmt.replace(/%\(\w+\)s/g, match => String(obj[match.slice(2, -2)]));
       }
+      return fmt.replace(/%s/g, () => String(obj.shift()));
     };
   });
 
@@ -108,7 +105,7 @@ describe('<Pagination />', () => {
     expect(component.find('.pagination').hasClass('no-direction-available')).toBeTruthy();
   });
 
-  test('displays the appropriate text when the number of results per page is greater than 1', () => {
+  test('displays the right text when the number of results per page is greater than 1', () => {
     const component = Enzyme.shallow(
       <Pagination
         key="pagination"
@@ -123,7 +120,7 @@ describe('<Pagination />', () => {
     expect(component.find('.pagination-list').text()).toEqual('Showing 10 of 100 recipes');
   });
 
-  test('displays the appropriate text when the number of results per page is 1', () => {
+  test('displays the right text when the number of results per page is 1', () => {
     const component = Enzyme.shallow(
       <Pagination
         key="pagination"

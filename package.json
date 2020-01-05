@@ -91,7 +91,7 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "lint": "eslint --ext .js,.jsx main/static/js/**/*",
+    "lint": "eslint --ext .js,.jsx main/static/js/**/* tests/jstests/**/*",
     "test": "jest"
   }
 }

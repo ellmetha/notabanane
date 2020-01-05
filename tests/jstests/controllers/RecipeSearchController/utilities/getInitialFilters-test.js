@@ -2,7 +2,6 @@
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
-import { createBrowserHistory } from 'history';
 import queryString from 'query-string';
 
 import getInitialFilters from 'controllers/RecipeSearchController/utilities/getInitialFilters';

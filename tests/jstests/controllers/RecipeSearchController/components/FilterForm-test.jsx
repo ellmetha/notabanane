@@ -5,7 +5,7 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import { act } from 'react-dom/test-utils'
+import { act } from 'react-dom/test-utils';
 
 import FilterForm from 'controllers/RecipeSearchController/components/FilterForm';
 
@@ -22,7 +22,7 @@ const waitForComponentToPaint = async (wrapper) => {
 
 describe('<FilterForm />', () => {
   beforeEach(() => {
-    global.gettext = (msgid) => msgid;
+    global.gettext = msgid => msgid;
   });
 
   test('can be properly rendered', () => {
@@ -35,14 +35,10 @@ describe('<FilterForm />', () => {
   });
 
   test('properly updates dish type checkboxes when values change', (done) => {
-    const onSubmitFilters = (values) => {
-      expect(values.dishTypes).toEqual(["APPETIZERS"]);
-      done();
-    };
     const component = Enzyme.mount(
       <FilterForm
         onSubmitFilters={(values) => {
-          expect(values.dishTypes).toEqual(["APPETIZERS"]);
+          expect(values.dishTypes).toEqual(['APPETIZERS']);
           done();
         }}
       />
@@ -62,7 +58,7 @@ describe('<FilterForm />', () => {
   });
 
   test('properly updates season checkboxes when values change', (done) => {
-    const component= Enzyme.mount(
+    const component = Enzyme.mount(
       <FilterForm
         onSubmitFilters={(values) => {
           expect(values.seasons).toEqual(['WINTER']);

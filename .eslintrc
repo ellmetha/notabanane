@@ -28,5 +28,6 @@
     "no-underscore-dangle": 0,
     "no-unused-vars": 1,
     "no-useless-escape": 0,
-  },
+    "react/jsx-boolean-value": 0
+  }
 }
