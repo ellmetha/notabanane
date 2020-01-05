@@ -1,6 +1,6 @@
-import cookie from './cookie';
+import Cookies from 'js-cookie';
 
 
 export default function getCSRFToken() {
-  return cookie.get('csrftoken');
+  return Cookies.get('csrftoken');
 }
