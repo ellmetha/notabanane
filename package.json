@@ -68,7 +68,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "main/static/js/**/*.{js,jsx}"
+      "main/static/js/**/{!(reverseUrl),}.{js,jsx}"
     ],
     "coverageDirectory": "./coverage/",
     "moduleDirectories": [
