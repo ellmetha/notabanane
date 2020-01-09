@@ -34,11 +34,8 @@ class RecipePageType(DjangoObjectType):
             'id',
             'title',
             'date',
-            'header_image_url',
-            'url',
             'dish_types',
             'seasons',
-            'formatted_date',
         )
         filter_fields = ('dish_types', )
 
