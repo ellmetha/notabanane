@@ -18,9 +18,9 @@ before_install:
   - nvm use 11.1.0
 
 install:
-  - pip install pipenv
+  - pip install poetry
   - pip install --upgrade setuptools
-  - pipenv install --dev
+  - poetry install
   - npm install --dev
   - cp tests/.env.json.ci .env.json
 

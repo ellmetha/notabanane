@@ -27,7 +27,7 @@ System requirements
 * Python_ 3.7+
 * PostgreSQL_ 9.4+
 * Node_ 11.0+
-* Pipenv_ 3.5+
+* Poetry_ 1.0+
 
 Installation
 ============
@@ -57,6 +57,6 @@ License
 GPLv3. See ``LICENSE`` for more details.
 
 .. _Node: https://nodejs.org/en/
-.. _Pipenv: https://github.com/kennethreitz/pipenv
+.. _Poetry: https://python-poetry.org/
 .. _PostgreSQL: https://www.postgresql.org/
 .. _Python: https://www.python.org

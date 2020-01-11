@@ -12,7 +12,8 @@ init:
 
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Python dependencies${RESET}\n\n"
 
-	pipenv install --dev --python `which python3`
+	poetry env use 3.7
+	poetry install
 
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Node.js dependencies${RESET}\n\n"
 
@@ -25,7 +26,7 @@ init:
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Database${RESET}\n\n"
 
 	psql -l|awk '{print $1}'|grep -w notabanane || createdb notabanane 2>/dev/null
-	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
+	poetry run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
 
 	@printf "\n\n${YELLOW}---------------- Done.${RESET}\n\n"
 
@@ -41,41 +42,41 @@ init:
 c: console
 ## Launch a development console.
 console:
-	pipenv run python manage.py shell --settings=$(DJANGO_SETTINGS_MODULE)
+	poetry run python manage.py shell --settings=$(DJANGO_SETTINGS_MODULE)
 
 .PHONY: s server
 ## Alias of "server".
 s: server
 ## Launch a development server.
 server:
-	pipenv run python manage.py runserver 0.0.0.0:8000 --settings=$(DJANGO_SETTINGS_MODULE)
+	poetry run python manage.py runserver 0.0.0.0:8000 --settings=$(DJANGO_SETTINGS_MODULE)
 
 ## Generate .po translations files.
 messages:
-	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr
-	pipenv run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*" --extension jsx
+	poetry run python manage.py makemessages --no-wrap --no-location -l en -l fr
+	poetry run python manage.py makemessages --no-wrap --no-location -l en -l fr -d djangojs --ignore="$(PROJECT_PACKAGE)/static/build_dev/*" --ignore="node_modules/*" --ignore="coverage/*" --extension jsx
 
 ## Generate .mo compiled translations files.
 compiledmessages:
-	pipenv run python manage.py compilemessages -l en -l fr
+	poetry run python manage.py compilemessages -l en -l fr
 
 ## Generates the GraphQL schema dump.
 graphql_schema:
-	pipenv run python manage.py dump_graphql_schema -o project/db/schema.graphql
+	poetry run python manage.py dump_graphql_schema -o project/db/schema.graphql
 
 ## Generate new database migrations.
 migrations:
-	pipenv run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
+	poetry run python manage.py makemigrations --settings=$(DJANGO_SETTINGS_MODULE) ${ARG}
 
 .PHONY: migrate
 ## Run the database migrations.
 migrate:
-	pipenv run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
+	poetry run python manage.py migrate --settings=$(DJANGO_SETTINGS_MODULE)
 
 .PHONY: superuser
 ## Create a superuser.
 superuser:
-	pipenv run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
+	poetry run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
 
 .PHONY: webpack_server
 ## Launch a webpack development server with hot reloading.
@@ -97,7 +98,7 @@ qa: lint isort
 lint: lint_python lint_js
 ## Trigger Python code quality checks (flake8).
 lint_python:
-	pipenv run flake8
+	poetry run flake8
 ## Trigger Javascript code quality checks (eslint).
 lint_js:
 	npm run lint
@@ -107,7 +108,7 @@ lint_js:
 isort: isort_python
 ## Check Python imports sorting.
 isort_python:
-	pipenv run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
+	poetry run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
 
 
 # TESTING
@@ -122,7 +123,7 @@ t: tests
 tests: tests_python tests_js
 ## Run the Python test suite.
 tests_python:
-	pipenv run py.test
+	poetry run py.test
 ## Run the Javascript test suite.
 tests_js:
 	npm test
@@ -132,7 +133,7 @@ tests_js:
 coverage: coverage_python coverage_js
 ## Collects code coverage data for the Python codebase.
 coverage_python:
-	pipenv run py.test --cov-report term-missing --cov $(PROJECT_PACKAGE)
+	poetry run py.test --cov-report term-missing --cov $(PROJECT_PACKAGE)
 ## Collects code coverage data for the Javascript codebase.
 coverage_js:
 	npm test
@@ -142,7 +143,7 @@ coverage_js:
 spec: spec_python
 # Run the Python test suite in "spec" mode.
 spec_python:
-	pipenv run py.test --spec -p no:sugar
+	poetry run py.test --spec -p no:sugar
 
 
 # MAKEFILE HELPERS
