@@ -6,8 +6,7 @@ addons:
   postgresql: "9.5"
 
 python:
-  - "3.7"
-  - "3.8-dev"
+  - "3.8"
 
 matrix:
   allow_failures:

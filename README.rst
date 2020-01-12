@@ -24,7 +24,7 @@ articles on various subjects.
 System requirements
 ===================
 
-* Python_ 3.7+
+* Python_ 3.8+
 * PostgreSQL_ 9.4+
 * Node_ 11.0+
 * Poetry_ 1.0+
