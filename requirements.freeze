@@ -29,9 +29,9 @@ django-anymail==7.0.0 \
 django-filter==2.2.0 \
     --hash=sha256:c3deb57f0dd7ff94d7dce52a047516822013e2b441bed472b722a317658cfd14 \
     --hash=sha256:558c727bce3ffa89c4a7a0b13bc8976745d63e5fd576b3a9a851650ef11c401b
-django-js-routes==0.1.0 \
-    --hash=sha256:f094ef72e682c0672e5f5645a11d440a3e6313453611eb55db7a6f29e64bfb4e \
-    --hash=sha256:65f742f8492304b979ad8a487ffbc19c434486349da76f1608fb02f4ea782a22
+django-js-routes==0.1.3 \
+    --hash=sha256:c919ea8dc2503e9a1e237f8eddee9eb3e90d5e70d4eb67d80456de15c1638baf \
+    --hash=sha256:5fd6f76fe2902e4f37f3627037a33b330dade497a5a32d01e052b4387f163831
 django-modelcluster==5.0.1 \
     --hash=sha256:6f857bb0251c0982afeb35474aeedb3ec72260df81a0262188df8108067467ba \
     --hash=sha256:09e4242119f04e81bfab25c77b09cb6e9d469dc14b14e71f04cd358c7256bc2a
