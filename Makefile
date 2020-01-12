@@ -83,6 +83,11 @@ superuser:
 webpack_server:
 	npm run gulp -- webpack-dev-server
 
+## Generate or refresh poetry.lock and requirements.freeze
+locked_requirements:
+	poetry update
+	poetry export -f requirements.txt > requirements.freeze
+
 
 # QUALITY ASSURANCE
 # ~~~~~~~~~~~~~~~~~
