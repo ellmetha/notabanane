@@ -291,7 +291,7 @@ class RecipePage(Page):
         blank=True,
         null=True,
         default=list,
-        verbose_name=_('Diet')
+        verbose_name=_('Diets')
     )
 
     # A blog recipe page can have an optional recipe image that'll be used when rendering the
