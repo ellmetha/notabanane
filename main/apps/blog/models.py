@@ -274,6 +274,26 @@ class RecipePage(Page):
         verbose_name=_('Seasons')
     )
 
+    # A recipe can be associated with specific diets.
+    DIET_VEGETARIAN = 'vegetarian'
+    DIET_VEGAN = 'vegan'
+    DIET_GLUTEN_FREE = 'gluten+free'
+    DIET_LACTOSE_FREE = 'lactose+free'
+    DIET_CHOICES = (
+        (DIET_VEGETARIAN, _('Vegetarian')),
+        (DIET_VEGAN, _('Vegan')),
+        (DIET_GLUTEN_FREE, _('Gluten free')),
+        (DIET_LACTOSE_FREE, _('Lactose free')),
+    )
+    diets = ChoiceArrayField(
+        models.CharField(max_length=12, choices=DIET_CHOICES),
+        size=4,
+        blank=True,
+        null=True,
+        default=list,
+        verbose_name=_('Diet')
+    )
+
     # A blog recipe page can have an optional recipe image that'll be used when rendering the
     # recipe. By default the header image is used instead if this image is not set.
     recipe_image = models.ForeignKey(
@@ -303,6 +323,7 @@ class RecipePage(Page):
         FieldPanel('introduction', classname='full'),
         FieldPanel('dish_types', widget=CheckboxSelectMultiple),
         FieldPanel('seasons', widget=CheckboxSelectMultiple),
+        FieldPanel('diets', widget=CheckboxSelectMultiple),
         MultiFieldPanel(
             [
                 FieldPanel('preparation_time', widget=ShortDurationSelectWidget),
