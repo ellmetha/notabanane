@@ -21,3 +21,8 @@ SEASONS_ENUM_MAPPING = {
     replace(t[0], (('-', '_'), ('+', '_'))).upper(): t[0] for t in RecipePage.SEASON_CHOICES
 }
 Season = graphene.Enum('Season', list(SEASONS_ENUM_MAPPING.items()))
+
+DIETS_ENUM_MAPPING = {
+    replace(t[0], (('-', '_'), ('+', '_'))).upper(): t[0] for t in RecipePage.DIET_CHOICES
+}
+Diet = graphene.Enum('Diet', list(DIETS_ENUM_MAPPING.items()))

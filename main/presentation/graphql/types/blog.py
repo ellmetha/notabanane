@@ -14,7 +14,7 @@ from graphene_django.types import DjangoObjectType
 from main.apps.blog.models import RecipePage
 
 from .connections import ExtendedConnection
-from .enums import DishType, Season
+from .enums import Diet, DishType, Season
 
 
 class RecipePageType(DjangoObjectType):
@@ -22,6 +22,7 @@ class RecipePageType(DjangoObjectType):
 
     dish_types = graphene.List(DishType, required=True)
     seasons = graphene.List(Season, required=True)
+    diets = graphene.List(Diet, required=True)
     header_image_thumbnail = graphene.String(required=True)
     url = graphene.String(required=True)
     formatted_date = graphene.String(required=True)
@@ -36,6 +37,7 @@ class RecipePageType(DjangoObjectType):
             'date',
             'dish_types',
             'seasons',
+            'diets'
         )
         filter_fields = ('dish_types', )
 

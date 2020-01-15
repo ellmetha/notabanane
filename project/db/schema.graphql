@@ -4,6 +4,13 @@ schema {
 
 scalar Date
 
+enum Diet {
+  VEGETARIAN
+  VEGAN
+  GLUTEN_FREE
+  LACTOSE_FREE
+}
+
 enum DishType {
   APPETIZERS
   BEVERAGES
@@ -36,6 +43,7 @@ type RecipePageType implements Node {
   date: Date!
   dishTypes: [DishType]!
   seasons: [Season]!
+  diets: [Diet]!
   headerImageThumbnail: String!
   url: String!
   formattedDate: String!
