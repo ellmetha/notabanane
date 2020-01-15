@@ -39,7 +39,7 @@ class RecipePageType(DjangoObjectType):
             'seasons',
             'diets'
         )
-        filter_fields = ('dish_types', )
+        filter_fields = ('dish_types', 'seasons', 'diets', )
 
     @classmethod
     def get_queryset(cls, queryset, info):
