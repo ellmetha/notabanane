@@ -14,7 +14,7 @@ import Pagination from './Pagination';
 import ResultListItem from './ResultListItem';
 
 
-const RECIPES = gql`
+export const RECIPES = gql`
   query Recipes($first: Int, $cursor: String, $dishTypes: [String], $seasons: [String]) {
     recipes(first: $first, after: $cursor, dishTypes: $dishTypes, seasons: $seasons) {
       edges {
