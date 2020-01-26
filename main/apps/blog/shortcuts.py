@@ -24,7 +24,7 @@ def get_instagram_media_feed(limit=6):
         graph = facebook.GraphAPI(access_token=blog_settings.INSTAGRAM_ACCESS_TOKEN)
         media_feed = graph.get_object(
             id=f'{blog_settings.INSTAGRAM_ACCOUNT_ID}/media',
-            fields='media_url',
+            fields='media_url,permalink',
             limit=limit
         )['data']
         cache.set(cache_key, media_feed, 10 * SHORT_TTL)
