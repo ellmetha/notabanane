@@ -50,5 +50,4 @@ class BlogRoutes(RoutablePageMixin):
         """ Generates a page containing all the recipes of the blog. """
         self.filter_type = 'pagetype'
         self.filter_value = 'recipe'
-        self.entries = self.get_recipes()
         return Page.serve(self, request, *args, **kwargs)

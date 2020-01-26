@@ -107,14 +107,14 @@ class TestBlogRoutes:
             article_page_1,
         ]
 
-    def test_recipes_list_include_live_recipes(self, rf):
-        recipe_page_1 = RecipePageFactory.create(
+    def test_recipes_list_only_exposes_the_right_filter_type_and_value(self, rf):
+        RecipePageFactory.create(
             parent=self.blog_page,
             date=tz.now() - dt.timedelta(days=3),
             live=True
         )
-        recipe_page_2 = RecipePageFactory.create(parent=self.blog_page, live=True)
-        recipe_page_3 = RecipePageFactory.create(
+        RecipePageFactory.create(parent=self.blog_page, live=True)
+        RecipePageFactory.create(
             parent=self.blog_page,
             date=tz.now() - dt.timedelta(days=1),
             live=True
@@ -123,8 +123,5 @@ class TestBlogRoutes:
 
         response = self.blog_page.recipes_list(rf.get('/recipes'))
 
-        assert list(response.context_data['self'].entries) == [
-            recipe_page_2,
-            recipe_page_3,
-            recipe_page_1,
-        ]
+        assert response.context_data['filter_type'] == 'pagetype'
+        assert response.context_data['filter_value'] == 'recipe'
