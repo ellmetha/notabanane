@@ -78,7 +78,9 @@ migrate:
 superuser:
 	poetry run python manage.py createsuperuser --settings=$(DJANGO_SETTINGS_MODULE)
 
-.PHONY: webpack_server
+.PHONY: ws webpack_server
+## Alias of "webpack_server".
+ws: webpack_server
 ## Launch a webpack development server with hot reloading.
 webpack_server:
 	npm run gulp -- webpack-dev-server
