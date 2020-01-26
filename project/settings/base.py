@@ -207,6 +207,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'main.common.cache.context_processors.constants',
                 'project.context_processors.google_analytics',
                 'project.context_processors.pinterest',
             ],
