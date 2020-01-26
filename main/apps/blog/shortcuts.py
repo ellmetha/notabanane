@@ -25,7 +25,7 @@ def get_instagram_media_feed(limit=6):
         media_feed = graph.get_object(
             id=f'{blog_settings.INSTAGRAM_ACCOUNT_ID}/media',
             fields='media_url',
-            limit=5
+            limit=limit
         )['data']
         cache.set(cache_key, media_feed, 10 * SHORT_TTL)
 

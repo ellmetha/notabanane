@@ -22,3 +22,9 @@ class TestGetInstagramMediaFeed:
         assert get_instagram_media_feed() == [{'id': 1}, {'id': 2}, {'id': 3}]
         assert get_instagram_media_feed() == [{'id': 1}, {'id': 2}, {'id': 3}]
         assert mocked_graph_get.call_count == 1
+
+    @unittest.mock.patch('facebook.GraphAPI.get_object')
+    def test_can_return_the_instagram_media_feed_using_a_specific_limit(self, mocked_graph_get):
+        mocked_graph_get.return_value = {'data': [{'id': 1}, {'id': 2}]}
+        assert get_instagram_media_feed(limit=2) == [{'id': 1}, {'id': 2}]
+        assert mocked_graph_get.call_args[-1]['limit'] == 2
