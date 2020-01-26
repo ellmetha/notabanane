@@ -1,5 +1,6 @@
 import datetime as dt
 import json
+import unittest.mock
 
 import pytest
 from django.template.defaultfilters import date
@@ -198,3 +199,70 @@ class TestRecipePageType:
         content = json.loads(response.content)
 
         assert content['data']['recipes']['totalCount'] == 3
+
+
+@pytest.mark.django_db
+class TestInstagramMediaType:
+    @unittest.mock.patch('facebook.GraphAPI.get_object')
+    def test_exposes_the_url_of_an_instagram_media(self, mocked_graph_get, client):
+        mocked_graph_get.return_value = {
+            'data': [
+                {'id': 1, 'permalink': 'https://example/1', 'media_url': 'https://example/m/1'},
+                {'id': 2, 'permalink': 'https://example/2', 'media_url': 'https://example/m/2'},
+                {'id': 3, 'permalink': 'https://example/3', 'media_url': 'https://example/m/3'},
+            ],
+        }
+
+        query = '''
+            query {
+                recentInstagramMedias {
+                    url
+                }
+            }
+        '''
+
+        response = client.post(
+            reverse('graphql'),
+            json.dumps({'query': query}),
+            content_type='application/json'
+        )
+
+        content = json.loads(response.content)
+
+        assert [m['url'] for m in content['data']['recentInstagramMedias']] == [
+            'https://example/1',
+            'https://example/2',
+            'https://example/3',
+        ]
+
+    @unittest.mock.patch('facebook.GraphAPI.get_object')
+    def test_exposes_the_image_url_of_an_instagram_media(self, mocked_graph_get, client):
+        mocked_graph_get.return_value = {
+            'data': [
+                {'id': 1, 'permalink': 'https://example/1', 'media_url': 'https://example/m/1'},
+                {'id': 2, 'permalink': 'https://example/2', 'media_url': 'https://example/m/2'},
+                {'id': 3, 'permalink': 'https://example/3', 'media_url': 'https://example/m/3'},
+            ],
+        }
+
+        query = '''
+            query {
+                recentInstagramMedias {
+                    imageUrl
+                }
+            }
+        '''
+
+        response = client.post(
+            reverse('graphql'),
+            json.dumps({'query': query}),
+            content_type='application/json'
+        )
+
+        content = json.loads(response.content)
+
+        assert [m['imageUrl'] for m in content['data']['recentInstagramMedias']] == [
+            'https://example/m/1',
+            'https://example/m/2',
+            'https://example/m/3',
+        ]

@@ -57,3 +57,18 @@ class RecipePageType(DjangoObjectType):
     def resolve_url(self, info):
         """ Returns the URL of the recipe page. """
         return self.url
+
+
+class InstagramMediaType(graphene.ObjectType):
+    """ Defines the GraphQL type of an Instagram media. """
+
+    url = graphene.String(required=True)
+    image_url = graphene.String(required=True)
+
+    def resolve_url(self, info):
+        """ Returns the URL of the Instagram media. """
+        return self['permalink']
+
+    def resolve_image_url(self, info):
+        """ Returns the image URL of the Instagram media. """
+        return self['media_url']
