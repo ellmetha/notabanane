@@ -349,6 +349,13 @@ GA_PROPERTY_ID = get_envsetting('GA_PROPERTY_ID', 'notset')
 PINTEREST_DOMAIN_VERIFICATION_ID = get_envsetting('PINTEREST_DOMAIN_VERIFICATION_ID', 'notset')
 
 
+# BLOG CONFIGURATION
+# ------------------------------------------------------------------------------
+
+BLOG_INSTAGRAM_ACCOUNT_ID = get_envsetting('BLOG_INSTAGRAM_ACCOUNT_ID', 'notset')
+BLOG_INSTAGRAM_ACCESS_TOKEN = get_envsetting('BLOG_INSTAGRAM_ACCESS_TOKEN', 'notset')
+
+
 # PROJECT CONFIGURATION
 # ------------------------------------------------------------------------------
 
