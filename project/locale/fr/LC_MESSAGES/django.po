@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 21:44-0500\n"
-"PO-Revision-Date: 2020-01-12 21:44-0500\n"
+"POT-Creation-Date: 2020-01-26 21:47-0500\n"
+"PO-Revision-Date: 2020-01-26 21:59-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -250,6 +250,15 @@ msgstr "À propos"
 
 msgid "Type to search"
 msgstr "Taper pour chercher"
+
+msgid "Who am I?"
+msgstr "Qui suis-je?"
+
+msgid "[WHOAMI_PRESENTATION]"
+msgstr "Hello et bienvenue sur Nota Banane! Je suis Gaëlle, blogueuse culinaire française expatriée à Montréal (Québec) depuis 2016. Généreuse de nature et grande gourmande je partage ici mes recettes du quotidien ainsi que mes astuces en cuisine."
+
+msgid "Find me on Instagram!"
+msgstr "Retrouve-moi sur Instagram!"
 
 msgid "Contact"
 msgstr "Contact"

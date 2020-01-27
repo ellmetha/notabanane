@@ -180,14 +180,14 @@
                 <img src="{% static 'img/gaelle.jpg' %}" alt="Gaëlle" />
               </div>
               <div class="content presentation">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et justo a ante pellentesque ultricies. Nam varius est eu lacus sagittis, vel aliquet lectus eleifend. Morbi condimentum nisi sed quam euismod, sit amet dapibus eros rutrum. Proin sagittis, odio non scelerisque ullamcorper.</p>
+                <p>{% trans "[WHOAMI_PRESENTATION]" %}</p>
               </div>
             </div>
             <div class="column instagram">
               <h3 class="is-size-3">
                 <a href="https://www.instagram.com/notabanane" target="_blank">
                   <span class="is-pulled-right instagram-handle"><i class="fa fa-instagram"></i> &#64;notabanane</span>
-                  {% trans "Find me on Instagram!" %}
+                  <span class="main">{% trans "Find me on Instagram!" %}</span>
                 </a>
               </h3>
               <div id="instagram_media_feed_wrapper"></div>
