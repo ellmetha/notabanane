@@ -33,7 +33,7 @@ const jsDir = `${staticDir}js`;
 const webpackConfig = {
   mode: PROD_ENV ? 'production' : 'development',
   entry: {
-    App: [`${jsDir}/App.js`, `${sassDir}/App.scss`],
+    App: [`${jsDir}/App.jsx`, `${sassDir}/App.scss`],
     WagtailAdminOverrides: [`${sassDir}/WagtailAdminOverrides.scss`],
   },
   output: {
@@ -159,7 +159,7 @@ gulp.task('webpack-dev-server', gulp.series(() => {
   devWebpackConfig.devServer = { hot: true };
   devWebpackConfig.entry = {
     App: [
-      `${jsDir}/App.js`, `${sassDir}/App.scss`,
+      `${jsDir}/App.jsx`, `${sassDir}/App.scss`,
       `webpack-dev-server/client?http://localhost:${WEBPACK_DEV_SERVER_PORT}`,
       'webpack/hot/only-dev-server',
     ],

@@ -3,10 +3,16 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import feather from 'feather-icons/dist/feather';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+import { ApolloProvider } from '@apollo/react-hooks';
+
+import InstagramMediaFeed from './components/InstagramMediaFeed';
 import controllers from './controllers';
 import DOMRouter from './core/DOMRouter';
 import FlashMessages from './core/FlashMessages';
+import graphqlClient from './core/graphqlClient';
 
 
 const router = new DOMRouter(controllers);
@@ -81,4 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   window.dispatchEvent(new Event('resize'));
+
+  // Initialies the Instagram media feed.
+  ReactDOM.render(
+    <ApolloProvider client={graphqlClient}>
+      <InstagramMediaFeed />
+    </ApolloProvider>,
+    document.getElementById('instagram_media_feed_wrapper')
+  );
 });

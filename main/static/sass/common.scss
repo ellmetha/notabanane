@@ -342,11 +342,11 @@ div#flash_messages {
     background-color: lighten($grey-lighter, 10%);
     border-bottom: 0.35rem solid $harvestGlod;
 
-    div.whoami {
-      h3 {
-        margin-bottom: 1.5rem;
-      }
+    h3 {
+      margin-bottom: 1.5rem;
+    }
 
+    div.whoami {
       div.photo {
         margin: 0 auto;
         margin-bottom: 1.5rem;
@@ -387,6 +387,20 @@ div#flash_messages {
               font-size: 1.5rem;
               vertical-align: middle;
             }
+          }
+        }
+      }
+
+      div#instagram_media_feed {
+        a {
+          display: block;
+
+          &:hover, &:focus {
+            opacity: 0.9;
+          }
+
+          img {
+            display: block;
           }
         }
       }
