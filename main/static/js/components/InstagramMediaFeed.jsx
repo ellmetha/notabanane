@@ -19,11 +19,11 @@ const InstagramMediaFeed = () => {
 
   return (
     <div id="instagram_media_feed">
-      <div className="columns is-vcentered is-multiline is-variable is-3">
+      <div className="columns is-vcentered is-multiline is-variable is-3 is-mobile">
         {medias.map(media => (
           <a
             href={media.url}
-            className="column is-one-quarter"
+            className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile"
             target="_blank"
             rel="noopener noreferrer"
           >

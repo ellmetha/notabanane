@@ -405,6 +405,41 @@ div#flash_messages {
         }
       }
     }
+
+    @include tablet-only {
+      div.instagram {
+        div#instagram_media_feed {
+          a {
+            &:nth-last-child(-n+2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      div.instagram {
+        h3 {
+          a {
+            position: relative;
+            display: block;
+
+            span.main {
+              display: none;
+            }
+
+            span.instagram-handle {
+              position: relative;
+              float: none !important;
+              display: block;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
   }
 
   footer {
