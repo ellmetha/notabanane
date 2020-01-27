@@ -15,7 +15,7 @@ from main.common.cache.constants import SHORT_TTL
 from .conf import settings as blog_settings
 
 
-def get_instagram_media_feed(limit=6):
+def get_instagram_media_feed(limit=8):
     """ Returns the Instagram media feed associated with the blog application. """
     cache_key = f'instagram-media-feed-{limit}-limit'
     media_feed = cache.get(cache_key)
