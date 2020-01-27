@@ -1,25 +1,15 @@
-import ApolloClient from 'apollo-boost';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import getCSRFToken from '../../core/getCSRFToken';
-import reverseUrl from '../../core/reverseUrl';
+import graphqlClient from '../../core/graphqlClient';
 
 import Search from './components/Search';
 
 
-const client = new ApolloClient({
-  uri: reverseUrl('graphql'),
-  headers: {
-    'X-CSRFToken': getCSRFToken(),
-  },
-});
-
 const SearchApp = () => (
-  <ApolloProvider client={client}>
+  <ApolloProvider client={graphqlClient}>
     <Search />
   </ApolloProvider>
 );
