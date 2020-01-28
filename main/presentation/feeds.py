@@ -6,6 +6,8 @@
 
 """
 
+import datetime as dt
+
 from django.contrib.syndication.views import Feed
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
@@ -53,3 +55,7 @@ class LatestEntriesFeed(Feed):
     def item_author_name(self, item):
         """ Returns the author name of an item. """
         return item.owner.first_name or item.owner.username
+
+    def item_pubdate(self, item):
+        """ Returns the item's creation date or update date. """
+        return dt.datetime.combine(item.date, dt.datetime.min.time())
