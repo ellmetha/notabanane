@@ -23,6 +23,7 @@ const InstagramMediaFeed = () => {
         {medias.map(media => (
           <a
             href={media.url}
+            key={media.url}
             className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile"
             target="_blank"
             rel="noopener noreferrer"
