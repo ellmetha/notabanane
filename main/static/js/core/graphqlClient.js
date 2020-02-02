@@ -1,4 +1,5 @@
 import ApolloClient from 'apollo-boost';
+import fetch from 'unfetch';
 
 import getCSRFToken from './getCSRFToken';
 import reverseUrl from './reverseUrl';
@@ -9,6 +10,7 @@ const client = new ApolloClient({
   headers: {
     'X-CSRFToken': getCSRFToken(),
   },
+  fetch,
 });
 
 export default client;
