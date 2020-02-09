@@ -6,6 +6,7 @@
 body#id_blog_entry {
   section#entry_header {
     position: relative;
+    border-bottom: 0.35rem solid $harvestGlod;
 
     .bg {
       position: absolute;
