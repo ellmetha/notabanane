@@ -39,7 +39,7 @@ jobs:
         make lint_python
         make isort_python
     - name: Run tests suite
-      run: poetry run pytest --cov-report xml --cov precise_bbcode
+      run: poetry run pytest --cov-report xml --cov main
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
