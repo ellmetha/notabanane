@@ -32,6 +32,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -U pip poetry
         poetry install
+    - name: Setup env json file
+      run: cp tests/.env.json.ci .env.json
     - name: Run QA checks
       run: |
         make lint_python
