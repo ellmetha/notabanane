@@ -1,0 +1,31 @@
+name: CI - Node.js
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install Node.js dependencies
+      run: npm ci
+    - name: Run QA checks
+      run: |
+        make lint_js
+    - name: Run tests suite
+      run: make coverage_js
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage/coverage-final.xml
+        flags: unittests
+        name: codecov-umbrella
+        yml: ./.codecov.yml
+        fail_ci_if_error: true
