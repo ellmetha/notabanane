@@ -265,14 +265,14 @@ body#id_blog_index {
       }
     }
 
-    div.latest-article-wrapper {
+    div.article-wrapper {
       margin-bottom: 3rem;
 
       h2 {
         margin-bottom: 1rem;
       }
 
-      a.latest-article {
+      a.article {
         margin-bottom: 0.75rem;
         display: block;
         text-align: center;
@@ -364,7 +364,7 @@ body#id_blog_index {
       }
 
       @include widescreen-only {
-        a.latest-article {
+        a.article {
           .content-wrapper {
             .post-title {
               margin-bottom: 1rem;
@@ -395,7 +395,7 @@ body#id_blog_index {
       }
 
       @include mobile {
-        a.latest-article {
+        a.article {
           .image-wrapper {
             img {
               display: block;

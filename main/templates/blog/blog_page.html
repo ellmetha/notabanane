@@ -66,12 +66,17 @@
     <div class="columns is-multiline">
       {% for post in paginated_entries %}
       {% with post=post.specific %}
-      <div class="column is-one-third">
-        <a href="{% pageurl post %}" class="post-box">
-          <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
-          <span class="content-wrapper">
-            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
-            <span class="post-title">{{ post.title }}</span>
+      <div class="column is-full article-wrapper">
+        <a href="{% pageurl post %}" class="article">
+          <span class="columns is-multiline">
+            <span class="column is-one-third is-full-mobile image-wrapper">
+              {% image post.header_image fill-555x312 %}
+            </span>
+            <span class="column is-two-thirds is-full-mobile content-wrapper">
+              <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+              <span class="post-title">{{ post.title }}</span>
+              <span class="post-truncated-body">{{ post.body|safe|striptags|truncatechars:300 }}</span>
+            </span>
           </span>
         </a>
       </div>
@@ -166,9 +171,9 @@
       {% endif %}
     </div>
     {% if self.latest_article %}
-    <div class="latest-article-wrapper">
+    <div class="article-wrapper">
       <h2 class="is-size-2">{% trans "Latest article" %}</h2>
-      <a href="{% pageurl self.latest_article %}" class="latest-article">
+      <a href="{% pageurl self.latest_article %}" class="article">
         <span class="columns is-multiline">
           <span class="column is-one-third is-full-mobile image-wrapper">
             {% image self.latest_article.header_image fill-555x312 %}
