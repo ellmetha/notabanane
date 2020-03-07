@@ -86,10 +86,10 @@ description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
 python-versions = "*"
-version = "1.12.14"
+version = "1.12.16"
 
 [package.dependencies]
-botocore = ">=1.15.14,<1.16.0"
+botocore = ">=1.15.16,<1.16.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
@@ -99,7 +99,7 @@ description = "Low-level, data-driven core of boto 3."
 name = "botocore"
 optional = false
 python-versions = "*"
-version = "1.15.14"
+version = "1.15.16"
 
 [package.dependencies]
 docutils = ">=0.10,<0.16"
@@ -712,8 +712,8 @@ category = "dev"
 description = "Library for building powerful interactive command lines in Python"
 name = "prompt-toolkit"
 optional = false
-python-versions = ">=3.6"
-version = "3.0.3"
+python-versions = ">=3.6.1"
+version = "3.0.4"
 
 [package.dependencies]
 wcwidth = "*"
@@ -1126,12 +1126,12 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.6.0.tar.gz", hash = "sha256:808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89"},
 ]
 boto3 = [
-    {file = "boto3-1.12.14-py2.py3-none-any.whl", hash = "sha256:3b00b93d9548ebc0777f54cbd77c11e2721f7bb873ffb371cf4fa66d06750de7"},
-    {file = "boto3-1.12.14.tar.gz", hash = "sha256:3d3973502f96faaa534faec083ce4cd51a969f613d740be9e34cb7e42238f59c"},
+    {file = "boto3-1.12.16-py2.py3-none-any.whl", hash = "sha256:a01e3a373638850822c863914fa56e25fd1a651a48fb9c6323694a634c76289c"},
+    {file = "boto3-1.12.16.tar.gz", hash = "sha256:ba1229df5f1e32dee4c8bb73e774dfb7d54e293f0895d4f825294e2d46e3c7b3"},
 ]
 botocore = [
-    {file = "botocore-1.15.14-py2.py3-none-any.whl", hash = "sha256:37e713b86bc833587e002610d0b2b5c5c88438617d68189d1b541e20726a43d4"},
-    {file = "botocore-1.15.14.tar.gz", hash = "sha256:4f889842519f54d007e285637c625a0645ffbe6aaa291b62ba510f3a25948f77"},
+    {file = "botocore-1.15.16-py2.py3-none-any.whl", hash = "sha256:1109f36e658de2097d1e466842d6634a6b66bb9d3779abe16698171360e1ae5f"},
+    {file = "botocore-1.15.16.tar.gz", hash = "sha256:39e903e1d1ae862e469b4d5f15dc6770a7c9c81da9fcffb1a40f551ea36acd35"},
 ]
 certifi = [
     {file = "certifi-2019.11.28-py2.py3-none-any.whl", hash = "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3"},
@@ -1383,8 +1383,8 @@ promise = [
     {file = "promise-2.3.tar.gz", hash = "sha256:dfd18337c523ba4b6a58801c164c1904a9d4d1b1747c7d5dbf45b693a49d93d0"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.3-py3-none-any.whl", hash = "sha256:c93e53af97f630f12f5f62a3274e79527936ed466f038953dfa379d4941f651a"},
-    {file = "prompt_toolkit-3.0.3.tar.gz", hash = "sha256:a402e9bf468b63314e37460b68ba68243d55b2f8c4d0192f85a019af3945050e"},
+    {file = "prompt_toolkit-3.0.4-py3-none-any.whl", hash = "sha256:859e1b205b6cf6a51fa57fa34202e45365cf58f8338f0ee9f4e84a4165b37d5b"},
+    {file = "prompt_toolkit-3.0.4.tar.gz", hash = "sha256:ebe6b1b08c888b84c50d7f93dee21a09af39860144ff6130aadbd61ae8d29783"},
 ]
 psycopg2 = [
     {file = "psycopg2-2.8.4-cp27-cp27m-win32.whl", hash = "sha256:72772181d9bad1fa349792a1e7384dde56742c14af2b9986013eb94a240f005b"},
