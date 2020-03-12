@@ -150,7 +150,7 @@ coverage_js:
 spec: spec_python
 # Run the Python test suite in "spec" mode.
 spec_python:
-	poetry run py.test --spec -p no:sugar
+	poetry run py.test --spec
 
 
 # MAKEFILE HELPERS

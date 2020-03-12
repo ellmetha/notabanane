@@ -45,7 +45,6 @@ pytest-cov = "*"
 pytest-django = "*"
 pytest-pythonpath = "*"
 pytest-spec = "*"
-pytest-sugar = "*"
 
 [build-system]
 requires = ["poetry>=0.12"]
