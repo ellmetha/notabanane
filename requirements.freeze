@@ -1,9 +1,9 @@
 aniso8601==7.0.0 \
     --hash=sha256:d10a4bf949f619f719b227ef5386e31f49a2b6d453004b21f02661ccc8670c7b \
     --hash=sha256:513d2b6637b7853806ae79ffaca6f3e8754bdd547048f5ccc1420aec4b714f1e
-asgiref==3.2.4 \
-    --hash=sha256:5e60ea919b37e5b9d8896d802c0dbbe41b16ea6719e5695a43496ef43e5b19ac \
-    --hash=sha256:f07043512078c76bb28a62fd1e327876599062b5f0aea60ed1d9cabc42e95fe2
+asgiref==3.2.5 \
+    --hash=sha256:3e4192eaec0758b99722f0b0666d5fbfaa713054d92e8de5b58ba84ec5ce696f \
+    --hash=sha256:c8f49dd3b42edcc51d09dd2eea8a92b3cfc987ff7e6486be734b4d0cbfd5d315
 babel==2.8.0 \
     --hash=sha256:d670ea0b10f8b723672d3a6abeb87b565b244da220d76b4dba1b66269ec152d4 \
     --hash=sha256:1aac2ae2d0d8ea368fa90906567f5c08463d98ade155c0c4bfedd6a0f7160e38
@@ -11,12 +11,12 @@ beautifulsoup4==4.6.0 \
     --hash=sha256:7015e76bf32f1f574636c4288399a6de66ce08fb7b2457f628a8d70c0fbabb11 \
     --hash=sha256:11a9a27b7d3bddc6d86f59fb76afb70e921a25ac2d6cc55b40d072bd68435a76 \
     --hash=sha256:808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89
-boto3==1.12.17 \
-    --hash=sha256:ef2d050e0c37e00dab6ff1135befe7ed4b9e1ec26c752b8ad01d043e184ea6d1 \
-    --hash=sha256:13ac5526d80e1f1c9f7adcaeae7237f8bd1a5f268e918ca16e770eb865d3292b
-botocore==1.15.17 \
-    --hash=sha256:17a70c5d8743237896907d00f3de0f51d31aeca863ab0da8d0d8c178608b7ce1 \
-    --hash=sha256:b09aed94cd7a01fbccbbf5746b69ca62ed37c0feaed42e0420f9a121ae7df755
+boto3==1.12.20 \
+    --hash=sha256:918c2e2153d96a5ae30c27ff8bfe2d5f5fc48ce0e62c766236c78a4f5aaff931 \
+    --hash=sha256:8804cd39b53ac2add31db3f8617548ce25d373dba179ba7f6d505861fd506042
+botocore==1.15.20 \
+    --hash=sha256:babe0e84fc8ba1d8b349acf2cd98d5b15d8974912d393ad149ff2b385097a062 \
+    --hash=sha256:4aabdfb65e1f3eb6d35fe5d921a9b6fd2880ea0ec39ad874af762192b6c40825
 certifi==2019.11.28 \
     --hash=sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3 \
     --hash=sha256:25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f
@@ -48,9 +48,9 @@ django-taggit==1.2.0 \
     --hash=sha256:bd1ec80b813d60adadaa94dcce4bfd971cb4ae717b07e69fedbd38d417deb6e9
 django-treebeard==4.3.1 \
     --hash=sha256:83aebc34a9f06de7daaec330d858d1c47887e81be3da77e3541fe7368196dd8a
-django-widget-tweaks==1.4.5 \
-    --hash=sha256:f2e2c9c9be1ccc59061e248dcc2144f4906d594abe1a563902f4bdf6aa14e432 \
-    --hash=sha256:65c960f3d75008a285e4b10f4d21f9eae4160fd77a0f6097ad545185f8648bd6
+django-widget-tweaks==1.4.6 \
+    --hash=sha256:bb81ca73ff17080192801c9bf3abba3b70d44ea0f1fcfd57778edb75f387c82e \
+    --hash=sha256:a4ab4877744238e493c162a1bde2ebcae499d338e45072ebf5569c0664644bf9
 djangorestframework==3.11.0 \
     --hash=sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4 \
     --hash=sha256:e782087823c47a26826ee5b6fa0c542968219263fb3976ec3c31edab23a4001f
