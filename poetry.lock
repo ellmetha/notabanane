@@ -307,7 +307,7 @@ description = "Tweak the form field rendering in templates, not in python-level 
 name = "django-widget-tweaks"
 optional = false
 python-versions = "*"
-version = "1.4.6"
+version = "1.4.8"
 
 [[package]]
 category = "main"
@@ -1204,8 +1204,8 @@ django-treebeard = [
     {file = "django-treebeard-4.3.1.tar.gz", hash = "sha256:83aebc34a9f06de7daaec330d858d1c47887e81be3da77e3541fe7368196dd8a"},
 ]
 django-widget-tweaks = [
-    {file = "django-widget-tweaks-1.4.6.tar.gz", hash = "sha256:bb81ca73ff17080192801c9bf3abba3b70d44ea0f1fcfd57778edb75f387c82e"},
-    {file = "django_widget_tweaks-1.4.6-py2.py3-none-any.whl", hash = "sha256:a4ab4877744238e493c162a1bde2ebcae499d338e45072ebf5569c0664644bf9"},
+    {file = "django-widget-tweaks-1.4.8.tar.gz", hash = "sha256:9f91ca4217199b7671971d3c1f323a2bec71a0c27dec6260b3c006fa541bc489"},
+    {file = "django_widget_tweaks-1.4.8-py2.py3-none-any.whl", hash = "sha256:f80bff4a8a59b278bb277a405a76a8b9a884e4bae7a6c70e78a39c626cd1c836"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.11.0-py3-none-any.whl", hash = "sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4"},
