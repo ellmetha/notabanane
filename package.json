@@ -80,7 +80,9 @@
       "node_modules",
       "main/static/js"
     ],
-    "setupTestFrameworkScriptFile": "./tests/jstests/setup.js",
+    "setupFilesAfterEnv": [
+      "./tests/jstests/setup.js"
+    ],
     "testPathIgnorePatterns": [
       "./tests/jstests/wrapper.js",
       "./tests/jstests/setup.js",
