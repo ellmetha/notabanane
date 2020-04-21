@@ -30,6 +30,7 @@ psycopg2 = "*"
 raven = "*"
 sentry-sdk = "*"
 wagtail = "^2.8.1"
+uvicorn = "^0.11.3"
 
 [tool.poetry.dev-dependencies]
 codecov = "*"
