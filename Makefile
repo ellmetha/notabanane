@@ -49,7 +49,7 @@ console:
 s: server
 ## Launch a development server.
 server:
-	env DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS_MODULE) poetry run uvicorn asgi:application --host 0.0.0.0
+	env DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS_MODULE) poetry run uvicorn asgi:application --host 0.0.0.0 --reload --reload-dir ./
 
 ## Generate .po translations files.
 messages:
