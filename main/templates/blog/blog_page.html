@@ -60,7 +60,7 @@
 {% endif %}
 {% if self.filter_type == 'pagetype' and self.filter_value == 'recipe' %}
 <div id="id_recipe_search_app"></div>
-{% elif self.filter_type == 'category' or self.filter_type == 'search' or self.filter_type == 'pagetype' %}
+{% elif self.filter_type == 'category' or self.filter_type == 'pagetype' %}
 <div class="section post-list">
   <div class="container">
     <div class="columns is-multiline">
@@ -77,6 +77,44 @@
               <span class="post-title">{{ post.title }}</span>
               <span class="post-truncated-body">{{ post.body|safe|striptags|truncatechars:300 }}</span>
             </span>
+          </span>
+        </a>
+      </div>
+      {% endwith %}
+      {% empty %}
+      {% if self.filter_type == 'search' %}
+      <div class="content is-large">
+        <p>{% trans "Sorry, no posts were found. Try searching for something else!" %}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% if paginated_entries.has_previous or paginated_entries.has_next %}
+    <div class="columns pagination-wrapper">
+      <div class="column">
+        {% if paginated_entries.has_previous %}
+        <a href="?page={{ paginated_entries.previous_page_number }}" class="button is-text">{% trans "Newer articles" %}</a>
+        {% endif %}
+        {% if paginated_entries.has_next %}
+        <a href="?page={{ paginated_entries.next_page_number }}" class="button is-text">{% trans "Older articles" %}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% elif self.filter_type == 'search' %}
+<div class="section post-list">
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for post in paginated_entries %}
+      {% with post=post.specific %}
+      <div class="column is-one-third">
+        <a href="{% pageurl post %}" class="post-box">
+          <span class="image-wrapper">{% image post.header_image fill-555x312 %}</span>
+          <span class="content-wrapper">
+            <span class="post-date">{{ post.date|date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="post-title">{{ post.title }}</span>
           </span>
         </a>
       </div>
