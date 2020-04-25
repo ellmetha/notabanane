@@ -27,10 +27,9 @@ html2text = "*"
 isodate = "*"
 pillow = "*"
 psycopg2 = "*"
-raven = "*"
 sentry-sdk = "*"
-wagtail = "^2.8.1"
 uvicorn = "^0.11.3"
+wagtail = "^2.8.1"
 
 [tool.poetry.dev-dependencies]
 codecov = "*"

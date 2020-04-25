@@ -11,6 +11,9 @@
 
 """
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 from .base import *  # noqa: F403
 
 
@@ -19,7 +22,6 @@ from .base import *  # noqa: F403
 
 INSTALLED_APPS += (  # noqa: F405
     'storages',
-    'raven.contrib.django.raven_compat',
 )
 
 
@@ -95,11 +97,6 @@ LOGGING = {
         },
     },
     'handlers': {
-        'sentry': {
-            'level': 'ERROR',  # To capture more than ERROR, change to WARNING, INFO, etc.
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-            'tags': {'custom-tag': 'x'},
-        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
@@ -109,11 +106,6 @@ LOGGING = {
     'loggers': {
         'django.db.backends': {
             'level': 'ERROR',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'raven': {
-            'level': 'DEBUG',
             'handlers': ['console'],
             'propagate': False,
         },
@@ -150,9 +142,10 @@ GZIP_CONTENT_TYPES = (
 )
 
 
-# RAVEN CONFIGURATION
+# SENTRY CONFIGURATION
 # ------------------------------------------------------------------------------
 
-RAVEN_CONFIG = {
-    'dsn': get_envsetting('SENTRY_DSN'),  # noqa: F405
-}
+sentry_sdk.init(
+    dsn=get_envsetting('SENTRY_DSN'),  # noqa: F405
+    integrations=[DjangoIntegration()],
+)
