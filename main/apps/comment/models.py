@@ -7,14 +7,18 @@
 """
 
 from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.core.validators import MaxLengthValidator
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from main.common.db.abstract_models import DatedModel
+
 from .conf import settings as comments_settings
 
 
-class Comment(models.Model):
+class Comment(DatedModel):
     """ The comment model. """
 
     # A comment can be submitted by an authenticated user. If so the information displayed regarding
@@ -31,9 +35,21 @@ class Comment(models.Model):
     # A comment can also be submitted by an anonymous user who doesn't have a registered account.
     # In that case basic poster information (email, name, website URL) is persisted along with the
     # comment.
-    unregistered_author_email = models.EmailField(verbose_name=_('Email address'))
-    unregistered_author_name = models.CharField(max_length=30, verbose_name=_('Name'))
-    unregistered_author_website_url = models.URLField(verbose_name=_('Website'))
+    unregistered_author_email = models.EmailField(
+        blank=True,
+        null=True,
+        verbose_name=_('Email address')
+    )
+    unregistered_author_name = models.CharField(
+        max_length=30,
+        blank=True,
+        null=True,
+        verbose_name=_('Name'))
+    unregistered_author_website_url = models.URLField(
+        blank=True,
+        null=True,
+        verbose_name=_('Website')
+    )
 
     # The author of a comment can choose whether they want to be notified when responses to their
     # comment are submitted.
@@ -58,11 +74,16 @@ class Comment(models.Model):
         verbose_name=_('IP address')
     )
 
-    # Creation dates and modification dates are stored for every comment.
-    created = models.DateTimeField(auto_now_add=True, verbose_name=_('Creation date'))
-    updated = models.DateTimeField(auto_now=True, verbose_name=_('Update date'))
+    # The commented object is a generic foreign key, thus allowing any model to have associated
+    # comments.
+    commented_object_content_type = models.ForeignKey(
+        ContentType, blank=True, null=True, db_index=True, related_name='+',
+        on_delete=models.CASCADE,
+    )
+    commented_object_id = models.CharField(max_length=255, blank=True, null=True, db_index=True)
+    commented_object = GenericForeignKey('commented_object_content_type', 'commented_object_id')
 
     class Meta:
-        ordering = ('-created', )
+        ordering = ('-created_at', )
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
