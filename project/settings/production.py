@@ -148,4 +148,5 @@ GZIP_CONTENT_TYPES = (
 sentry_sdk.init(
     dsn=get_envsetting('SENTRY_DSN'),  # noqa: F405
     integrations=[DjangoIntegration()],
+    environment='production'
 )
