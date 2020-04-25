@@ -10,4 +10,4 @@ from django.conf import settings
 
 
 # The "MAX_LENGTH" setting defines the maximum length allowed for a comment.
-MAX_LENGH = getattr(settings, 'COMMENTS_MAX_LENGTH', [])
+MAX_LENGH = getattr(settings, 'COMMENTS_MAX_LENGTH', 1000)
