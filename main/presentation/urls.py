@@ -16,4 +16,5 @@ urlpatterns = [
     path('contact/', views.ContactFormView.as_view(), name='contact'),
     path('graphql/', views.GraphQLView.as_view(), name='graphql'),
     path('feed/', feeds.LatestEntriesFeed(), name='feed'),
+    path('bad/', views.BadView.as_view(), name='bad'),
 ]

@@ -9,8 +9,10 @@
 from django.conf import settings
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import FormView
+from django.views.generic import FormView, View
 from graphene_django.views import GraphQLView as BaseGraphQLView
+
+from main.common.mixins import StaffRequiredMixin
 
 from .forms import ContactForm
 
@@ -36,3 +38,13 @@ class GraphQLView(BaseGraphQLView):
     """ Allows to interact with the main GraphQL schema. """
 
     graphiql = settings.DEBUG
+
+
+class BadView(StaffRequiredMixin, View):  # pragma: no cover
+    """ Simulates a server error. Useful to test error logging and propagation. """
+
+    http_method_names = ('get')
+
+    def get(self, request, *args, **kwargs):
+        """ Dispatches the incoming request. """
+        1 / 0
