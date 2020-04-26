@@ -14,7 +14,7 @@ from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils import translation
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from .context_managers import switch_language
 
@@ -50,7 +50,7 @@ class Email:
             self.context.update(extra_context or {})
             self.subject = (
                 self._render_template(subject_template).strip() if subject_template else
-                force_text(subject)
+                force_str(subject)
             )
             self.html_message = self._render_template(html_template)
             self.text_message = (

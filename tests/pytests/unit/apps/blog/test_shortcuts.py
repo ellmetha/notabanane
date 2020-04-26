@@ -7,7 +7,7 @@ from main.apps.blog.shortcuts import get_instagram_media_feed
 
 
 class TestGetInstagramMediaFeed:
-    @pytest.mark.fixture(autouse=True)
+    @pytest.fixture(autouse=True)
     def setup(self):
         cache.clear()
 
