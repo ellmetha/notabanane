@@ -96,9 +96,13 @@ locked_requirements:
 # The following rules can be used to check code quality, import sorting, etc.
 # --------------------------------------------------------------------------------------------------
 
-.PHONY: qa
+.PHONY: qa qa_python
 ## Trigger all quality assurance checks.
-qa: lint isort
+qa: qa_python qa_js
+## Trigger Python quality assurance checks.
+qa_python: lint_python isort_python
+## Trigger Javascript quality assurance checks.
+qa_js: lint_js
 
 .PHONY: lint lint_python lint_python
 ## Trigger code quality checks (flake8, eslint).
