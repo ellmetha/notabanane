@@ -9,10 +9,11 @@
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 from django.db import models
 from django.utils.text import Truncator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from main.common.db.abstract_models import DatedModel
 
@@ -96,3 +97,27 @@ class Comment(DatedModel):
     def truncated_content(self):
         """ Returns a truncated version of the comment. """
         return Truncator(self.content).chars(64)
+
+    def clean(self):
+        """ Validates the comment. """
+        super().clean()
+
+        unregistered_author_set = (
+            self.unregistered_author_email is not None and
+            self.unregistered_author_name is not None
+        )
+
+        if self.registered_author_id is None and not unregistered_author_set:
+            raise ValidationError(
+                _(
+                    'A comment must be associated with either a registered user or an unregistered '
+                    'user'
+                )
+            )
+        elif self.registered_author_id is not None and unregistered_author_set:
+            raise ValidationError(
+                _(
+                    'A comment cannot be associated with both a registered user and an '
+                    'unregistered user'
+                )
+            )
