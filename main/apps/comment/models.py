@@ -11,6 +11,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core.validators import MaxLengthValidator
 from django.db import models
+from django.utils.text import Truncator
 from django.utils.translation import ugettext_lazy as _
 
 from main.common.db.abstract_models import DatedModel
@@ -87,3 +88,11 @@ class Comment(DatedModel):
         ordering = ('-created_at', )
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
+
+    def __str__(self):
+        return self.truncated_content
+
+    @property
+    def truncated_content(self):
+        """ Returns a truncated version of the comment. """
+        return Truncator(self.content).chars(64)
