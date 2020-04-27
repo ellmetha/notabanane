@@ -2,12 +2,29 @@ import pytest
 from django.core.exceptions import ValidationError
 from django.utils.text import Truncator
 
+from main.apps.comment.conf import settings as comment_settings
 from main.apps.comment.test.factories import CommentFactory
 from main.common.test.factories import UserFactory
 
 
 @pytest.mark.django_db
 class TestComment:
+    def test_cannot_validate_a_comment_without_content(self):
+        comment = CommentFactory.build(content=None)
+
+        with pytest.raises(ValidationError) as excinfo:
+            comment.clean_fields()
+
+        assert 'content' in excinfo.value.message_dict
+
+    def test_cannot_validate_a_comment_that_is_too_long(self):
+        comment = CommentFactory.build(content='a' * (comment_settings.MAX_LENGH + 1))
+
+        with pytest.raises(ValidationError) as excinfo:
+            comment.clean_fields()
+
+        assert 'content' in excinfo.value.message_dict
+
     def test_cannot_validate_a_comment_without_author(self):
         comment = CommentFactory.build(registered_author=None, unregistered_author_email=None)
 
