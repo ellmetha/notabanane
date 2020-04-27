@@ -25,6 +25,15 @@ class TestComment:
 
         assert 'content' in excinfo.value.message_dict
 
+    def test_cannot_validate_a_comment_without_commented_object(self):
+        comment = CommentFactory.build(commented_object=None)
+
+        with pytest.raises(ValidationError) as excinfo:
+            comment.clean_fields()
+
+        assert 'commented_object_content_type' in excinfo.value.message_dict
+        assert 'commented_object_id' in excinfo.value.message_dict
+
     def test_cannot_validate_a_comment_without_author(self):
         comment = CommentFactory.build(registered_author=None, unregistered_author_email=None)
 
