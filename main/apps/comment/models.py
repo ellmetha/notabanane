@@ -79,10 +79,12 @@ class Comment(DatedModel):
     # The commented object is a generic foreign key, thus allowing any model to have associated
     # comments.
     commented_object_content_type = models.ForeignKey(
-        ContentType, blank=True, null=True, db_index=True, related_name='+',
+        ContentType,
+        db_index=True,
+        related_name='+',
         on_delete=models.CASCADE,
     )
-    commented_object_id = models.CharField(max_length=255, blank=True, null=True, db_index=True)
+    commented_object_id = models.CharField(max_length=255, db_index=True)
     commented_object = GenericForeignKey('commented_object_content_type', 'commented_object_id')
 
     class Meta:
