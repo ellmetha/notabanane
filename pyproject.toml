@@ -28,7 +28,7 @@ isodate = "*"
 pillow = "*"
 psycopg2 = "*"
 sentry-sdk = "*"
-uvicorn = "^0.11.3"
+uvicorn = "^0.11.4"
 wagtail = "^2.8.1"
 
 [tool.poetry.dev-dependencies]
