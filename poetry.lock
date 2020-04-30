@@ -1036,7 +1036,7 @@ description = "The lightning-fast ASGI server."
 name = "uvicorn"
 optional = false
 python-versions = "*"
-version = "0.11.3"
+version = "0.11.5"
 
 [package.dependencies]
 click = ">=7.0.0,<8.0.0"
@@ -1044,6 +1044,9 @@ h11 = ">=0.8,<0.10"
 httptools = ">=0.1.0,<0.2.0"
 uvloop = ">=0.14.0"
 websockets = ">=8.0.0,<9.0.0"
+
+[package.extras]
+watchgodreload = ["watchgod (>=0.6,<0.7)"]
 
 [[package]]
 category = "main"
@@ -1114,7 +1117,7 @@ python-versions = "*"
 version = "1.3"
 
 [metadata]
-content-hash = "3fceafa5492157d372a02b17df5225b5b0eab79e74fb6458407b6834465d912f"
+content-hash = "337a975c8f9f5288ecd1a953aa80fa55617b7d9014112274ad5910bbfc5aa073"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1545,8 +1548,8 @@ urllib3 = [
     {file = "urllib3-1.25.9.tar.gz", hash = "sha256:3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"},
 ]
 uvicorn = [
-    {file = "uvicorn-0.11.3-py3-none-any.whl", hash = "sha256:0f58170165c4495f563d8224b2f415a0829af0412baa034d6f777904613087fd"},
-    {file = "uvicorn-0.11.3.tar.gz", hash = "sha256:6fdaf8e53bf1b2ddf0fe9ed06079b5348d7d1d87b3365fe2549e6de0d49e631c"},
+    {file = "uvicorn-0.11.5-py3-none-any.whl", hash = "sha256:50577d599775dac2301bac8bd5b540d19a9560144143c5bdab13cba92783b6e7"},
+    {file = "uvicorn-0.11.5.tar.gz", hash = "sha256:596eaa8645b6dbc24d6610e335f8ddf5f925b4c4b86fdc7146abb0bf0da65d17"},
 ]
 uvloop = [
     {file = "uvloop-0.14.0-cp35-cp35m-macosx_10_11_x86_64.whl", hash = "sha256:08b109f0213af392150e2fe6f81d33261bb5ce968a288eb698aad4f46eb711bd"},
