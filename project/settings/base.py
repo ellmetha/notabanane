@@ -270,9 +270,6 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 ROOT_URLCONF = 'project.urls'
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'wsgi.application'
-
 
 # ADMIN CONFIGURATION
 # ------------------------------------------------------------------------------
