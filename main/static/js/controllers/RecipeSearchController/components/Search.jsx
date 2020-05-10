@@ -51,7 +51,7 @@ const Search = () => {
 
   const { data, fetchMore, loading } = useQuery(
     RECIPES,
-    { variables: { first: RESULTS_PER_PAGE, ...initialFilters } },
+    { variables: { first: RESULTS_PER_PAGE, ...initialFilters }, fetchPolicy: 'no-cache' },
   );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
@@ -79,6 +79,7 @@ const Search = () => {
       await smoothScrollTo(
         document.documentElement,
         searchEngineNode.current.offsetTop + toggleMobileFiltersWrapperNode.current.offsetTop,
+        200,
       );
     }
 
