@@ -10,7 +10,7 @@
 import os
 
 from django.contrib.staticfiles.storage import ManifestFilesMixin
-from storages.backends.s3boto3 import S3Boto3Storage, SpooledTemporaryFile
+from storages.backends.s3boto3 import S3Boto3Storage, S3Boto3StorageFile, SpooledTemporaryFile
 
 
 class CustomS3Boto3Storage(S3Boto3Storage):
@@ -47,8 +47,12 @@ class MediaRootS3BotoStorage(CustomS3Boto3Storage):
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
     location = 's'
 
-    def read_manifest(self):  # pragma: no cover
+    def _open(self, name, mode='rb'):  # pragma: no cover
+        name = self._normalize_name(self._clean_name(name))
         try:
-            return super().read_manifest()
-        except IOError:
-            return None
+            f = S3Boto3StorageFile(name, mode, self)
+        except ClientError as err:
+            if err.response['ResponseMetadata']['HTTPStatusCode'] == 404:
+                raise FileNotFoundError('File does not exist: %s' % name)
+            raise  # Let it bubble up if it was some other error
+        return f
