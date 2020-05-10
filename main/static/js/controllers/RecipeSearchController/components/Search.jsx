@@ -51,7 +51,7 @@ const Search = () => {
 
   const { data, fetchMore, loading } = useQuery(
     RECIPES,
-    { variables: { first: RESULTS_PER_PAGE, ...initialFilters }, fetchPolicy: 'no-cache' },
+    { variables: { first: RESULTS_PER_PAGE, ...initialFilters }, fetchPolicy: 'network-only' },
   );
   const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
