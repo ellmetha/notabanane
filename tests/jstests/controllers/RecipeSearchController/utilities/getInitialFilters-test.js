@@ -14,14 +14,28 @@ describe('getInitialFilters()', () => {
       location: '/',
       search: queryString.stringify({ dishTypes: ['APPETIZERS', 'SOUPS'] }),
     });
-    expect(getInitialFilters()).toEqual({ dishTypes: ['APPETIZERS', 'SOUPS'], seasons: [] });
+    expect(getInitialFilters()).toEqual(
+      { dishTypes: ['APPETIZERS', 'SOUPS'], seasons: [], diets: [] }
+    );
   });
 
-  test('extracts seaons values from the history', () => {
+  test('extracts seasons values from the history', () => {
     history.push({
       location: '/',
       search: queryString.stringify({ seasons: ['WINTER', 'SPRING'] }),
     });
-    expect(getInitialFilters()).toEqual({ dishTypes: [], seasons: ['WINTER', 'SPRING'] });
+    expect(getInitialFilters()).toEqual(
+      { dishTypes: [], seasons: ['WINTER', 'SPRING'], diets: [] }
+    );
+  });
+
+  test('extracts diets values from the history', () => {
+    history.push({
+      location: '/',
+      search: queryString.stringify({ seasons: ['VEGAN', 'VEGETARIAN'] }),
+    });
+    expect(getInitialFilters()).toEqual(
+      { diets: [], dishTypes: [], seasons: ['VEGAN', 'VEGETARIAN'] }
+    );
   });
 });

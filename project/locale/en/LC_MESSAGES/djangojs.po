@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-26 21:47-0500\n"
+"POT-Creation-Date: 2020-05-10 15:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,10 +54,25 @@ msgstr ""
 msgid "Autumn"
 msgstr ""
 
+msgid "Vegetarian"
+msgstr ""
+
+msgid "Vegan"
+msgstr ""
+
+msgid "Gluten free"
+msgstr ""
+
+msgid "Lactose free"
+msgstr ""
+
 msgid "Dish types"
 msgstr ""
 
 msgid "Seasons"
+msgstr ""
+
+msgid "Diets"
 msgstr ""
 
 #, javascript-format

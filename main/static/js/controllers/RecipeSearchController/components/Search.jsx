@@ -15,8 +15,20 @@ import ResultListItem from './ResultListItem';
 
 
 export const RECIPES = gql`
-  query Recipes($first: Int, $cursor: String, $dishTypes: [String], $seasons: [String]) {
-    recipes(first: $first, after: $cursor, dishTypes: $dishTypes, seasons: $seasons) {
+  query Recipes(
+    $first: Int,
+    $cursor: String,
+    $dishTypes: [String],
+    $seasons: [String],
+    $diets: [String]
+  ) {
+    recipes(
+      first: $first,
+      after: $cursor,
+      dishTypes: $dishTypes,
+      seasons: $seasons,
+      diets: $diets
+    ) {
       edges {
         node {
           id

@@ -36,8 +36,16 @@ const FilterForm = ({ onSubmitFilters }) => {
     ['AUTUMN', gettext('Autumn')],
   ];
 
+  const filterableDiets = [
+    ['VEGETARIAN', gettext('Vegetarian')],
+    ['VEGAN', gettext('Vegan')],
+    ['GLUTEN_FREE', gettext('Gluten free')],
+    ['LACTOSE_FREE', gettext('Lactose free')],
+  ];
+
   const dishTypesFilterLabel = gettext('Dish types');
   const seasonsFilterLabel = gettext('Seasons');
+  const dietsFilterLabel = gettext('Diets');
 
   return (
     <div id="recipe_filters_form">
@@ -111,6 +119,40 @@ const FilterForm = ({ onSubmitFilters }) => {
                             setFieldValue(
                               'seasons',
                               values.seasons.filter(el => el !== s[0]),
+                            );
+                          }
+                          submitForm();
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            />
+            <h4 className="is-size-4">{dietsFilterLabel}</h4>
+            <FieldArray
+              name="diets"
+              render={arrayHelpers => (
+                <div>
+                  {filterableDiets.map(s => (
+                    <div
+                      key={`diet-${s[0]}`}
+                      className="form-check form-check-inline"
+                    >
+                      <Field
+                        id={`diet_${s[0]}`}
+                        name="diets"
+                        value={s[0]}
+                        checked={values.diets ? values.diets.includes(s[0]) : false}
+                        label={s[1]}
+                        component={CheckBox}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            arrayHelpers.push(s[0]);
+                          } else {
+                            setFieldValue(
+                              'diets',
+                              values.diets.filter(el => el !== s[0]),
                             );
                           }
                           submitForm();

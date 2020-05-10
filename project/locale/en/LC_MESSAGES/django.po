@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-26 21:47-0500\n"
+"POT-Creation-Date: 2020-05-10 15:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -187,6 +187,48 @@ msgid "^articles/$"
 msgstr ""
 
 msgid "^recipes/$"
+msgstr ""
+
+msgid "Poster"
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Website"
+msgstr ""
+
+msgid "Notify author"
+msgstr ""
+
+msgid "Define whether the author is notified when responses to the comment are made"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "IP address"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "A comment must be associated with either a registered user or an unregistered user"
+msgstr ""
+
+msgid "A comment cannot be associated with both a registered user and an unregistered user"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "Update date"
 msgstr ""
 
 msgid "First name"

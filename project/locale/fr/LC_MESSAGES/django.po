@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-26 21:47-0500\n"
+"POT-Creation-Date: 2020-05-10 15:56-0500\n"
 "PO-Revision-Date: 2020-01-26 21:59-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -188,6 +188,60 @@ msgstr "^articles/$"
 
 msgid "^recipes/$"
 msgstr "^recettes/$"
+
+#, fuzzy
+#| msgid "Post date"
+msgid "Poster"
+msgstr "Date de publication"
+
+#, fuzzy
+#| msgid "Email address:"
+msgid "Email address"
+msgstr "Adresse courriel:"
+
+msgid "Name"
+msgstr ""
+
+msgid "Website"
+msgstr ""
+
+msgid "Notify author"
+msgstr ""
+
+msgid "Define whether the author is notified when responses to the comment are made"
+msgstr ""
+
+#, fuzzy
+#| msgid "Contact"
+msgid "Content"
+msgstr "Contact"
+
+#, fuzzy
+#| msgid "E-mail address"
+msgid "IP address"
+msgstr "Adresse courriel"
+
+msgid "Comment"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "A comment must be associated with either a registered user or an unregistered user"
+msgstr ""
+
+msgid "A comment cannot be associated with both a registered user and an unregistered user"
+msgstr ""
+
+#, fuzzy
+#| msgid "Preparation time"
+msgid "Creation date"
+msgstr "Temps de préparation"
+
+#, fuzzy
+#| msgid "Post date"
+msgid "Update date"
+msgstr "Date de publication"
 
 msgid "First name"
 msgstr "Prénom"

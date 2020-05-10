@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-26 21:47-0500\n"
-"PO-Revision-Date: 2019-12-28 15:33-0500\n"
+"POT-Creation-Date: 2020-05-10 15:56-0500\n"
+"PO-Revision-Date: 2020-05-10 16:58-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 
 msgid "Appetizers"
 msgstr "Entrées"
@@ -54,11 +54,26 @@ msgstr "Été"
 msgid "Autumn"
 msgstr "Automne"
 
+msgid "Vegetarian"
+msgstr "Végétarien"
+
+msgid "Vegan"
+msgstr "Végétalien"
+
+msgid "Gluten free"
+msgstr "Sans gluten"
+
+msgid "Lactose free"
+msgstr "Sans lactose"
+
 msgid "Dish types"
 msgstr "Types de plats"
 
 msgid "Seasons"
 msgstr "Saisons"
+
+msgid "Diets"
+msgstr "Régimes"
 
 #, javascript-format
 msgid "Showing %s of %s recipes"

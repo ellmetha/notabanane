@@ -12,5 +12,8 @@ export default function getInitialFilters() {
     seasons: initialParameters.seasons
       ? [initialParameters.seasons].reduce((acc, val) => acc.concat(val), [])
       : [],
+    diets: initialParameters.diets
+      ? [initialParameters.diets].reduce((acc, val) => acc.concat(val), [])
+      : [],
   };
 }

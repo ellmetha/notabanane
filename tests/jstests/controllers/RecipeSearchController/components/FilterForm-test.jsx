@@ -79,4 +79,27 @@ describe('<FilterForm />', () => {
 
     component.find('input[value="WINTER"]').simulate('change', { target: { checked: false } });
   });
+
+  test('properly updates diet checkboxes when values change', (done) => {
+    const component = Enzyme.mount(
+      <FilterForm
+        onSubmitFilters={(values) => {
+          expect(values.diets).toEqual(['VEGETARIAN']);
+          done();
+        }}
+      />
+    );
+    waitForComponentToPaint(component);
+    component.find('input[value="VEGETARIAN"]').simulate('change', { target: { checked: true } });
+
+    component.setProps({
+      onSubmitFilters: (values) => {
+        expect(values.diets).toEqual([]);
+        done();
+      },
+    });
+    component.update();
+
+    component.find('input[value="VEGETARIAN"]').simulate('change', { target: { checked: false } });
+  });
 });
