@@ -46,3 +46,9 @@ class MediaRootS3BotoStorage(CustomS3Boto3Storage):
 
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
     location = 's'
+
+    def read_manifest(self):  # pragma: no cover
+        try:
+            return super().read_manifest()
+        except IOError:
+            return None
