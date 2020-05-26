@@ -19,13 +19,4 @@ jobs:
       run: |
         make lint_js
     - name: Run tests suite
-      run: make coverage_js
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage/coverage-final.json
-        flags: unittests
-        name: codecov-umbrella
-        yml: ./.codecov.yml
-        fail_ci_if_error: true
+      run: make tests_js

@@ -32,7 +32,6 @@ uvicorn = "^0.11.5"
 wagtail = "^2.9"
 
 [tool.poetry.dev-dependencies]
-codecov = "*"
 coverage = ">=4.5"
 django-debug-toolbar = "*"
 factory-boy = "*"
