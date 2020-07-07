@@ -119,7 +119,7 @@ lint_js:
 isort: isort_python
 ## Check Python imports sorting.
 isort_python:
-	poetry run isort --check-only --recursive --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
+	poetry run isort --check-only --diff $(PROJECT_PACKAGE) $(PROJECT_CONFIGURATION_PACKAGE)
 
 
 # TESTING
