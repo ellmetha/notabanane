@@ -411,7 +411,7 @@ description = "Graphene Django integration"
 name = "graphene-django"
 optional = false
 python-versions = "*"
-version = "2.11.1"
+version = "2.12.0"
 
 [package.dependencies]
 Django = ">=1.11"
@@ -1291,8 +1291,8 @@ graphene = [
     {file = "graphene-2.1.8.tar.gz", hash = "sha256:2cbe6d4ef15cfc7b7805e0760a0e5b80747161ce1b0f990dfdc0d2cf497c12f9"},
 ]
 graphene-django = [
-    {file = "graphene-django-2.11.1.tar.gz", hash = "sha256:4ebf61a8b13ff6d7433c95b2efdaf723b1ee6bf8e74a34d89a378f1151c104ff"},
-    {file = "graphene_django-2.11.1-py2.py3-none-any.whl", hash = "sha256:84d0b83349741336dc45d7af65886fbe6d3f6cbc34588e039f73f5ada8b48940"},
+    {file = "graphene-django-2.12.0.tar.gz", hash = "sha256:93da3d127fadbd45b0531ade6d916877dba1e8c7767ed957ab5ed10b61ee2a32"},
+    {file = "graphene_django-2.12.0-py2.py3-none-any.whl", hash = "sha256:0d5f81410ba6522d08b5a750308d4599d57f82595b2adaf30e0d4fb2ac572895"},
 ]
 graphql-core = [
     {file = "graphql-core-2.3.2.tar.gz", hash = "sha256:aac46a9ac524c9855910c14c48fc5d60474def7f99fd10245e76608eba7af746"},
