@@ -89,10 +89,10 @@ description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
 python-versions = "*"
-version = "1.14.24"
+version = "1.14.25"
 
 [package.dependencies]
-botocore = ">=1.17.24,<1.18.0"
+botocore = ">=1.17.25,<1.18.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
@@ -102,7 +102,7 @@ description = "Low-level, data-driven core of boto 3."
 name = "botocore"
 optional = false
 python-versions = "*"
-version = "1.17.24"
+version = "1.17.25"
 
 [package.dependencies]
 docutils = ">=0.10,<0.16"
@@ -337,7 +337,7 @@ version = "2.1.7"
 [package.extras]
 html5lib = ["beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)"]
 lxml = ["lxml (>=4.2.0,<5)"]
-testing = ["tox (>=2.3.1)", "markov_draftjs (0.1.1)", "memory-profiler (0.47)", "psutil (5.4.1)", "coverage (>=4.1.0)", "flake8 (>=3.2.0)", "isort (4.2.5)", "beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)", "lxml (>=4.2.0,<5)"]
+testing = ["tox (>=2.3.1)", "markov-draftjs (0.1.1)", "memory-profiler (0.47)", "psutil (5.4.1)", "coverage (>=4.1.0)", "flake8 (>=3.2.0)", "isort (4.2.5)", "beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)", "lxml (>=4.2.0,<5)"]
 
 [[package]]
 category = "main"
@@ -1152,12 +1152,12 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.8.2.tar.gz", hash = "sha256:05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a"},
 ]
 boto3 = [
-    {file = "boto3-1.14.24-py2.py3-none-any.whl", hash = "sha256:6bf841797d5ec9f7770a335d919c5ea20d1980c1eb39b009e58f6de2879ff2cd"},
-    {file = "boto3-1.14.24.tar.gz", hash = "sha256:542fa3499624dfa3312fd5a6f45bc221d0871c73c5d91c57e5c6435b6f4463cc"},
+    {file = "boto3-1.14.25-py2.py3-none-any.whl", hash = "sha256:45331be8740a8f5ee873a487a7f91d93d9c360bb1408fc887f3a2f5c37377d87"},
+    {file = "boto3-1.14.25.tar.gz", hash = "sha256:69038d4a42056ec67060020a64001ac09a6ef668aca81c45af1cbbdb7b56a4f6"},
 ]
 botocore = [
-    {file = "botocore-1.17.24-py2.py3-none-any.whl", hash = "sha256:023e390e1caaf4aab55bd6b87738777d25e7b6f3098fb77e356e638c0baa491b"},
-    {file = "botocore-1.17.24.tar.gz", hash = "sha256:2e07c0b88563d793cca8186c7fa42cfd5b8ece4fed31c928e0676091f3bb815d"},
+    {file = "botocore-1.17.25-py2.py3-none-any.whl", hash = "sha256:98dc8b99e47d2d0bc14c017c957b4fb23172d2fc7db5e8529576308a6898f0fc"},
+    {file = "botocore-1.17.25.tar.gz", hash = "sha256:918c5ccde335545a2c2eb426bc47520a960d11e3e3ab72aa43b73f1d692f07e1"},
 ]
 certifi = [
     {file = "certifi-2020.6.20-py2.py3-none-any.whl", hash = "sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"},
@@ -1267,6 +1267,7 @@ docutils = [
     {file = "docutils-0.15.2.tar.gz", hash = "sha256:a2aeea129088da402665e92e0b25b04b073c04b2dce4ab65caaa38b7ce2e1a99"},
 ]
 draftjs-exporter = [
+    {file = "draftjs_exporter-2.1.7-py3-none-any.whl", hash = "sha256:d415a9964690a2cddb66a31ef32dd46c277e9b80434b94e39e3043188ed83e33"},
     {file = "draftjs_exporter-2.1.7.tar.gz", hash = "sha256:5839cbc29d7bce2fb99837a404ca40c3a07313f2a20e2700de7ad6aa9a9a18fb"},
 ]
 facebook-sdk = [
