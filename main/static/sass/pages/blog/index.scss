@@ -438,7 +438,6 @@ body#id_blog_index {
 
       &.is-featured {
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
 
         span.content-wrapper {
           margin: 0 1.5rem;
@@ -452,6 +451,7 @@ body#id_blog_index {
 
           .post-date {
             font-size: 1rem;
+            text-shadow: 0 1px 4px $grey-dark;
 
             &:before, &:after {
               background-color: $white;
@@ -462,9 +462,9 @@ body#id_blog_index {
             margin-top: 1.25rem;
             font-size: 2.25rem;
             line-height: 2.25rem;
+            text-shadow: 0 1px 4px $grey-dark;
           }
         }
-
 
         @include until($tablet) {
           span.image-wrapper {
@@ -495,6 +495,7 @@ body#id_blog_index {
               font-weight: 500;
               text-transform: uppercase;
               color: $grey-light;
+              text-shadow: none;
 
               &:before {
                 background: $grey-light;
@@ -529,6 +530,7 @@ body#id_blog_index {
               font-size: 1.5rem;
               font-weight: bold;
               line-height: 1.8rem;
+              text-shadow: none;
             }
           }
         }
@@ -536,7 +538,6 @@ body#id_blog_index {
 
       &.is-top-twin {
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
 
         &:hover, &:focus {
           span.content-wrapper {
@@ -564,6 +565,8 @@ body#id_blog_index {
           }
 
           .post-date {
+            text-shadow: 0 1px 4px $grey-dark;
+
             &:before, &:after {
               background-color: $white;
             }
@@ -571,6 +574,7 @@ body#id_blog_index {
 
           .post-title {
             margin-top: 1.25rem;
+            text-shadow: 0 1px 4px $grey-dark;
           }
         }
 
@@ -603,6 +607,7 @@ body#id_blog_index {
               font-weight: 500;
               text-transform: uppercase;
               color: $grey-light;
+              text-shadow: none;
 
               &:before {
                 background: $grey-light;
@@ -637,6 +642,7 @@ body#id_blog_index {
               font-size: 1.5rem;
               font-weight: bold;
               line-height: 1.8rem;
+              text-shadow: none;
             }
           }
         }
