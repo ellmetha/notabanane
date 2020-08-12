@@ -3,6 +3,8 @@
 {% load wagtailcore_tags %}
 {% load wagtailroutablepage_tags %}
 
+{% wagtail_site as current_site %}
+
 <!DOCTYPE html>
 <html {% get_current_language as LANGUAGE_CODE %}lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -33,7 +35,7 @@
         "url": "{{ request.scheme|add:'://'|add:request.get_host }}",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "{{ request.scheme|add:'://'|add:request.get_host }}{% routablepageurl request.site.root_page.specific 'entries_search' %}?q={search_term_string}",
+          "target": "{{ request.scheme|add:'://'|add:request.get_host }}{% routablepageurl current_site.root_page.specific 'entries_search' %}?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
@@ -89,35 +91,35 @@
             <div id="notabanane_navbar" class="navbar-menu">
               <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}" class="navbar-link is-arrowless">
+                  <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}" class="navbar-link is-arrowless">
                     {% trans "Recipes" %}
                   </a>
                   <div class="navbar-dropdown recipes-dropdown is-hidden-touch">
                     <div class="container">
                       <div class="columns">
                         <div class="column is-three-fifths">
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}" class="title is-size-5">{% trans "Recipes by category" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=APPETIZERS"><i class="fa fa-angle-double-right"></i> {% trans "Appetizers" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=BEVERAGES"><i class="fa fa-angle-double-right"></i> {% trans "Beverages" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=BREAKFAST"><i class="fa fa-angle-double-right"></i> {% trans "Breakfast" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=DESSERTS"><i class="fa fa-angle-double-right"></i> {% trans "Desserts" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=MAIN_COURSE"><i class="fa fa-angle-double-right"></i> {% trans "Main course" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=SAUCES_SALAD_DRESSINGS"><i class="fa fa-angle-double-right"></i> {% trans "Sauces and salad dressings" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=SOUPS"><i class="fa fa-angle-double-right"></i> {% trans "Soups" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?dishTypes=VEGETABLES_SALADS"><i class="fa fa-angle-double-right"></i> {% trans "Vegetables and salads" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}" class="title is-size-5">{% trans "Recipes by category" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=APPETIZERS"><i class="fa fa-angle-double-right"></i> {% trans "Appetizers" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=BEVERAGES"><i class="fa fa-angle-double-right"></i> {% trans "Beverages" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=BREAKFAST"><i class="fa fa-angle-double-right"></i> {% trans "Breakfast" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=DESSERTS"><i class="fa fa-angle-double-right"></i> {% trans "Desserts" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=MAIN_COURSE"><i class="fa fa-angle-double-right"></i> {% trans "Main course" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=SAUCES_SALAD_DRESSINGS"><i class="fa fa-angle-double-right"></i> {% trans "Sauces and salad dressings" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=SOUPS"><i class="fa fa-angle-double-right"></i> {% trans "Soups" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes=VEGETABLES_SALADS"><i class="fa fa-angle-double-right"></i> {% trans "Vegetables and salads" %}</a>
                         </div>
                         <div class="column">
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}" class="title is-size-5">{% trans "Recipes by season" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?seasons=WINTER"><i class="fa fa-angle-double-right"></i> {% trans "Winter" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?seasons=SPRING"><i class="fa fa-angle-double-right"></i> {% trans "Spring" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?seasons=SUMMER"><i class="fa fa-angle-double-right"></i> {% trans "Summer" %}</a>
-                          <a href="{% routablepageurl request.site.root_page.specific 'recipes_list' %}?seasons=AUTUMN"><i class="fa fa-angle-double-right"></i> {% trans "Autumn" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}" class="title is-size-5">{% trans "Recipes by season" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?seasons=WINTER"><i class="fa fa-angle-double-right"></i> {% trans "Winter" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?seasons=SPRING"><i class="fa fa-angle-double-right"></i> {% trans "Spring" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?seasons=SUMMER"><i class="fa fa-angle-double-right"></i> {% trans "Summer" %}</a>
+                          <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?seasons=AUTUMN"><i class="fa fa-angle-double-right"></i> {% trans "Autumn" %}</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <a href="{% routablepageurl request.site.root_page.specific 'articles_list' %}" class="navbar-item">{% trans "Articles" %}</a>
+                <a href="{% routablepageurl current_site.root_page.specific 'articles_list' %}" class="navbar-item">{% trans "Articles" %}</a>
                 <a href="{% slugurl 'a-propos' %}" class="navbar-item">{% trans "About" %}</a>
               </div>
               <div class="navbar-end">
@@ -141,7 +143,7 @@
                   </div>
                 </div>
                 <div id="search_input_container" class="is-hidden-touch">
-                  <form action="{% routablepageurl request.site.root_page.specific 'entries_search' %}" method="get">
+                  <form action="{% routablepageurl current_site.root_page.specific 'entries_search' %}" method="get">
                     <div class="field">
                       <div class="control">
                         <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium">
@@ -150,7 +152,7 @@
                   </form>
                 </div>
                 <div id="search_input_container_mobile" class="is-hidden-desktop">
-                  <form action="{% routablepageurl request.site.root_page.specific 'entries_search' %}" method="get">
+                  <form action="{% routablepageurl current_site.root_page.specific 'entries_search' %}" method="get">
                     <div class="field">
                       <div class="control">
                         <input name="q" type="text" placeholder="{% trans 'Type to search' %}" autocomplete="off" class="input is-medium">

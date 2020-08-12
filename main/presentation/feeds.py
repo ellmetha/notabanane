@@ -11,6 +11,7 @@ import datetime as dt
 from django.contrib.syndication.views import Feed
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
+from wagtail.core.models import Site
 
 from main.apps.blog.models import RecipePage
 
@@ -22,7 +23,8 @@ class LatestEntriesFeed(Feed):
 
     def get_feed(self, obj, request):
         """ Returns the feed. """
-        self.blog_page = request.site.root_page.specific
+        site = Site.find_for_request(request)
+        self.blog_page = site.root_page.specific
         return super().get_feed(obj, request)
 
     def title(self, obj):
