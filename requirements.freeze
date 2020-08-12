@@ -11,12 +11,12 @@ beautifulsoup4==4.8.2 \
     --hash=sha256:e1505eeed31b0f4ce2dbb3bc8eb256c04cc2b3b72af7d551a4ab6efd5cbe5dae \
     --hash=sha256:9fbb4d6e48ecd30bcacc5b63b94088192dcda178513b2ae3c394229f8911b887 \
     --hash=sha256:05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a
-boto3==1.14.40 \
-    --hash=sha256:a88d486dcbc80c3e180d811707b366f7b178cf293e0746ae3c00c24a07deac92 \
-    --hash=sha256:c9cab4e0ce77a8c54724eadff047adc976e541f912ca15e35bb475f42b344e0c
-botocore==1.17.40 \
-    --hash=sha256:c3fad73aefabc89c918687a0f207772925530017ce1ca58e2a47b459a1060cb0 \
-    --hash=sha256:feb71e0d2e73fed3c35f1ebfc6b9ff6e499dc9c66db60b63c787fffea3b360a5
+boto3==1.14.41 \
+    --hash=sha256:e9a5efddf7492719ec3d4024e67170fc71a874125d37eb5211b242f23c242dac \
+    --hash=sha256:26f76c7780470de54dfe816bcbeed57a05f53a0bec7c9ae9e8ad7b61ac4c74cc
+botocore==1.17.41 \
+    --hash=sha256:329ca6d6d5e91e97569ecd7f328cd3d627e918ce0703943f93d0b9de6af9aab2 \
+    --hash=sha256:519fcccf9c41634d2aba9dc769b0ac6aa14034f20a60882b0e098ae2e07cab55
 certifi==2020.6.20 \
     --hash=sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41 \
     --hash=sha256:5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3
@@ -71,9 +71,9 @@ facebook-sdk==3.1.0 \
 graphene==2.1.8 \
     --hash=sha256:09165f03e1591b76bf57b133482db9be6dac72c74b0a628d3c93182af9c5a896 \
     --hash=sha256:2cbe6d4ef15cfc7b7805e0760a0e5b80747161ce1b0f990dfdc0d2cf497c12f9
-graphene-django==2.12.1 \
-    --hash=sha256:3d92bf2c43834f3e1caa1c24b79cc5f7c5974670d7d92fd3a4f28c2fd7680c5b \
-    --hash=sha256:03dfe2081c256e56d94d90b33b0bf6fa46ec274186023ccffb9c3aa46a856587
+graphene-django==2.13.0 \
+    --hash=sha256:8a4efc7bf954ba0b5a28d3cdb090b36941aca6b83d211e3cd3ab29cf53ac6154 \
+    --hash=sha256:0e33cdec0774284175c387c2af1e0ef4eb0f4e10a56a3a1b2d39bc3a74d9a538
 graphql-core==2.3.2 \
     --hash=sha256:aac46a9ac524c9855910c14c48fc5d60474def7f99fd10245e76608eba7af746 \
     --hash=sha256:44c9bac4514e5e30c5a595fac8e3c76c1975cae14db215e8174c7fe995825bad
