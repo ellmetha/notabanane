@@ -8,6 +8,7 @@
 """
 
 import factory
+import factory.django
 from faker import Factory
 
 from ..models import Comment
@@ -16,7 +17,7 @@ from ..models import Comment
 fake = Factory.create()
 
 
-class CommentFactory(factory.DjangoModelFactory):
+class CommentFactory(factory.django.DjangoModelFactory):
     """ Factory class for the ``Comment`` model. """
 
     unregistered_author_email = factory.LazyFunction(fake.email)

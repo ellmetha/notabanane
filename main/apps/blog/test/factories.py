@@ -8,6 +8,7 @@
 """
 
 import factory
+import factory.django
 from django.utils.text import slugify
 from faker import Factory
 from wagtail.core.models import Collection, Page
@@ -22,7 +23,7 @@ from ..models import (
 fake = Factory.create()
 
 
-class _MP_NodeFactory(factory.DjangoModelFactory):
+class _MP_NodeFactory(factory.django.DjangoModelFactory):
     @classmethod
     def _build(cls, model_class, *args, **kwargs):
         return model_class(**kwargs)
@@ -56,7 +57,7 @@ class _CollectionFactory(_MP_NodeFactory):
         model = Collection
 
 
-class _CollectionMemberFactory(factory.DjangoModelFactory):
+class _CollectionMemberFactory(factory.django.DjangoModelFactory):
     collection = factory.SubFactory(_CollectionFactory, parent=None)
 
 
@@ -112,7 +113,7 @@ class SimplePageFactory(_PageFactory):
         model = SimplePage
 
 
-class RecipeIngredientsSectionFactory(factory.DjangoModelFactory):
+class RecipeIngredientsSectionFactory(factory.django.DjangoModelFactory):
     """ Factory class for the ``RecipeIngredientsSection`` model. """
 
     page = factory.SubFactory(RecipePageFactory)
@@ -121,7 +122,7 @@ class RecipeIngredientsSectionFactory(factory.DjangoModelFactory):
         model = RecipeIngredientsSection
 
 
-class RecipeInstructionsSectionFactory(factory.DjangoModelFactory):
+class RecipeInstructionsSectionFactory(factory.django.DjangoModelFactory):
     """ Factory class for the ``RecipeInstructionsSection`` model. """
 
     page = factory.SubFactory(RecipePageFactory)
