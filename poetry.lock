@@ -187,17 +187,15 @@ category = "main"
 description = "Django email integration for Amazon SES, Mailgun, Mailjet, Postmark, SendGrid, SendinBlue, SparkPost and other transactional ESPs"
 name = "django-anymail"
 optional = false
-python-versions = "*"
-version = "7.2.1"
+python-versions = ">=3.5"
+version = "8.0"
 
 [package.dependencies]
-django = ">=1.11"
+django = ">=2.0"
 requests = ">=2.4.3"
-six = "*"
 
 [package.extras]
 amazon_ses = ["boto3"]
-sparkpost = ["sparkpost"]
 
 [[package]]
 category = "dev"
@@ -1152,7 +1150,7 @@ requests = ">=2.11.1,<3.0"
 xlsxwriter = ">=1.2.8,<2.0"
 
 [package.dependencies.tablib]
-extras = ["xlsx", "xls"]
+extras = ["xls", "xlsx"]
 version = ">=0.14.0"
 
 [package.extras]
@@ -1323,8 +1321,8 @@ django = [
     {file = "Django-3.1.1.tar.gz", hash = "sha256:59c8125ca873ed3bdae9c12b146fbbd6ed8d0f743e4cf5f5817af50c51f1fc2f"},
 ]
 django-anymail = [
-    {file = "django-anymail-7.2.1.tar.gz", hash = "sha256:7fadf9781573b30af5bb6ca2f39b345c4ca2547723ce677c3025292d0a309a96"},
-    {file = "django_anymail-7.2.1-py2.py3-none-any.whl", hash = "sha256:dc5d835049a5dbf738a0f4bd793c4655cd53ba455e2ead275845bc158d48cc63"},
+    {file = "django-anymail-8.0.tar.gz", hash = "sha256:9a0a7d3f0722d0b4509548051b0d7578384e7d2d65112fc01c1ce66e5e16ae0c"},
+    {file = "django_anymail-8.0-py3-none-any.whl", hash = "sha256:ee6a59f8b4a4897fef49d40b876e62d62e55c7450f3380e830777194da1fd1b8"},
 ]
 django-debug-toolbar = [
     {file = "django-debug-toolbar-2.2.tar.gz", hash = "sha256:eabbefe89881bbe4ca7c980ff102e3c35c8e8ad6eb725041f538988f2f39a943"},
