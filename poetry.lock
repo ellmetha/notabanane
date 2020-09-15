@@ -958,7 +958,7 @@ description = "Python client for Sentry (https://sentry.io)"
 name = "sentry-sdk"
 optional = false
 python-versions = "*"
-version = "0.17.4"
+version = "0.17.5"
 
 [package.dependencies]
 certifi = "*"
@@ -1621,8 +1621,8 @@ s3transfer = [
     {file = "s3transfer-0.3.3.tar.gz", hash = "sha256:921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db"},
 ]
 sentry-sdk = [
-    {file = "sentry-sdk-0.17.4.tar.gz", hash = "sha256:a16caf9ce892623081cbb9a95f6c1f892778bb123909b0ed7afdfb52ce7a58a1"},
-    {file = "sentry_sdk-0.17.4-py2.py3-none-any.whl", hash = "sha256:97bff68e57402ad39674e6fe2545df0d5eea41c3d51e280c170761705c8c20ff"},
+    {file = "sentry-sdk-0.17.5.tar.gz", hash = "sha256:02f2a72698453f722b102562eb6430d2a82d6c6c40f2b991ed69e7628142de6a"},
+    {file = "sentry_sdk-0.17.5-py2.py3-none-any.whl", hash = "sha256:02400b4aeb3db676611ff05442d4421766f18512509255590fa60acee5cb4c5c"},
 ]
 singledispatch = [
     {file = "singledispatch-3.4.0.3-py2.py3-none-any.whl", hash = "sha256:833b46966687b3de7f438c761ac475213e53b306740f1abfaa86e1d1aae56aa8"},
