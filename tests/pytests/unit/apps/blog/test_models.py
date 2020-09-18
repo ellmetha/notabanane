@@ -172,6 +172,14 @@ class TestRecipePage:
         context = recipe_page.get_context(rf.get('/my-recipe'))
         assert context['blog_page'] == self.blog_page
 
+    def test_can_return_a_list_of_diets_tuples(self):
+        activate('en')
+        recipe_page = RecipePageFactory.create(
+            parent=self.blog_page,
+            diets=[RecipePage.DIET_GLUTEN_FREE]
+        )
+        assert recipe_page.diets_tuples == [(RecipePage.DIET_GLUTEN_FREE, 'Gluten free')]
+
     def test_can_return_a_list_of_dish_types_tuples(self):
         activate('en')
         recipe_page = RecipePageFactory.create(parent=self.blog_page)

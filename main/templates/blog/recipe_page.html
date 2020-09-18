@@ -71,6 +71,11 @@
               <span class="tag is-primary is-light">{{ dish_type }}</span>
             </a>
             {% endfor %}
+            {% for diet_id, diet in page.diets_tuples %}
+            <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?diets={{ diet_id|diet_enum }}" class="mr-2">
+              <span class="tag is-primary is-light">{{ diet }}</span>
+            </a>
+            {% endfor %}
           </p>
           {% endspaceless %}
         </div>

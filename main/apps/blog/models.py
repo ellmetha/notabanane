@@ -353,6 +353,12 @@ class RecipePage(Page):
         verbose_name_plural = _('Recipes')
 
     @property
+    def diets_tuples(self):
+        """ Returns an array of <diet ID, diet label> tuples. """
+        diets_choices = dict(self.DIET_CHOICES)
+        return [(d, diets_choices[d]) for d in self.diets]
+
+    @property
     def dish_types_tuples(self):
         """ Returns an array of <dish types ID, dish type label> tuples. """
         dish_types_choices = dict(self.DISH_TYPE_CHOICES)
