@@ -5,7 +5,7 @@ from django.core.paginator import Page
 from django.utils import timezone as tz
 from django.utils.translation import activate
 
-from main.apps.blog.models import ArticlePage
+from main.apps.blog.models import ArticlePage, RecipePage
 from main.apps.blog.test.factories import (
     ArticlePageFactory, BlogPageFactory, RecipeIngredientsSectionFactory,
     RecipeInstructionsSectionFactory, RecipePageFactory, SimplePageFactory
@@ -171,6 +171,11 @@ class TestRecipePage:
         recipe_page = RecipePageFactory.create(parent=self.blog_page)
         context = recipe_page.get_context(rf.get('/my-recipe'))
         assert context['blog_page'] == self.blog_page
+
+    def test_can_return_a_list_of_dish_types_tuples(self):
+        activate('en')
+        recipe_page = RecipePageFactory.create(parent=self.blog_page)
+        assert recipe_page.dish_types_tuples == [(RecipePage.DISH_TYPE_MAIN_COURSE, 'Main course')]
 
     def test_can_return_a_list_of_verbose_versions_of_dish_types(self):
         activate('en')
