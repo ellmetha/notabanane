@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load static %}
 {% load common_duration_tags %}
+{% load graphql_binding_tags %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% load wagtailroutablepage_tags %}
@@ -63,7 +64,15 @@
     <div class="columns">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="content dish-types">
-          <p class="has-text-grey-light">{% for dish_type in page.verbose_dish_types %}{{ dish_type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+          {% spaceless %}
+          <p class="has-text-grey-light">
+            {% for dish_type_id, dish_type in page.dish_types_tuples %}
+            <a href="{% routablepageurl current_site.root_page.specific 'recipes_list' %}?dishTypes={{ dish_type_id|dish_type_enum }}" class="mr-2">
+              <span class="tag is-primary is-light">{{ dish_type }}</span>
+            </a>
+            {% endfor %}
+          </p>
+          {% endspaceless %}
         </div>
         <div class="content introduction">
           {{ page.introduction|richtext }}
