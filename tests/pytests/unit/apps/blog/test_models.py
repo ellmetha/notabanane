@@ -185,11 +185,6 @@ class TestRecipePage:
         recipe_page = RecipePageFactory.create(parent=self.blog_page)
         assert recipe_page.dish_types_tuples == [(RecipePage.DISH_TYPE_MAIN_COURSE, 'Main course')]
 
-    def test_can_return_a_list_of_verbose_versions_of_dish_types(self):
-        activate('en')
-        recipe_page = RecipePageFactory.create(parent=self.blog_page)
-        assert recipe_page.verbose_dish_types == ['Main course']
-
 
 @pytest.mark.django_db
 class TestSimplePage:

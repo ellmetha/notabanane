@@ -364,12 +364,6 @@ class RecipePage(Page):
         dish_types_choices = dict(self.DISH_TYPE_CHOICES)
         return [(d, dish_types_choices[d]) for d in self.dish_types]
 
-    @property
-    def verbose_dish_types(self):
-        """ Returns verbose names of dish types. """
-        dish_types_choices = dict(self.DISH_TYPE_CHOICES)
-        return [dish_types_choices[d] for d in self.dish_types]
-
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
         context = super().get_context(request, *args, **kwargs)
