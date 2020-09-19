@@ -8,8 +8,7 @@
         Healthy recipes for real life adventurers.
     </p>
     <p align="center">
-        <a href="https://github.com/ellmetha/notabanane/actions" rel="nofollow"><img alt="Build status" src="https://github.com/ellmetha/notabanane/workflows/CI - Python/badge.svg?branch=master" style="max-width:100%;"></a>
-        <a href="https://github.com/ellmetha/notabanane/actions" rel="nofollow"><img alt="Build status" src="https://github.com/ellmetha/notabanane/workflows/CI - Node.js/badge.svg?branch=master" style="max-width:100%;"></a>
+        <a href="https://github.com/ellmetha/notabanane/actions" rel="nofollow"><img alt="Build status" src="https://github.com/ellmetha/notabanane/workflows/CI/badge.svg?branch=master" style="max-width:100%;"></a>
     </p>
 
 |
