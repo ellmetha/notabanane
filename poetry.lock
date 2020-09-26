@@ -89,10 +89,10 @@ description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
 python-versions = "*"
-version = "1.15.2"
+version = "1.15.4"
 
 [package.dependencies]
-botocore = ">=1.18.2,<1.19.0"
+botocore = ">=1.18.4,<1.19.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
@@ -102,7 +102,7 @@ description = "Low-level, data-driven core of boto 3."
 name = "botocore"
 optional = false
 python-versions = "*"
-version = "1.18.2"
+version = "1.18.4"
 
 [package.dependencies]
 jmespath = ">=0.7.1,<1.0.0"
@@ -1244,12 +1244,11 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.8.2.tar.gz", hash = "sha256:05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a"},
 ]
 boto3 = [
-    {file = "boto3-1.15.2-py2.py3-none-any.whl", hash = "sha256:87dc624a46b8b0458ca68f0670717aaa9f25a56f60bd8996199573bceb6a747f"},
-    {file = "boto3-1.15.2.tar.gz", hash = "sha256:7e22c4e21533d7c532e0136610b9cc45e3f81e57b738ff434a1f3d0a3b16e05e"},
+    {file = "boto3-1.15.4.tar.gz", hash = "sha256:97f81f40f32d683d52f2e31ef14afae77fc1aa3bc41d05ff3cd838c91d406dfc"},
 ]
 botocore = [
-    {file = "botocore-1.18.2-py2.py3-none-any.whl", hash = "sha256:4893d51caedaf3ebe84c33ca428d2f4bef257384b8ceff2f4a478f016475d32c"},
-    {file = "botocore-1.18.2.tar.gz", hash = "sha256:7fcfc20921de61bd015d363226476c6f51f38846c2a93f67ee7c70b66f54e223"},
+    {file = "botocore-1.18.4-py2.py3-none-any.whl", hash = "sha256:36073d47386e260c6dca17c65479c1746ed5a95f6c29a06e9163d3026150440f"},
+    {file = "botocore-1.18.4.tar.gz", hash = "sha256:78b88dd1b7566be9b932bcd213c6c57d54beeaecd8009eb0224c91a7eb1a937e"},
 ]
 certifi = [
     {file = "certifi-2020.6.20-py2.py3-none-any.whl", hash = "sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"},
