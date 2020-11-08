@@ -11,7 +11,7 @@ import factory
 import factory.django
 from django.utils.text import slugify
 from faker import Factory
-from wagtail.core.models import Collection, Page
+from wagtail.core.models import Collection, Locale, Page
 from wagtail.images import get_image_model
 
 from ..models import (
@@ -42,9 +42,18 @@ class _MP_NodeFactory(factory.django.DjangoModelFactory):
             del self._parent_factory
 
 
+class _LocaleFactory(factory.django.DjangoModelFactory):
+    language_code = 'fr'
+
+    class Meta:
+        model = Locale
+        django_get_or_create = ('language_code', )
+
+
 class _PageFactory(_MP_NodeFactory):
     title = factory.LazyAttribute(lambda o: fake.text(max_nb_chars=50, ext_word_list=None))
     slug = factory.LazyAttribute(lambda o: slugify(o.title))
+    locale = factory.SubFactory(_LocaleFactory)
 
     class Meta:
         model = Page
