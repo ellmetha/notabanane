@@ -303,7 +303,7 @@ WAGTAIL_ADMIN_URL = get_envsetting('WAGTAIL_ADMIN_URL')
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.contrib.postgres_search.backend',
-        'SEARCH_CONFIG': 'french',
+        'SEARCH_CONFIG': 'nb_french',
     }
 }
 
