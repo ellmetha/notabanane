@@ -19,3 +19,4 @@ TEMPLATES[0]['DIRS'] += [os.path.join(TEST_ROOT, '_testdata/templates/'), ]  # n
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 DEFAULT_FROM_EMAIL = 'test@example.com'
 PROJECT_CONTACT_EMAIL = 'test@example.com'
+WAGTAILSEARCH_BACKENDS['default']['SEARCH_CONFIG'] = 'french'
