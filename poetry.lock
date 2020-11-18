@@ -1062,7 +1062,7 @@ standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6,<0.7)", "python-dote
 
 [[package]]
 name = "wagtail"
-version = "2.11.1"
+version = "2.11.2"
 description = "A Django content management system."
 category = "main"
 optional = false
@@ -1142,7 +1142,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "9bd936cfee2f96b6dd3826beec4a3787ec332dae4723cc3fab74c4add9530fd5"
+content-hash = "5ce5af81ef0241f7f2da9227fb9d71a5148f61c026d4f1ec2e1b3a24364da019"
 
 [metadata.files]
 aniso8601 = [
@@ -1575,8 +1575,8 @@ uvicorn = [
     {file = "uvicorn-0.12.2.tar.gz", hash = "sha256:8ff7495c74b8286a341526ff9efa3988ebab9a4b2f561c7438c3cb420992d7dd"},
 ]
 wagtail = [
-    {file = "wagtail-2.11.1-py3-none-any.whl", hash = "sha256:dce3c1bf9e9031b9c01d0e8ade8c0853f89d98d3c5a86d98a3191585670237ff"},
-    {file = "wagtail-2.11.1.tar.gz", hash = "sha256:c2fdc2544402c068fbc2b3205ea60a0d1fb06590962381826d1da68338196f51"},
+    {file = "wagtail-2.11.2-py3-none-any.whl", hash = "sha256:ae8e5a1c71070f60ab573f5217225dd6335ee1252ca1c10f25d90b71dff62de9"},
+    {file = "wagtail-2.11.2.tar.gz", hash = "sha256:516a2613ce25d27ca7b431a64540d068389f88400375b99e294531fe2b897c6b"},
 ]
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},
