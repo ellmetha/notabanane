@@ -39,7 +39,7 @@ type PageInfo {
 }
 
 type Query {
-  recipes(before: String, after: String, first: Int, last: Int, dishTypes: [String], seasons: [String], diets: [String]): RecipePageTypeConnection
+  recipes(offset: Int, before: String, after: String, first: Int, last: Int, dishTypes: [String], seasons: [String], diets: [String]): RecipePageTypeConnection
   recentInstagramMedias: [InstagramMediaType]!
 }
 
