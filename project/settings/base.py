@@ -96,7 +96,6 @@ INSTALLED_APPS = (
 
     # Local apps
     'main.apps.blog',
-    'main.apps.comment',
     'main.common',
     'main.presentation',
 )
