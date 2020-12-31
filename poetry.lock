@@ -410,7 +410,7 @@ test = ["pytest", "pytest-benchmark", "pytest-cov", "pytest-mock", "snapshottest
 
 [[package]]
 name = "graphene-django"
-version = "2.14.0"
+version = "2.15.0"
 description = "Graphene Django integration"
 category = "main"
 optional = false
@@ -1338,8 +1338,8 @@ graphene = [
     {file = "graphene-2.1.8.tar.gz", hash = "sha256:2cbe6d4ef15cfc7b7805e0760a0e5b80747161ce1b0f990dfdc0d2cf497c12f9"},
 ]
 graphene-django = [
-    {file = "graphene-django-2.14.0.tar.gz", hash = "sha256:37b399a983e6e70d26696d0052b416a030d14f6d8a591d67711916e1fea95861"},
-    {file = "graphene_django-2.14.0-py2.py3-none-any.whl", hash = "sha256:68d5c52f775dea6f5e0578b2c09c0a7cddeb48a957a0000b289d6e6145d6a86d"},
+    {file = "graphene-django-2.15.0.tar.gz", hash = "sha256:b78c9b05bc899016b9cc5bf13faa1f37fe1faa8c5407552c6ddd1a28f46fc31a"},
+    {file = "graphene_django-2.15.0-py2.py3-none-any.whl", hash = "sha256:02671d195f0c09c8649acff2a8f4ad4f297d0f7d98ea6e6cdf034b81bab92880"},
 ]
 graphql-core = [
     {file = "graphql-core-2.3.2.tar.gz", hash = "sha256:aac46a9ac524c9855910c14c48fc5d60474def7f99fd10245e76608eba7af746"},
