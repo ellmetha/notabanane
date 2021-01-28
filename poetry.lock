@@ -185,7 +185,7 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-anymail"
-version = "8.1"
+version = "8.2"
 description = "Django email integration for Amazon SES, Mailgun, Mailjet, Postmark, SendGrid, SendinBlue, SparkPost and other transactional ESPs"
 category = "main"
 optional = false
@@ -1270,8 +1270,8 @@ django = [
     {file = "Django-3.1.5.tar.gz", hash = "sha256:2d78425ba74c7a1a74b196058b261b9733a8570782f4e2828974777ccca7edf7"},
 ]
 django-anymail = [
-    {file = "django-anymail-8.1.tar.gz", hash = "sha256:0c3e56a339a37e654b7511572564fe0949f4fbb12c072761c9e35cfc49cb4dc1"},
-    {file = "django_anymail-8.1-py3-none-any.whl", hash = "sha256:0301f2ea1dde7840e5276a5e2d1ca2a56fd558e2b71800e89ca895c18aa3c615"},
+    {file = "django-anymail-8.2.tar.gz", hash = "sha256:6381e04c41b2644e2d3ba2f95ee61ee3ee40cb6184506c52a363b9ddef0b098e"},
+    {file = "django_anymail-8.2-py3-none-any.whl", hash = "sha256:e011c582e771ce3970480c10d1e129ac036ba773e37ec56780a79776534b2ba6"},
 ]
 django-debug-toolbar = [
     {file = "django-debug-toolbar-3.2.tar.gz", hash = "sha256:84e2607d900dbd571df0a2acf380b47c088efb787dce9805aefeb407341961d2"},
