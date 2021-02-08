@@ -25,7 +25,7 @@
   "name": "{{ self.seo_title|default:self.title }}",
   "author": "{{ page.owner.first_name|default:page.owner.username }}",
   "image": "{{ structured_data_image.url }}",
-  {% if page.recipe_yield %}"recipeYield": "{{ page.recipe_yield }}",{% endif %}
+  "recipeYield": "{% if page.recipe_yield %}{{ page.recipe_yield }}{% endif %}",
   "cookTime": "{% if page.cook_time %}{{ page.cook_time|iso8601 }}{% else %}PT0M{% endif %}",
   "prepTime": "{% if page.preparation_time %}{{ page.preparation_time|iso8601 }}{% else %}PT0M{% endif %}",
   "recipeIngredient": [{% for ingredients_section in page.ingredients_sections.all %}{% for ingredient in ingredients_section.ingredients_list %}"{{ ingredient }}"{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}],
