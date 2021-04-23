@@ -91,20 +91,20 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.17.53"
+version = "1.17.56"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
 [package.dependencies]
-botocore = ">=1.20.53,<1.21.0"
+botocore = ">=1.20.56,<1.21.0"
 jmespath = ">=0.7.1,<1.0.0"
-s3transfer = ">=0.3.0,<0.4.0"
+s3transfer = ">=0.4.0,<0.5.0"
 
 [[package]]
 name = "botocore"
-version = "1.20.53"
+version = "1.20.56"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -116,7 +116,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = ">=1.25.4,<1.27"
 
 [package.extras]
-crt = ["awscrt (==0.10.8)"]
+crt = ["awscrt (==0.11.11)"]
 
 [[package]]
 name = "certifi"
@@ -892,7 +892,7 @@ python-versions = "*"
 
 [[package]]
 name = "s3transfer"
-version = "0.3.7"
+version = "0.4.2"
 description = "An Amazon S3 Transfer Manager"
 category = "main"
 optional = false
@@ -900,6 +900,9 @@ python-versions = "*"
 
 [package.dependencies]
 botocore = ">=1.12.36,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
 
 [[package]]
 name = "sentry-sdk"
@@ -1176,12 +1179,12 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.8.2.tar.gz", hash = "sha256:05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a"},
 ]
 boto3 = [
-    {file = "boto3-1.17.53-py2.py3-none-any.whl", hash = "sha256:3bf3305571f3c8b738a53e9e7dcff59137dffe94670046c084a17f9fa4599ff3"},
-    {file = "boto3-1.17.53.tar.gz", hash = "sha256:1d26f6e7ae3c940cb07119077ac42485dcf99164350da0ab50d0f5ad345800cd"},
+    {file = "boto3-1.17.56-py2.py3-none-any.whl", hash = "sha256:ccbc640b6c7b27626f87fbd6d73872ec697290065e8f473b6a3def472dd9253f"},
+    {file = "boto3-1.17.56.tar.gz", hash = "sha256:9caec835fdf9c3336068a28004bb6a6ffab14a75d2466dfe6e279946f409fe8f"},
 ]
 botocore = [
-    {file = "botocore-1.20.53-py2.py3-none-any.whl", hash = "sha256:d5e70d17b91c9b5867be7d6de0caa7dde9ed789bed62f03ea9b60718dc9350bf"},
-    {file = "botocore-1.20.53.tar.gz", hash = "sha256:e303500c4e80f6a706602da53daa6f751cfa8f491665c99a24ee732ab6321573"},
+    {file = "botocore-1.20.56-py2.py3-none-any.whl", hash = "sha256:367a7eaee80fdf7718f50461432ac2c4bd73363835a1ad011f99fdc592ba775d"},
+    {file = "botocore-1.20.56.tar.gz", hash = "sha256:134a7b1d21030b6323b6094226d0cc898a8f2a2b5d27e1e5c0a0071372eab68d"},
 ]
 certifi = [
     {file = "certifi-2020.12.5-py2.py3-none-any.whl", hash = "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"},
@@ -1537,8 +1540,8 @@ rx = [
     {file = "Rx-1.6.1.tar.gz", hash = "sha256:13a1d8d9e252625c173dc795471e614eadfe1cf40ffc684e08b8fff0d9748c23"},
 ]
 s3transfer = [
-    {file = "s3transfer-0.3.7-py2.py3-none-any.whl", hash = "sha256:efa5bd92a897b6a8d5c1383828dca3d52d0790e0756d49740563a3fb6ed03246"},
-    {file = "s3transfer-0.3.7.tar.gz", hash = "sha256:35627b86af8ff97e7ac27975fe0a98a312814b46c6333d8a6b889627bcd80994"},
+    {file = "s3transfer-0.4.2-py2.py3-none-any.whl", hash = "sha256:9b3752887a2880690ce628bc263d6d13a3864083aeacff4890c1c9839a5eb0bc"},
+    {file = "s3transfer-0.4.2.tar.gz", hash = "sha256:cb022f4b16551edebbb31a377d3f09600dbada7363d8c5db7976e7f47732e1b2"},
 ]
 sentry-sdk = [
     {file = "sentry-sdk-1.0.0.tar.gz", hash = "sha256:71de00c9711926816f750bc0f57ef2abbcb1bfbdf5378c601df7ec978f44857a"},
