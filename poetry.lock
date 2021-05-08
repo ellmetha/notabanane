@@ -836,7 +836,7 @@ pytest = ">=2.5.2"
 
 [[package]]
 name = "pytest-spec"
-version = "3.1.0"
+version = "3.2.0"
 description = "Library pytest-spec is a pytest plugin to display test execution output like a SPECIFICATION."
 category = "dev"
 optional = false
@@ -1520,8 +1520,8 @@ pytest-pythonpath = [
     {file = "pytest-pythonpath-0.7.3.tar.gz", hash = "sha256:63fc546ace7d2c845c1ee289e8f7a6362c2b6bae497d10c716e58e253e801d62"},
 ]
 pytest-spec = [
-    {file = "pytest-spec-3.1.0.tar.gz", hash = "sha256:5d94926fa60b1c6019b7b62ee5c8d30f18b25b789c548751986c8fed30e47f08"},
-    {file = "pytest_spec-3.1.0-py2.py3-none-any.whl", hash = "sha256:5e1099c28478368218068a3729f255f0681f00bb0b5e340b7f174b551c78fef6"},
+    {file = "pytest-spec-3.2.0.tar.gz", hash = "sha256:4af154588195f4bb6c62d6ca030a20218db7d80b675a08897d9a99239ea3d087"},
+    {file = "pytest_spec-3.2.0-py2.py3-none-any.whl", hash = "sha256:128dd1e133c72d6a18b28ed96d0af0fc43aece8f796ebcfcd81c850f0094b62e"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
