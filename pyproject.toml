@@ -29,7 +29,7 @@ pillow = "*"
 psycopg2 = "*"
 sentry-sdk = "*"
 uvicorn = "^0.13.4"
-wagtail = "^2.12"
+wagtail = "^2.13"
 
 [tool.poetry.dev-dependencies]
 coverage = ">=4.5"
