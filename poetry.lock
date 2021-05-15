@@ -1,114 +1,118 @@
 [[package]]
-name = "aniso8601"
-version = "7.0.0"
-description = "A library for parsing ISO 8601 strings."
 category = "main"
+description = "A library for parsing ISO 8601 strings."
+name = "aniso8601"
 optional = false
 python-versions = "*"
+version = "7.0.0"
 
 [[package]]
-name = "anyascii"
-version = "0.2.0"
-description = "Unicode to ASCII transliteration"
 category = "main"
+description = "Unicode to ASCII transliteration"
+name = "anyascii"
 optional = false
 python-versions = ">=3.3"
+version = "0.2.0"
 
 [[package]]
-name = "appnope"
-version = "0.1.2"
-description = "Disable App Nap on macOS >= 10.9"
 category = "dev"
+description = "Disable App Nap on macOS >= 10.9"
+marker = "sys_platform == \"darwin\""
+name = "appnope"
 optional = false
 python-versions = "*"
+version = "0.1.2"
 
 [[package]]
-name = "asgiref"
-version = "3.3.4"
-description = "ASGI specs, helper code, and adapters"
 category = "main"
+description = "ASGI specs, helper code, and adapters"
+name = "asgiref"
 optional = false
 python-versions = ">=3.6"
+version = "3.3.4"
 
 [package.extras]
 tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
 [[package]]
-name = "atomicwrites"
-version = "1.4.0"
-description = "Atomic file writes."
 category = "dev"
+description = "Atomic file writes."
+marker = "sys_platform == \"win32\""
+name = "atomicwrites"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.4.0"
 
 [[package]]
-name = "attrs"
-version = "20.3.0"
-description = "Classes Without Boilerplate"
 category = "dev"
+description = "Classes Without Boilerplate"
+name = "attrs"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "21.2.0"
 
 [package.extras]
-dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "furo", "sphinx", "pre-commit"]
-docs = ["furo", "sphinx", "zope.interface"]
-tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
-tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six"]
+dev = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "zope.interface", "furo", "sphinx", "sphinx-notfound-page", "pre-commit"]
+docs = ["furo", "sphinx", "zope.interface", "sphinx-notfound-page"]
+tests = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "zope.interface"]
+tests_no_zope = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins"]
 
 [[package]]
-name = "babel"
-version = "2.9.1"
-description = "Internationalization utilities"
 category = "main"
+description = "Internationalization utilities"
+name = "babel"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.9.1"
 
 [package.dependencies]
 pytz = ">=2015.7"
 
 [[package]]
-name = "backcall"
-version = "0.2.0"
-description = "Specifications for callback functions passed in to an API"
 category = "dev"
+description = "Specifications for callback functions passed in to an API"
+name = "backcall"
 optional = false
 python-versions = "*"
+version = "0.2.0"
 
 [[package]]
-name = "beautifulsoup4"
-version = "4.8.2"
-description = "Screen-scraping library"
 category = "main"
+description = "Screen-scraping library"
+name = "beautifulsoup4"
 optional = false
 python-versions = "*"
+version = "4.9.3"
 
 [package.dependencies]
-soupsieve = ">=1.2"
+[package.dependencies.soupsieve]
+python = ">=3.0"
+version = ">1.2"
 
 [package.extras]
 html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
-name = "boto3"
-version = "1.17.72"
-description = "The AWS SDK for Python"
 category = "main"
+description = "The AWS SDK for Python"
+name = "boto3"
 optional = false
 python-versions = ">= 2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+version = "1.17.73"
 
 [package.dependencies]
-botocore = ">=1.20.72,<1.21.0"
+botocore = ">=1.20.73,<1.21.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.4.0,<0.5.0"
 
 [[package]]
-name = "botocore"
-version = "1.20.72"
-description = "Low-level, data-driven core of boto 3."
 category = "main"
+description = "Low-level, data-driven core of boto 3."
+name = "botocore"
 optional = false
 python-versions = ">= 2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+version = "1.20.73"
 
 [package.dependencies]
 jmespath = ">=0.7.1,<1.0.0"
@@ -116,83 +120,84 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = ">=1.25.4,<1.27"
 
 [package.extras]
-crt = ["awscrt (==0.11.15)"]
+crt = ["awscrt (0.11.15)"]
 
 [[package]]
-name = "certifi"
-version = "2020.12.5"
-description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
+description = "Python package for providing Mozilla's CA Bundle."
+name = "certifi"
 optional = false
 python-versions = "*"
+version = "2020.12.5"
 
 [[package]]
-name = "chardet"
-version = "4.0.0"
+category = "main"
 description = "Universal encoding detector for Python 2 and 3"
-category = "main"
+name = "chardet"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "4.0.0"
 
 [[package]]
-name = "click"
-version = "7.1.2"
+category = "main"
 description = "Composable command line interface toolkit"
-category = "main"
+name = "click"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "7.1.2"
 
 [[package]]
-name = "colorama"
-version = "0.4.4"
+category = "dev"
 description = "Cross-platform colored terminal text."
-category = "dev"
+marker = "sys_platform == \"win32\""
+name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "0.4.4"
 
 [[package]]
-name = "coverage"
-version = "5.5"
-description = "Code coverage measurement for Python"
 category = "dev"
+description = "Code coverage measurement for Python"
+name = "coverage"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+version = "5.5"
 
 [package.extras]
 toml = ["toml"]
 
 [[package]]
-name = "decorator"
-version = "5.0.7"
-description = "Decorators for Humans"
 category = "dev"
+description = "Decorators for Humans"
+name = "decorator"
 optional = false
 python-versions = ">=3.5"
+version = "5.0.8"
 
 [[package]]
-name = "django"
-version = "3.1.11"
-description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+name = "django"
 optional = false
 python-versions = ">=3.6"
+version = "3.2.3"
 
 [package.dependencies]
-asgiref = ">=3.2.10,<4"
+asgiref = ">=3.3.2,<4"
 pytz = "*"
 sqlparse = ">=0.2.2"
 
 [package.extras]
-argon2 = ["argon2-cffi (>=16.1.0)"]
+argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-name = "django-anymail"
-version = "8.2"
-description = "Django email integration for Amazon SES, Mailgun, Mailjet, Postmark, SendGrid, SendinBlue, SparkPost and other transactional ESPs"
 category = "main"
+description = "Django email integration for Amazon SES, Mailgun, Mailjet, Postmark, SendGrid, SendinBlue, SparkPost and other transactional ESPs"
+name = "django-anymail"
 optional = false
 python-versions = ">=3.5"
+version = "8.2"
 
 [package.dependencies]
 django = ">=2.0"
@@ -202,46 +207,46 @@ requests = ">=2.4.3"
 amazon_ses = ["boto3"]
 
 [[package]]
-name = "django-debug-toolbar"
-version = "3.2.1"
-description = "A configurable set of panels that display various debug information about the current request/response."
 category = "dev"
+description = "A configurable set of panels that display various debug information about the current request/response."
+name = "django-debug-toolbar"
 optional = false
 python-versions = ">=3.6"
+version = "3.2.1"
 
 [package.dependencies]
 Django = ">=2.2"
 sqlparse = ">=0.2.0"
 
 [[package]]
-name = "django-filter"
-version = "2.4.0"
-description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
 category = "main"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+name = "django-filter"
 optional = false
 python-versions = ">=3.5"
+version = "2.4.0"
 
 [package.dependencies]
 Django = ">=2.2"
 
 [[package]]
-name = "django-js-routes"
-version = "0.1.3"
-description = "Expose and perform reverse lookups of Django URLs in the frontend world."
 category = "main"
+description = "Expose and perform reverse lookups of Django URLs in the frontend world."
+name = "django-js-routes"
 optional = false
 python-versions = ">=3.5,<4.0"
+version = "0.1.3"
 
 [package.dependencies]
 django = ">=2.2"
 
 [[package]]
-name = "django-modelcluster"
-version = "5.1"
-description = "Django extension to allow working with 'clusters' of models as a single unit, independently of the database"
 category = "main"
+description = "Django extension to allow working with 'clusters' of models as a single unit, independently of the database"
+name = "django-modelcluster"
 optional = false
 python-versions = ">=3.5"
+version = "5.1"
 
 [package.dependencies]
 pytz = ">=2015.2"
@@ -250,23 +255,23 @@ pytz = ">=2015.2"
 taggit = ["django-taggit (>=0.20)"]
 
 [[package]]
-name = "django-recaptcha"
-version = "2.0.6"
-description = "Django recaptcha form field/widget app."
 category = "main"
+description = "Django recaptcha form field/widget app."
+name = "django-recaptcha"
 optional = false
 python-versions = "*"
+version = "2.0.6"
 
 [package.dependencies]
 django = ">1.11,<4.0"
 
 [[package]]
-name = "django-storages"
-version = "1.9.1"
-description = "Support for many storage backends in Django"
 category = "main"
+description = "Support for many storage backends in Django"
+name = "django-storages"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.9.1"
 
 [package.dependencies]
 Django = ">=1.11"
@@ -280,85 +285,85 @@ libcloud = ["apache-libcloud"]
 sftp = ["paramiko"]
 
 [[package]]
-name = "django-taggit"
-version = "1.4.0"
-description = "django-taggit is a reusable Django application for simple tagging."
 category = "main"
+description = "django-taggit is a reusable Django application for simple tagging."
+name = "django-taggit"
 optional = false
 python-versions = ">=3.6"
+version = "1.4.0"
 
 [package.dependencies]
 Django = ">=1.11"
 
 [[package]]
-name = "django-treebeard"
-version = "4.5.1"
-description = "Efficient tree implementations for Django"
 category = "main"
+description = "Efficient tree implementations for Django"
+name = "django-treebeard"
 optional = false
 python-versions = ">=3.6"
+version = "4.5.1"
 
 [package.dependencies]
 Django = ">=2.2"
 
 [[package]]
-name = "django-widget-tweaks"
-version = "1.4.8"
-description = "Tweak the form field rendering in templates, not in python-level form definitions."
 category = "main"
+description = "Tweak the form field rendering in templates, not in python-level form definitions."
+name = "django-widget-tweaks"
 optional = false
 python-versions = "*"
+version = "1.4.8"
 
 [[package]]
-name = "djangorestframework"
-version = "3.12.4"
-description = "Web APIs for Django, made easy."
 category = "main"
+description = "Web APIs for Django, made easy."
+name = "djangorestframework"
 optional = false
 python-versions = ">=3.5"
+version = "3.12.4"
 
 [package.dependencies]
 django = ">=2.2"
 
 [[package]]
-name = "draftjs-exporter"
-version = "2.1.7"
-description = "Library to convert rich text from Draft.js raw ContentState to HTML"
 category = "main"
+description = "Library to convert rich text from Draft.js raw ContentState to HTML"
+name = "draftjs-exporter"
 optional = false
 python-versions = "*"
+version = "2.1.7"
 
 [package.extras]
 html5lib = ["beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)"]
 lxml = ["lxml (>=4.2.0,<5)"]
-testing = ["tox (>=2.3.1)", "markov-draftjs (==0.1.1)", "memory-profiler (==0.47)", "psutil (==5.4.1)", "coverage (>=4.1.0)", "flake8 (>=3.2.0)", "isort (==4.2.5)", "beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)", "lxml (>=4.2.0,<5)"]
+testing = ["tox (>=2.3.1)", "markov_draftjs (0.1.1)", "memory-profiler (0.47)", "psutil (5.4.1)", "coverage (>=4.1.0)", "flake8 (>=3.2.0)", "isort (4.2.5)", "beautifulsoup4 (>=4.4.1,<5)", "html5lib (>=0.999,<=1.0.1)", "lxml (>=4.2.0,<5)"]
 
 [[package]]
-name = "et-xmlfile"
-version = "1.0.1"
+category = "main"
 description = "An implementation of lxml.xmlfile for the standard library"
-category = "main"
+name = "et-xmlfile"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
+version = "1.1.0"
 
 [[package]]
-name = "facebook-sdk"
-version = "3.1.0"
-description = "This client library is designed to support the Facebook Graph API and the official Facebook JavaScript SDK, which is the canonical way to implement Facebook authentication."
 category = "main"
+description = "This client library is designed to support the Facebook Graph API and the official Facebook JavaScript SDK, which is the canonical way to implement Facebook authentication."
+name = "facebook-sdk"
 optional = false
 python-versions = "*"
+version = "3.1.0"
 
 [package.dependencies]
 requests = "*"
 
 [[package]]
-name = "factory-boy"
-version = "3.2.0"
-description = "A versatile test fixtures replacement based on thoughtbot's factory_bot for Ruby."
 category = "dev"
+description = "A versatile test fixtures replacement based on thoughtbot's factory_bot for Ruby."
+name = "factory-boy"
 optional = false
 python-versions = ">=3.6"
+version = "3.2.0"
 
 [package.dependencies]
 Faker = ">=0.7.0"
@@ -368,24 +373,24 @@ dev = ["coverage", "django", "flake8", "isort", "pillow", "sqlalchemy", "mongoen
 doc = ["sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
-name = "faker"
-version = "8.1.4"
-description = "Faker is a Python package that generates fake data for you."
 category = "dev"
+description = "Faker is a Python package that generates fake data for you."
+name = "faker"
 optional = false
 python-versions = ">=3.6"
+version = "8.1.4"
 
 [package.dependencies]
 python-dateutil = ">=2.4"
 text-unidecode = "1.3"
 
 [[package]]
-name = "flake8"
-version = "3.9.2"
-description = "the modular source code checker: pep8 pyflakes and co"
 category = "dev"
+description = "the modular source code checker: pep8 pyflakes and co"
+name = "flake8"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+version = "3.9.2"
 
 [package.dependencies]
 mccabe = ">=0.6.0,<0.7.0"
@@ -393,12 +398,12 @@ pycodestyle = ">=2.7.0,<2.8.0"
 pyflakes = ">=2.3.0,<2.4.0"
 
 [[package]]
-name = "graphene"
-version = "2.1.8"
-description = "GraphQL Framework for Python"
 category = "main"
+description = "GraphQL Framework for Python"
+name = "graphene"
 optional = false
 python-versions = "*"
+version = "2.1.8"
 
 [package.dependencies]
 aniso8601 = ">=3,<=7"
@@ -412,12 +417,12 @@ sqlalchemy = ["graphene-sqlalchemy"]
 test = ["pytest", "pytest-benchmark", "pytest-cov", "pytest-mock", "snapshottest", "coveralls", "promise", "six", "mock", "pytz", "iso8601"]
 
 [[package]]
-name = "graphene-django"
-version = "2.15.0"
-description = "Graphene Django integration"
 category = "main"
+description = "Graphene Django integration"
+name = "graphene-django"
 optional = false
 python-versions = "*"
+version = "2.15.0"
 
 [package.dependencies]
 Django = ">=1.11"
@@ -429,17 +434,17 @@ six = ">=1.10.0"
 text-unidecode = "*"
 
 [package.extras]
-dev = ["black (==19.10b0)", "flake8 (==3.7.9)", "flake8-black (==0.1.1)", "flake8-bugbear (==20.1.4)", "pytest (>=3.6.3)", "pytest-cov", "coveralls", "mock", "pytz", "pytest-django (>=3.3.2)", "djangorestframework (>=3.6.3)", "django-filter (<2)", "django-filter (>=2)"]
+dev = ["black (19.10b0)", "flake8 (3.7.9)", "flake8-black (0.1.1)", "flake8-bugbear (20.1.4)", "pytest (>=3.6.3)", "pytest-cov", "coveralls", "mock", "pytz", "pytest-django (>=3.3.2)", "djangorestframework (>=3.6.3)", "django-filter (<2)", "django-filter (>=2)"]
 rest_framework = ["djangorestframework (>=3.6.3)"]
 test = ["pytest (>=3.6.3)", "pytest-cov", "coveralls", "mock", "pytz", "pytest-django (>=3.3.2)", "djangorestframework (>=3.6.3)", "django-filter (<2)", "django-filter (>=2)"]
 
 [[package]]
-name = "graphql-core"
-version = "2.3.2"
-description = "GraphQL implementation for Python"
 category = "main"
+description = "GraphQL implementation for Python"
+name = "graphql-core"
 optional = false
 python-versions = "*"
+version = "2.3.2"
 
 [package.dependencies]
 promise = ">=2.3,<3"
@@ -448,15 +453,15 @@ six = ">=1.10.0"
 
 [package.extras]
 gevent = ["gevent (>=1.1)"]
-test = ["six (==1.14.0)", "pyannotate (==1.2.0)", "pytest (==4.6.10)", "pytest-django (==3.9.0)", "pytest-cov (==2.8.1)", "coveralls (==1.11.1)", "cython (==0.29.17)", "gevent (==1.5.0)", "pytest-benchmark (==3.2.3)", "pytest-mock (==2.0.0)"]
+test = ["six (1.14.0)", "pyannotate (1.2.0)", "pytest (4.6.10)", "pytest-django (3.9.0)", "pytest-cov (2.8.1)", "coveralls (1.11.1)", "cython (0.29.17)", "gevent (1.5.0)", "pytest-benchmark (3.2.3)", "pytest-mock (2.0.0)"]
 
 [[package]]
-name = "graphql-relay"
-version = "2.0.1"
-description = "Relay implementation for Python"
 category = "main"
+description = "Relay implementation for Python"
+name = "graphql-relay"
 optional = false
 python-versions = "*"
+version = "2.0.1"
 
 [package.dependencies]
 graphql-core = ">=2.2,<3"
@@ -464,28 +469,28 @@ promise = ">=2.2,<3"
 six = ">=1.12"
 
 [[package]]
-name = "h11"
-version = "0.12.0"
-description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 category = "main"
+description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
+name = "h11"
 optional = false
 python-versions = ">=3.6"
+version = "0.12.0"
 
 [[package]]
-name = "html2text"
-version = "2020.1.16"
-description = "Turn HTML into equivalent Markdown-structured text."
 category = "main"
+description = "Turn HTML into equivalent Markdown-structured text."
+name = "html2text"
 optional = false
 python-versions = ">=3.5"
+version = "2020.1.16"
 
 [[package]]
-name = "html5lib"
-version = "1.1"
-description = "HTML parser based on the WHATWG HTML specification"
 category = "main"
+description = "HTML parser based on the WHATWG HTML specification"
+name = "html5lib"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "1.1"
 
 [package.dependencies]
 six = ">=1.9"
@@ -498,40 +503,41 @@ genshi = ["genshi"]
 lxml = ["lxml"]
 
 [[package]]
-name = "idna"
-version = "2.10"
-description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
+description = "Internationalized Domain Names in Applications (IDNA)"
+name = "idna"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.10"
 
 [[package]]
-name = "iniconfig"
-version = "1.1.1"
-description = "iniconfig: brain-dead simple config-ini parsing"
 category = "dev"
+description = "iniconfig: brain-dead simple config-ini parsing"
+name = "iniconfig"
 optional = false
 python-versions = "*"
+version = "1.1.1"
 
 [[package]]
-name = "ipython"
-version = "7.23.1"
-description = "IPython: Productive Interactive Computing"
 category = "dev"
+description = "IPython: Productive Interactive Computing"
+name = "ipython"
 optional = false
 python-versions = ">=3.7"
+version = "7.23.1"
 
 [package.dependencies]
-appnope = {version = "*", markers = "sys_platform == \"darwin\""}
+appnope = "*"
 backcall = "*"
-colorama = {version = "*", markers = "sys_platform == \"win32\""}
+colorama = "*"
 decorator = "*"
 jedi = ">=0.16"
 matplotlib-inline = "*"
-pexpect = {version = ">4.3", markers = "sys_platform != \"win32\""}
+pexpect = ">4.3"
 pickleshare = "*"
 prompt-toolkit = ">=2.0.0,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.1.0"
 pygments = "*"
+setuptools = ">=18.5"
 traitlets = ">=4.2"
 
 [package.extras]
@@ -546,170 +552,171 @@ qtconsole = ["qtconsole"]
 test = ["nose (>=0.10.1)", "requests", "testpath", "pygments", "nbformat", "ipykernel", "numpy (>=1.16)"]
 
 [[package]]
-name = "ipython-genutils"
-version = "0.2.0"
-description = "Vestigial utilities from IPython"
 category = "dev"
+description = "Vestigial utilities from IPython"
+name = "ipython-genutils"
 optional = false
 python-versions = "*"
+version = "0.2.0"
 
 [[package]]
-name = "isodate"
-version = "0.6.0"
-description = "An ISO 8601 date/time/duration parser and formatter"
 category = "main"
+description = "An ISO 8601 date/time/duration parser and formatter"
+name = "isodate"
 optional = false
 python-versions = "*"
+version = "0.6.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-name = "isort"
-version = "5.8.0"
-description = "A Python utility / library to sort Python imports."
 category = "dev"
+description = "A Python utility / library to sort Python imports."
+name = "isort"
 optional = false
 python-versions = ">=3.6,<4.0"
+version = "5.8.0"
 
 [package.extras]
+colors = ["colorama (>=0.4.3,<0.5.0)"]
 pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
 requirements_deprecated_finder = ["pipreqs", "pip-api"]
-colors = ["colorama (>=0.4.3,<0.5.0)"]
 
 [[package]]
-name = "jedi"
-version = "0.18.0"
-description = "An autocompletion tool for Python that can be used for text editors."
 category = "dev"
+description = "An autocompletion tool for Python that can be used for text editors."
+name = "jedi"
 optional = false
 python-versions = ">=3.6"
+version = "0.18.0"
 
 [package.dependencies]
 parso = ">=0.8.0,<0.9.0"
 
 [package.extras]
-qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
+qa = ["flake8 (3.8.3)", "mypy (0.782)"]
 testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<6.0.0)"]
 
 [[package]]
-name = "jmespath"
-version = "0.10.0"
-description = "JSON Matching Expressions"
 category = "main"
+description = "JSON Matching Expressions"
+name = "jmespath"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "0.10.0"
 
 [[package]]
-name = "l18n"
-version = "2020.6.1"
-description = "Internationalization for pytz timezones and territories"
 category = "main"
+description = "Internationalization for pytz timezones and territories"
+name = "l18n"
 optional = false
 python-versions = "*"
+version = "2020.6.1"
 
 [package.dependencies]
 pytz = ">=2020.1"
 six = "*"
 
 [[package]]
-name = "matplotlib-inline"
-version = "0.1.2"
-description = "Inline Matplotlib backend for Jupyter"
 category = "dev"
+description = "Inline Matplotlib backend for Jupyter"
+name = "matplotlib-inline"
 optional = false
 python-versions = ">=3.5"
+version = "0.1.2"
 
 [package.dependencies]
 traitlets = "*"
 
 [[package]]
-name = "mccabe"
-version = "0.6.1"
-description = "McCabe checker, plugin for flake8"
 category = "dev"
+description = "McCabe checker, plugin for flake8"
+name = "mccabe"
 optional = false
 python-versions = "*"
+version = "0.6.1"
 
 [[package]]
-name = "openpyxl"
-version = "3.0.7"
-description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
 category = "main"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+name = "openpyxl"
 optional = false
 python-versions = ">=3.6,"
+version = "3.0.7"
 
 [package.dependencies]
 et-xmlfile = "*"
 
 [[package]]
-name = "packaging"
-version = "20.9"
-description = "Core utilities for Python packages"
 category = "dev"
+description = "Core utilities for Python packages"
+name = "packaging"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "20.9"
 
 [package.dependencies]
 pyparsing = ">=2.0.2"
 
 [[package]]
-name = "parso"
-version = "0.8.2"
-description = "A Python Parser"
 category = "dev"
+description = "A Python Parser"
+name = "parso"
 optional = false
 python-versions = ">=3.6"
+version = "0.8.2"
 
 [package.extras]
-qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
+qa = ["flake8 (3.8.3)", "mypy (0.782)"]
 testing = ["docopt", "pytest (<6.0.0)"]
 
 [[package]]
-name = "pexpect"
-version = "4.8.0"
-description = "Pexpect allows easy control of interactive console applications."
 category = "dev"
+description = "Pexpect allows easy control of interactive console applications."
+marker = "sys_platform != \"win32\""
+name = "pexpect"
 optional = false
 python-versions = "*"
+version = "4.8.0"
 
 [package.dependencies]
 ptyprocess = ">=0.5"
 
 [[package]]
-name = "pickleshare"
-version = "0.7.5"
-description = "Tiny 'shelve'-like database with concurrency support"
 category = "dev"
+description = "Tiny 'shelve'-like database with concurrency support"
+name = "pickleshare"
 optional = false
 python-versions = "*"
+version = "0.7.5"
 
 [[package]]
-name = "pillow"
-version = "8.2.0"
-description = "Python Imaging Library (Fork)"
 category = "main"
+description = "Python Imaging Library (Fork)"
+name = "pillow"
 optional = false
 python-versions = ">=3.6"
+version = "8.2.0"
 
 [[package]]
-name = "pluggy"
-version = "0.13.1"
-description = "plugin and hook calling mechanisms for python"
 category = "dev"
+description = "plugin and hook calling mechanisms for python"
+name = "pluggy"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.13.1"
 
 [package.extras]
 dev = ["pre-commit", "tox"]
 
 [[package]]
-name = "promise"
-version = "2.3"
-description = "Promises/A+ implementation for Python"
 category = "main"
+description = "Promises/A+ implementation for Python"
+name = "promise"
 optional = false
 python-versions = "*"
+version = "2.3"
 
 [package.dependencies]
 six = "*"
@@ -718,84 +725,85 @@ six = "*"
 test = ["pytest (>=2.7.3)", "pytest-cov", "coveralls", "futures", "pytest-benchmark", "mock"]
 
 [[package]]
-name = "prompt-toolkit"
-version = "3.0.18"
-description = "Library for building powerful interactive command lines in Python"
 category = "dev"
+description = "Library for building powerful interactive command lines in Python"
+name = "prompt-toolkit"
 optional = false
 python-versions = ">=3.6.1"
+version = "3.0.18"
 
 [package.dependencies]
 wcwidth = "*"
 
 [[package]]
-name = "psycopg2"
-version = "2.8.6"
-description = "psycopg2 - Python-PostgreSQL Database Adapter"
 category = "main"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+name = "psycopg2"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
+version = "2.8.6"
 
 [[package]]
-name = "ptyprocess"
-version = "0.7.0"
-description = "Run a subprocess in a pseudo terminal"
 category = "dev"
+description = "Run a subprocess in a pseudo terminal"
+marker = "sys_platform != \"win32\""
+name = "ptyprocess"
 optional = false
 python-versions = "*"
+version = "0.7.0"
 
 [[package]]
-name = "py"
-version = "1.10.0"
+category = "dev"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
-category = "dev"
+name = "py"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.10.0"
 
 [[package]]
-name = "pycodestyle"
-version = "2.7.0"
+category = "dev"
 description = "Python style guide checker"
-category = "dev"
+name = "pycodestyle"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.7.0"
 
 [[package]]
-name = "pyflakes"
-version = "2.3.1"
+category = "dev"
 description = "passive checker of Python programs"
-category = "dev"
+name = "pyflakes"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.3.1"
 
 [[package]]
-name = "pygments"
-version = "2.8.1"
-description = "Pygments is a syntax highlighting package written in Python."
 category = "dev"
+description = "Pygments is a syntax highlighting package written in Python."
+name = "pygments"
 optional = false
 python-versions = ">=3.5"
+version = "2.9.0"
 
 [[package]]
-name = "pyparsing"
-version = "2.4.7"
-description = "Python parsing module"
 category = "dev"
+description = "Python parsing module"
+name = "pyparsing"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "2.4.7"
 
 [[package]]
-name = "pytest"
-version = "6.2.4"
-description = "pytest: simple powerful testing with Python"
 category = "dev"
+description = "pytest: simple powerful testing with Python"
+name = "pytest"
 optional = false
 python-versions = ">=3.6"
+version = "6.2.4"
 
 [package.dependencies]
-atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
+atomicwrites = ">=1.0"
 attrs = ">=19.2.0"
-colorama = {version = "*", markers = "sys_platform == \"win32\""}
+colorama = "*"
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<1.0.0a1"
@@ -806,27 +814,30 @@ toml = "*"
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
-name = "pytest-cov"
-version = "2.11.1"
-description = "Pytest plugin for measuring coverage."
 category = "dev"
+description = "Pytest plugin for measuring coverage."
+name = "pytest-cov"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.12.0"
 
 [package.dependencies]
-coverage = ">=5.2.1"
 pytest = ">=4.6"
 
+[package.dependencies.coverage]
+extras = ["toml"]
+version = ">=5.2.1"
+
 [package.extras]
-testing = ["fields", "hunter", "process-tests (==2.0.2)", "six", "pytest-xdist", "virtualenv"]
+testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
-name = "pytest-django"
-version = "4.2.0"
-description = "A Django plugin for pytest."
 category = "dev"
+description = "A Django plugin for pytest."
+name = "pytest-django"
 optional = false
 python-versions = ">=3.5"
+version = "4.2.0"
 
 [package.dependencies]
 pytest = ">=5.4.0"
@@ -836,53 +847,53 @@ docs = ["sphinx", "sphinx-rtd-theme"]
 testing = ["django", "django-configurations (>=2.0)"]
 
 [[package]]
-name = "pytest-pythonpath"
-version = "0.7.3"
-description = "pytest plugin for adding to the PYTHONPATH from command line or configs."
 category = "dev"
+description = "pytest plugin for adding to the PYTHONPATH from command line or configs."
+name = "pytest-pythonpath"
 optional = false
 python-versions = "*"
+version = "0.7.3"
 
 [package.dependencies]
 pytest = ">=2.5.2"
 
 [[package]]
-name = "pytest-spec"
-version = "3.2.0"
-description = "Library pytest-spec is a pytest plugin to display test execution output like a SPECIFICATION."
 category = "dev"
+description = "Library pytest-spec is a pytest plugin to display test execution output like a SPECIFICATION."
+name = "pytest-spec"
 optional = false
 python-versions = "*"
+version = "3.2.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-name = "python-dateutil"
-version = "2.8.1"
-description = "Extensions to the standard Python datetime module"
 category = "main"
+description = "Extensions to the standard Python datetime module"
+name = "python-dateutil"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+version = "2.8.1"
 
 [package.dependencies]
 six = ">=1.5"
 
 [[package]]
-name = "pytz"
-version = "2021.1"
-description = "World timezone definitions, modern and historical"
 category = "main"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
 optional = false
 python-versions = "*"
+version = "2021.1"
 
 [[package]]
-name = "requests"
-version = "2.25.1"
-description = "Python HTTP for Humans."
 category = "main"
+description = "Python HTTP for Humans."
+name = "requests"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.25.1"
 
 [package.dependencies]
 certifi = ">=2017.4.17"
@@ -892,37 +903,37 @@ urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
 security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
-socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
 
 [[package]]
-name = "rx"
-version = "1.6.1"
+category = "main"
 description = "Reactive Extensions (Rx) for Python"
-category = "main"
+name = "rx"
 optional = false
 python-versions = "*"
+version = "1.6.1"
 
 [[package]]
-name = "s3transfer"
-version = "0.4.2"
-description = "An Amazon S3 Transfer Manager"
 category = "main"
+description = "An Amazon S3 Transfer Manager"
+name = "s3transfer"
 optional = false
 python-versions = "*"
+version = "0.4.2"
 
 [package.dependencies]
 botocore = ">=1.12.36,<2.0a.0"
 
 [package.extras]
-crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
+crt = ["botocore (>=1.20.29,<2.0a.0)"]
 
 [[package]]
-name = "sentry-sdk"
-version = "1.1.0"
-description = "Python client for Sentry (https://sentry.io)"
 category = "main"
+description = "Python client for Sentry (https://sentry.io)"
+name = "sentry-sdk"
 optional = false
 python-versions = "*"
+version = "1.1.0"
 
 [package.dependencies]
 certifi = "*"
@@ -945,12 +956,12 @@ sqlalchemy = ["sqlalchemy (>=1.2)"]
 tornado = ["tornado (>=5)"]
 
 [[package]]
-name = "singledispatch"
-version = "3.6.1"
-description = "Backport functools.singledispatch from Python 3.4 to Python 2.6-3.3."
 category = "main"
+description = "Backport functools.singledispatch from Python 3.4 to Python 2.6-3.3."
+name = "singledispatch"
 optional = false
 python-versions = ">=2.6"
+version = "3.6.1"
 
 [package.dependencies]
 six = "*"
@@ -960,41 +971,50 @@ docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "pytest-black (>=0.3.7)", "unittest2"]
 
 [[package]]
-name = "six"
-version = "1.15.0"
-description = "Python 2 and 3 compatibility utilities"
 category = "main"
+description = "Python 2 and 3 compatibility utilities"
+name = "six"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "1.16.0"
 
 [[package]]
-name = "soupsieve"
-version = "2.2.1"
-description = "A modern CSS selector implementation for Beautiful Soup."
 category = "main"
+description = "A modern CSS selector implementation for Beautiful Soup."
+marker = "python_version >= \"3.0\""
+name = "soupsieve"
 optional = false
 python-versions = ">=3.6"
+version = "2.2.1"
 
 [[package]]
-name = "sqlparse"
-version = "0.4.1"
-description = "A non-validating SQL parser."
 category = "main"
+description = "A non-validating SQL parser."
+name = "sqlparse"
 optional = false
 python-versions = ">=3.5"
+version = "0.4.1"
 
 [[package]]
-name = "tablib"
-version = "3.0.0"
-description = "Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
 category = "main"
+description = "Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
+name = "tablib"
 optional = false
 python-versions = ">=3.6"
+version = "3.0.0"
 
 [package.dependencies]
-openpyxl = {version = ">=2.6.0", optional = true, markers = "extra == \"xlsx\""}
-xlrd = {version = "*", optional = true, markers = "extra == \"xls\""}
-xlwt = {version = "*", optional = true, markers = "extra == \"xls\""}
+[package.dependencies.openpyxl]
+optional = true
+version = ">=2.6.0"
+
+[package.dependencies.xlrd]
+optional = true
+version = "*"
+
+[package.dependencies.xlwt]
+optional = true
+version = "*"
 
 [package.extras]
 all = ["markuppy", "odfpy", "openpyxl (>=2.6.0)", "pandas", "pyyaml", "tabulate", "xlrd", "xlwt"]
@@ -1007,39 +1027,39 @@ xlsx = ["openpyxl (>=2.6.0)"]
 yaml = ["pyyaml"]
 
 [[package]]
-name = "telepath"
-version = "0.1.1"
-description = "A library for exchanging data between Python and JavaScript"
 category = "main"
+description = "A library for exchanging data between Python and JavaScript"
+name = "telepath"
 optional = false
 python-versions = ">=3.5"
+version = "0.1.1"
 
 [package.extras]
 docs = ["mkdocs (>=1.1,<1.2)", "mkdocs-material (>=6.2,<6.3)"]
 
 [[package]]
-name = "text-unidecode"
-version = "1.3"
-description = "The most basic Text::Unidecode port"
 category = "main"
+description = "The most basic Text::Unidecode port"
+name = "text-unidecode"
 optional = false
 python-versions = "*"
+version = "1.3"
 
 [[package]]
-name = "toml"
-version = "0.10.2"
-description = "Python Library for Tom's Obvious, Minimal Language"
 category = "dev"
+description = "Python Library for Tom's Obvious, Minimal Language"
+name = "toml"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "0.10.2"
 
 [[package]]
-name = "traitlets"
-version = "5.0.5"
-description = "Traitlets Python configuration system"
 category = "dev"
+description = "Traitlets Python configuration system"
+name = "traitlets"
 optional = false
 python-versions = ">=3.7"
+version = "5.0.5"
 
 [package.dependencies]
 ipython-genutils = "*"
@@ -1048,45 +1068,47 @@ ipython-genutils = "*"
 test = ["pytest"]
 
 [[package]]
-name = "urllib3"
-version = "1.26.4"
-description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "main"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+name = "urllib3"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+version = "1.26.4"
 
 [package.extras]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 brotli = ["brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [[package]]
-name = "uvicorn"
-version = "0.13.4"
-description = "The lightning-fast ASGI server."
 category = "main"
+description = "The lightning-fast ASGI server."
+name = "uvicorn"
 optional = false
 python-versions = "*"
+version = "0.13.4"
 
 [package.dependencies]
 click = ">=7.0.0,<8.0.0"
 h11 = ">=0.8"
 
 [package.extras]
-standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6)", "python-dotenv (>=0.13)", "PyYAML (>=5.1)", "httptools (>=0.1.0,<0.2.0)", "uvloop (>=0.14.0,!=0.15.0,!=0.15.1)", "colorama (>=0.4)"]
+standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6)", "python-dotenv (>=0.13)", "PyYAML (>=5.1)", "httptools (>=0.1.0,<0.2.0)", "uvloop (>=0.14.0,<0.15.0 || >0.15.0,<0.15.1 || >0.15.1)", "colorama (>=0.4)"]
 
 [[package]]
-name = "wagtail"
-version = "2.13"
-description = "A Django content management system."
 category = "main"
+description = "A Django content management system."
+name = "wagtail"
 optional = false
 python-versions = ">=3.6"
+version = "2.13"
 
 [package.dependencies]
+Django = ">=2.2,<3.3"
+Pillow = ">=4.0.0,<9.0.0"
+Willow = ">=1.4,<1.5"
 anyascii = ">=0.1.5"
 beautifulsoup4 = ">=4.8,<4.10"
-Django = ">=2.2,<3.3"
 django-filter = ">=2.2,<3.0"
 django-modelcluster = ">=5.1,<6.0"
 django-taggit = ">=1.0,<2.0"
@@ -1095,48 +1117,49 @@ djangorestframework = ">=3.11.1,<4.0"
 draftjs-exporter = ">=2.1.5,<3.0"
 html5lib = ">=0.999,<2"
 l18n = ">=2018.5"
-Pillow = ">=4.0.0,<9.0.0"
 requests = ">=2.11.1,<3.0"
-tablib = {version = ">=0.14.0", extras = ["xls", "xlsx"]}
 telepath = ">=0.1.1,<1"
-Willow = ">=1.4,<1.5"
 xlsxwriter = ">=1.2.8,<2.0"
 
+[package.dependencies.tablib]
+extras = ["xlsx", "xls"]
+version = ">=0.14.0"
+
 [package.extras]
-docs = ["pyenchant (>=3.1.1,<4)", "sphinxcontrib-spelling (>=5.4.0,<6)", "Sphinx (>=1.5.2)", "sphinx-autobuild (>=0.6.0)", "sphinx-wagtail-theme (==5.0.3)", "recommonmark (>=0.7.1)"]
-testing = ["python-dateutil (>=2.2)", "pytz (>=2014.7)", "elasticsearch (>=5.0,<6.0)", "Jinja2 (>=2.11,<3.0)", "boto3 (>=1.16,<1.17)", "freezegun (>=0.3.8)", "openpyxl (>=2.6.4)", "Unidecode (>=0.04.14,<2.0)", "coverage (>=3.7.0)", "flake8 (>=3.6.0)", "isort (==5.6.4)", "flake8-blind-except (==0.1.1)", "flake8-print (==2.0.2)", "doc8 (==0.8.1)", "jinjalint (>=0.5)", "docutils (==0.15)", "django-taggit (>=1.3.0,<2.0)"]
+docs = ["pyenchant (>=3.1.1,<4)", "sphinxcontrib-spelling (>=5.4.0,<6)", "Sphinx (>=1.5.2)", "sphinx-autobuild (>=0.6.0)", "sphinx-wagtail-theme (5.0.3)", "recommonmark (>=0.7.1)"]
+testing = ["python-dateutil (>=2.2)", "pytz (>=2014.7)", "elasticsearch (>=5.0,<6.0)", "Jinja2 (>=2.11,<3.0)", "boto3 (>=1.16,<1.17)", "freezegun (>=0.3.8)", "openpyxl (>=2.6.4)", "Unidecode (>=0.04.14,<2.0)", "coverage (>=3.7.0)", "flake8 (>=3.6.0)", "isort (5.6.4)", "flake8-blind-except (0.1.1)", "flake8-print (2.0.2)", "doc8 (0.8.1)", "jinjalint (>=0.5)", "docutils (0.15)", "django-taggit (>=1.3.0,<2.0)"]
 
 [[package]]
-name = "wcwidth"
-version = "0.2.5"
-description = "Measures the displayed width of unicode strings in a terminal"
 category = "dev"
+description = "Measures the displayed width of unicode strings in a terminal"
+name = "wcwidth"
 optional = false
 python-versions = "*"
+version = "0.2.5"
 
 [[package]]
-name = "webencodings"
-version = "0.5.1"
+category = "main"
 description = "Character encoding aliases for legacy web content"
-category = "main"
+name = "webencodings"
 optional = false
 python-versions = "*"
+version = "0.5.1"
 
 [[package]]
-name = "willow"
-version = "1.4"
+category = "main"
 description = "A Python image library that sits on top of Pillow, Wand and OpenCV"
-category = "main"
+name = "willow"
 optional = false
 python-versions = "*"
+version = "1.4"
 
 [[package]]
-name = "xlrd"
-version = "2.0.1"
-description = "Library for developers to extract data from Microsoft Excel (tm) .xls spreadsheet files"
 category = "main"
+description = "Library for developers to extract data from Microsoft Excel (tm) .xls spreadsheet files"
+name = "xlrd"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+version = "2.0.1"
 
 [package.extras]
 build = ["wheel", "twine"]
@@ -1144,25 +1167,24 @@ docs = ["sphinx"]
 test = ["pytest", "pytest-cov"]
 
 [[package]]
-name = "xlsxwriter"
-version = "1.4.0"
-description = "A Python module for creating Excel XLSX files."
 category = "main"
+description = "A Python module for creating Excel XLSX files."
+name = "xlsxwriter"
 optional = false
 python-versions = "*"
+version = "1.4.3"
 
 [[package]]
-name = "xlwt"
-version = "1.3.0"
-description = "Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform, with Python 2.6, 2.7, 3.3+"
 category = "main"
+description = "Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform, with Python 2.6, 2.7, 3.3+"
+name = "xlwt"
 optional = false
 python-versions = "*"
+version = "1.3.0"
 
 [metadata]
-lock-version = "1.1"
-python-versions = "^3.9"
 content-hash = "267b3fb4da94f6692c59b747812b81dd6e15ae0c5d25799294dfe06db1f7b512"
+python-versions = "^3.9"
 
 [metadata.files]
 aniso8601 = [
@@ -1186,8 +1208,8 @@ atomicwrites = [
     {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
 ]
 attrs = [
-    {file = "attrs-20.3.0-py2.py3-none-any.whl", hash = "sha256:31b2eced602aa8423c2aea9c76a724617ed67cf9513173fd3a4f03e3a929c7e6"},
-    {file = "attrs-20.3.0.tar.gz", hash = "sha256:832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"},
+    {file = "attrs-21.2.0-py2.py3-none-any.whl", hash = "sha256:149e90d6d8ac20db7a955ad60cf0e6881a3f20d37096140088356da6c716b0b1"},
+    {file = "attrs-21.2.0.tar.gz", hash = "sha256:ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"},
 ]
 babel = [
     {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
@@ -1198,17 +1220,17 @@ backcall = [
     {file = "backcall-0.2.0.tar.gz", hash = "sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"},
 ]
 beautifulsoup4 = [
-    {file = "beautifulsoup4-4.8.2-py2-none-any.whl", hash = "sha256:e1505eeed31b0f4ce2dbb3bc8eb256c04cc2b3b72af7d551a4ab6efd5cbe5dae"},
-    {file = "beautifulsoup4-4.8.2-py3-none-any.whl", hash = "sha256:9fbb4d6e48ecd30bcacc5b63b94088192dcda178513b2ae3c394229f8911b887"},
-    {file = "beautifulsoup4-4.8.2.tar.gz", hash = "sha256:05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a"},
+    {file = "beautifulsoup4-4.9.3-py2-none-any.whl", hash = "sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35"},
+    {file = "beautifulsoup4-4.9.3-py3-none-any.whl", hash = "sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666"},
+    {file = "beautifulsoup4-4.9.3.tar.gz", hash = "sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"},
 ]
 boto3 = [
-    {file = "boto3-1.17.72-py2.py3-none-any.whl", hash = "sha256:ee3317fd79b443ef102469fac393a1ffb650ea51ac4fc27464013872c5e1ce31"},
-    {file = "boto3-1.17.72.tar.gz", hash = "sha256:3317722a1e9acbfc0d30cdf273d1708c823ceb19309e9cd91cac8a3604762341"},
+    {file = "boto3-1.17.73-py2.py3-none-any.whl", hash = "sha256:ce08b88a2d7a0ad8edb385f84ea4914296fee6813c66ebf0def956d5278de793"},
+    {file = "boto3-1.17.73.tar.gz", hash = "sha256:13cfe0e3ae1bdc7baf4272b1814a7e760fbb508b19d6ac3f472a6bbd64baad61"},
 ]
 botocore = [
-    {file = "botocore-1.20.72-py2.py3-none-any.whl", hash = "sha256:2aaf439e3683e4ac7e0a4f5fc3cd6779418456f3bd6f40b3e474cb151bbceab9"},
-    {file = "botocore-1.20.72.tar.gz", hash = "sha256:0fa93a2e2daad5791c63ee526ada66896cc483d04cb2d32bfcadfeb881203453"},
+    {file = "botocore-1.20.73-py2.py3-none-any.whl", hash = "sha256:4b4aa58c61d4b125bc6ec1597924b2749e19de8f2c9a374ac087aa2561e71828"},
+    {file = "botocore-1.20.73.tar.gz", hash = "sha256:69dc0b6fdc0855f5a4f8b1d29c96b9cec44e71054fea0f968e5904d6ccfd4fd9"},
 ]
 certifi = [
     {file = "certifi-2020.12.5-py2.py3-none-any.whl", hash = "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"},
@@ -1281,12 +1303,12 @@ coverage = [
     {file = "coverage-5.5.tar.gz", hash = "sha256:ebe78fe9a0e874362175b02371bdfbee64d8edc42a044253ddf4ee7d3c15212c"},
 ]
 decorator = [
-    {file = "decorator-5.0.7-py3-none-any.whl", hash = "sha256:945d84890bb20cc4a2f4a31fc4311c0c473af65ea318617f13a7257c9a58bc98"},
-    {file = "decorator-5.0.7.tar.gz", hash = "sha256:6f201a6c4dac3d187352661f508b9364ec8091217442c9478f1f83c003a0f060"},
+    {file = "decorator-5.0.8-py3-none-any.whl", hash = "sha256:77a3141f7f5837b5de43569c35508ca4570022ba501db8c8a2a8b292bd35772a"},
+    {file = "decorator-5.0.8.tar.gz", hash = "sha256:bff00cfb18698f9a19fa6400451fd7ea894f3845cedd7b8b7b0ce9c53171fefb"},
 ]
 django = [
-    {file = "Django-3.1.11-py3-none-any.whl", hash = "sha256:c79245c488411d1ae300b8f7a08ac18a496380204cf3035aff97ad917a8de999"},
-    {file = "Django-3.1.11.tar.gz", hash = "sha256:9a0a2f3d34c53032578b54db7ec55929b87dda6fec27a06cc2587afbea1965e5"},
+    {file = "Django-3.2.3-py3-none-any.whl", hash = "sha256:7e0a1393d18c16b503663752a8b6790880c5084412618990ce8a81cc908b4962"},
+    {file = "Django-3.2.3.tar.gz", hash = "sha256:13ac78dbfd189532cad8f383a27e58e18b3d33f80009ceb476d7fcbfc5dcebd8"},
 ]
 django-anymail = [
     {file = "django-anymail-8.2.tar.gz", hash = "sha256:6381e04c41b2644e2d3ba2f95ee61ee3ee40cb6184506c52a363b9ddef0b098e"},
@@ -1332,11 +1354,11 @@ djangorestframework = [
     {file = "djangorestframework-3.12.4.tar.gz", hash = "sha256:f747949a8ddac876e879190df194b925c177cdeb725a099db1460872f7c0a7f2"},
 ]
 draftjs-exporter = [
-    {file = "draftjs_exporter-2.1.7-py3-none-any.whl", hash = "sha256:d415a9964690a2cddb66a31ef32dd46c277e9b80434b94e39e3043188ed83e33"},
     {file = "draftjs_exporter-2.1.7.tar.gz", hash = "sha256:5839cbc29d7bce2fb99837a404ca40c3a07313f2a20e2700de7ad6aa9a9a18fb"},
 ]
 et-xmlfile = [
-    {file = "et_xmlfile-1.0.1.tar.gz", hash = "sha256:614d9722d572f6246302c4491846d2c393c199cfa4edc9af593437691683335b"},
+    {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
+    {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
 ]
 facebook-sdk = [
     {file = "facebook-sdk-3.1.0.tar.gz", hash = "sha256:cabcd2e69ea3d9f042919c99b353df7aa1e2be86d040121f6e9f5e63c1cf0f8d"},
@@ -1504,8 +1526,6 @@ psycopg2 = [
     {file = "psycopg2-2.8.6-cp37-cp37m-win_amd64.whl", hash = "sha256:56fee7f818d032f802b8eed81ef0c1232b8b42390df189cab9cfa87573fe52c5"},
     {file = "psycopg2-2.8.6-cp38-cp38-win32.whl", hash = "sha256:ad2fe8a37be669082e61fb001c185ffb58867fdbb3e7a6b0b0d2ffe232353a3e"},
     {file = "psycopg2-2.8.6-cp38-cp38-win_amd64.whl", hash = "sha256:56007a226b8e95aa980ada7abdea6b40b75ce62a433bd27cec7a8178d57f4051"},
-    {file = "psycopg2-2.8.6-cp39-cp39-win32.whl", hash = "sha256:2c93d4d16933fea5bbacbe1aaf8fa8c1348740b2e50b3735d1b0bf8154cbf0f3"},
-    {file = "psycopg2-2.8.6-cp39-cp39-win_amd64.whl", hash = "sha256:d5062ae50b222da28253059880a871dc87e099c25cb68acf613d9d227413d6f7"},
     {file = "psycopg2-2.8.6.tar.gz", hash = "sha256:fb23f6c71107c37fd667cb4ea363ddeb936b348bbd6449278eb92c189699f543"},
 ]
 ptyprocess = [
@@ -1525,8 +1545,8 @@ pyflakes = [
     {file = "pyflakes-2.3.1.tar.gz", hash = "sha256:f5bc8ecabc05bb9d291eb5203d6810b49040f6ff446a756326104746cc00c1db"},
 ]
 pygments = [
-    {file = "Pygments-2.8.1-py3-none-any.whl", hash = "sha256:534ef71d539ae97d4c3a4cf7d6f110f214b0e687e92f9cb9d2a3b0d3101289c8"},
-    {file = "Pygments-2.8.1.tar.gz", hash = "sha256:2656e1a6edcdabf4275f9a3640db59fd5de107d88e8663c5d4e9a0fa62f77f94"},
+    {file = "Pygments-2.9.0-py3-none-any.whl", hash = "sha256:d66e804411278594d764fc69ec36ec13d9ae9147193a1740cd34d272ca383b8e"},
+    {file = "Pygments-2.9.0.tar.gz", hash = "sha256:a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
@@ -1537,8 +1557,8 @@ pytest = [
     {file = "pytest-6.2.4.tar.gz", hash = "sha256:50bcad0a0b9c5a72c8e4e7c9855a3ad496ca6a881a3641b4260605450772c54b"},
 ]
 pytest-cov = [
-    {file = "pytest-cov-2.11.1.tar.gz", hash = "sha256:359952d9d39b9f822d9d29324483e7ba04a3a17dd7d05aa6beb7ea01e359e5f7"},
-    {file = "pytest_cov-2.11.1-py2.py3-none-any.whl", hash = "sha256:bdb9fdb0b85a7cc825269a4c56b48ccaa5c7e365054b6038772c32ddcdc969da"},
+    {file = "pytest-cov-2.12.0.tar.gz", hash = "sha256:8535764137fecce504a49c2b742288e3d34bc09eed298ad65963616cc98fd45e"},
+    {file = "pytest_cov-2.12.0-py2.py3-none-any.whl", hash = "sha256:95d4933dcbbacfa377bb60b29801daa30d90c33981ab2a79e9ab4452c165066e"},
 ]
 pytest-django = [
     {file = "pytest-django-4.2.0.tar.gz", hash = "sha256:80f8875226ec4dc0b205f0578072034563879d98d9b1bec143a80b9045716cb0"},
@@ -1580,8 +1600,8 @@ singledispatch = [
     {file = "singledispatch-3.6.1.tar.gz", hash = "sha256:58b46ce1cc4d43af0aac3ac9a047bdb0f44e05f0b2fa2eec755863331700c865"},
 ]
 six = [
-    {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
-    {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 soupsieve = [
     {file = "soupsieve-2.2.1-py3-none-any.whl", hash = "sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b"},
@@ -1639,8 +1659,8 @@ xlrd = [
     {file = "xlrd-2.0.1.tar.gz", hash = "sha256:f72f148f54442c6b056bf931dbc34f986fd0c3b0b6b5a58d013c9aef274d0c88"},
 ]
 xlsxwriter = [
-    {file = "XlsxWriter-1.4.0-py2.py3-none-any.whl", hash = "sha256:1a6dd98892e8010d3e089d1cb61385baa8f76fa547598df2c221cc37238c72d3"},
-    {file = "XlsxWriter-1.4.0.tar.gz", hash = "sha256:82be5a58c09bdc2ff8afc25acc815c465275239ddfc56d6e7b2a7e6c5d2e213b"},
+    {file = "XlsxWriter-1.4.3-py2.py3-none-any.whl", hash = "sha256:1a7fac99687020e76aa7dd0d7de4b9b576547ed748e5cd91a99d52a6df54ca16"},
+    {file = "XlsxWriter-1.4.3.tar.gz", hash = "sha256:641db6e7b4f4982fd407a3f372f45b878766098250d26963e95e50121168cbe2"},
 ]
 xlwt = [
     {file = "xlwt-1.3.0-py2.py3-none-any.whl", hash = "sha256:a082260524678ba48a297d922cc385f58278b8aa68741596a87de01a9c628b2e"},
