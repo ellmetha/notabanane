@@ -231,7 +231,7 @@ Django = ">=2.2"
 
 [[package]]
 name = "django-js-routes"
-version = "0.1.3"
+version = "0.1.4"
 description = "Expose and perform reverse lookups of Django URLs in the frontend world."
 category = "main"
 optional = false
@@ -1308,8 +1308,8 @@ django-filter = [
     {file = "django_filter-2.4.0-py3-none-any.whl", hash = "sha256:e00d32cebdb3d54273c48f4f878f898dced8d5dfaad009438fe61ebdf535ace1"},
 ]
 django-js-routes = [
-    {file = "django-js-routes-0.1.3.tar.gz", hash = "sha256:c919ea8dc2503e9a1e237f8eddee9eb3e90d5e70d4eb67d80456de15c1638baf"},
-    {file = "django_js_routes-0.1.3-py3-none-any.whl", hash = "sha256:5fd6f76fe2902e4f37f3627037a33b330dade497a5a32d01e052b4387f163831"},
+    {file = "django-js-routes-0.1.4.tar.gz", hash = "sha256:eaa9e384ea7807d3749e808d0e7b7f6c203103f1b17b6abc6ff283ea5b19fafa"},
+    {file = "django_js_routes-0.1.4-py3-none-any.whl", hash = "sha256:d0bc09f2aa9eec9fe4ae90819a06d2fb35b9a81c7c0fc843f5942e8ca7fa2904"},
 ]
 django-modelcluster = [
     {file = "django-modelcluster-5.1.tar.gz", hash = "sha256:783d177f7bf5c8f30fe365c347b9a032920de371fe1c63d955d7b283684d4c08"},
