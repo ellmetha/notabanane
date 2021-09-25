@@ -1,16 +1,19 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint comma-dangle: 0 */
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
 import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 
 import { MockedProvider } from '@apollo/react-testing';
 
 import Search, { RECIPES } from 'controllers/RecipeSearchController/components/Search';
-
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -42,14 +45,14 @@ const mocks = [
 
 const waitForComponentToPaint = async (wrapper) => {
   await act(async () => {
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
     wrapper.update();
   });
 };
 
 describe('<Search />', () => {
   beforeEach(() => {
-    global.gettext = msgid => msgid;
+    global.gettext = (msgid) => msgid;
   });
 
   test('can be properly rendered', () => {

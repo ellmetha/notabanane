@@ -32,5 +32,4 @@ class DOMRouter {
   }
 }
 
-
 export default DOMRouter;

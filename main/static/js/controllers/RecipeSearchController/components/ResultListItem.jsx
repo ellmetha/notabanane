@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const ResultListItem = ({ recipe }) => (
   <div className="column is-half">
     <a href={recipe.url} className="post-box" target="_blank" rel="noopener noreferrer">

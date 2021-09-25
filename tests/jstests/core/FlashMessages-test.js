@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint import/extensions: [0, {}] */
 /* eslint import/first: 0 */
 /* eslint import/no-unresolved: [0, {}] */
@@ -6,7 +10,6 @@ jest.mock('noty');
 import Noty from 'noty';
 
 import FlashMessages from 'core/FlashMessages';
-
 
 describe('FlashMessages', () => {
   test('init() generates notification for each message', () => {

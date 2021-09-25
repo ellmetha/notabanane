@@ -1,10 +1,11 @@
-import '@babel/polyfill';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import gulp from 'gulp';
 import env from 'gulp-env';
 import mjml from 'gulp-mjml';
 import gutil from 'gulp-util';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
@@ -71,20 +72,25 @@ const webpackConfig = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader'], fallback: 'style-loader', publicPath: '../',
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       { test: /\.txt$/, use: 'raw-loader' },
-      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/, use: 'url-loader?limit=10000' },
-      { test: /\.(eot|ttf|wav|mp3|otf)([\?]?.*)$/, use: 'file-loader' },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/,
+        type: 'asset/resource'
+      },
+      { test: /\.(eot|ttf|wav|mp3|otf)([\?]?.*)$/, type: 'asset/resource' },
     ],
   },
   optimization: {
     minimize: PROD_ENV,
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'css/[name].css', disable: false }),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
     ...(PROD_ENV ? [
       new webpack.LoaderOptionsPlugin({
         minimize: true,
@@ -190,8 +196,8 @@ gulp.task('webpack-dev-server', gulp.series(() => {
       },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.txt$/, use: 'raw-loader' },
-      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/, use: 'url-loader?limit=10000' },
-      { test: /\.(eot|ttf|wav|mp3|otf)([\?]?.*)$/, use: 'file-loader' },
+      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)([\?]?.*)$/, type: 'asset/inline' },
+      { test: /\.(eot|ttf|wav|mp3|otf)([\?]?.*)$/, type: 'asset/resource' },
     ],
   };
   devWebpackConfig.output = {
@@ -206,11 +212,12 @@ gulp.task('webpack-dev-server', gulp.series(() => {
 
   // Start a webpack-dev-server
   new WebpackDevServer(webpack(devWebpackConfig), {
-    contentBase: path.resolve(__dirname, staticDir, '..'),
-    publicPath: '/static/',
+    static: {
+      directory: path.resolve(__dirname, staticDir, '..'),
+      publicPath: '/static/',
+    },
     headers: { 'Access-Control-Allow-Origin': '*' },
     hot: true,
-    inline: true,
   }).listen(WEBPACK_DEV_SERVER_PORT, 'localhost', (err) => {
     if (err) throw new gutil.PluginError('webpack-dev-server', err);
     gutil.log(

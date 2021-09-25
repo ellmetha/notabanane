@@ -7,7 +7,6 @@ import graphqlClient from '../../core/graphqlClient';
 
 import Search from './components/Search';
 
-
 const SearchApp = () => (
   <ApolloProvider client={graphqlClient}>
     <Search />

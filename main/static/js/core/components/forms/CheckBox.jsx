@@ -3,7 +3,6 @@
 
 import React from 'react';
 
-
 const Label = ({ error, children, ...props }) => (
   <label {...props}>{children}</label>
 );

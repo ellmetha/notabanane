@@ -14,7 +14,6 @@ import CheckBox from '../../../core/components/forms/CheckBox';
 import history from '../../../core/history';
 import getInitialFilters from '../utilities/getInitialFilters';
 
-
 const FilterForm = ({ onSubmitFilters }) => {
   const initialValues = getInitialFilters();
 
@@ -64,9 +63,9 @@ const FilterForm = ({ onSubmitFilters }) => {
             <h4 className="is-size-4">{dishTypesFilterLabel}</h4>
             <FieldArray
               name="dishTypes"
-              render={arrayHelpers => (
+              render={(arrayHelpers) => (
                 <div>
-                  {filterableDishTypes.map(d => (
+                  {filterableDishTypes.map((d) => (
                     <div
                       key={`dish-type-${d[0]}`}
                       className="form-check form-check-inline"
@@ -84,7 +83,7 @@ const FilterForm = ({ onSubmitFilters }) => {
                           } else {
                             setFieldValue(
                               'dishTypes',
-                              values.dishTypes.filter(el => el !== d[0]),
+                              values.dishTypes.filter((el) => el !== d[0]),
                             );
                           }
                           submitForm();
@@ -98,9 +97,9 @@ const FilterForm = ({ onSubmitFilters }) => {
             <h4 className="is-size-4">{seasonsFilterLabel}</h4>
             <FieldArray
               name="seasons"
-              render={arrayHelpers => (
+              render={(arrayHelpers) => (
                 <div>
-                  {filterableSeasons.map(s => (
+                  {filterableSeasons.map((s) => (
                     <div
                       key={`season-${s[0]}`}
                       className="form-check form-check-inline"
@@ -118,7 +117,7 @@ const FilterForm = ({ onSubmitFilters }) => {
                           } else {
                             setFieldValue(
                               'seasons',
-                              values.seasons.filter(el => el !== s[0]),
+                              values.seasons.filter((el) => el !== s[0]),
                             );
                           }
                           submitForm();
@@ -132,9 +131,9 @@ const FilterForm = ({ onSubmitFilters }) => {
             <h4 className="is-size-4">{dietsFilterLabel}</h4>
             <FieldArray
               name="diets"
-              render={arrayHelpers => (
+              render={(arrayHelpers) => (
                 <div>
-                  {filterableDiets.map(s => (
+                  {filterableDiets.map((s) => (
                     <div
                       key={`diet-${s[0]}`}
                       className="form-check form-check-inline"
@@ -152,7 +151,7 @@ const FilterForm = ({ onSubmitFilters }) => {
                           } else {
                             setFieldValue(
                               'diets',
-                              values.diets.filter(el => el !== s[0]),
+                              values.diets.filter((el) => el !== s[0]),
                             );
                           }
                           submitForm();

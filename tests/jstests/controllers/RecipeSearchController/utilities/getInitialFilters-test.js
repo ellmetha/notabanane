@@ -7,7 +7,6 @@ import queryString from 'query-string';
 import getInitialFilters from 'controllers/RecipeSearchController/utilities/getInitialFilters';
 import history from 'core/history';
 
-
 describe('getInitialFilters()', () => {
   test('extracts dish types values from the history', () => {
     history.push({

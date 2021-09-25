@@ -13,7 +13,6 @@ import FilterForm from './FilterForm';
 import Pagination from './Pagination';
 import ResultListItem from './ResultListItem';
 
-
 export const RECIPES = gql`
   query Recipes(
     $first: Int,
@@ -65,7 +64,7 @@ const Search = () => {
     RECIPES,
     { variables: { first: RESULTS_PER_PAGE, ...initialFilters }, fetchPolicy: 'network-only' },
   );
-  const recipes = data ? data.recipes.edges.map(edge => edge.node) : [];
+  const recipes = data ? data.recipes.edges.map((edge) => edge.node) : [];
   const totalCount = data ? data.recipes.totalCount : null;
   const pageInfo = data ? data.recipes.pageInfo : null;
 
@@ -186,7 +185,7 @@ const Search = () => {
             )}
             {recipes.length > 0 && (
               <div className="columns is-multiline post-list">
-                {recipes.map(recipe => (
+                {recipes.map((recipe) => (
                   <ResultListItem
                     key={recipe.id}
                     recipe={recipe}

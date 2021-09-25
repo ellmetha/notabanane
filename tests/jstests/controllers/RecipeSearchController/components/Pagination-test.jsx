@@ -1,26 +1,28 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint comma-dangle: 0 */
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
 import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
 
 import Pagination from 'controllers/RecipeSearchController/components/Pagination';
 
-
 Enzyme.configure({ adapter: new Adapter() });
-
 
 describe('<Pagination />', () => {
   beforeEach(() => {
-    global.gettext = msgid => msgid;
+    global.gettext = (msgid) => msgid;
     global.ngettext = (singular, plural, count) => (
       (count === 1) ? singular : plural
     );
     global.interpolate = (fmt, obj, named) => {
       if (named) {
-        return fmt.replace(/%\(\w+\)s/g, match => String(obj[match.slice(2, -2)]));
+        return fmt.replace(/%\(\w+\)s/g, (match) => String(obj[match.slice(2, -2)]));
       }
       return fmt.replace(/%s/g, () => String(obj.shift()));
     };

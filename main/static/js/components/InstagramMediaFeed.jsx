@@ -3,7 +3,6 @@ import React from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 
-
 export const INSTAGRAM_MEDIA_FEED = gql`
   {
     recentInstagramMedias {
@@ -20,7 +19,7 @@ const InstagramMediaFeed = () => {
   return (
     <div id="instagram_media_feed">
       <div className="columns is-vcentered is-multiline is-variable is-3 is-mobile">
-        {medias.map(media => (
+        {medias.map((media) => (
           <a
             href={media.url}
             key={media.url}

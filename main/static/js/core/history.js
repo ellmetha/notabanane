@@ -1,4 +1,4 @@
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
-
-export default createBrowserHistory();
+const isTest = process.env.NODE_ENV === 'test';
+export default isTest ? createMemoryHistory() : createBrowserHistory();

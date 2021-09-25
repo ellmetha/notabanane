@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 
 import getCSRFToken from 'core/getCSRFToken';
 
-
 describe('getCSRFToken', () => {
   test('returns the CSRF token from the corresponding cookie', () => {
     const spy = jest.spyOn(Cookies, 'get');

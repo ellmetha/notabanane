@@ -2,7 +2,6 @@
 
 import Noty from 'noty';
 
-
 /**
  * Basic object allowing to initialize the appropriate behaviour allowing to get flash messages
  * displayed in a nice way to the final users.

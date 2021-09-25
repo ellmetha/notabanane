@@ -2,7 +2,6 @@ import queryString from 'query-string';
 
 import history from '../../../core/history';
 
-
 export default function getInitialFilters() {
   const initialParameters = queryString.parse(history.location.search);
   return {

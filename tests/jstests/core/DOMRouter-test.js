@@ -1,8 +1,11 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
 import DOMRouter from 'core/DOMRouter';
-
 
 describe('DOMRouter', () => {
   test('can run a specific action of a specific controller', () => {

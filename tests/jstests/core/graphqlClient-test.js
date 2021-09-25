@@ -5,7 +5,6 @@ import { ApolloClient } from 'apollo-boost';
 
 import graphqlClient from 'core/graphqlClient';
 
-
 describe('graphqlClient', () => {
   test('is an Apollo client', () => {
     expect(graphqlClient).toBeInstanceOf(ApolloClient);

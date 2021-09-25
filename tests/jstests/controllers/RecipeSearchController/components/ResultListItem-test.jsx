@@ -1,16 +1,18 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint comma-dangle: 0 */
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
 import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
 
 import ResultListItem from 'controllers/RecipeSearchController/components/ResultListItem';
 
-
 Enzyme.configure({ adapter: new Adapter() });
-
 
 describe('<ResultListItem />', () => {
   test('can be properly rendered', () => {

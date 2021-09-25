@@ -1,9 +1,12 @@
+/**
+ * @jest-environment jsdom
+ */
+
 /* eslint comma-dangle: 0 */
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
 import smoothScrollTo from 'core/smoothScrollTo';
-
 
 describe('smoothScrollTo()', () => {
   test('scrolls to a specific element', async () => {
