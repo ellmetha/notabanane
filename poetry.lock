@@ -276,20 +276,20 @@ django = ">1.11,<4.0"
 
 [[package]]
 name = "django-storages"
-version = "1.9.1"
+version = "1.12.1"
 description = "Support for many storage backends in Django"
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.5"
 
 [package.dependencies]
-Django = ">=1.11"
+Django = ">=2.2"
 
 [package.extras]
-azure = ["azure-storage-blob (>=1.3.1,<12.0.0)"]
+azure = ["azure-storage-blob (>=12.0.0)"]
 boto3 = ["boto3 (>=1.4.4)"]
 dropbox = ["dropbox (>=7.2.1)"]
-google = ["google-cloud-storage (>=1.15.0)"]
+google = ["google-cloud-storage (>=1.27.0)"]
 libcloud = ["apache-libcloud"]
 sftp = ["paramiko"]
 
@@ -1177,7 +1177,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d0381dcd02ad01d298351f2215c4e935b50992690ae2d0e7c7eb79f1a3fae83e"
+content-hash = "f8abd11d0c0cb2e045c25b82d2dad7d9bc6a98c42bdb8b141f738e8ff25a2bee"
 
 [metadata.files]
 aniso8601 = [
@@ -1308,8 +1308,8 @@ django-recaptcha = [
     {file = "django_recaptcha-2.0.6-py2.py3-none-any.whl", hash = "sha256:567784963fd5400feaf92e8951d8dbbbdb4b4c48a76e225d4baa63a2c9d2cd8c"},
 ]
 django-storages = [
-    {file = "django-storages-1.9.1.tar.gz", hash = "sha256:a59e9923cbce7068792f75344ed7727021ee4ac20f227cf17297d0d03d141e91"},
-    {file = "django_storages-1.9.1-py2.py3-none-any.whl", hash = "sha256:3103991c2ee8cef8a2ff096709973ffe7106183d211a79f22cf855f33533d924"},
+    {file = "django-storages-1.12.1.tar.gz", hash = "sha256:cb079981e2e4fe16d7f41000913225140dc334a84f5b7c5e4fcc6b7e6a028222"},
+    {file = "django_storages-1.12.1-py3-none-any.whl", hash = "sha256:a88199d67e2fc032e92de02106315ed005ae22a2bf4df5269c0add4148fec739"},
 ]
 django-taggit = [
     {file = "django-taggit-1.5.1.tar.gz", hash = "sha256:e5bb62891f458d55332e36a32e19c08d20142c43f74bc5656c803f8af25c084a"},
