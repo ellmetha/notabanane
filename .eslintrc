@@ -5,7 +5,7 @@
     "browser": true,
     "es6": true,
     "jest/globals": true,
-    "node": true,
+    "node": true
   },
 
   "parser": "@babel/eslint-parser",
@@ -35,6 +35,7 @@
     "no-unused-vars": 1,
     "no-useless-escape": 0,
     "react/jsx-boolean-value": 0,
-    "react/jsx-props-no-spreading": 0
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0
   }
 }
