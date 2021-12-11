@@ -90,7 +90,7 @@ const webpackConfig = {
     minimize: PROD_ENV,
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].css' }),
+    new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
     ...(PROD_ENV ? [
       new webpack.LoaderOptionsPlugin({
         minimize: true,
