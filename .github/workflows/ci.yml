@@ -75,6 +75,6 @@ jobs:
         pip install -U pip poetry
         poetry install
     - name: Setup env json file
-      run: cp tests/.env.json.ci .env.json
+      run: cp tests/.env.ci .env
     - name: Run tests suite
       run: make tests_python

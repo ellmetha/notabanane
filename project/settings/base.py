@@ -13,6 +13,7 @@ import os
 import pathlib
 
 from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
 
 
 # BASE DIRECTORIES
@@ -33,23 +34,19 @@ INSTALL_PATH = pathlib.Path(os.environ.get('DJANGO_INSTALL_PATH')) \
 # ENVIRONMENT SETTINGS HANDLING
 # ------------------------------------------------------------------------------
 
-ENVSETTINGS_FILENAME = '.env.json'
+load_dotenv()
+
 ENVSETTINGS_NIL = object()
 
-# JSON-based environment module
-with open(os.environ.get('ENVSETTINGS_FILEPATH') or str(INSTALL_PATH / ENVSETTINGS_FILENAME)) as f:
-    secrets = json.loads(f.read())
 
-
-def get_envsetting(setting, default=ENVSETTINGS_NIL, secrets=secrets):
+def get_envsetting(setting, default=ENVSETTINGS_NIL):
     """ Get the environment setting variable or return explicit exception. """
     try:
-        return secrets[setting]
+        return os.environ[setting]
     except KeyError:
         if default is not ENVSETTINGS_NIL:
             return default
-        error_msg = f'Set the {setting} environment variable in the {ENVSETTINGS_FILENAME} file'
-        raise ImproperlyConfigured(error_msg)
+        raise ImproperlyConfigured(f"Set the {setting} environment variable")
 
 
 # APP CONFIGURATION
@@ -137,7 +134,6 @@ DATABASES = {
         'PASSWORD': get_envsetting('DB_PASSWORD'),
         'HOST': get_envsetting('DB_HOST'),
         'PORT': get_envsetting('DB_PORT', ''),
-        'OPTIONS': get_envsetting('DB_OPTIONS'),
     },
 }
 

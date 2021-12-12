@@ -6,9 +6,9 @@ DJANGO_SETTINGS_MODULE := $(PROJECT_CONFIGURATION_PACKAGE).settings.development
 init:
 	@printf "${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Environment settings${RESET}\n\n"
 
-	rsync --ignore-existing .env.json.example .env.json
-	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$(USER)\",/" .env.json
-	rm -f .env.json.bak
+	rsync --ignore-existing .env.example .env
+	sed -i .bak "s/.*__whoami__.*/  \"DB_USER\": \"$(USER)\",/" .env
+	rm -f .env.bak
 
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Python dependencies${RESET}\n\n"
 
