@@ -25,6 +25,12 @@ INSTALLED_APPS += (  # noqa: F405
 )
 
 
+# DATABASE CONFIGURATION
+# ------------------------------------------------------------------------------
+
+DATABASES['default']['DB_OPTIONS'] = {'sslmode': 'require'}  # noqa: F405
+
+
 # FILE STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
 
