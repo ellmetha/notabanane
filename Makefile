@@ -85,10 +85,10 @@ ws: webpack_server
 webpack_server:
 	npm run gulp -- webpack-dev-server
 
-## Generate or refresh poetry.lock and requirements.freeze
+## Generate or refresh poetry.lock and requirements.txt
 locked_requirements:
 	poetry update
-	poetry export -f requirements.txt > requirements.freeze
+	poetry export -f requirements.txt > requirements.txt
 
 
 # QUALITY ASSURANCE
