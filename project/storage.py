@@ -42,11 +42,11 @@ class CustomS3Boto3Storage(S3Boto3Storage):
 
 
 class MediaRootS3BotoStorage(CustomS3Boto3Storage):
-    location = 'm2'
+    location = 'm'
 
 
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
-    location = 's2'
+    location = 's3'
 
     def _open(self, name, mode='rb'):  # pragma: no cover
         name = self._normalize_name(self._clean_name(name))
