@@ -46,7 +46,7 @@ class MediaRootS3BotoStorage(CustomS3Boto3Storage):
 
 
 class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
-    location = 's3'
+    location = 's4'
 
     def _open(self, name, mode='rb'):  # pragma: no cover
         name = self._normalize_name(self._clean_name(name))
