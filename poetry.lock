@@ -217,7 +217,7 @@ postal = ["cryptography"]
 
 [[package]]
 name = "django-debug-toolbar"
-version = "3.2.2"
+version = "3.2.3"
 description = "A configurable set of panels that display various debug information about the current request/response."
 category = "dev"
 optional = false
@@ -1317,8 +1317,8 @@ django-anymail = [
     {file = "django_anymail-8.4-py3-none-any.whl", hash = "sha256:2e8307e84f0a12f9283469017094a8246db9a0fc608ac17dd1027ee011ece986"},
 ]
 django-debug-toolbar = [
-    {file = "django-debug-toolbar-3.2.2.tar.gz", hash = "sha256:8c5b13795d4040008ee69ba82dcdd259c49db346cf7d0de6e561a49d191f0860"},
-    {file = "django_debug_toolbar-3.2.2-py3-none-any.whl", hash = "sha256:d7bab7573fab35b0fd029163371b7182f5826c13da69734beb675c761d06a4d3"},
+    {file = "django-debug-toolbar-3.2.3.tar.gz", hash = "sha256:95880677ea846ba1077d02305fd5e2b25e1da096e1d4a735b665e3340fa2ae79"},
+    {file = "django_debug_toolbar-3.2.3-py3-none-any.whl", hash = "sha256:516702e1d71302bbc06059fa3c41efd1a3bd9cbb5580fc793343118d95b309e0"},
 ]
 django-filter = [
     {file = "django-filter-21.1.tar.gz", hash = "sha256:632a251fa8f1aadb4b8cceff932bb52fe2f826dd7dfe7f3eac40e5c463d6836e"},
