@@ -53,7 +53,10 @@ STATICFILES_DIRS = (
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-MIDDLEWARE += ('django.middleware.security.SecurityMiddleware', )  # noqa: F405
+MIDDLEWARE += (  # noqa: F405
+    'django.middleware.security.SecurityMiddleware',
+    'main.common.middleware.WwwRedirectMiddleware',
+)
 
 
 # CSRF CONFIGURATION
