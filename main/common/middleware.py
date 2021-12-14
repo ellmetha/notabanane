@@ -16,6 +16,8 @@ class WwwRedirectMiddleware:
     def __call__(self, request):
         host = request.get_host().partition(":")[0]
         if host.startswith('www.'):
-            return HttpResponsePermanentRedirect('{}://{}{}'.format(request.scheme, host[4:], request.path))
+            return HttpResponsePermanentRedirect(
+                '{}://{}{}'.format(request.scheme, host[4:], request.path)
+            )
         else:
             return self.get_response(request)
