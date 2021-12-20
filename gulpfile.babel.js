@@ -40,7 +40,7 @@ const webpackConfig = {
   output: {
     filename: 'js/[name].js',
     path: buildDir,
-    publicPath: PROD_ENV ? '/s4/' : '/static/',
+    publicPath: PROD_ENV ? '/s5/' : '/static/',
   },
   resolve: {
     modules: ['node_modules'],
