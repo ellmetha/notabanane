@@ -131,14 +131,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "boto3"
-version = "1.20.40"
+version = "1.20.45"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.6"
 
 [package.dependencies]
-botocore = ">=1.23.40,<1.24.0"
+botocore = ">=1.23.45,<1.24.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.5.0,<0.6.0"
 
@@ -147,7 +147,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.23.40"
+version = "1.23.45"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -1116,11 +1116,11 @@ tests = ["pytest", "typeguard", "pygments", "littleutils"]
 
 [[package]]
 name = "tablib"
-version = "3.1.0"
+version = "3.2.0"
 description = "Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 openpyxl = {version = ">=2.6.0", optional = true, markers = "extra == \"xlsx\""}
@@ -1356,12 +1356,12 @@ black = [
     {file = "black-21.12b0.tar.gz", hash = "sha256:77b80f693a569e2e527958459634f18df9b0ba2625ba4e0c2d5da5be42e6f2b3"},
 ]
 boto3 = [
-    {file = "boto3-1.20.40-py3-none-any.whl", hash = "sha256:cfe85589e4a0a997c7b9ae7432400b03fa6fa5fea29fdc48db3099a903b76998"},
-    {file = "boto3-1.20.40.tar.gz", hash = "sha256:66aef9a6d8cad393f69166112ba49e14e2c6766f9278c96134101314a9af2992"},
+    {file = "boto3-1.20.45-py3-none-any.whl", hash = "sha256:2ea0e0aa1494ef87a342260da8d9381000d774e73d83ee3d7c2906fefcbe2c32"},
+    {file = "boto3-1.20.45.tar.gz", hash = "sha256:3d9cb5edeff09598b7065abe5b42affb0b6e1c0c805ab57c051d0f3592a0f02b"},
 ]
 botocore = [
-    {file = "botocore-1.23.40-py3-none-any.whl", hash = "sha256:88a314fe27cd97a0c731094c5b34db01ebe930801700e5d1b68485ebde746c3c"},
-    {file = "botocore-1.23.40.tar.gz", hash = "sha256:49baa1fca4483b24769f0743fbf72afe4db391f41f1fc12ea34e06036db642a4"},
+    {file = "botocore-1.23.45-py3-none-any.whl", hash = "sha256:793a0a4b572bfb157ba17971e4d783766f59c5a0f117407bbeefeb577efa1ed1"},
+    {file = "botocore-1.23.45.tar.gz", hash = "sha256:782323846dad22ea814a64bd64b89c7f04550812d3945ce77748b2bac6fe745b"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
@@ -1770,8 +1770,8 @@ stack-data = [
     {file = "stack_data-0.1.4.tar.gz", hash = "sha256:7769ed2482ce0030e00175dd1bf4ef1e873603b6ab61cd3da443b410e64e9477"},
 ]
 tablib = [
-    {file = "tablib-3.1.0-py3-none-any.whl", hash = "sha256:26141c9cf2d5904a2228d3f5d45f8a46a3f3f2f0fbb4c33b4a1c1ddca9f31348"},
-    {file = "tablib-3.1.0.tar.gz", hash = "sha256:d64c9f6712918a3d90ec5d71b44b8bab1083e3609e4844ad2be80eb633e097ed"},
+    {file = "tablib-3.2.0-py3-none-any.whl", hash = "sha256:1ba12da7b0b17e33f5997fb1bc8ed560aae3535f5892ae5e5c01a056c47d4d78"},
+    {file = "tablib-3.2.0.tar.gz", hash = "sha256:12d8686454c721de88d8ca5adf07e1f419ef6dbcecedf65e8950d4a329daf3a0"},
 ]
 telepath = [
     {file = "telepath-0.2-py35-none-any.whl", hash = "sha256:801615094d3d964e178183099bf04020f4ff9c84ec43945d40b096df0a5767ee"},
