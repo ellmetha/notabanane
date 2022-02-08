@@ -301,14 +301,14 @@ taggit = ["django-taggit (>=0.20)"]
 
 [[package]]
 name = "django-recaptcha"
-version = "2.0.6"
+version = "3.0.0"
 description = "Django recaptcha form field/widget app."
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-django = ">1.11,<4.0"
+django = "*"
 
 [[package]]
 name = "django-storages"
@@ -1467,7 +1467,8 @@ django-modelcluster = [
     {file = "django_modelcluster-5.2-py2.py3-none-any.whl", hash = "sha256:767084078b9e172540b271454ecc73cb320927131ca4b2c5f276daf771f9542f"},
 ]
 django-recaptcha = [
-    {file = "django_recaptcha-2.0.6-py2.py3-none-any.whl", hash = "sha256:567784963fd5400feaf92e8951d8dbbbdb4b4c48a76e225d4baa63a2c9d2cd8c"},
+    {file = "django-recaptcha-3.0.0.tar.gz", hash = "sha256:253197051288923cae675d7eff91b619e3775311292a5dbaf27a8a55ffebc670"},
+    {file = "django_recaptcha-3.0.0-py3-none-any.whl", hash = "sha256:1aed69fd6ac8fd9e99e52665392ae6748f8b6339ace656fad779fe0c6c915a52"},
 ]
 django-storages = [
     {file = "django-storages-1.12.3.tar.gz", hash = "sha256:a475edb2f0f04c4f7e548919a751ecd50117270833956ed5bd585c0575d2a5e7"},
