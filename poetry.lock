@@ -127,14 +127,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "boto3"
-version = "1.20.53"
+version = "1.20.54"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.6"
 
 [package.dependencies]
-botocore = ">=1.23.53,<1.24.0"
+botocore = ">=1.23.54,<1.24.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.5.0,<0.6.0"
 
@@ -143,7 +143,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.23.53"
+version = "1.23.54"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -167,7 +167,7 @@ python-versions = "*"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.11"
+version = "2.0.12"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -764,7 +764,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "platformdirs"
-version = "2.4.1"
+version = "2.5.0"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "dev"
 optional = false
@@ -802,7 +802,7 @@ test = ["pytest (>=2.7.3)", "pytest-cov", "coveralls", "futures", "pytest-benchm
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.26"
+version = "3.0.28"
 description = "Library for building powerful interactive command lines in Python"
 category = "dev"
 optional = false
@@ -1026,7 +1026,7 @@ crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
 
 [[package]]
 name = "sentry-sdk"
-version = "1.5.4"
+version = "1.5.5"
 description = "Python client for Sentry (https://sentry.io)"
 category = "main"
 optional = false
@@ -1161,7 +1161,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tomli"
-version = "2.0.0"
+version = "2.0.1"
 description = "A lil' TOML parser"
 category = "dev"
 optional = false
@@ -1180,7 +1180,7 @@ test = ["pytest"]
 
 [[package]]
 name = "typing-extensions"
-version = "4.0.1"
+version = "4.1.0"
 description = "Backported and Experimental Type Hints for Python 3.6+"
 category = "dev"
 optional = false
@@ -1217,7 +1217,7 @@ standard = ["websockets (>=10.0)", "httptools (>=0.2.0,<0.4.0)", "watchgod (>=0.
 
 [[package]]
 name = "wagtail"
-version = "2.16"
+version = "2.16.1"
 description = "A Django content management system."
 category = "main"
 optional = false
@@ -1372,20 +1372,20 @@ black = [
     {file = "black-22.1.0.tar.gz", hash = "sha256:a7c0192d35635f6fc1174be575cb7915e92e5dd629ee79fdaf0dcfa41a80afb5"},
 ]
 boto3 = [
-    {file = "boto3-1.20.53-py3-none-any.whl", hash = "sha256:d96c1aa3edebff6466362e574af6d8a6f2f6c9c1d902d3c7efb0835e09f34ddb"},
-    {file = "boto3-1.20.53.tar.gz", hash = "sha256:96f50e95bded5612ac8bd116d5d56a0cce4868870177805cb974d1f4f0a24b73"},
+    {file = "boto3-1.20.54-py3-none-any.whl", hash = "sha256:1a272a1dd36414b1626a47bb580425203be0b5a34caa117f38a5e18adf21f918"},
+    {file = "boto3-1.20.54.tar.gz", hash = "sha256:8129ad42cc0120d1c63daa18512d6f0b1439e385b2b6e0fe987f116bdf795546"},
 ]
 botocore = [
-    {file = "botocore-1.23.53-py3-none-any.whl", hash = "sha256:a97834aee61177e11618348ed8fe1963c37f319af628e6f875f1e0fbd587a9ec"},
-    {file = "botocore-1.23.53.tar.gz", hash = "sha256:7a628bc8bb2573fbc77709c9e7a02061b750f6ebb8e961562de658eda98e140d"},
+    {file = "botocore-1.23.54-py3-none-any.whl", hash = "sha256:06ae8076c4dcf3d72bec4d37e5f2dce4a92a18a8cdaa3bfaa6e3b7b5e30a8d7e"},
+    {file = "botocore-1.23.54.tar.gz", hash = "sha256:4bb9ba16cccee5f5a2602049bc3e2db6865346b2550667f3013bdf33b0a01ceb"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
     {file = "certifi-2021.10.8.tar.gz", hash = "sha256:78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.11.tar.gz", hash = "sha256:98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"},
-    {file = "charset_normalizer-2.0.11-py3-none-any.whl", hash = "sha256:2842d8f5e82a1f6aa437380934d5e1cd4fcf2003b06fed6940769c164a480a45"},
+    {file = "charset-normalizer-2.0.12.tar.gz", hash = "sha256:2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"},
+    {file = "charset_normalizer-2.0.12-py3-none-any.whl", hash = "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1652,8 +1652,8 @@ pillow = [
     {file = "Pillow-9.0.1.tar.gz", hash = "sha256:6c8bc8238a7dfdaf7a75f5ec5a663f4173f8c367e5a39f87e720495e1eed75fa"},
 ]
 platformdirs = [
-    {file = "platformdirs-2.4.1-py3-none-any.whl", hash = "sha256:1d7385c7db91728b83efd0ca99a5afb296cab9d0ed8313a45ed8ba17967ecfca"},
-    {file = "platformdirs-2.4.1.tar.gz", hash = "sha256:440633ddfebcc36264232365d7840a970e75e1018d15b4327d11f91909045fda"},
+    {file = "platformdirs-2.5.0-py3-none-any.whl", hash = "sha256:30671902352e97b1eafd74ade8e4a694782bd3471685e78c32d0fdfd3aa7e7bb"},
+    {file = "platformdirs-2.5.0.tar.gz", hash = "sha256:8ec11dfba28ecc0715eb5fb0147a87b1bf325f349f3da9aab2cd6b50b96b692b"},
 ]
 pluggy = [
     {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
@@ -1663,8 +1663,8 @@ promise = [
     {file = "promise-2.3.tar.gz", hash = "sha256:dfd18337c523ba4b6a58801c164c1904a9d4d1b1747c7d5dbf45b693a49d93d0"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.26-py3-none-any.whl", hash = "sha256:4bcf119be2200c17ed0d518872ef922f1de336eb6d1ddbd1e089ceb6447d97c6"},
-    {file = "prompt_toolkit-3.0.26.tar.gz", hash = "sha256:a51d41a6a45fd9def54365bca8f0402c8f182f2b6f7e29c74d55faeb9fb38ac4"},
+    {file = "prompt_toolkit-3.0.28-py3-none-any.whl", hash = "sha256:30129d870dcb0b3b6a53efdc9d0a83ea96162ffd28ffe077e94215b233dc670c"},
+    {file = "prompt_toolkit-3.0.28.tar.gz", hash = "sha256:9f1cd16b1e86c2968f2519d7fb31dd9d669916f515612c269d14e9ed52b51650"},
 ]
 psycopg2 = [
     {file = "psycopg2-2.9.3-cp310-cp310-win32.whl", hash = "sha256:083707a696e5e1c330af2508d8fab36f9700b26621ccbcb538abe22e15485362"},
@@ -1752,8 +1752,8 @@ s3transfer = [
     {file = "s3transfer-0.5.1.tar.gz", hash = "sha256:69d264d3e760e569b78aaa0f22c97e955891cd22e32b10c51f784eeda4d9d10a"},
 ]
 sentry-sdk = [
-    {file = "sentry-sdk-1.5.4.tar.gz", hash = "sha256:f7e54567937ebcbe938c4df1075ec891587faeb7c74184b88cf2894e47c86116"},
-    {file = "sentry_sdk-1.5.4-py2.py3-none-any.whl", hash = "sha256:4fc7960a82c95d906a0514cf4d9aacba1743eb9863a5b7c2a01c525a7d9b21e6"},
+    {file = "sentry-sdk-1.5.5.tar.gz", hash = "sha256:98fd155fa5d5fec1dbabed32a1a4ae2705f1edaa5dae4e7f7b62a384ba30e759"},
+    {file = "sentry_sdk-1.5.5-py2.py3-none-any.whl", hash = "sha256:3817274fba2498c8ebf6b896ee98ac916c5598706340573268c07bf2bb30d831"},
 ]
 singledispatch = [
     {file = "singledispatch-3.7.0-py2.py3-none-any.whl", hash = "sha256:bc77afa97c8a22596d6d4fc20f1b7bdd2b86edc2a65a4262bdd7cc3cc19aa989"},
@@ -1792,16 +1792,16 @@ toml = [
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
 ]
 tomli = [
-    {file = "tomli-2.0.0-py3-none-any.whl", hash = "sha256:b5bde28da1fed24b9bd1d4d2b8cba62300bfb4ec9a6187a957e8ddb9434c5224"},
-    {file = "tomli-2.0.0.tar.gz", hash = "sha256:c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1"},
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 traitlets = [
     {file = "traitlets-5.1.1-py3-none-any.whl", hash = "sha256:2d313cc50a42cd6c277e7d7dc8d4d7fedd06a2c215f78766ae7b1a66277e0033"},
     {file = "traitlets-5.1.1.tar.gz", hash = "sha256:059f456c5a7c1c82b98c2e8c799f39c9b8128f6d0d46941ee118daace9eb70c7"},
 ]
 typing-extensions = [
-    {file = "typing_extensions-4.0.1-py3-none-any.whl", hash = "sha256:7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"},
-    {file = "typing_extensions-4.0.1.tar.gz", hash = "sha256:4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e"},
+    {file = "typing_extensions-4.1.0-py3-none-any.whl", hash = "sha256:c13180fbaa7cd97065a4915ceba012bdb31dc34743e63ddee16360161d358414"},
+    {file = "typing_extensions-4.1.0.tar.gz", hash = "sha256:ba97c5143e5bb067b57793c726dd857b1671d4b02ced273ca0538e71ff009095"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
@@ -1812,8 +1812,8 @@ uvicorn = [
     {file = "uvicorn-0.17.4.tar.gz", hash = "sha256:25850bbc86195a71a6477b3e4b3b7b4c861fb687fb96912972ce5324472b1011"},
 ]
 wagtail = [
-    {file = "wagtail-2.16-py3-none-any.whl", hash = "sha256:6ce5b16f3e3d5a2e391176b8ee982b1ad350a2345b3e676fa8f5e3a71a37c06b"},
-    {file = "wagtail-2.16.tar.gz", hash = "sha256:add16b877dbce7dc9a3bf13c3e65c8541a9bd80979451c7ed10f1dc087826c41"},
+    {file = "wagtail-2.16.1-py3-none-any.whl", hash = "sha256:129bb91c422e5c2b3603ebc67e9c392541cb564e55a5b864881905ca246a2c4e"},
+    {file = "wagtail-2.16.1.tar.gz", hash = "sha256:53dbd62a93da97c4ef6982652a103ab9be5bfe03f34cf5bc796c5d716b9020e8"},
 ]
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},
