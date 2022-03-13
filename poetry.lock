@@ -105,14 +105,14 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.21.17"
+version = "1.21.18"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.6"
 
 [package.dependencies]
-botocore = ">=1.24.17,<1.25.0"
+botocore = ">=1.24.18,<1.25.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.5.0,<0.6.0"
 
@@ -121,7 +121,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.24.17"
+version = "1.24.18"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -265,7 +265,7 @@ django = ">=3.2"
 
 [[package]]
 name = "django-modelcluster"
-version = "5.2"
+version = "5.3"
 description = "Django extension to allow working with 'clusters' of models as a single unit, independently of the database"
 category = "main"
 optional = false
@@ -1292,12 +1292,12 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.9.3.tar.gz", hash = "sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"},
 ]
 boto3 = [
-    {file = "boto3-1.21.17-py3-none-any.whl", hash = "sha256:b01d29305527fe8754a0c5847c0431ec677dca34069aaed9429ff178826ab366"},
-    {file = "boto3-1.21.17.tar.gz", hash = "sha256:a235c422239d1b468924b37faa95f5750c6abd43651fe7deb3976e10a331c991"},
+    {file = "boto3-1.21.18-py3-none-any.whl", hash = "sha256:d857feb6af9932e1ee3a748060a2cd9fd6043dbbccf66976eda54586597efdc0"},
+    {file = "boto3-1.21.18.tar.gz", hash = "sha256:8d6f3c548f0ee03d742f404c96515e7579fc6968135aaa50dd855a046698ff79"},
 ]
 botocore = [
-    {file = "botocore-1.24.17-py3-none-any.whl", hash = "sha256:e61b9e6d0d5e384f8135211f05fc05694571505390293d939a9688ac08d4f62a"},
-    {file = "botocore-1.24.17.tar.gz", hash = "sha256:29212b4be640efc047665650fee474357e884725a3e2a9bc029bca46a6ef0853"},
+    {file = "botocore-1.24.18-py3-none-any.whl", hash = "sha256:7ea8ef1ff7c4882ab59b337662f90ddf5ea860e95e7e209dca593a34ea585b1b"},
+    {file = "botocore-1.24.18.tar.gz", hash = "sha256:d2da7ccbc5ddd61fe3cd45fcbd3de380d9e3a15bfa8fbfd2d9259a93dcc60c56"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
@@ -1383,8 +1383,8 @@ django-js-routes = [
     {file = "django_js_routes-0.2.0-py3-none-any.whl", hash = "sha256:9adc2f5e1874d238ec3004dbde3cd0220bcef56669a607847502f1f34c2ddccd"},
 ]
 django-modelcluster = [
-    {file = "django-modelcluster-5.2.tar.gz", hash = "sha256:e541a46a0a899ef4778a4708be22e71cac3efacc09a6ff44bc065c5c9194c054"},
-    {file = "django_modelcluster-5.2-py2.py3-none-any.whl", hash = "sha256:767084078b9e172540b271454ecc73cb320927131ca4b2c5f276daf771f9542f"},
+    {file = "django-modelcluster-5.3.tar.gz", hash = "sha256:0347cdcacb19a1078ee56cc3e6d5413ba27b8a5900710c53bb92b5d8ff3819cd"},
+    {file = "django_modelcluster-5.3-py2.py3-none-any.whl", hash = "sha256:f9f4250e706ee5e57503a30fbf37058b73e9fdc3190d75031338b81913cc9b4e"},
 ]
 django-recaptcha = [
     {file = "django-recaptcha-3.0.0.tar.gz", hash = "sha256:253197051288923cae675d7eff91b619e3775311292a5dbaf27a8a55ffebc670"},
