@@ -12,7 +12,7 @@
     "history": "^5.1.0",
     "js-cookie": "^3.0.1",
     "kind-of": ">=6.0.3",
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "natives": "^1.1.4",
     "node-sass": "^7.0.0",
     "noty": "^3.2.0-beta-deprecated",
