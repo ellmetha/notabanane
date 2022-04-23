@@ -40,9 +40,9 @@ django-filter==21.1; python_version >= "3.6" \
 django-js-routes==0.2.0; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:67f4fbd6d45cf0c0c5adae5e45e6de2aa4a7e2505e073cb5550ce2503ea986aa \
     --hash=sha256:9adc2f5e1874d238ec3004dbde3cd0220bcef56669a607847502f1f34c2ddccd
-django-modelcluster==5.3; python_version >= "3.7" \
-    --hash=sha256:0347cdcacb19a1078ee56cc3e6d5413ba27b8a5900710c53bb92b5d8ff3819cd \
-    --hash=sha256:f9f4250e706ee5e57503a30fbf37058b73e9fdc3190d75031338b81913cc9b4e
+django-modelcluster==6.0; python_version >= "3.7" \
+    --hash=sha256:4ae46f86c43702020f24f212222eef0a2588df937bbb523a5447da247b5fb130 \
+    --hash=sha256:cdcffef5baf5d3759ee04c5b60ffaf1a0c95fc0f265e762f3ddfadde3394e5db
 django-recaptcha==3.0.0 \
     --hash=sha256:253197051288923cae675d7eff91b619e3775311292a5dbaf27a8a55ffebc670 \
     --hash=sha256:1aed69fd6ac8fd9e99e52665392ae6748f8b6339ace656fad779fe0c6c915a52
