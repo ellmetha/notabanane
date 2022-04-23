@@ -13,7 +13,7 @@ python = "^3.9"
 
 babel = "*"
 boto3 = "*"
-django = "^3.2"
+django = "^4.0"
 django-anymail = "*"
 django-filter = "*"
 django-js-routes = ">=0.1.3"
