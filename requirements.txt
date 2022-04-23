@@ -76,9 +76,9 @@ facebook-sdk==3.1.0 \
 graphene-django==2.15.0 \
     --hash=sha256:b78c9b05bc899016b9cc5bf13faa1f37fe1faa8c5407552c6ddd1a28f46fc31a \
     --hash=sha256:02671d195f0c09c8649acff2a8f4ad4f297d0f7d98ea6e6cdf034b81bab92880
-graphene==2.1.9 \
-    --hash=sha256:3d446eb1237c551052bc31155cf1a3a607053e4f58c9172b83a1b597beaa0868 \
-    --hash=sha256:b9f2850e064eebfee9a3ef4a1f8aa0742848d97652173ab44c82cc8a62b9ed93
+graphene==3.0 \
+    --hash=sha256:57ce5ee7c9dc194224a1df96e4f7cb48d31eae96c791091d059f8f3d4d131390 \
+    --hash=sha256:af48066e152200a071aac1e0b703954c717ec7268720ba190a0c91d9bcb0a122
 graphql-core==3.2.1 \
     --hash=sha256:9d1bf141427b7d54be944587c8349df791ce60ade2e3cccaf9c56368c133c201 \
     --hash=sha256:f83c658e4968998eed1923a2e3e3eddd347e005ac0315fbb7ca4d70ea9156323
