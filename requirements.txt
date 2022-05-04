@@ -10,10 +10,9 @@ asgiref==3.5.1; python_version >= "3.7" and python_version < "4.0" \
 babel==2.10.1; python_version >= "3.6" \
     --hash=sha256:3f349e85ad3154559ac4930c3918247d319f21910d5ce4b25d439ed8693b98d2 \
     --hash=sha256:98aeaca086133efb3e1e2aad0396987490c8425929ddbcfe0550184fdc54cd13
-beautifulsoup4==4.9.3; python_version >= "3.7" \
-    --hash=sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35 \
-    --hash=sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666 \
-    --hash=sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25
+beautifulsoup4==4.11.1; python_version >= "3.7" \
+    --hash=sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30 \
+    --hash=sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693
 boto3==1.22.6; python_version >= "3.6" \
     --hash=sha256:5df9979ce66b629877a235d4f252d81c048c7094edebaa9e0bea0f6619f59873 \
     --hash=sha256:2de76a1a34a9ab7c828f17100ba3de16cc895b9a40ad020af2834931c21be59f
