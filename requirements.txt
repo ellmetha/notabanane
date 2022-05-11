@@ -181,9 +181,9 @@ rx==1.6.1 \
 s3transfer==0.5.2; python_version >= "3.6" \
     --hash=sha256:7a6f4c4d1fdb9a2b640244008e142cbc2cd3ae34b386584ef044dd0f27101971 \
     --hash=sha256:95c58c194ce657a5f4fb0b9e60a84968c808888aed628cd98ab8771fe1db98ed
-sentry-sdk==1.5.11 \
-    --hash=sha256:6c01d9d0b65935fd275adc120194737d1df317dce811e642cbf0394d0d37a007 \
-    --hash=sha256:c17179183cac614e900cbd048dab03f49a48e2820182ec686c25e7ce46f8548f
+sentry-sdk==1.5.12 \
+    --hash=sha256:259535ba66933eacf85ab46524188c84dcb4c39f40348455ce15e2c0aca68863 \
+    --hash=sha256:778b53f0a6c83b1ee43d3b7886318ba86d975e686cb2c7906ccc35b334360be1
 singledispatch==3.7.0; python_version >= "2.6" \
     --hash=sha256:bc77afa97c8a22596d6d4fc20f1b7bdd2b86edc2a65a4262bdd7cc3cc19aa989 \
     --hash=sha256:c1a4d5c1da310c3fd8fccfb8d4e1cb7df076148fd5d858a819e37fffe44f3092
