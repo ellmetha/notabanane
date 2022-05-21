@@ -66,7 +66,6 @@ INSTALLED_APPS = (
     # Wagtail apps
     'wagtail.admin',
     'wagtail.contrib.forms',
-    'wagtail.contrib.postgres_search',
     'wagtail.contrib.redirects',
     'wagtail.contrib.routable_page',
     'wagtail.core',
@@ -296,7 +295,7 @@ WAGTAIL_ADMIN_URL = get_envsetting('WAGTAIL_ADMIN_URL')
 
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': 'wagtail.contrib.postgres_search.backend',
+        'BACKEND': 'wagtail.search.backends.database',
         'SEARCH_CONFIG': 'nb_french',
     }
 }
