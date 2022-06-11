@@ -18,7 +18,6 @@ from modelcluster.models import ClusterableModel
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Orderable, Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 from main.common.db.models.fields import ChoiceArrayField
@@ -153,7 +152,7 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
-        ImageChooserPanel('header_image'),
+        FieldPanel('header_image'),
     ]
 
     ####################################
@@ -336,8 +335,8 @@ class RecipePage(Page):
         ),
         InlinePanel('ingredients_sections', label=_('Recipe ingredients sections')),
         InlinePanel('instructions_sections', label=_('Recipe instructions sections')),
-        ImageChooserPanel('header_image'),
-        ImageChooserPanel('recipe_image'),
+        FieldPanel('header_image'),
+        FieldPanel('recipe_image'),
         FieldPanel('date'),
     ]
 
@@ -464,7 +463,7 @@ class SimplePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname='full'),
-        ImageChooserPanel('header_image'),
+        FieldPanel('header_image'),
     ]
 
     promote_panels = [

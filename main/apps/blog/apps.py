@@ -15,3 +15,4 @@ class BlogAppConfig(AppConfig):
     label = 'blog'
     name = 'main.apps.blog'
     verbose_name = _('Blog')
+    default_auto_field = 'django.db.models.AutoField'

@@ -8,7 +8,7 @@
 
 from django.core.management.base import BaseCommand
 from graphene_django.settings import graphene_settings
-from graphql.utils import schema_printer
+from graphql.utilities.print_schema import print_schema
 
 
 class Command(BaseCommand):
@@ -25,7 +25,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """ Performs the command actions. """
         output = open(options['output'], 'w') if options['output'] else self.stdout
-        output.write(schema_printer.print_schema(graphene_settings.SCHEMA))
+        output.write(print_schema(graphene_settings.SCHEMA.graphql_schema))
         if options['output']:
             self.stdout.write(
                 self.style.MIGRATE_HEADING(
