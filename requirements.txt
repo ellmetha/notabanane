@@ -14,12 +14,12 @@ beautifulsoup4==4.9.3; python_version >= "3.7" \
     --hash=sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35 \
     --hash=sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666 \
     --hash=sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25
-boto3==1.24.12; python_version >= "3.7" \
-    --hash=sha256:0b9757575b8003928defc5fb6e816936fa1bdb1384d0edec6622bb9fb104e96c \
-    --hash=sha256:f39b91a4c3614db8e44912ee82426fb4b16d5df2cd66883f3aff6f76d7f5d310
-botocore==1.27.12; python_version >= "3.7" \
-    --hash=sha256:b8ac156e55267da6e728ea0b806bfcd97adf882801cffe7849c4b88ce4780326 \
-    --hash=sha256:17d3ec9f684d21e06b64d9cb224934557bcd95031e2ecb551bf16271e8722fec
+boto3==1.24.15; python_version >= "3.7" \
+    --hash=sha256:42485c7c53eda9e49106d49a6bc222062428969dd27164fe346b1433d6de74ee \
+    --hash=sha256:c13ef01bd6c8872e68141060bd046a3baa979e96524391efc880dfde4ed64e11
+botocore==1.27.15; python_version >= "3.7" \
+    --hash=sha256:aaa019265dfea61c5355a207b14283161002d4d94e0eb85194dd04f3bdba48be \
+    --hash=sha256:3799d5c8642b29b347418eb26d42e541d0dc24faa5e62bc8b3812722ab2bf139
 certifi==2022.6.15; python_version >= "3.7" and python_version < "4" \
     --hash=sha256:fe86415d55e84719d75f8b69414f6438ac3547d2078ab91b67e779ef69378412 \
     --hash=sha256:84c85a9078b11105f04f3036a9482ae10e4621616db313fe045dd24743a0820d
@@ -181,9 +181,9 @@ requests==2.28.0; python_version >= "3.7" and python_version < "4" \
 s3transfer==0.6.0; python_version >= "3.7" \
     --hash=sha256:06176b74f3a15f61f1b4f25a1fc29a4429040b7647133a463da8fa5bd28d5ecd \
     --hash=sha256:2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947
-sentry-sdk==1.5.12 \
-    --hash=sha256:259535ba66933eacf85ab46524188c84dcb4c39f40348455ce15e2c0aca68863 \
-    --hash=sha256:778b53f0a6c83b1ee43d3b7886318ba86d975e686cb2c7906ccc35b334360be1
+sentry-sdk==1.6.0 \
+    --hash=sha256:b82ad57306d5546713f15d5d70daea0408cf7f998c7566db16e0e6257e51e561 \
+    --hash=sha256:ddbd191b6f4e696b7845b4d87389898ae1207981faf114f968a57363aa6be03c
 six==1.16.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7" \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926
