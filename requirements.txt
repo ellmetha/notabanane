@@ -62,9 +62,9 @@ django-treebeard==4.5.1; python_version >= "3.6" \
 django-widget-tweaks==1.4.12; python_version >= "3.7" \
     --hash=sha256:9bfc5c705684754a83cc81da328b39ad1b80f32bd0f4340e2a810cbab4b0c00e \
     --hash=sha256:fe6b17d5d595c63331f300917980db2afcf71f240ab9341b954aea8f45d25b9a
-django==4.0.5; python_version >= "3.8" \
-    --hash=sha256:502ae42b6ab1b612c933fb50d5ff850facf858a4c212f76946ecd8ea5b3bf2d9 \
-    --hash=sha256:f7431a5de7277966f3785557c3928433347d998c1e6459324501378a291e5aab
+django==4.0.6; python_version >= "3.8" \
+    --hash=sha256:a67a793ff6827fd373555537dca0da293a63a316fe34cb7f367f898ccca3c3ae \
+    --hash=sha256:ca54ebedfcbc60d191391efbf02ba68fb52165b8bf6ccd6fe71f098cac1fe59e
 djangorestframework==3.13.1; python_version >= "3.7" \
     --hash=sha256:24c4bf58ed7e85d1fe4ba250ab2da926d263cd57d64b03e8dcef0ac683f8b1aa \
     --hash=sha256:0c33407ce23acc68eca2a6e46424b008c9c02eceb8cf18581921d0092bc1f2ee
