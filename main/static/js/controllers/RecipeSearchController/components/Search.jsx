@@ -1,9 +1,8 @@
 /* global gettext */
 
-import { gql } from 'apollo-boost';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { useQuery } from '@apollo/react-hooks';
+import { gql, useQuery } from '@apollo/client';
 
 import smoothScrollTo from '../../../core/smoothScrollTo';
 

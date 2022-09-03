@@ -1,7 +1,5 @@
-import { gql } from 'apollo-boost';
+import { gql, useQuery } from '@apollo/client';
 import React from 'react';
-
-import { useQuery } from '@apollo/react-hooks';
 
 export const INSTAGRAM_MEDIA_FEED = gql`
   {

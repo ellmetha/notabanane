@@ -1,7 +1,7 @@
 /* eslint import/extensions: [0, {}] */
 /* eslint import/no-unresolved: [0, {}] */
 
-import { ApolloClient } from 'apollo-boost';
+import { ApolloClient } from '@apollo/client';
 
 import graphqlClient from 'core/graphqlClient';
 
