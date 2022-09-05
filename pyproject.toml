@@ -31,7 +31,7 @@ psycopg2 = "*"
 sentry-sdk = "*"
 uvicorn = "^0.18.3"
 wagtail = "*"
-python-dotenv = "^0.20.0"
+python-dotenv = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
 coverage = ">=4.5"
