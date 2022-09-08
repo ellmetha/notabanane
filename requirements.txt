@@ -79,9 +79,9 @@ facebook-sdk==3.1.0 \
 graphene-django==3.0.0b7 \
     --hash=sha256:b1a4ce1a2227b1e77f67f0bc2fadd59c1d05016cb9aced45ab65f8612fba2c87 \
     --hash=sha256:0f226ec7db744a54dbc5d6db2aa52d945701ae800e1055046dec2b76a539550a
-graphene==3.1 \
-    --hash=sha256:99becdccd2683c2db1a8486e98d007b5e64fa2ff0922e6c1b08e19233031368d \
-    --hash=sha256:73332510a14b94fcb925dae4563ad6a028d414144704fdcc191565af72608798
+graphene==3.1.1 \
+    --hash=sha256:1c0d43560a86536b7816bb05e3685beebf140118e091a9c445cd10f55acb20fd \
+    --hash=sha256:ff251dbc39a6409106c41de444358d93b2c5588d161dce2245bea7d74b445c86
 graphql-core==3.1.7; python_version >= "3.6" and python_version < "4" \
     --hash=sha256:62ec192150ccecd9a18cfb79e3e72eb7d1fd68fb594ef19c40099b6deec8ef0c \
     --hash=sha256:9b460f60320be01c7f3b1766cf3e406933003008055079b9d983b8f3988f4400
