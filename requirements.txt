@@ -210,9 +210,9 @@ urllib3==1.26.12; python_version >= "3.7" and python_full_version < "3.0.0" and 
 uvicorn==0.18.3; python_version >= "3.7" \
     --hash=sha256:0abd429ebb41e604ed8d2be6c60530de3408f250e8d2d84967d85ba9e86fe3af \
     --hash=sha256:9a66e7c42a2a95222f76ec24a4b754c158261c4696e683b9dadc72b590e0311b
-wagtail==4.0; python_version >= "3.7" \
-    --hash=sha256:8f5f6838326547ca645805e8f8b41850c0c86c7811b8e88d401b78fc6ccc8d5b \
-    --hash=sha256:5dd00dbcdf488ad14eabc99a992d17a0257803fc0d6f4ca9713e6f309f6fbe5d
+wagtail==4.0.1; python_version >= "3.7" \
+    --hash=sha256:29661e150855b4a69b58de74b92d9e3064135c6a75067b4b9de008459e17d9a2 \
+    --hash=sha256:bf161aff275f6d32fa0500d3893c8eb1e1fc24322da50991ce35336367c0adf2
 webencodings==0.5.1; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7" \
     --hash=sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78 \
     --hash=sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923
