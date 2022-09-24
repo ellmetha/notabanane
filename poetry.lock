@@ -108,14 +108,14 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.24.74"
+version = "1.24.80"
 description = "The AWS SDK for Python"
 category = "main"
 optional = false
 python-versions = ">= 3.7"
 
 [package.dependencies]
-botocore = ">=1.27.74,<1.28.0"
+botocore = ">=1.27.80,<1.28.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.6.0,<0.7.0"
 
@@ -124,7 +124,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.27.74"
+version = "1.27.80"
 description = "Low-level, data-driven core of boto 3."
 category = "main"
 optional = false
@@ -357,14 +357,14 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "djangorestframework"
-version = "3.13.1"
+version = "3.14.0"
 description = "Web APIs for Django, made easy."
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-django = ">=2.2"
+django = ">=3.0"
 pytz = "*"
 
 [[package]]
@@ -419,11 +419,11 @@ python-versions = ">=3.6"
 Faker = ">=0.7.0"
 
 [package.extras]
-dev = ["Django", "Pillow", "SQLAlchemy", "coverage", "flake8", "isort", "mongoengine", "tox", "wheel (>=0.32.0)", "zest.releaser[recommended]"]
-doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
+dev = ["coverage", "django", "flake8", "isort", "mongoengine", "pillow", "sqlalchemy", "tox", "wheel (>=0.32.0)", "zest.releaser"]
+doc = ["sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
-name = "Faker"
+name = "faker"
 version = "14.2.1"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
@@ -465,23 +465,24 @@ test = ["coveralls (>=3.3,<4)", "iso8601 (>=1,<2)", "mock (>=4,<5)", "promise (>
 
 [[package]]
 name = "graphene-django"
-version = "3.0.0b7"
+version = "3.0.0b8"
 description = "Graphene Django integration"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-Django = ">=2.2"
-graphene = ">=3.0.0b5,<4"
+Django = ">=3.2"
+graphene = ">=3.0,<4"
 graphql-core = ">=3.1.0,<4"
+graphql-relay = ">=3.1.1,<4"
 promise = ">=2.1"
 text-unidecode = "*"
 
 [package.extras]
-dev = ["black (==19.10b0)", "coveralls", "django-filter (>=2)", "djangorestframework (>=3.6.3)", "flake8 (==3.7.9)", "flake8-black (==0.1.1)", "flake8-bugbear (==20.1.4)", "mock", "pytest (>=3.6.3)", "pytest-cov", "pytest-django (>=3.3.2)", "pytest-random-order", "pytz"]
+dev = ["black (==22.8.0)", "coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", "flake8 (==5.0.4)", "flake8-black (==0.3.3)", "flake8-bugbear (==22.9.11)", "mock", "pytest (>=7.1.3)", "pytest-cov", "pytest-django (>=4.5.2)", "pytest-random-order", "pytz"]
 rest_framework = ["djangorestframework (>=3.6.3)"]
-test = ["coveralls", "django-filter (>=2)", "djangorestframework (>=3.6.3)", "mock", "pytest (>=3.6.3)", "pytest-cov", "pytest-django (>=3.3.2)", "pytest-random-order", "pytz"]
+test = ["coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", "mock", "pytest (>=7.1.3)", "pytest-cov", "pytest-django (>=4.5.2)", "pytest-random-order", "pytz"]
 
 [[package]]
 name = "graphql-core"
@@ -890,7 +891,7 @@ pytest = ">=5.4.0"
 
 [package.extras]
 docs = ["sphinx", "sphinx-rtd-theme"]
-testing = ["Django", "django-configurations (>=2.0)"]
+testing = ["django", "django-configurations (>=2.0)"]
 
 [[package]]
 name = "pytest-pythonpath"
@@ -1026,7 +1027,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "sqlparse"
-version = "0.4.2"
+version = "0.4.3"
 description = "A non-validating SQL parser."
 category = "main"
 optional = false
@@ -1155,7 +1156,7 @@ standard = ["colorama (>=0.4)", "httptools (>=0.4.0)", "python-dotenv (>=0.13)",
 
 [[package]]
 name = "wagtail"
-version = "4.0.1"
+version = "4.0.2"
 description = "A Django content management system."
 category = "main"
 optional = false
@@ -1287,12 +1288,12 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.11.1.tar.gz", hash = "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"},
 ]
 boto3 = [
-    {file = "boto3-1.24.74-py3-none-any.whl", hash = "sha256:293593dd93c0a5fe6088dd9a393002376824977c55c8e5756d53a1c0283473dd"},
-    {file = "boto3-1.24.74.tar.gz", hash = "sha256:def153fb4773c55d89193529e8b0f829eab5fed57cee1d28f3cdcaa18b8837c8"},
+    {file = "boto3-1.24.80-py3-none-any.whl", hash = "sha256:0c5732a78f75ff3e2692e6ed1765c5c9d4960ba0e8b0694066864b86f9537350"},
+    {file = "boto3-1.24.80.tar.gz", hash = "sha256:c686295e7829cf54127f7ab9c20088cc7b2a7d24768fcf355aebffa65879e2c9"},
 ]
 botocore = [
-    {file = "botocore-1.27.74-py3-none-any.whl", hash = "sha256:e4430a48aaa8817342127b18c4c6c9cd44bdce85e3c0d980f9b36322d518fe2e"},
-    {file = "botocore-1.27.74.tar.gz", hash = "sha256:e103eb209e33c37bdb68e10ea3048088ee93e8973e5d9415af12d3c3f1ac46a6"},
+    {file = "botocore-1.27.80-py3-none-any.whl", hash = "sha256:412145ab8b9ec2ee3c9ecf43e06f9fe0fc03cc645add8314327e69e58be78cab"},
+    {file = "botocore-1.27.80.tar.gz", hash = "sha256:0f8b937c41e7ea92c5374e83d54c006d99d9f9fa203175fbfb1ded74c28e9759"},
 ]
 certifi = [
     {file = "certifi-2022.9.14-py3-none-any.whl", hash = "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"},
@@ -1415,8 +1416,8 @@ django-widget-tweaks = [
     {file = "django_widget_tweaks-1.4.12-py3-none-any.whl", hash = "sha256:fe6b17d5d595c63331f300917980db2afcf71f240ab9341b954aea8f45d25b9a"},
 ]
 djangorestframework = [
-    {file = "djangorestframework-3.13.1-py3-none-any.whl", hash = "sha256:24c4bf58ed7e85d1fe4ba250ab2da926d263cd57d64b03e8dcef0ac683f8b1aa"},
-    {file = "djangorestframework-3.13.1.tar.gz", hash = "sha256:0c33407ce23acc68eca2a6e46424b008c9c02eceb8cf18581921d0092bc1f2ee"},
+    {file = "djangorestframework-3.14.0-py3-none-any.whl", hash = "sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08"},
+    {file = "djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},
 ]
 draftjs-exporter = [
     {file = "draftjs_exporter-2.1.7-py3-none-any.whl", hash = "sha256:d415a9964690a2cddb66a31ef32dd46c277e9b80434b94e39e3043188ed83e33"},
@@ -1438,7 +1439,7 @@ factory-boy = [
     {file = "factory_boy-3.2.1-py2.py3-none-any.whl", hash = "sha256:eb02a7dd1b577ef606b75a253b9818e6f9eaf996d94449c9d5ebb124f90dc795"},
     {file = "factory_boy-3.2.1.tar.gz", hash = "sha256:a98d277b0c047c75eb6e4ab8508a7f81fb03d2cb21986f627913546ef7a2a55e"},
 ]
-Faker = [
+faker = [
     {file = "Faker-14.2.1-py3-none-any.whl", hash = "sha256:2e28aaea60456857d4ce95dd12aed767769537ad23d13d51a545cd40a654e9d9"},
     {file = "Faker-14.2.1.tar.gz", hash = "sha256:daad7badb4fd916bd047b28c8459ef4689e4fe6acf61f6dfebee8cc602e4d009"},
 ]
@@ -1451,8 +1452,8 @@ graphene = [
     {file = "graphene-3.1.1.tar.gz", hash = "sha256:ff251dbc39a6409106c41de444358d93b2c5588d161dce2245bea7d74b445c86"},
 ]
 graphene-django = [
-    {file = "graphene-django-3.0.0b7.tar.gz", hash = "sha256:b1a4ce1a2227b1e77f67f0bc2fadd59c1d05016cb9aced45ab65f8612fba2c87"},
-    {file = "graphene_django-3.0.0b7-py2.py3-none-any.whl", hash = "sha256:0f226ec7db744a54dbc5d6db2aa52d945701ae800e1055046dec2b76a539550a"},
+    {file = "graphene-django-3.0.0b8.tar.gz", hash = "sha256:fe8771589ce7fd7196849dceddcd762cc50217e9932e697ff49b93fd3875ae53"},
+    {file = "graphene_django-3.0.0b8-py2.py3-none-any.whl", hash = "sha256:6f2c32a7ae688f16a6203b740827c1595d707704eae61d352b64939acd00f97d"},
 ]
 graphql-core = [
     {file = "graphql-core-3.1.7.tar.gz", hash = "sha256:62ec192150ccecd9a18cfb79e3e72eb7d1fd68fb594ef19c40099b6deec8ef0c"},
@@ -1679,8 +1680,8 @@ soupsieve = [
     {file = "soupsieve-2.3.2.post1.tar.gz", hash = "sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"},
 ]
 sqlparse = [
-    {file = "sqlparse-0.4.2-py3-none-any.whl", hash = "sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d"},
-    {file = "sqlparse-0.4.2.tar.gz", hash = "sha256:0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae"},
+    {file = "sqlparse-0.4.3-py3-none-any.whl", hash = "sha256:0323c0ec29cd52bceabc1b4d9d579e311f3e4961b98d174201d5622a23b85e34"},
+    {file = "sqlparse-0.4.3.tar.gz", hash = "sha256:69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"},
 ]
 stack-data = [
     {file = "stack_data-0.5.0-py3-none-any.whl", hash = "sha256:66d2ebd3d7f29047612ead465b6cae5371006a71f45037c7e2507d01367bce3b"},
@@ -1723,8 +1724,8 @@ uvicorn = [
     {file = "uvicorn-0.18.3.tar.gz", hash = "sha256:9a66e7c42a2a95222f76ec24a4b754c158261c4696e683b9dadc72b590e0311b"},
 ]
 wagtail = [
-    {file = "wagtail-4.0.1-py3-none-any.whl", hash = "sha256:bf161aff275f6d32fa0500d3893c8eb1e1fc24322da50991ce35336367c0adf2"},
-    {file = "wagtail-4.0.1.tar.gz", hash = "sha256:29661e150855b4a69b58de74b92d9e3064135c6a75067b4b9de008459e17d9a2"},
+    {file = "wagtail-4.0.2-py3-none-any.whl", hash = "sha256:2572068dcc6a3406c411eb8e81220471e2cb0578b6d86d401850f27c237942fa"},
+    {file = "wagtail-4.0.2.tar.gz", hash = "sha256:a106ef4d85aeb9858de5670f6501866be3f6c7e241828925eb1f777bdf4a7e64"},
 ]
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},
