@@ -4,9 +4,11 @@ import "regenerator-runtime/runtime";
 import gulp from 'gulp';
 import env from 'gulp-env';
 import mjml from 'gulp-mjml';
-import gutil from 'gulp-util';
+import log from 'fancy-log';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import minimist from "minimist";
 import path from 'path';
+import PluginError from 'plugin-error';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 
@@ -15,7 +17,7 @@ import WebpackDevServer from 'webpack-dev-server';
 const rootDir = `${__dirname}/`;
 const staticDir = `${rootDir}main/static/`;
 const templatesDir = `${rootDir}main/templates/`;
-const PROD_ENV = gutil.env.production;
+const PROD_ENV = minimist(process.argv.slice(2)).production;
 const WEBPACK_DEV_SERVER_PORT = (
   process.env.WEBPACK_DEV_SERVER_PORT ? process.env.WEBPACK_DEV_SERVER_PORT : 8080);
 env.set({ NODE_ENV: PROD_ENV ? 'production' : 'debug' });
@@ -219,8 +221,8 @@ gulp.task('webpack-dev-server', gulp.series(() => {
     headers: { 'Access-Control-Allow-Origin': '*' },
     hot: true,
   }).listen(WEBPACK_DEV_SERVER_PORT, 'localhost', (err) => {
-    if (err) throw new gutil.PluginError('webpack-dev-server', err);
-    gutil.log(
+    if (err) throw new PluginError('webpack-dev-server', err);
+    log(
       '[webpack-dev-server]',
       `http://localhost:${WEBPACK_DEV_SERVER_PORT}/webpack-dev-server/`,
     );
