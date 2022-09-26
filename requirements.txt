@@ -88,9 +88,9 @@ graphql-core==3.1.7; python_version >= "3.6" and python_version < "4" \
 graphql-relay==3.1.5; python_version >= "3.6" and python_version < "4" \
     --hash=sha256:127f40913f11cb847452ef794931261aae3b222eaaf976f7c8430298534e54d3 \
     --hash=sha256:d1455316182e1017d06f0b4d4a2ce8bafad38253a6c7c5666fc80d5d516ee5c8
-h11==0.13.0; python_version >= "3.7" \
-    --hash=sha256:8ddd78563b633ca55346c8cd41ec0af27d3c79931828beffb46ce70a379e7442 \
-    --hash=sha256:70813c1135087a248a4d38cc0e1a0181ffab2188141a93eaf567940c3957ff06
+h11==0.14.0; python_version >= "3.7" \
+    --hash=sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d \
+    --hash=sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761
 html2text==2020.1.16; python_version >= "3.5" \
     --hash=sha256:c7c629882da0cf377d66f073329ccf34a12ed2adf0169b9285ae4e63ef54c82b \
     --hash=sha256:e296318e16b059ddb97f7a8a1d6a5c1d7af4544049a01e261731d2d5cc277bbb
