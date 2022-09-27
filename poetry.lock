@@ -419,8 +419,8 @@ python-versions = ">=3.6"
 Faker = ">=0.7.0"
 
 [package.extras]
-dev = ["coverage", "django", "flake8", "isort", "mongoengine", "pillow", "sqlalchemy", "tox", "wheel (>=0.32.0)", "zest.releaser"]
-doc = ["sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
+dev = ["Django", "Pillow", "SQLAlchemy", "coverage", "flake8", "isort", "mongoengine", "tox", "wheel (>=0.32.0)", "zest.releaser[recommended]"]
+doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
@@ -465,7 +465,7 @@ test = ["coveralls (>=3.3,<4)", "iso8601 (>=1,<2)", "mock (>=4,<5)", "promise (>
 
 [[package]]
 name = "graphene-django"
-version = "3.0.0b8"
+version = "3.0.0"
 description = "Graphene Django integration"
 category = "main"
 optional = false
@@ -891,7 +891,7 @@ pytest = ">=5.4.0"
 
 [package.extras]
 docs = ["sphinx", "sphinx-rtd-theme"]
-testing = ["django", "django-configurations (>=2.0)"]
+testing = ["Django", "django-configurations (>=2.0)"]
 
 [[package]]
 name = "pytest-pythonpath"
@@ -1245,7 +1245,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c773fdd629bd50a2fcd546f9c2fa177963d7b633d90157cd0a6c10044181f65d"
+content-hash = "a0bd2cf75096cea70fa497691eef884ba107ffc7e6eb179e5083b858c51bce0f"
 
 [metadata.files]
 aniso8601 = [
@@ -1452,8 +1452,8 @@ graphene = [
     {file = "graphene-3.1.1.tar.gz", hash = "sha256:ff251dbc39a6409106c41de444358d93b2c5588d161dce2245bea7d74b445c86"},
 ]
 graphene-django = [
-    {file = "graphene-django-3.0.0b8.tar.gz", hash = "sha256:fe8771589ce7fd7196849dceddcd762cc50217e9932e697ff49b93fd3875ae53"},
-    {file = "graphene_django-3.0.0b8-py2.py3-none-any.whl", hash = "sha256:6f2c32a7ae688f16a6203b740827c1595d707704eae61d352b64939acd00f97d"},
+    {file = "graphene-django-3.0.0.tar.gz", hash = "sha256:018a8dc4736d99b5bb4a15d7fd0b46c98010e9201cb52a290f6d1f16ae6fefda"},
+    {file = "graphene_django-3.0.0-py2.py3-none-any.whl", hash = "sha256:9fa531d319d5c8f9e08274628f547574ee684e74dddd1c969abf38142bc32df2"},
 ]
 graphql-core = [
     {file = "graphql-core-3.1.7.tar.gz", hash = "sha256:62ec192150ccecd9a18cfb79e3e72eb7d1fd68fb594ef19c40099b6deec8ef0c"},
