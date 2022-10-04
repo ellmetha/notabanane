@@ -180,9 +180,9 @@ requests==2.28.1; python_version >= "3.7" and python_version < "4" \
 s3transfer==0.6.0; python_version >= "3.7" \
     --hash=sha256:06176b74f3a15f61f1b4f25a1fc29a4429040b7647133a463da8fa5bd28d5ecd \
     --hash=sha256:2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947
-sentry-sdk==1.9.9 \
-    --hash=sha256:d6c71d2f85710b66822adaa954af7912bab135d6c85febd5b0f3dfd4ab37e181 \
-    --hash=sha256:ef925b5338625448645a778428d8f22a3d17de8b28cc8e6fba60b93393ad86fe
+sentry-sdk==1.9.10 \
+    --hash=sha256:2469240f6190aaebcb453033519eae69cfe8cc602065b4667e18ee14fc1e35dc \
+    --hash=sha256:4fbace9a763285b608c06f01a807b51acb35f6059da6a01236654e08b0ee81ff
 six==1.16.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7" \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926
