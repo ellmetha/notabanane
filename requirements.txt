@@ -16,9 +16,9 @@ beautifulsoup4==4.11.1; python_full_version >= "3.6.0" and python_version >= "3.
 boto3==1.24.89; python_version >= "3.7" \
     --hash=sha256:346f8f0d101a4261dac146a959df18d024feda6431e1d9d84f94efd24d086cae \
     --hash=sha256:d0d8ffcdc10821c4562bc7f935cdd840033bbc342ac0e14b6bdd348b3adf4c04
-botocore==1.27.89; python_version >= "3.7" \
-    --hash=sha256:238f1dfdb8d8d017c2aea082609a3764f3161d32745900f41bcdcf290d95a048 \
-    --hash=sha256:621f5413be8f97712b7e36c1b075a8791d1d1b9971a7ee060cdcdf5e2debf6c1
+botocore==1.27.90; python_version >= "3.7" \
+    --hash=sha256:2a934e713e83ae7f4dde1dd013be280538e3c4a3825c5f5a2727a1956d4cd82c \
+    --hash=sha256:4ecc149d1dd36d32ba222de135c2e147731107ae444440b12714282dc00f88a4
 certifi==2022.9.24; python_version >= "3.7" and python_version < "4" \
     --hash=sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382 \
     --hash=sha256:0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14
