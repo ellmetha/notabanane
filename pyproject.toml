@@ -29,7 +29,7 @@ isodate = "*"
 pillow = "<9.2.0"
 psycopg2 = "*"
 sentry-sdk = "*"
-uvicorn = "^0.18.3"
+uvicorn = "^0.19.0"
 wagtail = "*"
 python-dotenv = "^0.21.0"
 
