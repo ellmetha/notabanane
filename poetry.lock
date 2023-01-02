@@ -338,14 +338,14 @@ Django = ">=3.2"
 
 [[package]]
 name = "django-treebeard"
-version = "4.5.1"
+version = "4.6.0"
 description = "Efficient tree implementations for Django"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-Django = ">=2.2"
+Django = ">=3.2"
 
 [[package]]
 name = "django-widget-tweaks"
@@ -1351,8 +1351,8 @@ django-taggit = [
     {file = "django_taggit-3.1.0-py3-none-any.whl", hash = "sha256:543218ac346fbe02a65733e0341c91b57a3e0f7a41568966b26f1cea9edc4805"},
 ]
 django-treebeard = [
-    {file = "django-treebeard-4.5.1.tar.gz", hash = "sha256:80150017725239702054e5fa64dc66e383dc13ac262c8d47ee5a82cb005969da"},
-    {file = "django_treebeard-4.5.1-py3-none-any.whl", hash = "sha256:7c2b1cdb1e9b46d595825186064a1228bc4d00dbbc186db5b0b9412357fba91c"},
+    {file = "django-treebeard-4.6.0.tar.gz", hash = "sha256:7eb1eb71b24214f2e7dc3bd215f0c3ae32fd6764179cd4774af7aab49139dea0"},
+    {file = "django_treebeard-4.6.0-py3-none-any.whl", hash = "sha256:b926fcefaa6a609996ec1429be5b62975628ca13dc8902ea95d75db816a805da"},
 ]
 django-widget-tweaks = [
     {file = "django-widget-tweaks-1.4.12.tar.gz", hash = "sha256:9bfc5c705684754a83cc81da328b39ad1b80f32bd0f4340e2a810cbab4b0c00e"},
