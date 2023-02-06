@@ -500,14 +500,14 @@ Django = ">=3.2"
 
 [[package]]
 name = "django-treebeard"
-version = "4.6.0"
+version = "4.6.1"
 description = "Efficient tree implementations for Django"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "django-treebeard-4.6.0.tar.gz", hash = "sha256:7eb1eb71b24214f2e7dc3bd215f0c3ae32fd6764179cd4774af7aab49139dea0"},
-    {file = "django_treebeard-4.6.0-py3-none-any.whl", hash = "sha256:b926fcefaa6a609996ec1429be5b62975628ca13dc8902ea95d75db816a805da"},
+    {file = "django-treebeard-4.6.1.tar.gz", hash = "sha256:84ab35040277d524eb77939e235568c9c856cb523cc9655793b66fe9a3ef468b"},
+    {file = "django_treebeard-4.6.1-py3-none-any.whl", hash = "sha256:89bc79a7d9ae62e8071ff1f866c83b1484c408d6082ce11cf3eca689240712f6"},
 ]
 
 [package.dependencies]
