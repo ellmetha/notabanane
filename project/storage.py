@@ -12,6 +12,7 @@ import os
 from botocore.exceptions import ClientError
 from django.contrib.staticfiles.storage import ManifestFilesMixin
 from storages.backends.s3boto3 import S3Boto3Storage, S3Boto3StorageFile, SpooledTemporaryFile
+from storages.utils import clean_name
 
 
 class CustomS3Boto3Storage(S3Boto3Storage):
@@ -49,7 +50,7 @@ class StaticRootS3BotoStorage(ManifestFilesMixin, CustomS3Boto3Storage):
     location = 's5'
 
     def _open(self, name, mode='rb'):  # pragma: no cover
-        name = self._normalize_name(self._clean_name(name))
+        name = self._normalize_name(clean_name(name))
         try:
             f = S3Boto3StorageFile(name, mode, self)
         except ClientError as err:
