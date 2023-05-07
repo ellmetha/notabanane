@@ -742,14 +742,14 @@ test = ["coveralls (>=3.3,<4)", "iso8601 (>=1,<2)", "mock (>=4,<5)", "pytest (>=
 
 [[package]]
 name = "graphene-django"
-version = "3.0.0"
+version = "3.0.2"
 description = "Graphene Django integration"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "graphene-django-3.0.0.tar.gz", hash = "sha256:018a8dc4736d99b5bb4a15d7fd0b46c98010e9201cb52a290f6d1f16ae6fefda"},
-    {file = "graphene_django-3.0.0-py2.py3-none-any.whl", hash = "sha256:9fa531d319d5c8f9e08274628f547574ee684e74dddd1c969abf38142bc32df2"},
+    {file = "graphene-django-3.0.2.tar.gz", hash = "sha256:895e0cf02d4264010a95dc1126cef920e137db31c8f09e5c9a96679dcecc0759"},
+    {file = "graphene_django-3.0.2-py2.py3-none-any.whl", hash = "sha256:9e436cb5a6f5a4e88e2a426966e6bab418a6bd11bfb3a32996493f8f18dadf26"},
 ]
 
 [package.dependencies]
@@ -761,7 +761,7 @@ promise = ">=2.1"
 text-unidecode = "*"
 
 [package.extras]
-dev = ["black (==22.8.0)", "coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", "flake8 (==5.0.4)", "flake8-black (==0.3.3)", "flake8-bugbear (==22.9.11)", "mock", "pytest (>=7.1.3)", "pytest-cov", "pytest-django (>=4.5.2)", "pytest-random-order", "pytz"]
+dev = ["black (==22.8.0)", "coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", "flake8 (==5.0.4)", "flake8-black (==0.3.3)", "flake8-bugbear (==22.9.11)", "mock", "pre-commit", "pytest (>=7.1.3)", "pytest-cov", "pytest-django (>=4.5.2)", "pytest-random-order", "pytz"]
 rest-framework = ["djangorestframework (>=3.6.3)"]
 test = ["coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", "mock", "pytest (>=7.1.3)", "pytest-cov", "pytest-django (>=4.5.2)", "pytest-random-order", "pytz"]
 
@@ -1791,4 +1791,4 @@ testing = ["Pillow (>=6.0.0,<10.0.0)", "Wand (>=0.6,<1.0)", "mock (>=3.0,<4.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "8aec5891e738da11d5d0328d680ad96d21c64cee2293416f44cdc9630a5e7098"
+content-hash = "a9f2223868aeec0b1b235fd8ff141c0e1822d5d94505f69f11f3f73b16ffaad5"
