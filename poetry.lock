@@ -767,30 +767,30 @@ test = ["coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", 
 
 [[package]]
 name = "graphql-core"
-version = "3.1.7"
+version = "3.2.3"
 description = "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
 category = "main"
 optional = false
 python-versions = ">=3.6,<4"
 files = [
-    {file = "graphql-core-3.1.7.tar.gz", hash = "sha256:62ec192150ccecd9a18cfb79e3e72eb7d1fd68fb594ef19c40099b6deec8ef0c"},
-    {file = "graphql_core-3.1.7-py3-none-any.whl", hash = "sha256:9b460f60320be01c7f3b1766cf3e406933003008055079b9d983b8f3988f4400"},
+    {file = "graphql-core-3.2.3.tar.gz", hash = "sha256:06d2aad0ac723e35b1cb47885d3e5c45e956a53bc1b209a9fc5369007fe46676"},
+    {file = "graphql_core-3.2.3-py3-none-any.whl", hash = "sha256:5766780452bd5ec8ba133f8bf287dc92713e3868ddd83aee4faab9fc3e303dc3"},
 ]
 
 [[package]]
 name = "graphql-relay"
-version = "3.1.5"
+version = "3.2.0"
 description = "Relay library for graphql-core"
 category = "main"
 optional = false
 python-versions = ">=3.6,<4"
 files = [
-    {file = "graphql-relay-3.1.5.tar.gz", hash = "sha256:127f40913f11cb847452ef794931261aae3b222eaaf976f7c8430298534e54d3"},
-    {file = "graphql_relay-3.1.5-py3-none-any.whl", hash = "sha256:d1455316182e1017d06f0b4d4a2ce8bafad38253a6c7c5666fc80d5d516ee5c8"},
+    {file = "graphql-relay-3.2.0.tar.gz", hash = "sha256:1ff1c51298356e481a0be009ccdff249832ce53f30559c1338f22a0e0d17250c"},
+    {file = "graphql_relay-3.2.0-py3-none-any.whl", hash = "sha256:c9b22bd28b170ba1fe674c74384a8ff30a76c8e26f88ac3aa1584dd3179953e5"},
 ]
 
 [package.dependencies]
-graphql-core = ">=3.1,<3.2"
+graphql-core = ">=3.2,<3.3"
 
 [[package]]
 name = "h11"
@@ -1791,4 +1791,4 @@ testing = ["Pillow (>=6.0.0,<10.0.0)", "Wand (>=0.6,<1.0)", "mock (>=3.0,<4.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "a9f2223868aeec0b1b235fd8ff141c0e1822d5d94505f69f11f3f73b16ffaad5"
+content-hash = "9021bb1aa208e0adefb616b3903992aa1f8e33419122a98fdc5a4d486fbfc6ad"
