@@ -87,7 +87,6 @@ webpack_server:
 
 ## Generate or refresh poetry.lock and requirements.txt
 locked_requirements:
-	poetry update
 	poetry export -f requirements.txt > requirements.txt
 
 

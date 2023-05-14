@@ -29,9 +29,9 @@ isodate = "*"
 pillow = "<9.6.0"
 psycopg2 = "*"
 sentry-sdk = "*"
-uvicorn = "^0.22.0"
-wagtail = "*"
-python-dotenv = "^1.0.0"
+uvicorn = "*"
+wagtail = "^4.1.1"
+python-dotenv = "*"
 
 [tool.poetry.dev-dependencies]
 coverage = ">=4.5"
