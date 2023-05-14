@@ -30,7 +30,7 @@ pillow = "<9.6.0"
 psycopg2 = "*"
 sentry-sdk = "*"
 uvicorn = "*"
-wagtail = "^4.1.1"
+wagtail = "^5.0"
 python-dotenv = "*"
 
 [tool.poetry.dev-dependencies]
