@@ -64,18 +64,18 @@ INSTALLED_APPS = (
     'django.forms',
 
     # Wagtail apps
-    'wagtail.admin',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.contrib.routable_page',
-    'wagtail.core',
-    'wagtail.documents',
     'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
     'wagtail.images',
     'wagtail.search',
-    'wagtail.sites',
-    'wagtail.snippets',
-    'wagtail.users',
+    'wagtail.admin',
+    'wagtail',
 
     # Third-party apps
     'anymail',

@@ -7,7 +7,7 @@ from django.template.defaultfilters import date
 from django.urls import reverse
 from django.utils import timezone as tz
 from graphql_relay import to_global_id
-from wagtail.core.models import Site
+from wagtail.models import Site
 
 from main.apps.blog.test.factories import BlogPageFactory, RecipePageFactory
 

@@ -10,7 +10,7 @@
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.core.models import Page
+from wagtail.models import Page
 from wagtail.search.models import Query
 
 

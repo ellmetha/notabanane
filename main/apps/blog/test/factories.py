@@ -11,8 +11,8 @@ import factory
 import factory.django
 from django.utils.text import slugify
 from faker import Factory
-from wagtail.core.models import Collection, Locale, Page
 from wagtail.images import get_image_model
+from wagtail.models import Collection, Locale, Page
 
 from ..models import (
     ArticlePage, BlogPage, RecipeIngredientsSection, RecipeInstructionsSection, RecipePage,

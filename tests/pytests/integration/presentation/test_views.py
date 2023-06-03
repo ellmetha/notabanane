@@ -5,7 +5,7 @@ from captcha.client import RecaptchaResponse
 from django.conf import settings
 from django.core import mail
 from django.urls import reverse
-from wagtail.core.models import Site
+from wagtail.models import Site
 
 from main.apps.blog.test.factories import BlogPageFactory
 from main.common.test.factories import UserFactory

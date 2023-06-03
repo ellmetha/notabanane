@@ -7,7 +7,7 @@ import modelcluster.contrib.taggit
 import modelcluster.fields
 import main.apps.blog.routes
 import main.common.db.models.fields
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             name='ArticlePage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('body', wagtail.core.fields.RichTextField(verbose_name='Introduction')),
+                ('body', wagtail.fields.RichTextField(verbose_name='Introduction')),
                 ('date', models.DateField(default=datetime.datetime.today, verbose_name='Post date')),
             ],
             options={
@@ -108,7 +108,7 @@ class Migration(migrations.Migration):
             name='RecipePage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('introduction', wagtail.core.fields.RichTextField(verbose_name='Introduction')),
+                ('introduction', wagtail.fields.RichTextField(verbose_name='Introduction')),
                 ('date', models.DateField(default=datetime.datetime.today, verbose_name='Post date')),
                 ('preparation_time', models.DurationField(blank=True, help_text='Duration in the form "HH:MM:SS".', null=True, verbose_name='Preparation time')),
                 ('cook_time', models.DurationField(blank=True, help_text='Duration in the form "HH:MM:SS".', null=True, verbose_name='Cook time')),

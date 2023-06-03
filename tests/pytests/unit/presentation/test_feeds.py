@@ -2,7 +2,7 @@ import datetime as dt
 
 import pytest
 from django.utils import timezone as tz
-from wagtail.core.models import Site
+from wagtail.models import Site
 
 from main.apps.blog.test.factories import ArticlePageFactory, BlogPageFactory, RecipePageFactory
 from main.common.test.factories import UserFactory

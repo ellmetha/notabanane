@@ -11,7 +11,7 @@ import datetime as dt
 from django.contrib.syndication.views import Feed
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
-from wagtail.core.models import Site
+from wagtail.models import Site
 
 from main.apps.blog.models import RecipePage
 

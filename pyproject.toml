@@ -12,8 +12,9 @@ exclude = ["*"]
 python = "^3.11"
 
 babel = "*"
-boto3 = "*"
-django = "^4.1"
+boto3 = "^1.26.146"
+botocore = "^1.29.146"
+django = "*"
 django-anymail = "*"
 django-filter = "*"
 django-js-routes = ">=0.1.3"
@@ -30,8 +31,9 @@ pillow = "<9.6.0"
 psycopg2 = "*"
 sentry-sdk = "*"
 uvicorn = "*"
-wagtail = "^4.1.1"
+wagtail = "^5.0"
 python-dotenv = "*"
+
 
 [tool.poetry.dev-dependencies]
 coverage = ">=4.5"
@@ -46,7 +48,3 @@ pytest-cov = "*"
 pytest-django = "*"
 pytest-pythonpath = "*"
 pytest-spec = "*"
-
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
