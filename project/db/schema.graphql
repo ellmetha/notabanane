@@ -68,6 +68,7 @@ value as specified by
 """
 scalar Date
 
+"""An enumeration."""
 enum DishType {
   APPETIZERS
   BEVERAGES
@@ -79,6 +80,7 @@ enum DishType {
   VEGETABLES_SALADS
 }
 
+"""An enumeration."""
 enum Season {
   WINTER
   SPRING
@@ -86,6 +88,7 @@ enum Season {
   AUTUMN
 }
 
+"""An enumeration."""
 enum Diet {
   VEGETARIAN
   VEGAN
