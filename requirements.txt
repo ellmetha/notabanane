@@ -16,9 +16,9 @@ beautifulsoup4==4.11.2 ; python_version >= "3.11" and python_version < "4.0" \
 boto3==1.28.30 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:2b509a959966a572f15db5768a18066ce1f53022ac53fca9421c620219fa3998 \
     --hash=sha256:e095ede98d3680e65966ab71f273b7d86938f5d853773ef96f4cb646277c2a4b
-botocore==1.31.30 ; python_version >= "3.11" and python_version < "4.0" \
-    --hash=sha256:269f20dcadd8dfd0c26d0e6fbceb84814ff6638ff3aafcc5324b9fb9949a7051 \
-    --hash=sha256:3cf6a9d7621b897c9ff23cd02113826141b3dd3d7e90273b661efc4dc05f84e2
+botocore==1.31.34 ; python_version >= "3.11" and python_version < "4.0" \
+    --hash=sha256:23ba9e3a8b4c0e5966bbe2db62edb27f61e16b846f153f22aefda7b3c05c7942 \
+    --hash=sha256:456ef8eb458db35b8643eb10e652ed50750d13e5af431593471b2c705c34b5db
 certifi==2023.7.22 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082 \
     --hash=sha256:92d6037539857d8206b8f6ae472e8b77db8058fec5937a1ef3f54304089edbb9
