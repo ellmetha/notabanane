@@ -137,17 +137,17 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.28.49"
+version = "1.28.50"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "boto3-1.28.49-py3-none-any.whl", hash = "sha256:519639859a3c829ccf7073a58b3716cb26cb5906e306fe63eb4beab68bf9bfab"},
-    {file = "boto3-1.28.49.tar.gz", hash = "sha256:c9fad1b01a1d7e7bd51150b3175b4c32b79d699ce94708082611f59fde2e097a"},
+    {file = "boto3-1.28.50-py3-none-any.whl", hash = "sha256:cda98a2952cccb1db4208c53a1bba6585620fffa0ca05244827ca65884856d1f"},
+    {file = "boto3-1.28.50.tar.gz", hash = "sha256:33062ab3801029ab7b2cb35b6bf4768715d13c5f9ea7d5dce22ace6219c1dc7a"},
 ]
 
 [package.dependencies]
-botocore = ">=1.31.49,<1.32.0"
+botocore = ">=1.31.50,<1.32.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.6.0,<0.7.0"
 
@@ -1883,4 +1883,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "7ec39e3bbce3e2a3f40792dad2aca4ed9d2920a607ed74aa95c9dc016aae6cb0"
+content-hash = "0196c6deb754e28d3188ae65a55fe7b601be221c988f3f600b8694f48ce7031d"
