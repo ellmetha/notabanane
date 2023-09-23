@@ -156,13 +156,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.31.50"
+version = "1.31.52"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "botocore-1.31.50-py3-none-any.whl", hash = "sha256:5038a407783ea394aaf0671d1086cf55cc1e7c303e1fac244b76adc78cc7ef07"},
-    {file = "botocore-1.31.50.tar.gz", hash = "sha256:a1343f2e38ea86e11247d61bd37a9d5656c16186f4a21b482c713589a054c605"},
+    {file = "botocore-1.31.52-py3-none-any.whl", hash = "sha256:46b0a75a38521aa6a75fddccb1542e002930e609d4e13516f40fef170d32e515"},
+    {file = "botocore-1.31.52.tar.gz", hash = "sha256:6d09881c5a8be34b497872ca3936f8757d886a6f42f2a8703411928189cfedc0"},
 ]
 
 [package.dependencies]
@@ -1883,4 +1883,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "7ec39e3bbce3e2a3f40792dad2aca4ed9d2920a607ed74aa95c9dc016aae6cb0"
+content-hash = "09294b3dce3efa167f0b0ccc934062603f2dd9881224efeb2108ea81ef4e9bcd"
