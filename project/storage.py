@@ -8,10 +8,11 @@
 """
 
 import os
+from tempfile import SpooledTemporaryFile
 
 from botocore.exceptions import ClientError
 from django.contrib.staticfiles.storage import ManifestFilesMixin
-from storages.backends.s3boto3 import S3Boto3Storage, S3Boto3StorageFile, SpooledTemporaryFile
+from storages.backends.s3boto3 import S3Boto3Storage, S3Boto3StorageFile
 from storages.utils import clean_name
 
 
