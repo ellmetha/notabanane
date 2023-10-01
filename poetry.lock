@@ -1805,13 +1805,13 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 
 [[package]]
 name = "wagtail"
-version = "5.1.1"
+version = "5.1.2"
 description = "A Django content management system."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "wagtail-5.1.1-py3-none-any.whl", hash = "sha256:e1f1d920bb294c81eafdb415d2bd150d5637e2323bf9df5a34ef53cb86274121"},
-    {file = "wagtail-5.1.1.tar.gz", hash = "sha256:211ff0cd7059f968a7fc4385503b20d801c1e68b56f5831e0a6a4fc600a5943f"},
+    {file = "wagtail-5.1.2-py3-none-any.whl", hash = "sha256:f4df51dea3b492d21effae2523cb1aed11631e354844c02c7eb8f5985d79bf38"},
+    {file = "wagtail-5.1.2.tar.gz", hash = "sha256:1f79d7810e27a644340016da7d02f860425f9ff78ace09706cc895f5e6610828"},
 ]
 
 [package.dependencies]
@@ -1831,7 +1831,7 @@ openpyxl = ">=3.0.10,<4.0"
 Pillow = ">=9.1.0,<11.0.0"
 requests = ">=2.11.1,<3.0"
 telepath = ">=0.1.1,<1"
-Willow = {version = ">=1.6,<1.7", extras = ["heif"]}
+Willow = {version = ">=1.6.2,<1.7", extras = ["heif"]}
 
 [package.extras]
 docs = ["Sphinx (>=1.5.2)", "myst-parser (==0.18.1)", "pyenchant (>=3.1.1,<4)", "sphinx-autobuild (>=0.6.0)", "sphinx-copybutton (>=0.5,<1.0)", "sphinx-wagtail-theme (==6.1.1)", "sphinxcontrib-spelling (>=5.4.0,<6)"]
