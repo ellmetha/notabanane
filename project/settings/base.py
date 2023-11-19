@@ -79,7 +79,7 @@ INSTALLED_APPS = (
 
     # Third-party apps
     'anymail',
-    'captcha',
+    'django_recaptcha',
     'graphene_django',
     'js_routes',
     'modelcluster',
