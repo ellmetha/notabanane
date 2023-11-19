@@ -1,10 +1,10 @@
 import unittest.mock
 
 import pytest
-from captcha.client import RecaptchaResponse
 from django.conf import settings
 from django.core import mail
 from django.urls import reverse
+from django_recaptcha.client import RecaptchaResponse
 from wagtail.models import Site
 
 from main.apps.blog.test.factories import BlogPageFactory
@@ -28,7 +28,7 @@ class TestContactFormView:
         response = client.get(reverse('contact'))
         assert response.status_code == 200
 
-    @unittest.mock.patch('captcha.fields.client.submit')
+    @unittest.mock.patch('django_recaptcha.fields.client.submit')
     def test_triggers_the_sending_of_a_contact_email(self, mocked_submit, client):
         mocked_submit.return_value = RecaptchaResponse(is_valid=True)
 
