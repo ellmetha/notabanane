@@ -13,7 +13,7 @@ python = "^3.11"
 
 babel = "*"
 boto3 = "^1.28.52"
-botocore = "^1.32.7"
+botocore = "^1.33.9"
 cryptography = "*"
 django = "*"
 django-anymail = "*"
