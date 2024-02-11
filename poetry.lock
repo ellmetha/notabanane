@@ -120,17 +120,17 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.34.34"
+version = "1.34.39"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">= 3.8"
 files = [
-    {file = "boto3-1.34.34-py3-none-any.whl", hash = "sha256:33a8b6d9136fa7427160edb92d2e50f2035f04e9d63a2d1027349053e12626aa"},
-    {file = "boto3-1.34.34.tar.gz", hash = "sha256:b2f321e20966f021ec800b7f2c01287a3dd04fc5965acdfbaa9c505a24ca45d1"},
+    {file = "boto3-1.34.39-py3-none-any.whl", hash = "sha256:476896e70d36c9134d4125834280c597c17b54bff4902baf2e5fcde74f8acec8"},
+    {file = "boto3-1.34.39.tar.gz", hash = "sha256:35bcbecf1b5d3620c93f0062d2994177f8bda25a9d2cba144d6462793c16065b"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.34,<1.35.0"
+botocore = ">=1.34.39,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -139,13 +139,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.38"
+version = "1.34.39"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">= 3.8"
 files = [
-    {file = "botocore-1.34.38-py3-none-any.whl", hash = "sha256:773e49f5bf596191e796b2a15096ff381e61778cbe7c982b381bb9f6bfe5fef3"},
-    {file = "botocore-1.34.38.tar.gz", hash = "sha256:da9754a8e1798706427ede9c9c0a55263bd8e57f217c021807b2946eb4a0c2d8"},
+    {file = "botocore-1.34.39-py3-none-any.whl", hash = "sha256:e175360445424b83b0e28ae20d301b99cf44ff2c9d5ab1d8670899bec05a9753"},
+    {file = "botocore-1.34.39.tar.gz", hash = "sha256:9f00bd5e4698bcdd37ce6e224a896baf58d209678ed92834944b767de9061cc5"},
 ]
 
 [package.dependencies]
@@ -1350,8 +1350,6 @@ files = [
     {file = "psycopg2-2.9.9-cp310-cp310-win_amd64.whl", hash = "sha256:426f9f29bde126913a20a96ff8ce7d73fd8a216cfb323b1f04da402d452853c3"},
     {file = "psycopg2-2.9.9-cp311-cp311-win32.whl", hash = "sha256:ade01303ccf7ae12c356a5e10911c9e1c51136003a9a1d92f7aa9d010fb98372"},
     {file = "psycopg2-2.9.9-cp311-cp311-win_amd64.whl", hash = "sha256:121081ea2e76729acfb0673ff33755e8703d45e926e416cb59bae3a86c6a4981"},
-    {file = "psycopg2-2.9.9-cp312-cp312-win32.whl", hash = "sha256:d735786acc7dd25815e89cc4ad529a43af779db2e25aa7c626de864127e5a024"},
-    {file = "psycopg2-2.9.9-cp312-cp312-win_amd64.whl", hash = "sha256:a7653d00b732afb6fc597e29c50ad28087dcb4fbfb28e86092277a559ae4e693"},
     {file = "psycopg2-2.9.9-cp37-cp37m-win32.whl", hash = "sha256:5e0d98cade4f0e0304d7d6f25bbfbc5bd186e07b38eac65379309c4ca3193efa"},
     {file = "psycopg2-2.9.9-cp37-cp37m-win_amd64.whl", hash = "sha256:7e2dacf8b009a1c1e843b5213a87f7c544b2b042476ed7755be813eaf4e8347a"},
     {file = "psycopg2-2.9.9-cp38-cp38-win32.whl", hash = "sha256:ff432630e510709564c01dafdbe996cb552e0b9f3f065eb89bdce5bd31fabf4c"},
@@ -1793,13 +1791,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "uvicorn"
-version = "0.27.0.post1"
+version = "0.27.1"
 description = "The lightning-fast ASGI server."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "uvicorn-0.27.0.post1-py3-none-any.whl", hash = "sha256:4b85ba02b8a20429b9b205d015cbeb788a12da527f731811b643fd739ef90d5f"},
-    {file = "uvicorn-0.27.0.post1.tar.gz", hash = "sha256:54898fcd80c13ff1cd28bf77b04ec9dbd8ff60c5259b499b4b12bb0917f22907"},
+    {file = "uvicorn-0.27.1-py3-none-any.whl", hash = "sha256:5c89da2f3895767472a35556e539fd59f7edbe9b1e9c0e1c99eebeadc61838e4"},
+    {file = "uvicorn-0.27.1.tar.gz", hash = "sha256:3d9a267296243532db80c83a959a3400502165ade2c1338dea4e67915fd4745a"},
 ]
 
 [package.dependencies]
