@@ -350,6 +350,7 @@ class RecipePage(Page):
     class Meta:
         verbose_name = _('Recipe')
         verbose_name_plural = _('Recipes')
+        ordering = ['title']
 
     @property
     def diets_tuples(self):
@@ -489,6 +490,7 @@ class SimplePage(Page):
     class Meta:
         verbose_name = _('Simple page')
         verbose_name_plural = _('Simple pages')
+        ordering = ['title']
 
     def get_context(self, request, *args, **kwargs):
         """ Returns a dictionary of variables to bind into the template. """
