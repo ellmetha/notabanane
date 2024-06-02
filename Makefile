@@ -12,7 +12,7 @@ init:
 
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Python dependencies${RESET}\n\n"
 
-	poetry env use 3.11
+	poetry env use 3.12
 	poetry install
 
 	@printf "\n\n${YELLOW}---------------- Initialization ---${RESET} ${GREEN}Node.js dependencies${RESET}\n\n"
