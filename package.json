@@ -44,7 +44,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "fancy-log": "^2.0.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-env": "^0.4.0",
     "gulp-mjml": "^4.0.2",
     "jest": "^27.4.4",
