@@ -1527,17 +1527,18 @@ pytest = ">=2.5.2,<7"
 
 [[package]]
 name = "pytest-spec"
-version = "3.2.0"
+version = "4.0.0"
 description = "Library pytest-spec is a pytest plugin to display test execution output like a SPECIFICATION."
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "pytest-spec-3.2.0.tar.gz", hash = "sha256:4af154588195f4bb6c62d6ca030a20218db7d80b675a08897d9a99239ea3d087"},
-    {file = "pytest_spec-3.2.0-py2.py3-none-any.whl", hash = "sha256:128dd1e133c72d6a18b28ed96d0af0fc43aece8f796ebcfcd81c850f0094b62e"},
+    {file = "pytest_spec-4.0.0-py3-none-any.whl", hash = "sha256:5d85ed29d9240722dfe778bed80022b917154c8200020864a61bfa65f138f70a"},
+    {file = "pytest_spec-4.0.0.tar.gz", hash = "sha256:71c9985e97d090a69b1f1b7adb64e7a208fb1ac42432ce9566c32cdd6b44c1ad"},
 ]
 
-[package.dependencies]
-six = "*"
+[package.extras]
+deploy = ["build", "twine"]
+test = ["pytest", "pytest-describe"]
 
 [[package]]
 name = "python-dateutil"
