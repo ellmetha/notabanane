@@ -1019,17 +1019,14 @@ test-extra = ["curio", "ipython[test]", "matplotlib (!=3.2.0)", "nbformat", "num
 
 [[package]]
 name = "isodate"
-version = "0.6.1"
+version = "0.7.0"
 description = "An ISO 8601 date/time/duration parser and formatter"
 optional = false
 python-versions = "*"
 files = [
-    {file = "isodate-0.6.1-py2.py3-none-any.whl", hash = "sha256:0751eece944162659049d35f4f549ed815792b38793f07cf73381c1c87cbed96"},
-    {file = "isodate-0.6.1.tar.gz", hash = "sha256:48c5881de7e8b0a0d648cb024c8062dc84e7b840ed81e864c7614fd3c127bde9"},
+    {file = "isodate-0.7.0-py3-none-any.whl", hash = "sha256:bc2c92e5b9526930bebb884fe5366ef8c4f437228b836a87a49af82d859fdb16"},
+    {file = "isodate-0.7.0.tar.gz", hash = "sha256:c6332cf456314b85cc3b6ea2c45a6fa417cb1fddb361f6d2ed8f4f69e843c6d1"},
 ]
-
-[package.dependencies]
-six = "*"
 
 [[package]]
 name = "isort"
