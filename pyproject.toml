@@ -32,7 +32,7 @@ pillow = "<10.5.0"
 psycopg2 = "*"
 sentry-sdk = "*"
 uvicorn = "*"
-wagtail = "^5.2"
+wagtail = "^6.3"
 python-dotenv = "*"
 
 
