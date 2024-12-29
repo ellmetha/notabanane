@@ -33,11 +33,11 @@ jobs:
   python_qa:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
     - name: Set up Python 3.13
       uses: actions/setup-python@v1
       with:
-        python-version: 3.13
+        python-version: '3.13'
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
