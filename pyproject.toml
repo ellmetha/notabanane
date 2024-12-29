@@ -9,7 +9,7 @@ classifiers = ["Private :: Do Not Upload"]
 exclude = ["*"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
 
 babel = "*"
 boto3 = "^1.35.85"
@@ -29,7 +29,7 @@ graphql-core = "<3.2"
 html2text = "*"
 isodate = "*"
 pillow = "<10.5.0"
-psycopg2 = "*"
+psycopg2-binary = "*"
 sentry-sdk = "*"
 uvicorn = "*"
 wagtail = "^5.2"
