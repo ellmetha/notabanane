@@ -9,7 +9,7 @@ classifiers = ["Private :: Do Not Upload"]
 exclude = ["*"]
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.12"
 
 babel = "*"
 boto3 = "^1.35.85"
