@@ -103,17 +103,17 @@ lxml = ["lxml"]
 
 [[package]]
 name = "boto3"
-version = "1.35.90"
+version = "1.35.92"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.35.90-py3-none-any.whl", hash = "sha256:b0874233057995a8f0c813f5b45a36c09630e74c43d7a7c64db2feef2915d493"},
-    {file = "boto3-1.35.90.tar.gz", hash = "sha256:dc56caaaab2157a4bfc109c88b50cd032f3ac66c06d17f8ee335b798eaf53e5c"},
+    {file = "boto3-1.35.92-py3-none-any.whl", hash = "sha256:786930d5f1cd13d03db59ff2abbb2b7ffc173fd66646d5d8bee07f316a5f16ca"},
+    {file = "boto3-1.35.92.tar.gz", hash = "sha256:f7851cb320dcb2a53fc73b4075187ec9b05d51291539601fa238623fdc0e8cd3"},
 ]
 
 [package.dependencies]
-botocore = ">=1.35.90,<1.36.0"
+botocore = ">=1.35.92,<1.36.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -122,13 +122,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.35.91"
+version = "1.35.92"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.35.91-py3-none-any.whl", hash = "sha256:93de9d0f52f7e36a2c190d55520d3b2654f32c5a628fdd484bffa00bc7865e1d"},
-    {file = "botocore-1.35.91.tar.gz", hash = "sha256:7b0b9c5954701fff4d2c516918f45641b04ff4ca92bbd9f5b37c0b80f8c14220"},
+    {file = "botocore-1.35.92-py3-none-any.whl", hash = "sha256:f94ae1e056a675bd67c8af98a6858d06e3927d974d6c712ed6e27bb1d11bee1d"},
+    {file = "botocore-1.35.92.tar.gz", hash = "sha256:caa7d5d857fed5b3d694b89c45f82b9f938f840e90a4eb7bf50aa65da2ba8f82"},
 ]
 
 [package.dependencies]
@@ -783,13 +783,13 @@ doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
-version = "33.1.0"
+version = "33.3.0"
 description = "Faker is a Python package that generates fake data for you."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Faker-33.1.0-py3-none-any.whl", hash = "sha256:d30c5f0e2796b8970de68978365247657486eb0311c5abe88d0b895b68dff05d"},
-    {file = "faker-33.1.0.tar.gz", hash = "sha256:1c925fc0e86a51fc46648b504078c88d0cd48da1da2595c4e712841cab43a1e4"},
+    {file = "Faker-33.3.0-py3-none-any.whl", hash = "sha256:ae074d9c7ef65817a93b448141a5531a16b2ea2e563dc5774578197c7c84060c"},
+    {file = "faker-33.3.0.tar.gz", hash = "sha256:2abb551a05b75d268780b6095100a48afc43c53e97422002efbfc1272ebf5f26"},
 ]
 
 [package.dependencies]
