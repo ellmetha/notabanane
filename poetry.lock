@@ -889,14 +889,14 @@ test = ["coveralls (>=3.3,<5)", "pytest (>=8,<9)", "pytest-asyncio (>=0.16,<2)",
 
 [[package]]
 name = "graphene-django"
-version = "3.2.2"
+version = "3.2.3"
 description = "Graphene Django integration"
 optional = false
 python-versions = "*"
 groups = ["main"]
 files = [
-    {file = "graphene-django-3.2.2.tar.gz", hash = "sha256:059ccf25d9a5159f28d7ebf1a648c993ab34deb064e80b70ca096aa22a609556"},
-    {file = "graphene_django-3.2.2-py2.py3-none-any.whl", hash = "sha256:0fd95c8c1cbe77ae2a5940045ce276803c3acbf200a156731e0c730f2776ae2c"},
+    {file = "graphene-django-3.2.3.tar.gz", hash = "sha256:d831bfe8e9a6e77e477b7854faef4addb318f386119a69ee4c57b74560f3e07d"},
+    {file = "graphene_django-3.2.3-py2.py3-none-any.whl", hash = "sha256:0c673a4dad315b26b4d18eb379ad0c7027fd6a36d23a1848b7c7c09a14a9271e"},
 ]
 
 [package.dependencies]
@@ -2093,4 +2093,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "1468c05de3f562b0a44a3814329451b53e435c882f97703d74ec6be57155faf9"
+content-hash = "b6f9ba2d39b5f3974b8f30808d0620477feed4387fb4ad3877d0422092b946d6"
