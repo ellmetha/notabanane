@@ -551,6 +551,6 @@ wagtail==5.2.8 ; python_version >= "3.12" and python_version < "4.0" \
 webencodings==0.5.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78 \
     --hash=sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923
-willow==1.6.3 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:143cefd30d3bb816cdff857c454da24991dda35a0315ea795101675e0b14262f \
-    --hash=sha256:f4b17a16c6315864604dadb6cdf2987d0b685e295cca74c6da28b94167a3126e
+willow==1.11.0 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:0a4388dbf18726eef8f27449659047689c39b7023045ca5a8a75410d3864ee6f \
+    --hash=sha256:70292b2d0cd2d5bb4076f0b3d61308aeaa0b225f3970d00752f08a8fd386c3d1
