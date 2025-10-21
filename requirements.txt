@@ -539,9 +539,9 @@ requests==2.32.5 ; python_version >= "3.12" and python_version < "4.0" \
 s3transfer==0.14.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:ea3b790c7077558ed1f02a3072fb3cb992bbbd253392f4b6e9e8976941c7d456 \
     --hash=sha256:eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125
-sentry-sdk==2.41.0 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:343cde6540574113d13d178d1b2093e011ac21dd55abd3a1ec7e540f0d18a5bd \
-    --hash=sha256:e7af3f4d7f8bac4c56fbaf95adb0d111f061cce58d5df91cfcd4e69782759b10
+sentry-sdk==2.42.1 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:8598cc6edcfe74cb8074ba6a7c15338cdee93d63d3eb9b9943b4b568354ad5b6 \
+    --hash=sha256:f8716b50c927d3beb41bc88439dc6bcd872237b596df5b14613e2ade104aee02
 six==1.17.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
