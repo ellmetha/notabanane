@@ -28,13 +28,13 @@ graphene-django = "^3.2.3"
 graphql-core = "<3.3"
 html2text = "*"
 isodate = "*"
-pillow = "<10.5.0"
+pillow = "*"
 psycopg2-binary = "*"
+python-dotenv = "*"
 sentry-sdk = "*"
 uvicorn = "*"
 wagtail = "^7.2"
-python-dotenv = "*"
-
+willow = {version = ">=1.11", extras = ["heif"]}
 
 [tool.poetry.dev-dependencies]
 coverage = ">=4.5"
