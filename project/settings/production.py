@@ -31,18 +31,19 @@ INSTALLED_APPS += (  # noqa: F405
 DATABASES['default']['DB_OPTIONS'] = {'sslmode': 'require'}  # noqa: F405
 
 
-# FILE STORAGE CONFIGURATION
+# STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DEFAULT_FILE_STORAGE
-DEFAULT_FILE_STORAGE = 'project.storage.MediaRootS3BotoStorage'
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#storages
+STORAGES = {
+    'default': {
+        'BACKEND': 'project.storage.MediaRootS3BotoStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'project.storage.StaticRootS3BotoStorage',
+    },
+}
 
-
-# STATIC FILE CONFIGURATION
-# ------------------------------------------------------------------------------
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-STATICFILES_STORAGE
-STATICFILES_STORAGE = 'project.storage.StaticRootS3BotoStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
