@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'django.forms',
 
     # Wagtail apps

@@ -10,8 +10,8 @@
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.contrib.search_promotions.models import Query
 from wagtail.models import Page
-from wagtail.search.models import Query
 
 
 class BlogRoutes(RoutablePageMixin):
