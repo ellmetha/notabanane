@@ -1,6 +1,7 @@
 import datetime as dt
 
 import pytest
+from django.core.management import call_command
 from django.utils import timezone as tz
 
 from main.apps.blog.test.factories import ArticlePageFactory, BlogPageFactory, RecipePageFactory
@@ -73,6 +74,8 @@ class TestBlogRoutes:
             live=True,
             title='My dummy recipe'
         )
+
+        call_command('update_index')
 
         response = self.blog_page.entries_search(rf.get('/search', {'q': 'super'}))
 

@@ -23,7 +23,8 @@ class TestDumpGraphqlSchema:
     def test_can_export_the_dump_of_the_graphql_schema_to_the_standard_output(self):
         call_command('dump_graphql_schema', stdout=self.stdout)
         self.stdout.seek(0)
-        assert self.stdout.read() == print_schema(graphene_settings.SCHEMA.graphql_schema)
+        expected = print_schema(graphene_settings.SCHEMA.graphql_schema).strip()
+        assert self.stdout.read().strip() == expected
 
     def test_can_export_the_dump_of_the_graphql_schema_to_a_single_file(self):
         export_filename = tempfile.mktemp()
