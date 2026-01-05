@@ -324,9 +324,9 @@ django==6.0 ; python_version >= "3.12" and python_version < "4.0" \
 djangorestframework==3.16.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:166809528b1aced0a17dc66c24492af18049f2c9420dbd0be29422029cfc3ff7 \
     --hash=sha256:33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec
-draftjs-exporter==5.1.0 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:9f44b8dcecb702540e3aab24af2fad8683aec910fe0034c12cfab5d716ac5f84 \
-    --hash=sha256:c32932b7933b994fd5ea74c1decf47b5c41e13ba06363f5b69b76ef10137d4e9
+draftjs-exporter==5.2.0 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:4d665f8c75fd173d2c99326405300e8defcf4961b9b2f16ff117486489c6760b \
+    --hash=sha256:f5255510a9c1de60807c1ba4be9666fb44ba263841b63329c8ce70d66146764c
 et-xmlfile==2.0.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa \
     --hash=sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54
