@@ -361,9 +361,9 @@ jmespath==1.1.0 ; python_version >= "3.12" and python_version < "4.0" \
 laces==0.1.2 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:3218e09c1889ae5cf3fc7a82f5bb63ec0c7879889b6a9760bfc42323c694b84d \
     --hash=sha256:980cdaf9a31e883a2b8198132e2388931a4eb8814f5bfa5d8bba13ff9f657b7c
-modelsearch==1.1.1 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:25f329c4d93572729c931f65c46cedb5cfc32d368690ebdabc223aa6205251d6 \
-    --hash=sha256:d2580790af76c3a6404f651c9d8ca8695b284551583bb8ca6ddeb17eca0cfb52
+modelsearch==1.2 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:b4421c134175224e67f1aae9b4f26265347dfa617c2d433520cf379ca37c71f2 \
+    --hash=sha256:c150eb8bc0317fd5e656eb54f3b6809da313588a9998796a4e59a1cfed273ee7
 openpyxl==3.1.5 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2 \
     --hash=sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050
