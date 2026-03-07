@@ -33,7 +33,7 @@ psycopg2-binary = "*"
 python-dotenv = "*"
 sentry-sdk = "*"
 uvicorn = "*"
-wagtail = "^7.2"
+wagtail = "^7.3"
 willow = {version = ">=1.11", extras = ["heif"]}
 
 [tool.poetry.dev-dependencies]
