@@ -12,7 +12,7 @@ exclude = ["*"]
 python = "^3.12"
 
 babel = "*"
-boto3 = "^1.42.22"
+boto3 = "^1.42.67"
 botocore = "^1.42.67"
 cryptography = "*"
 django = "*"
