@@ -10,9 +10,9 @@ babel==2.18.0 ; python_version >= "3.12" and python_version < "4.0" \
 beautifulsoup4==4.14.3 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:0918bfe44902e6ad8d57732ba310582e98da931428d231a5ecb9e7c703a735bb \
     --hash=sha256:6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86
-boto3==1.42.83 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:544846fdb10585bb7837e409868e8e04c6b372fa04479ba1597ce82cf1242076 \
-    --hash=sha256:cc5621e603982cb3145b7f6c9970e02e297a1a0eb94637cc7f7b69d3017640ee
+boto3==1.42.87 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:15cc1404b3ccbcfe17bd5834d467b1b28d53d9aca44e3798dc44876ac57362e6 \
+    --hash=sha256:b5b86a826f8f12c7d38679f35bd0135807a6867a21eb8be6dea7c27aeb14ec14
 botocore==1.42.90 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:234c39492cd3088acb021d999e3392a4d50238ae3e70b9d9ae1504c30d9009d1 \
     --hash=sha256:5c95504720346990adc8e3ae1023eb46f9409084b79688e4773ba7099c5fd3db
