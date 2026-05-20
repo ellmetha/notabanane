@@ -314,9 +314,9 @@ django-recaptcha==4.1.0 ; python_version >= "3.12" and python_version < "4.0" \
 django-storages==1.14.2 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:1db759346b52ada6c2efd9f23d8241ecf518813eb31db9e2589207174f58f6ad \
     --hash=sha256:51b36af28cc5813b98d5f3dfe7459af638d84428c8df4a03990c7d74d1bea4e5
-django-stubs-ext==6.0.2 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:70b7b7ae837e7a6036e2facb64435550bf7cf8143c1a6e802864d4824ce6058c \
-    --hash=sha256:b35bdec1995bf49765cc39fa89aa7c23f120a23d0cb0152ab7fb4e48ff7d667b
+django-stubs-ext==6.0.3 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:3307d42132bc295d5744de6276bc5fdf6896efc70f891e21c0ae8bdf529d2762 \
+    --hash=sha256:9e4105955419ae310d7da9cfd808e039d4dae3092c628f021057bb4f2c237f8f
 django-taggit==6.1.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:ab776264bbc76cb3d7e49e1bf9054962457831bd21c3a42db9138b41956e4cf0 \
     --hash=sha256:c4d1199e6df34125dd36db5eb0efe545b254dec3980ce5dd80e6bab3e78757c3
