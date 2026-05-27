@@ -606,9 +606,9 @@ python-dotenv==1.2.2 ; python_version >= "3.12" and python_version < "4.0" \
 requests==2.34.2 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0 \
     --hash=sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed
-s3transfer==0.17.0 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a \
-    --hash=sha256:ce3801712acf4ad3e89fb9990df97b4972e93f4b3b0004d214be5bce12814c20
+s3transfer==0.17.1 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:042dd5e3b1b512355e35a23f0223e426b7042e80b97830ea2680ddce327fc45e \
+    --hash=sha256:5b9827d1044159bbb01b86ef8902760ea39281927f5de31de75e1d657177bf4c
 sentry-sdk==2.60.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:0bd25e54e78ca02d0be512529fa644bbbf9e8470d7b26371294012d4ca93c978 \
     --hash=sha256:28a536c03291c8bcb363cf35c611b32738ec118ff64d8d6383b096448ac4c803
