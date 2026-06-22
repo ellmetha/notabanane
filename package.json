@@ -48,7 +48,7 @@
     "gulp-env": "^0.4.0",
     "gulp-mjml": "^4.0.2",
     "jest": "^27.4.4",
-    "lodash.template": ">=4.5.0",
+    "lodash.template": ">=4.18.1",
     "mini-css-extract-plugin": "^2.4.5",
     "minimist": "^1.2.6",
     "nan": "^2.15.0",
