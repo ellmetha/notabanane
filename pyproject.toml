@@ -37,7 +37,7 @@ wagtail = "^7.3"
 willow = {version = ">=1.11", extras = ["heif"]}
 
 [tool.poetry.dev-dependencies]
-coverage = ">=7.14.1"
+coverage = ">=7.15.2"
 django-debug-toolbar = "*"
 factory-boy = "*"
 faker = "*"
