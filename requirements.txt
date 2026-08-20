@@ -618,9 +618,9 @@ urllib3==2.7.0 ; python_version >= "3.12" and python_version < "4.0" \
 uvicorn==0.52.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd \
     --hash=sha256:e4403f9d93188cf9d1088e9f40e3acd12630e2df8675316704379a7fc20fff6a
-wagtail==7.4.2 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:6e261b50693abfbe2b738717bedc5bd0915e2e08efb9400102f4098c0c03aaab \
-    --hash=sha256:ae80a6d536a4098f7c9d37e169ba0f14c29c9769b50b6d92546f41e5cad201d8
+wagtail==7.4.3 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:dafa7d25459724822362db816c37261cc37441dd1ff0e08f47386615d2644171 \
+    --hash=sha256:e359e457ba7838b1c398f7169e34e203cefd75df9062eb8ecadb4be8f1c52912
 willow==1.12.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:d3541690b6726a4f6f4654f80507d81bacfa0c686ab065eb5c90159f1b9cee38 \
     --hash=sha256:db29c8d2f19b9d91f4ce22881521055aa2f6070131d64b4098cb86a98e851a70
