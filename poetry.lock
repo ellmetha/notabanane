@@ -2201,14 +2201,14 @@ standard = ["httptools (>=0.8.0)", "python-dotenv (>=0.13)", "pyyaml (>=5.1)", "
 
 [[package]]
 name = "wagtail"
-version = "7.4.2"
+version = "7.4.3"
 description = "A Django content management system."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "wagtail-7.4.2-py3-none-any.whl", hash = "sha256:ae80a6d536a4098f7c9d37e169ba0f14c29c9769b50b6d92546f41e5cad201d8"},
-    {file = "wagtail-7.4.2.tar.gz", hash = "sha256:6e261b50693abfbe2b738717bedc5bd0915e2e08efb9400102f4098c0c03aaab"},
+    {file = "wagtail-7.4.3-py3-none-any.whl", hash = "sha256:dafa7d25459724822362db816c37261cc37441dd1ff0e08f47386615d2644171"},
+    {file = "wagtail-7.4.3.tar.gz", hash = "sha256:e359e457ba7838b1c398f7169e34e203cefd75df9062eb8ecadb4be8f1c52912"},
 ]
 
 [package.dependencies]
