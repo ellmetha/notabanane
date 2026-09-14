@@ -349,9 +349,9 @@ cryptography==50.0.1 ; python_version >= "3.12" and python_version < "4.0" \
 defusedxml==0.7.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69 \
     --hash=sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61
-django-anymail==15.1 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:299fb12a21ac4101e9706c2ade461d18deacbb6bc3750cfa6ca08aeea1fc9442 \
-    --hash=sha256:cb482b0e2b0aea665c83d49e3f13bb0673210aa0de285b1748a3b5e6277fc826
+django-anymail==15.2 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:65b26b1c99e6a09051b71b012ac4dfdd75a33aeb057315944dd9fb872cae57cf \
+    --hash=sha256:866ed547e9d3110210e6fad343a2311eead55dbd4d544195fb628d06ae25d737
 django-filter==26.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:66ea04031b068c77c86e1ac26ced7a3f8f13ce797f5795751707e3deefc58054 \
     --hash=sha256:7d98ef2899218e6242619b532cb1b95af14e09dfcf74844aecb550ad27b59ff2
