@@ -409,9 +409,9 @@ graphene-django==3.2.3 ; python_version >= "3.12" and python_version < "4.0" \
 graphene==3.4.3 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:2a3786948ce75fe7e078443d37f609cbe5bb36ad8d6b828740ad3b95ed1a0aaa \
     --hash=sha256:820db6289754c181007a150db1f7fff544b94142b556d12e3ebc777a7bf36c71
-graphql-core==3.2.11 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:0b3e35ff41e9adba53021ab0cef475eb18f57c7f53f0f2ca55567fbf3c537ea0 \
-    --hash=sha256:e7e156d10beb127cab5c89ff0da71416fc73d27c484a4757d3b2d35633774802
+graphql-core==3.2.12 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:3d8f104532070485e13caa4092c1e71cda2ba6cffd96e98f285111ee10ed1e51 \
+    --hash=sha256:4579094d5fc8a1a59555a9b18e51b320779d9bbc63e2302c519af0c4919d9543
 graphql-relay==3.2.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:1ff1c51298356e481a0be009ccdff249832ce53f30559c1338f22a0e0d17250c \
     --hash=sha256:c9b22bd28b170ba1fe674c74384a8ff30a76c8e26f88ac3aa1584dd3179953e5
