@@ -383,9 +383,9 @@ django-storages==1.14.2 ; python_version >= "3.12" and python_version < "4.0" \
 django-stubs-ext==6.1.1 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:64aebb7ce2c327a4a2b75207d67034e879fd7edf027c93487be69da363dc79fa \
     --hash=sha256:c35263135558d4c5d12b69e1f4c98632bf59bc3ab5118f7d4882d12800e3a7dd
-django-taggit==6.1.0 ; python_version >= "3.12" and python_version < "4.0" \
-    --hash=sha256:ab776264bbc76cb3d7e49e1bf9054962457831bd21c3a42db9138b41956e4cf0 \
-    --hash=sha256:c4d1199e6df34125dd36db5eb0efe545b254dec3980ce5dd80e6bab3e78757c3
+django-taggit==7.0.0 ; python_version >= "3.12" and python_version < "4.0" \
+    --hash=sha256:191dd89528f40a6109d1922f197885f25db3cd05b4280b6ec2a1e8e790c295b8 \
+    --hash=sha256:338b7af0f3417f079a2a4346da1677a1e0d4ca0aba1b04a4e12c9e3a85450a7a
 django-tasks==0.12.0 ; python_version >= "3.12" and python_version < "4.0" \
     --hash=sha256:58be66c1e487da32a3ce7320bd1949d0d1dc381b9004819f92591eb37fb2c1b8 \
     --hash=sha256:ffcc1d7bdfad3bc5ef9c2d498596c6546484c9ec6b182fb9709c691eb66a8709
